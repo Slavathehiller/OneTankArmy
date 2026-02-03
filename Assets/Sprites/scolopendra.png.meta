@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 5a3830da8868ef847b658a0146dd9483
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4304118581870347885
+    second: scolopendra_0
+  - first:
+      213: 7451742476069205982
+    second: scolopendra_1
+  - first:
+      213: 1998698238803580396
+    second: scolopendra_2
+  - first:
+      213: 2212594218012642744
+    second: scolopendra_3
+  - first:
+      213: 3680367173271211709
+    second: scolopendra_4
+  - first:
+      213: 8006416852495888565
+    second: scolopendra_5
+  - first:
+      213: -1502090023574054579
+    second: scolopendra_6
+  - first:
+      213: 7846518939938476652
+    second: scolopendra_7
+  - first:
+      213: -2531635151106009000
+    second: scolopendra_8
+  - first:
+      213: -1718020839437624778
+    second: scolopendra_9
+  - first:
+      213: 8152786901364295967
+    second: scolopendra_10
+  - first:
+      213: -4968025360488865414
+    second: scolopendra_11
+  - first:
+      213: 1033190434136073333
+    second: scolopendra_12
+  - first:
+      213: -3238405157739440041
+    second: scolopendra_13
+  - first:
+      213: -5424873293584483579
+    second: scolopendra_14
+  - first:
+      213: -7353362680382217885
+    second: scolopendra_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: scolopendra_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 443
+        width: 34
+        height: 56
+      alignment: 9
+      pivot: {x: 0.8275182, y: 0.16858456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 399b57834f2b444c0800000000000000
+      internalID: -4304118581870347885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 470
+        width: 14
+        height: 32
+      alignment: 9
+      pivot: {x: 0.58837837, y: 0.22934532}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed77bcb0d48e96760800000000000000
+      internalID: 7451742476069205982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 471
+        width: 13
+        height: 29
+      alignment: 9
+      pivot: {x: 0.4524143, y: 0.18001372}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce51619657dccbb10800000000000000
+      internalID: 1998698238803580396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 449
+        width: 32
+        height: 55
+      alignment: 9
+      pivot: {x: 0.09401512, y: 0.10631825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd0abce7b6b4be10800000000000000
+      internalID: 2212594218012642744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 385
+        width: 94
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbec6d5d17a431330800000000000000
+      internalID: 3680367173271211709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 424
+        width: 45
+        height: 38
+      alignment: 9
+      pivot: {x: 0.88493484, y: 0.17439912}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b0f7b025b18c1f60800000000000000
+      internalID: 8006416852495888565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_6
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 416
+        width: 44
+        height: 38
+      alignment: 9
+      pivot: {x: 0.10631769, y: 0.17439912}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d49d53cf411872be0800000000000000
+      internalID: -1502090023574054579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_7
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 341
+        width: 58
+        height: 40
+      alignment: 9
+      pivot: {x: 0.8839868, y: 0.42267075}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62586a376f64ec60800000000000000
+      internalID: 7846518939938476652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_8
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 381
+        width: 54
+        height: 40
+      alignment: 9
+      pivot: {x: 0.91243035, y: 0.22161102}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8581f654e33dddcd0800000000000000
+      internalID: -2531635151106009000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_9
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 381
+        width: 52
+        height: 41
+      alignment: 9
+      pivot: {x: 0.07170765, y: 0.21331266}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63a1a94262d5828e0800000000000000
+      internalID: -1718020839437624778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_10
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 340
+        width: 58
+        height: 40
+      alignment: 9
+      pivot: {x: 0.09468105, y: 0.43813705}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19c641dd74842170800000000000000
+      internalID: 8152786901364295967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_11
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 281
+        width: 54
+        height: 54
+      alignment: 9
+      pivot: {x: 0.9238868, y: 0.5687397}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a71ede0a1470e0bb0800000000000000
+      internalID: -4968025360488865414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_12
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 282
+        width: 56
+        height: 54
+      alignment: 9
+      pivot: {x: 0.06915828, y: 0.55728316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 574230cc931a65e00800000000000000
+      internalID: 1033190434136073333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_13
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 203
+        width: 40
+        height: 80
+      alignment: 9
+      pivot: {x: 0.14427967, y: 0.8479885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 758d526baafde03d0800000000000000
+      internalID: -3238405157739440041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_14
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 9
+        width: 84
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50bb4605b7af6b4b0800000000000000
+      internalID: -5424873293584483579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scolopendra_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 208
+        width: 42
+        height: 73
+      alignment: 9
+      pivot: {x: 0.8535118, y: 0.8728826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 361243b1a9b93f990800000000000000
+      internalID: -7353362680382217885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b80b6d29d419c454f90f8f8569c181ee
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      scolopendra_0: -4304118581870347885
+      scolopendra_1: 7451742476069205982
+      scolopendra_10: 8152786901364295967
+      scolopendra_11: -4968025360488865414
+      scolopendra_12: 1033190434136073333
+      scolopendra_13: -3238405157739440041
+      scolopendra_14: -5424873293584483579
+      scolopendra_15: -7353362680382217885
+      scolopendra_2: 1998698238803580396
+      scolopendra_3: 2212594218012642744
+      scolopendra_4: 3680367173271211709
+      scolopendra_5: 8006416852495888565
+      scolopendra_6: -1502090023574054579
+      scolopendra_7: 7846518939938476652
+      scolopendra_8: -2531635151106009000
+      scolopendra_9: -1718020839437624778
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

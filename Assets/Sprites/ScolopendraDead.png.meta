@@ -1,0 +1,393 @@
+fileFormatVersion: 2
+guid: cec660ea79744e24a8b8f820ae745751
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1445698698261451331
+    second: ScolopendraDead_0
+  - first:
+      213: 7738491782232004655
+    second: ScolopendraDead_1
+  - first:
+      213: 6729424937206409244
+    second: ScolopendraDead_2
+  - first:
+      213: 2336082898155761515
+    second: ScolopendraDead_3
+  - first:
+      213: -8086208871912592278
+    second: ScolopendraDead_4
+  - first:
+      213: -187259990956409649
+    second: ScolopendraDead_5
+  - first:
+      213: 8327778583701038353
+    second: ScolopendraDead_6
+  - first:
+      213: 6363126006783450369
+    second: ScolopendraDead_7
+  - first:
+      213: 8031309295782566284
+    second: ScolopendraDead_8
+  - first:
+      213: 5303748200966574371
+    second: ScolopendraDead_9
+  - first:
+      213: -6844291565445433757
+    second: ScolopendraDead_10
+  - first:
+      213: -2371772291107235828
+    second: ScolopendraDead_11
+  - first:
+      213: -764652678931883172
+    second: ScolopendraDead_12
+  - first:
+      213: 7718972646460256
+    second: ScolopendraDead_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ScolopendraDead_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 807
+        width: 397
+        height: 430
+      alignment: 9
+      pivot: {x: 0.4244061, y: 0.512146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbda1ed81b8dfebe0800000000000000
+      internalID: -1445698698261451331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScolopendraDead_1
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 906
+        width: 302
+        height: 317
+      alignment: 9
+      pivot: {x: 0.43082312, y: 0.4546911}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28d7319645a46b60800000000000000
+      internalID: 7738491782232004655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScolopendraDead_8
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 693
+        width: 183
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c899968b041f47f60800000000000000
+      internalID: 8031309295782566284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScolopendraDead_10
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 385
+        width: 251
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3663c6675113401a0800000000000000
+      internalID: -6844291565445433757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScolopendraDead_13
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 70
+        width: 468
+        height: 472
+      alignment: 9
+      pivot: {x: 0.52232, y: 0.6462295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06b8f9e5d5c6b1000800000000000000
+      internalID: 7718972646460256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScolopendraDead_2
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 832
+        width: 287
+        height: 163
+      alignment: 9
+      pivot: {x: 0.50258046, y: 0.5326426}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a280c6105788dbb4ab9ac2aee42f61d6
+      internalID: 6729424937206409244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScolopendraDead_3
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 876
+        width: 406
+        height: 372
+      alignment: 9
+      pivot: {x: 0.5418085, y: 0.5982794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12ef7737a6ce5646ac5a23c0f566175
+      internalID: 2336082898155761515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScolopendraDead_4
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 25
+        width: 543
+        height: 633
+      alignment: 9
+      pivot: {x: 0.31965292, y: 0.46493348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff03adfce3fa7f488b5516f1ba1df95
+      internalID: -8086208871912592278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScolopendraDead_5
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 40
+        width: 88
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ef7936d3725ae45a5164404de0c391
+      internalID: -187259990956409649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScolopendraDead_6
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1112
+        width: 175
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6523a4e6c0cecf6429ca610ddb1263e2
+      internalID: 8327778583701038353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: efd6eea3b6c208643a339d24e6491ab8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ScolopendraDead_0: -1445698698261451331
+      ScolopendraDead_1: 7738491782232004655
+      ScolopendraDead_10: -6844291565445433757
+      ScolopendraDead_11: -2371772291107235828
+      ScolopendraDead_12: -764652678931883172
+      ScolopendraDead_13: 7718972646460256
+      ScolopendraDead_2: 6729424937206409244
+      ScolopendraDead_3: 2336082898155761515
+      ScolopendraDead_4: -8086208871912592278
+      ScolopendraDead_5: -187259990956409649
+      ScolopendraDead_6: 8327778583701038353
+      ScolopendraDead_7: 6363126006783450369
+      ScolopendraDead_8: 8031309295782566284
+      ScolopendraDead_9: 5303748200966574371
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

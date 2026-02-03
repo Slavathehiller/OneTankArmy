@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 1019f3731ece93d4da27a981d843e814
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 351882355745386332
+    second: CockroachDead2_0
+  - first:
+      213: -2359312150953139436
+    second: CockroachDead2_1
+  - first:
+      213: 6846495894101838759
+    second: CockroachDead2_2
+  - first:
+      213: 473106826313198917
+    second: CockroachDead2_3
+  - first:
+      213: -1403948045062963393
+    second: CockroachDead2_4
+  - first:
+      213: 704303838630797230
+    second: CockroachDead2_5
+  - first:
+      213: -8195496605843155053
+    second: CockroachDead2_6
+  - first:
+      213: -3359165627826416100
+    second: CockroachDead2_7
+  - first:
+      213: 1427206242317526134
+    second: CockroachDead2_8
+  - first:
+      213: 1376893531654880216
+    second: CockroachDead2_9
+  - first:
+      213: -5653175536229787566
+    second: CockroachDead2_10
+  - first:
+      213: -1506389913281140446
+    second: CockroachDead2_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CockroachDead2_0
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 993
+        width: 166
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f6ee0632322e400800000000000000
+      internalID: 351882355745386332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_1
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1183
+        width: 55
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413ec20591a024fd0800000000000000
+      internalID: -2359312150953139436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_2
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1010
+        width: 496
+        height: 286
+      alignment: 9
+      pivot: {x: 0.46419242, y: 0.39273646}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab4c1ccdb3a30f50800000000000000
+      internalID: 6846495894101838759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_3
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 784
+        width: 195
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54de533e620d09600800000000000000
+      internalID: 473106826313198917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_4
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 745
+        width: 213
+        height: 192
+      alignment: 9
+      pivot: {x: 0.37113503, y: 0.5168187}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3ffae201bc248ce0800000000000000
+      internalID: -1403948045062963393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_5
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 598
+        width: 399
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaf58831c9036c900800000000000000
+      internalID: 704303838630797230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_6
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 687
+        width: 133
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3979cc2324fb34e80800000000000000
+      internalID: -8195496605843155053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_7
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 761
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1654bbb8a8d161d0800000000000000
+      internalID: -3359165627826416100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_8
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 718
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6746e8604847ec310800000000000000
+      internalID: 1427206242317526134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 490
+        width: 117
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db72d73f55bb1310800000000000000
+      internalID: 1376893531654880216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_10
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 263
+        width: 442
+        height: 305
+      alignment: 9
+      pivot: {x: 0.33196455, y: 0.5105875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25858163dc2eb81b0800000000000000
+      internalID: -5653175536229787566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CockroachDead2_11
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 261
+        width: 112
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22965a5ea5a381be0800000000000000
+      internalID: -1506389913281140446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1e17093073023aa41ada33749878bb11
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CockroachDead2_0: 351882355745386332
+      CockroachDead2_1: -2359312150953139436
+      CockroachDead2_10: -5653175536229787566
+      CockroachDead2_11: -1506389913281140446
+      CockroachDead2_2: 6846495894101838759
+      CockroachDead2_3: 473106826313198917
+      CockroachDead2_4: -1403948045062963393
+      CockroachDead2_5: 704303838630797230
+      CockroachDead2_6: -8195496605843155053
+      CockroachDead2_7: -3359165627826416100
+      CockroachDead2_8: 1427206242317526134
+      CockroachDead2_9: 1376893531654880216
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
