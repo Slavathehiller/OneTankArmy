@@ -1,37 +1,25 @@
 fileFormatVersion: 2
-guid: 96dcacbdbd5cc17449967fa2acb3c53c
+guid: 3c3e2d5a34f0d794cb74baa266511885
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2460449645711567866
-    second: mantiss_0
+      213: 7846769140060783845
+    second: tanks2_0
   - first:
-      213: -2225719292464276408
-    second: mantiss_1
+      213: 6074180819950051355
+    second: tanks2_1
   - first:
-      213: 4696616440900796616
-    second: mantiss_2
+      213: -5484064414586202074
+    second: tanks2_2
   - first:
-      213: -3124667127326984593
-    second: mantiss_3
+      213: -3647740020988181976
+    second: tanks2_3
   - first:
-      213: 533687778642341629
-    second: mantiss_4
+      213: 1599495983801815460
+    second: tanks2_4
   - first:
-      213: -4946630717707672623
-    second: mantiss_5
-  - first:
-      213: 7221399105769072887
-    second: mantiss_6
-  - first:
-      213: -4499484688270865902
-    second: mantiss_7
-  - first:
-      213: 5728339530210718143
-    second: mantiss_8
-  - first:
-      213: 5320533810252513704
-    second: mantiss_9
+      213: 7164424061944645752
+    second: tanks2_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -127,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mantiss_0
+      name: tanks2_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 466
-        width: 135
-        height: 143
+        x: 56
+        y: 175
+        width: 52
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,129 +130,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60450af451abaddd0800000000000000
-      internalID: -2460449645711567866
+      spriteID: 5e402db75f255ec60800000000000000
+      internalID: 7846769140060783845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mantiss_1
+      name: tanks2_1
       rect:
         serializedVersion: 2
-        x: 376
-        y: 527
-        width: 92
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 84cdeea8818ac11e0800000000000000
-      internalID: -2225719292464276408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mantiss_2
-      rect:
-        serializedVersion: 2
-        x: 567
-        y: 527
-        width: 95
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c0c62ee4cbbd2140800000000000000
-      internalID: 4696616440900796616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mantiss_3
-      rect:
-        serializedVersion: 2
-        x: 852
-        y: 466
-        width: 133
-        height: 143
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f66b55a8dc3f2a4d0800000000000000
-      internalID: -3124667127326984593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mantiss_4
-      rect:
-        serializedVersion: 2
-        x: 451
-        y: 5
-        width: 118
-        height: 493
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dfea1f2053a086700800000000000000
-      internalID: 533687778642341629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mantiss_5
-      rect:
-        serializedVersion: 2
-        x: 482
-        y: 487
-        width: 11
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d3aff312990a5bb0800000000000000
-      internalID: -4946630717707672623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mantiss_6
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 286
-        width: 222
+        x: 222
+        y: 198
+        width: 77
         height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -274,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f860b0e930973460800000000000000
-      internalID: 7221399105769072887
+      spriteID: b102d9af543db4450800000000000000
+      internalID: 6074180819950051355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mantiss_7
+      name: tanks2_2
       rect:
         serializedVersion: 2
-        x: 773
-        y: 267
-        width: 223
-        height: 105
+        x: 394
+        y: 186
+        width: 96
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,42 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 21a4e4be38e9e81c0800000000000000
-      internalID: -4499484688270865902
+      spriteID: 6289a338870b4e3b0800000000000000
+      internalID: -5484064414586202074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mantiss_8
+      name: tanks2_3
       rect:
         serializedVersion: 2
-        x: 51
-        y: 5
-        width: 188
-        height: 206
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb1b903e3762f7f40800000000000000
-      internalID: 5728339530210718143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mantiss_9
-      rect:
-        serializedVersion: 2
-        x: 791
+        x: 9
         y: 0
-        width: 188
-        height: 209
+        width: 142
+        height: 165
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,8 +196,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a18e8f9f4556d940800000000000000
-      internalID: 5320533810252513704
+      spriteID: 822060807cf906dc0800000000000000
+      internalID: -3647740020988181976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanks2_4
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 0
+        width: 142
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1db2e6f1d823610800000000000000
+      internalID: 1599495983801815460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanks2_5
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 0
+        width: 141
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 878c870c9b52d6360800000000000000
+      internalID: 7164424061944645752
       vertices: []
       indices: 
       edges: []
@@ -360,16 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mantiss_0: -2460449645711567866
-      mantiss_1: -2225719292464276408
-      mantiss_2: 4696616440900796616
-      mantiss_3: -3124667127326984593
-      mantiss_4: 533687778642341629
-      mantiss_5: -4946630717707672623
-      mantiss_6: 7221399105769072887
-      mantiss_7: -4499484688270865902
-      mantiss_8: 5728339530210718143
-      mantiss_9: 5320533810252513704
+      tanks2_0: 7846769140060783845
+      tanks2_1: 6074180819950051355
+      tanks2_2: -5484064414586202074
+      tanks2_3: -3647740020988181976
+      tanks2_4: 1599495983801815460
+      tanks2_5: 7164424061944645752
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

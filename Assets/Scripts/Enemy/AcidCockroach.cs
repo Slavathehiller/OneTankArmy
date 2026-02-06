@@ -90,5 +90,4 @@ public class AcidCockroach : AIRangedEnemy
         base.DeadPerfomance();
         StartCoroutine(MakeGoooCoroutine<AcidGoo>(BodyParts[0].gameObject, DisablePhysic));
     }
-
 }

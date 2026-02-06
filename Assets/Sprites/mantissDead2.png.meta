@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 7e5f895a22d7c044394cc8e05ace4809
+guid: d5fa4b7e1758aac42bde3e7966bc4062
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3003683066294653989
-    second: Flame_A_0
+      213: -2825894555975058148
+    second: mantissDead2_0
   - first:
-      213: 832751403069891182
-    second: Flame_A_1
+      213: 3887176268564079448
+    second: mantissDead2_1
+  - first:
+      213: -6006497763484335105
+    second: mantissDead2_2
+  - first:
+      213: 6931863196316037701
+    second: mantissDead2_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,23 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flame_A_0
+      name: mantissDead2_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 98
-        width: 21
-        height: 61
-      alignment: 9
-      pivot: {x: 0.47449166, y: 0.047748253}
+        x: 17
+        y: 429
+        width: 225
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5245958a5d93fa920800000000000000
-      internalID: 3003683066294653989
+      spriteID: c1d7562afd768c8d0800000000000000
+      internalID: -2825894555975058148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mantissDead2_1
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 362
+        width: 328
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853271b983602f530800000000000000
+      internalID: 3887176268564079448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mantissDead2_2
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 301
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff3865f9b12a4aca0800000000000000
+      internalID: -6006497763484335105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mantissDead2_3
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 39
+        width: 558
+        height: 259
+      alignment: 9
+      pivot: {x: 0.68119884, y: 0.7326783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5427508b9dce23060800000000000000
+      internalID: 6931863196316037701
       vertices: []
       indices: 
       edges: []
@@ -128,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c51d995bd9921bb43b845e1cbe642fd4
+    spriteID: dfe221f21cf6cd74f924090daba19a99
     internalID: 0
     vertices: []
     indices: 
@@ -138,8 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Flame_A_0: 3003683066294653989
-      Flame_A_1: 832751403069891182
+      mantissDead2_0: -2825894555975058148
+      mantissDead2_1: 3887176268564079448
+      mantissDead2_2: -6006497763484335105
+      mantissDead2_3: 6931863196316037701
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

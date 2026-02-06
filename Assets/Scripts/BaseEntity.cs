@@ -1,3 +1,4 @@
+using Assets.Scripts.DamageDealers;
 using UnityEngine;
 
 public abstract class BaseEntity : MonoBehaviour
@@ -18,5 +19,14 @@ public abstract class BaseEntity : MonoBehaviour
     }
 
     protected abstract void CheckIfDead();
+    public abstract void TakeDamage(float damage);
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<DamageDealerDOT>(out var ddDOT))
+        {
+            TakeDamage(ddDOT.DOT);
+        }
+    }
 
 }

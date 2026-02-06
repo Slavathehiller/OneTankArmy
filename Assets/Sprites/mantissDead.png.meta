@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 7e5f895a22d7c044394cc8e05ace4809
+guid: 2d1b513bcfe5217458c25bf602dfecde
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3003683066294653989
-    second: Flame_A_0
+      213: 323698798255148669
+    second: mantissDead_0
   - first:
-      213: 832751403069891182
-    second: Flame_A_1
+      213: 2285751893540344658
+    second: mantissDead_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,23 +103,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flame_A_0
+      name: mantissDead_1
       rect:
         serializedVersion: 2
-        x: 119
-        y: 98
-        width: 21
-        height: 61
-      alignment: 9
-      pivot: {x: 0.47449166, y: 0.047748253}
+        x: 113
+        y: 4
+        width: 692
+        height: 554
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5245958a5d93fa920800000000000000
-      internalID: 3003683066294653989
+      spriteID: 253162b9c3f98bf10800000000000000
+      internalID: 2285751893540344658
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c51d995bd9921bb43b845e1cbe642fd4
+    spriteID: f2da664505506e541925cf87a59c3c36
     internalID: 0
     vertices: []
     indices: 
@@ -138,8 +138,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Flame_A_0: 3003683066294653989
-      Flame_A_1: 832751403069891182
+      mantissDead_0: 323698798255148669
+      mantissDead_1: 2285751893540344658
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

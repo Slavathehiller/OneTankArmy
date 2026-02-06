@@ -1,3 +1,4 @@
+using Assets.Scripts.DamageDealers;
 using TMPro;
 using UnityEngine;
 
@@ -169,14 +170,6 @@ public class TankController : BaseEntity
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<FirePit>(out var firepit))
-        {
-            TakeDamage(firepit.DOT);
-        }
-    }
-
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent<Electra>(out var electra))
@@ -192,8 +185,7 @@ public class TankController : BaseEntity
             TakeDamage(dd.Damage);
         }
     }
-
-    public void TakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         _tank.TakeDamage(damage);
     }

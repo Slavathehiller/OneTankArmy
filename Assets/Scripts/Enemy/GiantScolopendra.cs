@@ -3,15 +3,6 @@ using UnityEngine;
 
 public class GiantScolopendra : AIEnemy
 {
-
-    [SerializeField]
-    protected float _distanceOfAttack;
-
-    [SerializeField]
-    protected float _meleeAttackCooldown;
-    protected float _currentMeleeAttackCooldown;
-
-
     protected override void UpdateActions()
     {
         _currentMeleeAttackCooldown -= Time.deltaTime;
@@ -33,7 +24,7 @@ public class GiantScolopendra : AIEnemy
         if (!TryToRotateAtTarget())
         {
             RigidBody.angularVelocity = 0;
-            if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceOfAttack)
+            if (_inContactWithTarget)
             {
                 if (_currentMeleeAttackCooldown <= 0)
                     Bite();
@@ -69,7 +60,7 @@ public class GiantScolopendra : AIEnemy
                 return true;
             }
 
-            if (Mathf.Abs(angleToTarget.Value) < minAngleToCurve && Vector3.Distance(transform.position, _target.transform.position) >= _distanceOfAttack)
+            if (Mathf.Abs(angleToTarget.Value) < minAngleToCurve && !_inContactWithTarget)
             {
                 RigidBody.AddForce(transform.up * _moveSpeed);
                 _animator.SetBool("TurningLeft", false);
@@ -85,7 +76,7 @@ public class GiantScolopendra : AIEnemy
     protected void Bite()
     {
         _animator.SetTrigger("Bite");
-        if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceOfAttack)
+        if (_inContactWithTarget)
             _target.GetComponent<TankController>().TakeDamage(_meleeDamage);
         _currentMeleeAttackCooldown = _meleeAttackCooldown;
     }

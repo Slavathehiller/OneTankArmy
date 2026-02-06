@@ -24,7 +24,8 @@ namespace Assets.Scripts.Enemy
 
         protected override void UpdateActions()
         {
-            _currentRangeAttackCooldown -= Time.deltaTime;
+            if (_currentRangeAttackCooldown > 0)
+                _currentRangeAttackCooldown -= Time.deltaTime;
             base.UpdateActions();
         }
 

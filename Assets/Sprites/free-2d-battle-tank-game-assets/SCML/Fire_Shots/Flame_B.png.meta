@@ -107,11 +107,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 103
-        y: 114
+        y: 76
         width: 50
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5803516, y: 0.008104544}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -124,33 +124,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Flame_B_1
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 76
-        width: 20
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1722d220ca537dd90800000000000000
-      internalID: -7073125676874915215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c718d4950f5764e4ba7a212f492b825a
     internalID: 0
     vertices: []
     indices: 

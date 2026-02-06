@@ -24,9 +24,15 @@ public abstract class AIEnemy : BaseEntity
     protected float _currentDetectionCooldown = 0;
 
     [SerializeField]
+    protected float _meleeAttackCooldown;
+    protected float _currentMeleeAttackCooldown;
+
+    [SerializeField]
     protected float _meleeDamage;
 
     protected GameObject _target;
+
+    protected bool _inContactWithTarget;
 
     protected bool _isDead;
 
@@ -52,10 +58,10 @@ public abstract class AIEnemy : BaseEntity
 
     void Start()
     {
-        _currentHP = _maxHP;
+        StartActions();
     }
 
-    // Update is called once per frame
+   // Update is called once per frame
     void Update()
     {
         UpdateActions();
@@ -63,7 +69,10 @@ public abstract class AIEnemy : BaseEntity
 
     protected virtual void UpdateActions()
     {
-        _currentDetectionCooldown -= Time.deltaTime;
+        if (_currentDetectionCooldown > 0)
+            _currentDetectionCooldown -= Time.deltaTime;
+        if (_currentMeleeAttackCooldown > 0)
+            _currentMeleeAttackCooldown -= Time.deltaTime;
         if (_currentDetectionCooldown <= 0)
         {
             var detectedColliders = Physics2D.OverlapCircleAll(transform.position, _distanceOfDetection);
@@ -83,6 +92,11 @@ public abstract class AIEnemy : BaseEntity
 
             _currentDetectionCooldown = _detectionCooldown;
         }
+    }
+
+    protected virtual void StartActions() 
+    {
+        _currentHP = _maxHP;
     }
 
     protected virtual bool TryToRotateAtTarget()
@@ -123,7 +137,7 @@ public abstract class AIEnemy : BaseEntity
         _target = null;
     }
 
-    protected void TakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         if (_isDead) return;
         _currentHP -= damage;
@@ -137,6 +151,19 @@ public abstract class AIEnemy : BaseEntity
             TakeDamage(dd.Damage);
             ReactToDamage(dd);
             dd.gameObject.SetActive(false);
+        }
+        if (collision.gameObject == _target)
+        {
+            _inContactWithTarget = true;
+        }
+        //ReactToCollision(collision);
+    }
+
+    protected void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject == _target)
+        {
+            _inContactWithTarget = false;
         }
     }
 
@@ -159,6 +186,7 @@ public abstract class AIEnemy : BaseEntity
         }        
     }
 
+   // protected abstract void ReactToCollision(Collision2D collision);
     protected abstract void ReactToDamage(DamageDealer dd);
     protected virtual void DeadPerfomance()
     {
@@ -179,12 +207,19 @@ public abstract class AIEnemy : BaseEntity
 
     protected void DisablePhysic()
     {
-        GetComponent<Collider2D>().enabled = false;
-        RigidBody.simulated = false;
+        var mainCollider = GetComponent<Collider2D>();
+        if (mainCollider != null)
+            mainCollider.enabled = false;
+        if (RigidBody != null)
+            RigidBody.simulated = false;
         foreach (var bodyPart in BodyParts)
         {
-            bodyPart.GetComponent<Rigidbody2D>().simulated = false;
-            bodyPart.GetComponent<Collider2D>().enabled = false;
+            var bpRigidBody = bodyPart.GetComponent<Rigidbody2D>();
+            if (bpRigidBody != null)
+                bpRigidBody.simulated = false;
+            var bpCollider = bodyPart.GetComponent<Collider2D>();
+            if (bpCollider != null)
+                bpCollider.enabled = false;
         }
         enabled = false;
     }
