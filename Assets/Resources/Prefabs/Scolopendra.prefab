@@ -1786,8 +1786,9 @@ MonoBehaviour:
   _rotateSpeed: 1
   _animator: {fileID: 2463686268153394793}
   _maxHP: 100
-  _distanceOfDetection: 4
+  _distanceOfDetection: 8
   _detectionCooldown: 1
+  _meleeAttackCooldown: 0.5
   _meleeDamage: 20
   _mainBody: {fileID: 2149267448374833974}
   _bodyPartsCollection:
@@ -1806,8 +1807,6 @@ MonoBehaviour:
     - {fileID: 8486954581663747479}
     - {fileID: 8800979262299925625}
     - {fileID: 8433822058581101124}
-  _distanceOfAttack: 0.5
-  _meleeAttackCooldown: 0.5
 --- !u!95 &2463686268153394793
 Animator:
   serializedVersion: 7

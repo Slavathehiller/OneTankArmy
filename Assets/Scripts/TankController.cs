@@ -23,7 +23,6 @@ public class TankController : BaseEntity
 
     private Tank _tank;
 
-    // Start is called before the first frame update
     void Start()
     {
         _healthBarOffset = _healthBar.localPosition;
@@ -50,21 +49,17 @@ public class TankController : BaseEntity
         }
 
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0; // важно для 2D!
+        mousePosition.z = 0; 
         foreach (var cabin in _cabins)
         {
-            // Направление от объекта к курсору
             Vector2 direction = mousePosition - cabin.transform.position;
 
-            // Угол в градусах
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             targetAngle -= 90;
 
-            // Текущий угол объекта
             float currentAngle = cabin.transform.eulerAngles.z;
 
-            // Плавно поворачиваем к цели
             float angle = Mathf.LerpAngle(currentAngle, targetAngle, _cabinsRotationSpeed * Time.deltaTime);            
 
             cabin.transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -79,7 +74,6 @@ public class TankController : BaseEntity
         bullet.transform.rotation = _firePoint.transform.rotation;
         bullet.SetActive(true);
         _audioSourceFire.PlayOneShot(_fireSound);
-       // Destroy(bullet, 5);
     }
     protected override void CheckIfDead()
     {
@@ -155,7 +149,6 @@ public class TankController : BaseEntity
         if (collision.gameObject.TryGetComponent<DamageDealer>(out var dd))
         {
             TakeDamage(dd.Damage);
-           // dd.gameObject.SetActive(false);
         }
 
         if (collision.gameObject.TryGetComponent<Mine>(out var mine))

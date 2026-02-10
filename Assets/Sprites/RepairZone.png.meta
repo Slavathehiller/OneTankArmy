@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e9f583253d8bb214a8dae1c05e96fb70
+guid: c13b68b6549934d49a566b107916db52
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2363835626174630292
-    second: RepairZone_0
+      213: 6641244103684105037
+    second: RepaitZone_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RepairZone_0
+      name: RepaitZone_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 607
-        height: 539
+        x: 20
+        y: 15
+        width: 986
+        height: 986
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a5d750423234a90418d31ea2b49e2344
-      internalID: -2363835626174630292
+      spriteID: d43afb253507a2c50800000000000000
+      internalID: 6641244103684105037
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a37fc7b47ad2fb648a72f5737e3e58ad
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RepairZone_0: -2363835626174630292
+      RepaitZone_0: 6641244103684105037
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

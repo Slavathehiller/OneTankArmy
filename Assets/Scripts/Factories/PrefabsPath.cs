@@ -38,7 +38,8 @@ namespace Assets.Scripts.Factories
             Register(typeof(AcidGoo), "Prefabs/AcidGoo");
             Register(typeof(ToxicGoo), "Prefabs/ToxicGoo");
             Register(typeof(BigGreenGoo), "Prefabs/BigGreenGoo");            
-            Register(typeof(Flame), "Prefabs/Flame");            
+            Register(typeof(Flame), "Prefabs/Flame");
+            Register(typeof(Beetle), "Prefabs/Vehicle/Beetle");
         }
 
     }

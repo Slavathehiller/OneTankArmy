@@ -1,0 +1,13 @@
+:root {
+}
+
+.buttons {
+    -unity-text-align: middle-center;
+    width: 80%;
+    height: 10%;
+    margin-left: 0%;
+    padding-top: 0;
+    font-size: 300%;
+    -unity-font-style: bold;
+    margin-top: 5%;
+}

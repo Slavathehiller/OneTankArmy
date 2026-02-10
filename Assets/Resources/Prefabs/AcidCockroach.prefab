@@ -1496,12 +1496,10 @@ MonoBehaviour:
   _rotateSpeed: 0.1
   _animator: {fileID: -4548803581218888768}
   _maxHP: 30
-  _distanceOfDetection: 6
+  _distanceOfDetection: 9
   _detectionCooldown: 1
-  _distanceOfRangeAttack: 4
-  _rangeAttackCooldown: 0.5
-  _firePoint: {fileID: 8878035907138750546}
-  _missilePrefab: {fileID: 1495488355993545971, guid: a67d4e1941fc3c24fbe6f026dea02ccf, type: 3}
+  _meleeAttackCooldown: 0
+  _meleeDamage: 0
   _mainBody: {fileID: 2628012586123905761}
   _bodyPartsCollection:
   - Parts:
@@ -1518,6 +1516,10 @@ MonoBehaviour:
     - {fileID: 7214593828954634750}
     - {fileID: 1254565202284105489}
     - {fileID: 8609389939541461134}
+  _distanceOfRangeAttack: 4
+  _rangeAttackCooldown: 0.5
+  _firePoint: {fileID: 8878035907138750546}
+  _missilePrefab: {fileID: 1495488355993545971, guid: a67d4e1941fc3c24fbe6f026dea02ccf, type: 3}
 --- !u!95 &-4548803581218888768
 Animator:
   serializedVersion: 7

@@ -25,17 +25,6 @@ namespace Assets.Scripts.MISC
             angleToTurn = angle;
 
             return angleToTurn;
-
-            //if (_angleToTurn != null)
-            //{
-            //    var nowTurnAngle = _rotateSpeed * Time.deltaTime;
-            //    if (_angleToTurn< 0)
-            //        nowTurnAngle = -nowTurnAngle;
-            //    transform.Rotate(0, 0, nowTurnAngle);
-            //    _angleToTurn -= nowTurnAngle;
-            //    if (Math.Abs(_angleToTurn.Value) <= Math.Abs(nowTurnAngle))
-            //        _angleToTurn = null;
-            //}
         }
     } 
 }

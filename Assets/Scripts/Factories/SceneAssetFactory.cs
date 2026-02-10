@@ -11,9 +11,7 @@ namespace Assets.Scripts.Factories
 {
     public class SceneAssetFactory : BaseFactory, ISceneAssetFactory
     {
-        public SceneAssetFactory(DiContainer container) : base(container)
-        {
-        }
+        public SceneAssetFactory(DiContainer container) : base(container) { }
 
         public T CreateAsset<T>() where T : MonoBehaviour
         {

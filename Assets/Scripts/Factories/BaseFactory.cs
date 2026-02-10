@@ -7,14 +7,12 @@ namespace Assets.Scripts.Factories
 {
     public abstract class BaseFactory 
     {
-        // [Inject] private DiContainer _container;                            //Будем делать принудительный инжект создаваемых объектов, чтобы в них тоже работали Zenject зависимости
-
         protected readonly DiContainer _container;
 
         private Dictionary<Type, GameObject> _cache = new();                //Фабрика ассетов имеет кэш. Поскольку биндится она AsTransient, для каждой сцены будет свой экземпляр фабрики и свой кэш
                                                                             //Таким образом кэш сцены уничтожается вместе со сценой и не занимает память
 
-        protected BaseFactory(DiContainer container)
+        protected BaseFactory(DiContainer container)                        //Будем делать принудительный инжект создаваемых объектов, чтобы в них тоже работали Zenject зависимости
         {
             _container = container ?? throw new ArgumentNullException(nameof(container)); 
         }
