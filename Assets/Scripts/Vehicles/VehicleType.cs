@@ -9,6 +9,7 @@ namespace Assets.Vehicles
     public enum VehicleType
     {
         Undefined = -1,
-        Beetle = 0
+        Beetle = 0,
+        DianBao = 1
     }
 }

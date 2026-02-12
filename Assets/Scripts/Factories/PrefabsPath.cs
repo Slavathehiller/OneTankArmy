@@ -40,7 +40,7 @@ namespace Assets.Scripts.Factories
             Register(typeof(BigGreenGoo), "Prefabs/BigGreenGoo");            
             Register(typeof(Flame), "Prefabs/Flame");
             Register(typeof(Beetle), "Prefabs/Vehicle/Beetle");
+            Register(typeof(DianBao), "Prefabs/Vehicle/DianBao");            
         }
-
     }
 }

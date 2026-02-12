@@ -118,12 +118,12 @@ TextureImporter:
       name: tanks_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 391
-        width: 91
-        height: 122
+        x: 3
+        y: 241
+        width: 151
+        height: 166
       alignment: 9
-      pivot: {x: 0.48608842, y: 0.712722}
+      pivot: {x: 0.49161625, y: 0.3817933}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: tanks_1
       rect:
         serializedVersion: 2
-        x: 227
-        y: 410
-        width: 79
-        height: 103
+        x: 181
+        y: 231
+        width: 151
+        height: 172
       alignment: 9
-      pivot: {x: 0.47596297, y: 0.7027985}
+      pivot: {x: 0.5, y: 0.41167733}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: tanks_2
       rect:
         serializedVersion: 2
-        x: 414
-        y: 407
-        width: 52
-        height: 112
+        x: 361
+        y: 237
+        width: 151
+        height: 166
       alignment: 9
-      pivot: {x: 0.487827, y: 0.73736656}
+      pivot: {x: 0.5041918, y: 0.3817933}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: tanks_3
       rect:
         serializedVersion: 2
-        x: 3
-        y: 198
-        width: 151
-        height: 166
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 42
+        y: 92
+        width: 91
+        height: 122
+      alignment: 9
+      pivot: {x: 0.4791326, y: 0.30284306}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: tanks_4
       rect:
         serializedVersion: 2
-        x: 181
-        y: 202
-        width: 151
-        height: 166
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 227
+        y: 92
+        width: 79
+        height: 103
+      alignment: 9
+      pivot: {x: 0.47596297, y: 0.32178313}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: tanks_5
       rect:
         serializedVersion: 2
-        x: 361
-        y: 202
-        width: 151
-        height: 166
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 414
+        y: 86
+        width: 52
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5121724, y: 0.2739367}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 86006a4595620d547979d977cc471454
+    spriteID: 48377568724dc6841b9175a17f55f46d
     internalID: 0
     vertices: []
     indices: 

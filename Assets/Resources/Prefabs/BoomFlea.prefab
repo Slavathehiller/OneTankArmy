@@ -112,13 +112,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2a376808b319043a3b3e32e88e49ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoomFlea
-  _moveSpeed: 0.5
+  _moveSpeed: 0.7
   _rotateSpeed: 0.01
   _animator: {fileID: 6486955513966762370}
   _maxHP: 1
   _distanceOfDetection: 8
-  _detectionCooldown: 4
-  _distanceOfJump: 3
+  _detectionCooldown: 2
+  _meleeAttackCooldown: 0
+  _meleeDamage: 0
+  _mainBody: {fileID: 0}
+  _bodyPartsCollection: []
+  _distanceOfJump: 4
   _jumpSpeed: 2.5
   _jumpMaxTime: 0.5
 --- !u!95 &6486955513966762370

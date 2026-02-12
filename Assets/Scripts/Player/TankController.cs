@@ -1,55 +1,50 @@
-using Assets.Scripts.DamageDealers;
-using TMPro;
 using UnityEngine;
 
 public class TankController : BaseEntity
 {
-    [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private GameObject _firePoint;
-
     [SerializeField] private Transform _healthBar;
     [SerializeField] private SpriteRenderer _healthBarRenderer;
     [SerializeField] private Sprite _destroyedSprite;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private AudioSource _audioSourceDrive;
-    [SerializeField] private AudioSource _audioSourceFire;
-    [SerializeField] private AudioClip _fireSound;
 
-    [SerializeField] private GameObject[] _cabins;
-    [SerializeField] private float _cabinsRotationSpeed = 1f;
+    [SerializeField]
+    private float _cabinsRotationSpeed = 1f;
+    [SerializeField] 
+    private GameObject[] _cabins;
+    [SerializeField]
+    private Vehicle _vehicle;
 
     private Vector3 _healthBarOffset;
     private float _healthBarMaxSize;
 
-    private Tank _tank;
 
     void Start()
     {
         _healthBarOffset = _healthBar.localPosition;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _healthBarMaxSize = _healthBarRenderer.size.x;
-        _tank = new Tank();
-        _tank.HealthChanges += RefreshHealth;
-        _tank.HealthChanges += CheckIfDead;
-        _tank.LoadPrefs();
+        _vehicle.HealthChanges += RefreshHealth;
+        _vehicle.HealthChanges += CheckIfDead;
+        _vehicle.LoadPrefs();
     }
 
     private void RefreshHealth()
     {
-        _healthBarRenderer.size = new Vector3(_healthBarMaxSize * _tank.Health / _tank.MaxHealth, _healthBarRenderer.size.y, 1);
+        _healthBarRenderer.size = new Vector3(_healthBarMaxSize * _vehicle.Health / _vehicle.MaxHealth, _healthBarRenderer.size.y, 1);
     }
 
     void Update()
     {
         _healthBar.position = transform.position + _healthBarOffset;
         _healthBar.localRotation = Quaternion.Inverse(transform.rotation);
-        if (Input.GetMouseButtonDown(0))
-        {
-            Fire();
-        }
+        CabinsFollowCursor();
+    }
 
+    private void CabinsFollowCursor()
+    {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0; 
+        mousePosition.z = 0;
         foreach (var cabin in _cabins)
         {
             Vector2 direction = mousePosition - cabin.transform.position;
@@ -60,24 +55,16 @@ public class TankController : BaseEntity
 
             float currentAngle = cabin.transform.eulerAngles.z;
 
-            float angle = Mathf.LerpAngle(currentAngle, targetAngle, _cabinsRotationSpeed * Time.deltaTime);            
+            float angle = Mathf.LerpAngle(currentAngle, targetAngle, _cabinsRotationSpeed * Time.deltaTime);
 
             cabin.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 
     }
 
-    private void Fire()
-    {
-        var bullet = Instantiate(_bulletPrefab);
-        bullet.transform.position = _firePoint.transform.position;
-        bullet.transform.rotation = _firePoint.transform.rotation;
-        bullet.SetActive(true);
-        _audioSourceFire.PlayOneShot(_fireSound);
-    }
     protected override void CheckIfDead()
     {
-        if (_tank.Health <= 0)
+        if (_vehicle.Health <= 0)
         {
             _audioSourceDrive.Stop();
             _spriteRenderer.sprite = _destroyedSprite;
@@ -180,13 +167,13 @@ public class TankController : BaseEntity
     }
     public override void TakeDamage(float damage)
     {
-        _tank.TakeDamage(damage);
+        _vehicle.TakeDamage(damage);
     }
 
     private void OnDestroy()
     {
-        _tank.HealthChanges -= RefreshHealth;
-        _tank.HealthChanges -= CheckIfDead;
+        _vehicle.HealthChanges -= RefreshHealth;
+        _vehicle.HealthChanges -= CheckIfDead;
     }
 
 }

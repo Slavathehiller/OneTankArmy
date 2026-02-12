@@ -16,7 +16,9 @@ namespace Assets.Scripts.Factories
             switch (vehicleType)
             {
                 case VehicleType.Beetle: 
-                    return Create<Beetle>();                    
+                    return Create<Beetle>();
+                case VehicleType.DianBao:
+                    return Create<DianBao>();
                 default:
                     throw new ArgumentException($"There is no vehicle class for type {vehicleType}");
             }                            

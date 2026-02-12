@@ -10,6 +10,12 @@ namespace Assets.Scripts.Player
 
         private const string CURRENT_VEHICLE = "CurrentVehicle";
 
+        public void ChangeVechicle(VehicleType vehicle)
+        {
+            CurrentVehicle = vehicle;
+            SaveSettings();
+        }
+
         public PlayerSettings()
         {
             LoadSettings();
@@ -19,7 +25,7 @@ namespace Assets.Scripts.Player
             if (PlayerPrefs.HasKey(CURRENT_VEHICLE))
                 CurrentVehicle = (VehicleType)PlayerPrefs.GetInt(CURRENT_VEHICLE);
             else
-                CurrentVehicle = VehicleType.Beetle;
+                CurrentVehicle = VehicleType.DianBao;
         }
 
         public void SaveSettings() 

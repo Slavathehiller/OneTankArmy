@@ -1785,8 +1785,8 @@ MonoBehaviour:
   _moveSpeed: 25
   _rotateSpeed: 1
   _animator: {fileID: 2463686268153394793}
-  _maxHP: 100
-  _distanceOfDetection: 8
+  _maxHP: 250
+  _distanceOfDetection: 9
   _detectionCooldown: 1
   _meleeAttackCooldown: 0.5
   _meleeDamage: 20
