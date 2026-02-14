@@ -1782,7 +1782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b792a198e373948bf68a041980aa08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GiantScolopendra
-  _moveSpeed: 25
+  _moveSpeed: 20
   _rotateSpeed: 1
   _animator: {fileID: 2463686268153394793}
   _maxHP: 250

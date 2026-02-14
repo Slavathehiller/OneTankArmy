@@ -74,6 +74,7 @@ public class Shuttle : NPC_Base
         }
 
         gameObject.SetActive(false); 
+        callback?.Invoke();
     }
 
 

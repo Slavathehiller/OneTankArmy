@@ -25,7 +25,7 @@ namespace Assets.Scripts.Player
             if (PlayerPrefs.HasKey(CURRENT_VEHICLE))
                 CurrentVehicle = (VehicleType)PlayerPrefs.GetInt(CURRENT_VEHICLE);
             else
-                CurrentVehicle = VehicleType.DianBao;
+                CurrentVehicle = VehicleType.Beetle;
         }
 
         public void SaveSettings() 

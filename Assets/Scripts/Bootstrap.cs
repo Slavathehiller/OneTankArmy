@@ -7,6 +7,6 @@ public class Bootstrap : MonoBehaviour
     void Start()
     {
         PrefabsPath.InitPathes();
-        SceneManager.LoadScene(Scenes.BATTLE_SCENE);
+        SceneManager.LoadScene(Scenes.MAIN_MENU);
     }
 }

@@ -1,0 +1,35 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Outpost.uss?fileID=7433441132597879392&amp;guid=a4f011f86eeda8b48a3b96118247df18&amp;type=3#Outpost" />
+    <ui:Button text="Колониальный магазин" name="ColonialShopButton" enabled="true" style="height: 24px; width: 204px; top: 133px; left: 204px; visibility: hidden; display: flex;" />
+    <ui:Button text="Оперативный центр" name="OperationCenterButton" enabled="true" style="height: 24px; width: 153px; top: 133px; left: 660px; visibility: hidden; display: flex;" />
+    <ui:Button text="Зона ремонта" name="RepairZoneButton" enabled="true" style="height: 24px; width: 113px; top: 97px; left: 1029px; visibility: hidden; display: flex;" />
+    <ui:Button text="Отправиться" name="TakeOffButton" enabled="true" style="height: 24px; width: 113px; top: 465px; left: 1052px; visibility: hidden; display: flex;" />
+    <ui:Button text="На орбиту" name="ToOrbitButton" enabled="true" style="height: 24px; width: 113px; top: 411px; left: 161px; visibility: hidden; display: flex;" />
+    <ui:VisualElement name="ToOrbitWindow" class="window" style="height: 206px; width: 50%; background-size: 50% 50%; justify-content: space-around; align-items: center; align-self: center; font-size: initial; visibility: hidden; position: absolute; translate: 0% 50%;">
+        <ui:Label text="Челнок не заправлен. Выход на орбиту невозможен" name="MessageLabel" class="message" />
+        <ui:Button text="Закрыть" name="CloseButton" class="closebutton" />
+    </ui:VisualElement>
+    <ui:VisualElement name="ColonialShopWindow" class="window" style="height: 90%; width: 90%; background-size: 50% 50%; translate: 5% 10%; justify-content: space-around; align-items: center; align-self: stretch; font-size: 50%; visibility: hidden; flex-direction: column; position: absolute;">
+        <ui:Label text="Колониальный магазин" name="MessageLabel" class="message" style="font-size: 72px;" />
+        <ui:VisualElement name="ShopPanel" data-source-type="VehiclePresenter, Assembly-CSharp" style="flex-grow: 1; width: auto; align-self: flex-start; flex-direction: row;">
+            <ui:ListView item-template="project://database/Assets/UI/ChooseTankTemplate.uxml?fileID=9197481963319205126&amp;guid=b8ad20f292d3c6047bae29ea6830a60d&amp;type=3#ChooseTankTemplate" name="AvailableVehiclesView" virtualization-method="DynamicHeight" allow-add="false" allow-remove="false" binding-source-selection-mode="AutoAssign" style="align-self: flex-start; align-items: flex-start; width: auto; height: auto; background-color: rgba(0, 0, 0, 0.38);" />
+            <ui:VisualElement name="CurrentTankPanel" data-source-type="Presenter, Assembly-CSharp" style="flex-direction: column; background-color: rgb(140, 140, 140); flex-grow: 1; padding-right: 0; padding-top: 0; padding-bottom: 0; padding-left: 0; margin-right: 0; height: auto;">
+                <ui:VisualElement name="CurrentTankPicture" data-source-type="Presenter, Assembly-CSharp" style="flex-grow: 1; padding-bottom: 5px; background-image: url(&quot;project://database/Assets/Sprites/Vehicles/Presenters/BeetlePresenter.png?fileID=21300000&amp;guid=37157eb041d7b2b41b6c9805ea543698&amp;type=3#BeetlePresenter&quot;); width: 300px; height: 100%; align-self: center; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;">
+                    <Bindings>
+                        <ui:DataBinding property="style.backgroundImage" data-source-path="Portrait" binding-mode="ToTarget" />
+                    </Bindings>
+                </ui:VisualElement>
+                <ui:Button text="Сменить танк" name="ChangeTankButton" class="closebutton" style="align-self: center; width: 22%; height: 10%; font-size: 25%; translate: 0% 0%; margin-top: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="height: 40px; width: 10%; align-self: flex-end; left: -9px; bottom: 13px; margin-top: 21px; font-size: 25%;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="OperationCenterWndow" class="window" style="height: 206px; width: 50%; background-size: 50% 50%; justify-content: space-around; align-items: center; align-self: center; font-size: initial; visibility: hidden; position: absolute; translate: 0% 50%;">
+        <ui:Label text="Закрыто на переучет" name="MessageLabel" parse-escape-sequences="true" class="message" style="translate: 0% 78%;" />
+        <ui:Button text="Закрыть" name="CloseButton" class="closebutton" />
+    </ui:VisualElement>
+    <ui:VisualElement name="RepairZoneWndow" class="window" style="height: 206px; width: 50%; background-size: 50% 50%; justify-content: space-around; align-items: center; align-self: center; font-size: initial; visibility: hidden; position: absolute; translate: 0% 50%;">
+        <ui:Label text="Проводятся технические работы" name="MessageLabel" parse-escape-sequences="true" class="message" style="translate: 0% 78%;" />
+        <ui:Button text="Закрыть" name="CloseButton" class="closebutton" />
+    </ui:VisualElement>
+</ui:UXML>
