@@ -1,11 +1,11 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=1a175ca2b059844448327e484be21489&amp;type=3#MainMenu" />
-    <ui:VisualElement name="Root" style="flex-grow: 1;">
-        <ui:Label text="Main menu" name="MainMenuLabel" style="height: 10%; width: 100%; -unity-text-align: middle-left; font-size: 80%; margin-left: 5%; color: rgb(255, 255, 255); -unity-font-style: bold; margin-top: 5%; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&amp;guid=4beb055f07aaff244873dec698d0363e&amp;type=3#Roboto-Bold&quot;);" />
+    <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=1a175ca2b059844448327e484be21489&amp;type=3#MainMenu"/>
+    <ui:VisualElement name="Root" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/MainMenuBackground.png?fileID=6850352397346096737&amp;guid=615c09ff65398484a9dd612e54728089&amp;type=3#MainMenuBackground_0&quot;);">
+        <ui:Label text="Main menu" name="MainMenuLabel" style="height: 10%; width: 100%; -unity-text-align: middle-left; font-size: 80%; margin-left: 5%; color: rgb(140, 140, 140); -unity-font-style: bold; margin-top: 5%; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&amp;guid=4beb055f07aaff244873dec698d0363e&amp;type=3#Roboto-Bold&quot;);"/>
         <ui:VisualElement name="ButtonContainer" style="flex-grow: 1; margin-top: 4%; padding-top: 0; padding-bottom: 0; padding-right: 0; padding-left: 0; justify-content: flex-start; align-items: flex-start; align-self: flex-start; top: auto; position: relative; flex-direction: column; flex-shrink: 1; flex-basis: auto; width: 25%; height: 70%; margin-left: 5%;">
-            <ui:Button text="Play" name="PlayButton" class="buttons" />
-            <ui:Button text="Settings" name="SettingsButton" class="buttons" />
-            <ui:Button text="Exit" name="ExitButton" class="buttons" />
+            <ui:Button text="Play" name="PlayButton" class="buttons"/>
+            <ui:Button text="Settings" name="SettingsButton" class="buttons"/>
+            <ui:Button text="Exit" name="ExitButton" class="buttons"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

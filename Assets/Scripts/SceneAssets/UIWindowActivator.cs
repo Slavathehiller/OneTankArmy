@@ -4,10 +4,13 @@ using UnityEngine.UIElements;
 
 public class UIWindowActivator : UIActivator
 {
+    public event Action OnShowWindow;
     [SerializeField]
     protected string _windowName;
     private VisualElement _window;
     private Button _closeButton;
+
+    public Func<bool> WindowAvailable;
 
     private void Start()
     {
@@ -18,9 +21,13 @@ public class UIWindowActivator : UIActivator
         _closeButton.clicked += DeactivateWindow;
     }
 
-    private void ActivateWindow()
+    protected void ActivateWindow()
     {
-        _window.style.visibility = Visibility.Visible;
+        if (WindowAvailable == null || WindowAvailable())
+        {
+            _window.style.visibility = Visibility.Visible;
+            OnShowWindow?.Invoke();
+        }
     }
 
     private void DeactivateWindow()

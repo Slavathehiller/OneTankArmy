@@ -130,11 +130,24 @@ public abstract class AIEnemy : BaseEntity
 
     protected virtual void DetectEnemy(TankController controller)
     {
+        if (controller.IsDead)
+            return;
         _target = controller.gameObject;
+        _target.GetComponent<TankController>().Die += TagetDead;
     }
+
+    private void TagetDead()
+    {
+        LooseEnemy();
+    }
+
     protected virtual void LooseEnemy()
     {
-        _target = null;
+        if (_target != null)
+        {
+            _target.GetComponent<TankController>().Die -= TagetDead;
+            _target = null;
+        }
     }
 
     public override void TakeDamage(float damage)

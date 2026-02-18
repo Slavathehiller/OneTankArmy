@@ -1,5 +1,8 @@
+using Assets.Player;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Zenject;
 
 public class Vehicle : MonoBehaviour
 {
@@ -8,13 +11,15 @@ public class Vehicle : MonoBehaviour
     private float _health;
     public event UnityAction HealthChanges;
 
-    private const string CURRENT_HEALTH = "CurrentHealth";
+    [Inject]
+    private IPlayerSettings _playerSettings;
 
-    void Awake()
+
+    private void Start()
     {
-        LoadPrefs();
-        if (Health <= 0)
-            Health = _maxHealth;
+        Health = _playerSettings.CurrentHealth;
+        if (Health == float.MinValue)
+            Health = MaxHealth;
     }
     public float MaxHealth
     {
@@ -28,19 +33,18 @@ public class Vehicle : MonoBehaviour
         set
         {
             _health = value;
-            PlayerPrefs.SetFloat(CURRENT_HEALTH, _health);
             HealthChanges?.Invoke();
         }
-    }
-
-    public void LoadPrefs()
-    {
-        Health = PlayerPrefs.GetFloat(CURRENT_HEALTH);
     }
 
     public void TakeDamage(float damage)
     {
         if (Health > 0)
             Health -= damage;
+    }
+
+    public void ControlOff()
+    {
+        GetComponent<TankController>().ControlOff();
     }
 }

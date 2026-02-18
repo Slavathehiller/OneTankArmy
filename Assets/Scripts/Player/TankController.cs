@@ -1,7 +1,13 @@
+using Assets.Player;
 using UnityEngine;
+using UnityEngine.Events;
+using Zenject;
 
 public class TankController : BaseEntity
 {
+    public event UnityAction CallToEvacuate;
+    public event UnityAction Die;
+
     [SerializeField] private Transform _healthBar;
     [SerializeField] private SpriteRenderer _healthBarRenderer;
     [SerializeField] private Sprite _destroyedSprite;
@@ -15,8 +21,18 @@ public class TankController : BaseEntity
     [SerializeField]
     private Vehicle _vehicle;
 
+    [SerializeField]
+    private GameObject _evacuateFlare;
+
+    [SerializeField]
+    private GameObject _destroyedSmoke;
+
     private Vector3 _healthBarOffset;
     private float _healthBarMaxSize;
+
+    [Inject]
+    private IPlayerSettings _playerSettings;
+    public bool IsDead => _vehicle.Health <= 0;
 
 
     void Start()
@@ -26,7 +42,7 @@ public class TankController : BaseEntity
         _healthBarMaxSize = _healthBarRenderer.size.x;
         _vehicle.HealthChanges += RefreshHealth;
         _vehicle.HealthChanges += CheckIfDead;
-        _vehicle.LoadPrefs();
+        RefreshHealth();
     }
 
     private void RefreshHealth()
@@ -38,6 +54,11 @@ public class TankController : BaseEntity
     {
         _healthBar.position = transform.position + _healthBarOffset;
         _healthBar.localRotation = Quaternion.Inverse(transform.rotation);
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.E))
+        {
+            _evacuateFlare.SetActive(true);
+            CallToEvacuate?.Invoke();
+        }
         CabinsFollowCursor();
     }
 
@@ -66,12 +87,12 @@ public class TankController : BaseEntity
     {
         if (_vehicle.Health <= 0)
         {
-            _audioSourceDrive.Stop();
-            _spriteRenderer.sprite = _destroyedSprite;
-            _healthBar.gameObject.SetActive(false);
-            foreach(var cabin in _cabins)
-                cabin.SetActive(false);
-            this.enabled = false;
+            _destroyedSmoke.SetActive(true);
+            _spriteRenderer.color = new Color(0.2f, 0.2f, 0.2f);
+            foreach (var cabin in _cabins)
+                cabin.GetComponentInChildren<SpriteRenderer>().color = new Color(0.2f, 0.2f, 0.2f);
+            Die?.Invoke();
+            ControlOff();
         }
     }
 
@@ -168,6 +189,15 @@ public class TankController : BaseEntity
     public override void TakeDamage(float damage)
     {
         _vehicle.TakeDamage(damage);
+    }
+
+    public void ControlOff()
+    {
+        _audioSourceDrive.Stop();
+        _healthBar.gameObject.SetActive(false);
+        GetComponent<FireController>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        enabled = false;
     }
 
     private void OnDestroy()

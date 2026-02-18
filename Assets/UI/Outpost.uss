@@ -28,3 +28,6 @@
     height: 24%;
     font-size: 200%;
 }
+
+.tooltip {
+}

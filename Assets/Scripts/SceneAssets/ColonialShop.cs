@@ -1,13 +1,17 @@
 using Assets.Player;
+using Assets.Vehicles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 using Zenject;
 
 public class ColonialShop : MonoBehaviour
 {
+    public event UnityAction OnVehicleTypeChange;
+
     [SerializeField]
     private UIDocument _document;
     private VisualElement _shop;
@@ -30,14 +34,15 @@ public class ColonialShop : MonoBehaviour
         _vehiclesView.itemsSource = _allVehiclePresenters.Data;
         
         RefreshCurrentVehicle();
-
         _changeTankButton.clicked += ChangeVehicle;
     }
 
     private void ChangeVehicle()
     {
+
         _playerSettings.CurrentVehicle = ((VehiclePresenter)_vehiclesView.selectedItem).VehicleType;
         _playerSettings.SaveSettings();
+        OnVehicleTypeChange?.Invoke();
         RefreshCurrentVehicle();
     }
 
