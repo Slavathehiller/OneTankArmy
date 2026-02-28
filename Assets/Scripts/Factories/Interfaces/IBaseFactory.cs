@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.Scripts.Interfaces
+namespace Assets.Scripts.Factories.Interfaces
 {
     public interface IBaseFactory
     {

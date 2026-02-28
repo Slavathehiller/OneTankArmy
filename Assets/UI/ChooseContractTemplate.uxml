@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/contractList.uss?fileID=7433441132597879392&amp;guid=fa87ec8bbe7d4bc46a45cbf5f8bd050b&amp;type=3#contractList"/>
+    <ui:VisualElement name="root" data-source-type="ContractData, Assembly-CSharp" style="flex-grow: 1;">
+        <ui:Label text="Label" name="Description" enabled="true" class="label" style="align-self: flex-start; width: auto; height: auto; font-size: 20px; -unity-text-align: upper-center; margin-left: 13px;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="Description" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+    </ui:VisualElement>
+</ui:UXML>

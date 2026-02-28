@@ -11,7 +11,7 @@
     </ui:VisualElement>
     <ui:VisualElement name="ColonialShopWindow" class="window" style="height: 90%; width: 90%; background-size: 50% 50%; translate: 5% 10%; justify-content: space-around; align-items: center; align-self: stretch; font-size: 50%; visibility: hidden; flex-direction: column; position: absolute;">
         <ui:Label text="Колониальный магазин" name="MessageLabel" class="message" style="font-size: 72px;"/>
-        <ui:VisualElement name="ShopPanel" data-source-type="VehiclePresenter, Assembly-CSharp" style="flex-grow: 1; width: auto; align-self: flex-start; flex-direction: row;">
+        <ui:VisualElement name="ShopPanel" data-source-type="VehiclePresenter, Assembly-CSharp" style="flex-grow: 1; width: 1222px; align-self: flex-start; flex-direction: row;">
             <ui:ListView item-template="project://database/Assets/UI/ChooseTankTemplate.uxml?fileID=9197481963319205126&amp;guid=b8ad20f292d3c6047bae29ea6830a60d&amp;type=3#ChooseTankTemplate" name="AvailableVehiclesView" virtualization-method="DynamicHeight" allow-add="false" allow-remove="false" binding-source-selection-mode="AutoAssign" style="align-self: flex-start; align-items: flex-start; width: auto; height: auto; background-color: rgba(0, 0, 0, 0.38);"/>
             <ui:VisualElement name="CurrentTankPanel" style="flex-direction: column; background-color: rgb(140, 140, 140); flex-grow: 1; padding-right: 0; padding-top: 0; padding-bottom: 0; padding-left: 0; margin-right: 0; height: auto;">
                 <ui:VisualElement name="CurrentTankPicture" style="flex-grow: 1; padding-bottom: 5px; background-image: url(&quot;project://database/Assets/Sprites/Vehicles/Presenters/BeetlePresenter.png?fileID=21300000&amp;guid=37157eb041d7b2b41b6c9805ea543698&amp;type=3#BeetlePresenter&quot;); width: 300px; height: 100%; align-self: center; margin-top: 50px; margin-right: 50px; margin-bottom: 50px; margin-left: 50px;">
@@ -24,15 +24,38 @@
         </ui:VisualElement>
         <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="height: 40px; width: 10%; align-self: flex-end; left: -9px; bottom: 13px; margin-top: 21px; font-size: 25%;"/>
     </ui:VisualElement>
-    <ui:VisualElement name="OperationCenterWndow" class="window" style="height: 206px; width: 50%; background-size: 50% 50%; justify-content: space-around; align-items: center; align-self: center; font-size: initial; visibility: hidden; position: absolute; translate: 0% 50%;">
-        <ui:Label text="Закрыто на переучет" name="MessageLabel" parse-escape-sequences="true" class="message" style="translate: 0% 78%;"/>
-        <ui:Button text="Закрыть" name="CloseButton" class="closebutton"/>
+    <ui:VisualElement name="OperationCenterWndow" data-source-type="ContractData, Assembly-CSharp" class="window" style="height: 566px; width: 1129px; background-size: 50% 50%; justify-content: flex-start; align-items: stretch; align-self: center; font-size: initial; visibility: hidden; position: absolute; translate: 0% 50%; top: -164px; flex-direction: row;">
+        <ui:VisualElement name="ContractList" style="flex-grow: 1; align-self: stretch; height: auto; width: 285px; flex-shrink: 1;">
+            <ui:Label text="Список контрактов&#10;" name="ContractListLabel" style="color: rgb(255, 255, 255); font-size: 24px; -unity-text-align: upper-center; width: 272px; align-self: stretch;"/>
+            <ui:ListView name="Contracts" item-template="project://database/Assets/UI/ChooseContractTemplate.uxml?fileID=9197481963319205126&amp;guid=bc35224c5106a5147b7f74773a189171&amp;type=3#ChooseContractTemplate" binding-source-selection-mode="AutoAssign" allow-add="false" allow-remove="false" virtualization-method="DynamicHeight" style="width: 100%; height: 519px; align-items: flex-start;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="ControlPanel" style="flex-grow: 1; align-self: stretch; flex-shrink: 1; width: 781px; height: 564px; align-items: stretch; justify-content: flex-start; align-content: flex-start;">
+            <ui:Label text="Описание" name="DescriptionLabel" style="color: rgb(255, 255, 255); font-size: 24px;">
+                <Bindings>
+                    <ui:DataBinding property="text" data-source-path="Description" binding-mode="ToTarget"/>
+                </Bindings>
+            </ui:Label>
+            <ui:Label name="StatusLabel" text="Статус" style="color: rgb(185, 185, 185); font-size: 20px;"/>
+            <ui:Label text="Детали" name="Details" style="font-size: 18px; color: rgb(255, 255, 255); height: 433px; white-space: normal; flex-wrap: wrap;">
+                <Bindings>
+                    <ui:DataBinding property="text" data-source-path="Details" binding-mode="ToTarget"/>
+                </Bindings>
+            </ui:Label>
+            <ui:VisualElement name="ButtonPanel" style="flex-grow: 0; position: absolute; top: 487px; flex-shrink: 0; height: 78px; width: 811px; flex-direction: row;">
+                <ui:Button text="Подписать&#10;" name="SignButton" class="closebutton" style="align-self: stretch; height: 52px; width: 21%; margin-top: 0; margin-right: 0; position: relative; margin-bottom: 0; margin-left: 0; top: 15px; left: 25px;">
+                    <Bindings>
+                        <ui:DataBinding property="enabledSelf" data-source-path="Available" binding-mode="ToTarget"/>
+                    </Bindings>
+                </ui:Button>
+                <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="align-self: stretch; height: 52px; width: 21%; margin-top: 0; margin-right: 0; position: relative; margin-bottom: 0; margin-left: 0; top: 15px; left: 449px;"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="RepairZoneWindow" class="window" style="height: 206px; width: 50%; align-items: center; align-self: center; font-size: initial; visibility: hidden; position: absolute; translate: 0% 50%;">
         <ui:Label text="Проводятся технические работы" name="MessageLabel" parse-escape-sequences="true" class="message" style="translate: 0% 83%;"/>
         <ui:VisualElement name="ButtonPanel" style="flex-grow: 1; flex-direction: row; translate: 0% 35%;">
-            <ui:Button name="ShowAdvButton" tooltip="Ускорить ремонт за просмотр рекламы" style="height: 54px; width: 95px; background-image: url(&quot;project://database/Assets/Sprites/advicon.png?fileID=8711668809565807325&amp;guid=fed3bef8849206746bb500b98677a269&amp;type=3#advicon_0&quot;); background-size: 50% 70%;"/>
-            <ui:Button name="UseNanorepairButton" tooltip="Использовать наноремонтный набор" style="height: 54px; width: 95px; background-image: url(&quot;project://database/Assets/Sprites/toolkit.png?fileID=-4687270063616015408&amp;guid=f90d6d7c33bb34a49a5fc62cb5e592eb&amp;type=3#toolkit_0&quot;); background-size: 50% 70%;"/>
+            <ui:Button name="ShowAdvButton" tooltip="Ускорить ремонт за просмотр рекламы" style="height: 54px; width: 95px; background-image: url(&quot;project://database/Assets/Sprites/UI/advicon.png?fileID=8711668809565807325&amp;guid=fed3bef8849206746bb500b98677a269&amp;type=3#advicon_0&quot;); background-size: 50% 70%;"/>
+            <ui:Button name="UseNanorepairButton" tooltip="Использовать наноремонтный набор" style="height: 54px; width: 95px; background-image: url(&quot;project://database/Assets/Sprites/UI/toolkit.png?fileID=-4687270063616015408&amp;guid=f90d6d7c33bb34a49a5fc62cb5e592eb&amp;type=3#toolkit_0&quot;); background-size: 50% 70%;"/>
         </ui:VisualElement>
         <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="translate: 0% -19%;"/>
     </ui:VisualElement>
@@ -53,5 +76,34 @@
     <ui:VisualElement name="ErrorWindow" style="flex-grow: 1; background-color: rgb(38, 0, 0); position: absolute; width: 50%; height: 182px; align-self: center; margin-top: 138px; display: none;">
         <ui:Label text="Error" name="ErrorLabel" style="color: rgb(255, 255, 255); font-size: 20px; align-self: center; margin-top: 50px;"/>
         <ui:Button text="Закрыть" name="CloseButton" style="width: 15%; align-self: center; margin-top: 29px;"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="MainUI" picking-mode="Ignore" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; flex-direction: column; font-size: 12px;">
+        <ui:VisualElement name="SidePanel" style="flex-grow: 1; align-self: flex-end; align-content: stretch; position: absolute; justify-content: flex-end; align-items: flex-start; width: 10%; height: 100%; flex-direction: column-reverse;">
+            <ui:Button text="" name="CurrentContractButton" class="sideButton" style="align-self: center; border-top-left-radius: 19px; border-top-right-radius: 19px; border-bottom-right-radius: 19px; border-bottom-left-radius: 19px; background-image: url(&quot;project://database/Assets/Sprites/UI/contract.png?fileID=2800000&amp;guid=c14a7ce66da70e241943ecb59d92bf7d&amp;type=3#contract&quot;); background-color: rgb(214, 184, 80); top: 3%;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="CurrentContractWindow" data-source-type="ContractData, Assembly-CSharp" style="flex-grow: 1; position: absolute; align-self: center; top: 177px; width: 737px; height: auto; background-color: rgb(65, 65, 65); display: none;">
+        <ui:Label name="CaptionLabel" text="Текущий контракт" style="align-self: center; font-size: 22px; color: rgb(255, 255, 255); top: 21px; left: 25px; -unity-font-style: bold;"/>
+        <ui:Label text="Описание" name="DescriptionLabel" style="align-self: flex-start; font-size: 22px; color: rgb(255, 255, 255); top: 21px; left: 25px;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="Description" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Label text="Детали" name="DetailsLabel" style="align-self: flex-start; font-size: 22px; color: rgb(255, 255, 255); top: 21px; left: 25px; height: 119px; width: 681px; flex-wrap: wrap; white-space: normal;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="Details" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Label text="Не завершен" name="CompleteLabel" style="align-self: flex-start; font-size: 22px; color: rgb(255, 255, 255); top: 7px; left: 25px; height: 32px; width: 622px; -unity-font-style: italic;"/>
+        <ui:VisualElement name="ButtonPanel" style="flex-grow: 1; flex-direction: row-reverse; top: -4px; align-self: stretch; display: flex;">
+            <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="align-self: flex-end; height: 39px; width: 184px;"/>
+            <ui:Button text="Отправиться" name="TakeOffButton" class="closebutton" style="align-self: flex-end; height: 39px; width: 184px; font-size: 24px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="CheckCurrentContractStatusWindow" data-source-type="ContractData, Assembly-CSharp" style="flex-grow: 1; position: absolute; align-self: center; top: 177px; width: 737px; height: 122px; background-color: rgb(65, 65, 65); display: none;">
+        <ui:Label name="MessageLabel" text="Текущий контракт" style="align-self: center; font-size: 22px; color: rgb(255, 255, 255); top: 21px; left: 25px; -unity-font-style: bold;"/>
+        <ui:VisualElement name="ButtonPanel" style="flex-grow: 1; flex-direction: row-reverse; top: -4px; align-self: stretch; display: flex;">
+            <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="align-self: flex-end; height: 39px; width: 184px;"/>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

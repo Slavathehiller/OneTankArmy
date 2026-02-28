@@ -5,16 +5,13 @@ using System.Net.Security;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.U2D.Animation;
 using Zenject;
 
 public abstract class AIEnemy : BaseEntity
 {
     [SerializeField]
     protected Animator _animator;
-
-    [SerializeField]
-    protected float _maxHP;
-    protected float _currentHP;
 
     [SerializeField]
     protected float _distanceOfDetection;
@@ -34,7 +31,7 @@ public abstract class AIEnemy : BaseEntity
 
     protected bool _inContactWithTarget;
 
-    protected bool _isDead;
+    public bool IsDead => _isDead;
 
     [SerializeField]
     protected GameObject _mainBody;
@@ -56,8 +53,24 @@ public abstract class AIEnemy : BaseEntity
     [Inject]
     private IVFXManager _VFXMmanager;
 
+    //private void Awake()
+    //{
+    //    var skins = GetComponentsInChildren<SpriteSkin>(true);
+    //    if (skins == null)
+    //        return;
+    //    foreach (var skin in skins)
+    //    {
+    //        _ = skin.transform;
+    //    }
+    //}
+
     void Start()
     {
+        //foreach (var skin in GetComponentsInChildren<SpriteSkin>())
+        //{
+        //    skin.enabled = false;
+        //    skin.enabled = true;
+        //}
         StartActions();
     }
 
@@ -136,7 +149,7 @@ public abstract class AIEnemy : BaseEntity
         _target.GetComponent<TankController>().Die += TagetDead;
     }
 
-    private void TagetDead()
+    private void TagetDead(BaseEntity tarket)
     {
         LooseEnemy();
     }
@@ -192,11 +205,9 @@ public abstract class AIEnemy : BaseEntity
 
     protected override void CheckIfDead()
     {
-        if (_currentHP <= 0)
-        {
-            _isDead = true;
+        base.CheckIfDead();
+        if (_isDead)
             DeadPerfomance();
-        }        
     }
 
    // protected abstract void ReactToCollision(Collision2D collision);

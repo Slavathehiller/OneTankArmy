@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Outpost.uss?fileID=7433441132597879392&amp;guid=a4f011f86eeda8b48a3b96118247df18&amp;type=3#Outpost"/>
+    <ui:VisualElement name="ContractCompleteWindow" style="flex-grow: 1; background-color: rgba(41, 97, 130, 0); align-self: center; width: 50%; height: 25%; position: absolute; top: 13%; flex-direction: column-reverse; display: none;">
+        <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="width: 225px; display: none;"/>
+        <ui:Label text="Контракт выполнен. Нажмите Ctrl-E для эвакуации." name="ContractCompleteLabel" style="align-self: center; -unity-text-align: middle-center; text-overflow: clip; margin-bottom: 9%; font-size: 24%; color: rgb(255, 255, 255); white-space: normal; position: relative; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&amp;guid=4beb055f07aaff244873dec698d0363e&amp;type=3#Roboto-Bold&quot;);"/>
+    </ui:VisualElement>
+    <ui:Label text="Осталось целей: 0" name="TargetsLeftLabel" style="align-self: flex-end; margin-top: 29px; padding-right: 106px; font-size: 24px; color: rgb(255, 255, 255);"/>
+</ui:UXML>

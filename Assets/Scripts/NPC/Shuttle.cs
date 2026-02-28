@@ -16,7 +16,14 @@ public class Shuttle : NPC_Base
     public void MoveToPoint(Vector3 point, UnityAction callback = null)
     {
         StopAllCoroutines();
+        RotateTo(point);
         StartCoroutine(MoveToPointCoroutine(point, callback));
+    }
+
+    public override void RotateTo(Vector3 point, UnityAction callback = null)
+    {
+        StopAllCoroutines();
+        base.RotateTo(point, callback);
     }
 
     public void TakeOff(UnityAction callback = null)

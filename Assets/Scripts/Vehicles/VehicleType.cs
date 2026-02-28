@@ -10,6 +10,7 @@ namespace Assets.Vehicles
     {
         Undefined = -1,
         Beetle = 0,
-        DianBao = 1
+        DianBao = 1,
+        Fury = 2
     }
 }

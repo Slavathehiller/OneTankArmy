@@ -19,3 +19,6 @@ MonoBehaviour:
   - VehicleType: 1
     Name: "\u0414\u044F\u043D\u044C \u0411\u0430\u043E"
     Portrait: {fileID: 21300000, guid: 5b9d5f0c968d021468cb135ce4a77e34, type: 3}
+  - VehicleType: 2
+    Name: "\u0424\u0443\u0440\u0438\u044F"
+    Portrait: {fileID: 21300000, guid: a08496ae2ab429a47bbffbca6734ce92, type: 3}

@@ -1738,6 +1738,7 @@ GameObject:
   - component: {fileID: 1342080696}
   - component: {fileID: 1342080698}
   - component: {fileID: 1342080699}
+  - component: {fileID: 1342080701}
   - component: {fileID: 1342080700}
   m_Layer: 0
   m_Name: Routine
@@ -1762,7 +1763,10 @@ MonoBehaviour:
   _repairPoint: {fileID: 503334945}
   _defaultPointPoint: {fileID: 187882398}
   _shop: {fileID: 1342080698}
+  _controlCenter: {fileID: 1342080701}
+  _errorController: {fileID: 1342080700}
   _colonialShopActivator: {fileID: 1237031532}
+  _controlCenterActivator: {fileID: 1966257705}
   _document: {fileID: 243175787}
 --- !u!4 &1342080697
 Transform:
@@ -1819,6 +1823,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ErrorController
   _document: {fileID: 243175787}
+--- !u!114 &1342080701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342080695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99efe8352d89a6849a46e9e939063644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.SceneAssets.ControlCenter
+  _document: {fileID: 243175787}
+  _errorController: {fileID: 1342080700}
 --- !u!1 &1391852534
 GameObject:
   m_ObjectHideFlags: 0

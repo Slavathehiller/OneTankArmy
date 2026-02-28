@@ -1,8 +1,5 @@
-﻿using Assets.Scripts;
-using Assets.Scripts.Factories;
-using Assets.Scripts.Interfaces;
+﻿using Assets.Scripts.Factories;
 using Assets.Scripts.Player;
-using Assets.Scripts.VFX.Interfaces;
 using Zenject;
 
 public class GlobalSettingsInstaller : MonoInstaller
@@ -13,7 +10,8 @@ public class GlobalSettingsInstaller : MonoInstaller
         Container.BindInterfacesTo<UIAssetFactory>().AsTransient();
         Container.BindInterfacesTo<VFXManager>().AsSingle();
         Container.BindInterfacesTo<PlayerSettings>().AsSingle();
-        
+        Container.BindInterfacesTo<ContractsManager>().AsSingle();
+
         //Container.Bind<ILogger>().To<Logger>().AsCached();
         //Container.BindInterfacesTo<LocalizationManager>().AsSingle();
         //Container.BindInterfacesTo<TooltipManager>().AsSingle();        

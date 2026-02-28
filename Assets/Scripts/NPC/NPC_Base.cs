@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class NPC_Base : MonoBehaviour
 {
@@ -26,13 +27,19 @@ public abstract class NPC_Base : MonoBehaviour
             Vector3 direction = _target.Value - transform.position;
             if (_rotateTo != null)
             {
-                var rotateDirection = _rotateTo.Value - transform.position;
-                var angle = Mathf.Atan2(rotateDirection.y, rotateDirection.x) * Mathf.Rad2Deg;
-                angle -= 90;
-                transform.rotation = Quaternion.Euler(0, 0, angle);
+                RotateTo(_rotateTo.Value);
             }
             transform.position += direction.normalized * _moveSpeed * Time.deltaTime;
         }
+    }
+
+    public virtual void RotateTo(Vector3 point, UnityAction callback = null)
+    {
+        var rotateDirection = point - transform.position;
+        var angle = Mathf.Atan2(rotateDirection.y, rotateDirection.x) * Mathf.Rad2Deg;
+        angle -= 90;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+        callback?.Invoke();
     }
 
     protected virtual bool UpdateAction() 

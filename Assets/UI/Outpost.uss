@@ -22,12 +22,39 @@
 .closebutton {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    width: 50%;
-    height: 24%;
     font-size: 200%;
+    -unity-text-align: middle-center;
+    align-self: flex-end;
+    height: 14%;
+    border-bottom-right-radius: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
 }
 
 .tooltip {
+}
+
+.sideButton {
+    width: 70px;
+    height: 70px;
+    align-self: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transition-property: width, height;
+    transition-duration: 0.3s, 0.3s;
+}
+
+.sideButton:hover {
+    width: 80px;
+    height: 80px;
+}
+
+.sideButton:active {
+    width: 65px;
+    height: 65px;
 }

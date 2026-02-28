@@ -1,4 +1,4 @@
-using Assets.Scripts.Interfaces;
+using Assets.Scripts.Factories.Interfaces;
 using Assets.Scripts.VFX.Interfaces;
 using UnityEngine;
 using Zenject;

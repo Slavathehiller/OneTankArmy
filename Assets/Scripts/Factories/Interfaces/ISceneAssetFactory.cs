@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.Interfaces
+namespace Assets.Scripts.Factories.Interfaces
 {
     public interface ISceneAssetFactory
     {

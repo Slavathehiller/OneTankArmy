@@ -61,7 +61,7 @@ public class ToolTipController : MonoBehaviour
     {
         _tooltipLabel.text = text;
         _tooltip.style.left = position.x;
-        _tooltip.style.top = position.y;
+        _tooltip.style.top = position.y; 
         _tooltip.style.display = DisplayStyle.Flex;
     }
 

@@ -5,12 +5,10 @@ using Zenject;
 
 public class TankController : BaseEntity
 {
-    public event UnityAction CallToEvacuate;
-    public event UnityAction Die;
+    public event UnityAction<BaseEntity> CallToEvacuate;
 
     [SerializeField] private Transform _healthBar;
     [SerializeField] private SpriteRenderer _healthBarRenderer;
-    [SerializeField] private Sprite _destroyedSprite;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private AudioSource _audioSourceDrive;
 
@@ -34,7 +32,6 @@ public class TankController : BaseEntity
     private IPlayerSettings _playerSettings;
     public bool IsDead => _vehicle.Health <= 0;
 
-
     void Start()
     {
         _healthBarOffset = _healthBar.localPosition;
@@ -57,7 +54,7 @@ public class TankController : BaseEntity
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.E))
         {
             _evacuateFlare.SetActive(true);
-            CallToEvacuate?.Invoke();
+            CallToEvacuate?.Invoke(this);
         }
         CabinsFollowCursor();
     }
@@ -83,15 +80,20 @@ public class TankController : BaseEntity
 
     }
 
+    protected override bool CheckHPOver()
+    {
+        return _vehicle.Health <= 0;
+    }
+
     protected override void CheckIfDead()
     {
-        if (_vehicle.Health <= 0)
+        base.CheckIfDead();
+        if (_isDead)
         {
             _destroyedSmoke.SetActive(true);
             _spriteRenderer.color = new Color(0.2f, 0.2f, 0.2f);
             foreach (var cabin in _cabins)
                 cabin.GetComponentInChildren<SpriteRenderer>().color = new Color(0.2f, 0.2f, 0.2f);
-            Die?.Invoke();
             ControlOff();
         }
     }

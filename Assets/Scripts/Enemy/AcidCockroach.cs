@@ -47,13 +47,8 @@ public class AcidCockroach : AIRangedEnemy
                 }
             }
             else
-            {
-                if (!IsShocked)
-                    MoveToTarget();
-            }
+                MoveToTarget();
         }
-        else
-            _animator.SetBool("Moving", false);
     }
 
     protected override void UpdateActions()
