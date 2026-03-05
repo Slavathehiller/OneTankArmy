@@ -23,15 +23,39 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    font-size: 200%;
+    font-size: 100%;
     -unity-text-align: middle-center;
     align-self: flex-end;
-    height: 14%;
+    height: 15%;
     border-bottom-right-radius: 10px;
-    margin-top: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    background-image: url("project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/btn/button_empty_5.png?fileID=2800000&guid=d43e9a6f548db0e47830a21f9c905220&type=3#button_empty_5");
+    background-color: rgba(0, 0, 0, 0);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    border-left-color: rgba(255, 255, 255, 0);
+    border-right-color: rgba(255, 255, 255, 0);
+    border-top-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0);
+    -unity-text-auto-size: best-fit 4px 200px;
+    width: 63%;
+    -unity-text-generator: advanced;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-right: 1%;
+}
+
+.closebutton:hover {
+    scale: 1.1 1.1;
+    transition-duration: 0.3s;
+}
+
+.closebutton:active {
+    scale: 0.9 0.9;
+    transition-duration: 0s;
 }
 
 .tooltip {

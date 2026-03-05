@@ -9,6 +9,9 @@ public class VehiclePresenter
     public VehicleType VehicleType;
     public string Name;
     public Sprite Portrait;
+    public string Vitality;
+    public string Speed;
+    public string Firepower;
 }
 
 [CreateAssetMenu(fileName = "VehiclePresenters", menuName = "Scriptable Objects/VehiclePresenters")]

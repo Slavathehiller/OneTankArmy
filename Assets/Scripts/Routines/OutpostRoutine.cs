@@ -54,6 +54,7 @@ public class OutpostRoutine : MonoBehaviour
     private Button _currentContractTakeOffButton;
     private VisualElement _checkCurrentContractStatusWindow;
     private Button _closeCheckCurrentContractStatusWindowButton;
+    private Button _toOrbitButton;
 
     [Inject]
     private IPlayerSettings _playerSettings;
@@ -63,6 +64,7 @@ public class OutpostRoutine : MonoBehaviour
 
     [Inject]
     private IVehicleFactory _vehicleFactory;
+
     void Start()
     {
         _takeOffButtonButton = _document.rootVisualElement.Q<Button>("TakeOffButton");
@@ -81,8 +83,11 @@ public class OutpostRoutine : MonoBehaviour
         _currentContractTakeOffButton.clicked += () => _currentContractWindow.style.display = DisplayStyle.None;
         _currentContractTakeOffButton.clicked += TakeOff;
 
+        _toOrbitButton = _document.rootVisualElement.Q<Button>("ToOrbitButton");
+        _toOrbitButton.clicked += ToOrbit;
+
         _shop.OnVehicleTypeChange += ChangeVehicle;
-        _controlCenter.OnContractSigned += ContractSignet;
+        _controlCenter.OnContractSigned += ContractSigned;
 
 
         _colonialShopActivator.WindowAvailable = ColonialShopAvailable;
@@ -113,7 +118,12 @@ public class OutpostRoutine : MonoBehaviour
         }
     }
 
-    private void ContractSignet()
+    private void ToOrbit()
+    {
+        _errorController.ShowError("Челонок не заправлен. Выход на орбиту невозможен.");
+    }
+
+    private void ContractSigned()
     {
         _document.rootVisualElement.Q<VisualElement>("OperationCenterWndow").style.visibility = Visibility.Hidden;
         CheckCurrentContractButton();
@@ -272,8 +282,9 @@ public class OutpostRoutine : MonoBehaviour
         _takeOffButtonButton.clicked -= TakeOff;
         _currentContractTakeOffButton.clicked -= TakeOff;
         _shop.OnVehicleTypeChange -= ChangeVehicle;
-        _controlCenter.OnContractSigned -= ContractSignet;
+        _controlCenter.OnContractSigned -= ContractSigned;
         _closeCheckCurrentContractStatusWindowButton.clicked -= CloseCheckCurrentContractStatusWindow;
+        _toOrbitButton.clicked -= ToOrbit;
         _playerSettings.SaveSettings();
     }
 }

@@ -25,14 +25,14 @@ public class UIWindowActivator : UIActivator
     {
         if (WindowAvailable == null || WindowAvailable())
         {
-            _window.style.visibility = Visibility.Visible;
+            _window.style.display = DisplayStyle.Flex;
             OnShowWindow?.Invoke();
         }
     }
 
     private void DeactivateWindow()
     {
-        _window.style.visibility = Visibility.Hidden;
+        _window.style.display = DisplayStyle.None;
     }
 
     private void OnDestroy()

@@ -4,8 +4,6 @@ using UnityEngine.Events;
 
 public abstract class BaseEntity : MonoBehaviour
 {
-    [SerializeField]
-    protected float _maxHP;
     protected float _currentHP;
 
     public event UnityAction<BaseEntity> Die;

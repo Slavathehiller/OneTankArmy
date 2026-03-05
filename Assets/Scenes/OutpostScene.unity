@@ -279,8 +279,8 @@ GameObject:
   m_Component:
   - component: {fileID: 89518100}
   - component: {fileID: 89518099}
-  - component: {fileID: 89518102}
   - component: {fileID: 89518101}
+  - component: {fileID: 89518102}
   m_Layer: 0
   m_Name: ships_2
   m_TagString: Untagged
@@ -337,7 +337,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8383162673023287823, guid: 3682643e260cadf4382a6ba6c9771593, type: 3}
+  m_Sprite: {fileID: -6991317626218484040, guid: 0169565e5591cfd4eaffbcfa2b32f9c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -356,7 +356,7 @@ Transform:
   m_GameObject: {fileID: 89518098}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.96, y: -1.97, z: 0}
+  m_LocalPosition: {x: -6.47, y: -2.27, z: 0}
   m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -396,8 +396,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0022786988, y: 0}
-  m_Size: {x: 0.6096029, y: 1.2400001}
+  m_Offset: {x: -0.0022786988, y: -0.03124788}
+  m_Size: {x: 0.6096029, y: 1.4462365}
   m_Direction: 0
 --- !u!114 &89518102
 MonoBehaviour:
@@ -408,12 +408,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 89518098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b3a56fd174fcc4f8d8089b7caf9f4f, type: 3}
+  m_Script: {fileID: 11500000, guid: a0868bc8c6492f24cb4352cde330c150, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIBinding
+  m_EditorClassIdentifier: Assembly-CSharp::UIActivator
   _document: {fileID: 243175787}
   _buttonName: ToOrbitButton
-  _windowName: ToOrbitWindow
 --- !u!1 &101748806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,7 +3014,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: 703548200694269954, guid: 1edd6a031d5f3f04880fcf0daf905d06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.97, y: 4.18}

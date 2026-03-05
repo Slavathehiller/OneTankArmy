@@ -233,11 +233,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3babbb3990bcc943bfc18766504f2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 15
-  _rotateSpeed: 10
+  _moveSpeed: 14
+  _rotateSpeed: 9
   _healthBar: {fileID: 3167926836334825702}
   _healthBarRenderer: {fileID: 2319024376133290374}
-  _destroyedSprite: {fileID: -1746014967700649631, guid: f5d34253aa5c10e4d9ca53ef44386dce, type: 3}
   _spriteRenderer: {fileID: 6586793873056049515}
   _audioSourceDrive: {fileID: 7517493489112617148}
   _cabinsRotationSpeed: 2.5
@@ -260,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FireController
   _guns:
   - {fileID: 8577120033596588368}
+  _auxillaryGuns: []
 --- !u!114 &-1267759032250053154
 MonoBehaviour:
   m_ObjectHideFlags: 0

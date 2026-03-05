@@ -11,6 +11,8 @@ using Zenject;
 public abstract class AIEnemy : BaseEntity
 {
     [SerializeField]
+    protected float _maxHP;
+    [SerializeField]
     protected Animator _animator;
 
     [SerializeField]

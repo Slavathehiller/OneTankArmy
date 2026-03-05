@@ -29,12 +29,20 @@ public class ColonialShop : MonoBehaviour
         _shop = _document.rootVisualElement.Q<VisualElement>("ColonialShopWindow");
         _vehiclesView = _shop.Q<VisualElement>("ShopPanel").Q<ListView>("AvailableVehiclesView");
         _currentTankPanel = _shop.Q<VisualElement>("ShopPanel").Q<VisualElement>("CurrentTankPanel");
-        _changeTankButton = _shop.Q<VisualElement>("ShopPanel").Q<Button>("ChangeTankButton");
+        _changeTankButton = _shop.Q<Button>("ChangeTankButton");
         _allVehiclePresenters = Resources.Load<VehiclePresenters>("VehiclePresenters");
         _vehiclesView.itemsSource = _allVehiclePresenters.Data;
-        
+
+        _vehiclesView.selectionChanged += VehicleClicked;
+
+
         RefreshCurrentVehicle();
         _changeTankButton.clicked += ChangeVehicle;
+    }
+
+    private void VehicleClicked(IEnumerable<object> enumerable)
+    {
+        _currentTankPanel.dataSource = enumerable.First();
     }
 
     private void ChangeVehicle()
@@ -43,12 +51,17 @@ public class ColonialShop : MonoBehaviour
         _playerSettings.CurrentVehicle = ((VehiclePresenter)_vehiclesView.selectedItem).VehicleType;
         _playerSettings.SaveSettings();
         OnVehicleTypeChange?.Invoke();
-        RefreshCurrentVehicle();
     }
 
     private void RefreshCurrentVehicle()
     {
-        _currentTankPanel.dataSource = _allVehiclePresenters.Data.First(x => x.VehicleType == _playerSettings.CurrentVehicle);
+        _vehiclesView.selectedIndex = _allVehiclePresenters.Data.IndexOf(_allVehiclePresenters.Data.First(x => x.VehicleType == _playerSettings.CurrentVehicle));
+    }
+
+    private void OnDestroy()
+    {
+        _vehiclesView.selectionChanged -= VehicleClicked;
+        _changeTankButton.clicked -= ChangeVehicle;
     }
 
 }

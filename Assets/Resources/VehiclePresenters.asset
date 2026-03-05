@@ -16,9 +16,18 @@ MonoBehaviour:
   - VehicleType: 0
     Name: "\u0416\u0443\u0447\u043E\u043A"
     Portrait: {fileID: 21300000, guid: 37157eb041d7b2b41b6c9805ea543698, type: 3}
+    Vitality: "\u25A0\u25A1\u25A1\u25A1\u25A1"
+    Speed: "\u25A0\u25A0\u25A0\u25A0\u25A1"
+    Firepower: "\u25A0\u25A0\u25A1\u25A1\u25A1"
   - VehicleType: 1
     Name: "\u0414\u044F\u043D\u044C \u0411\u0430\u043E"
     Portrait: {fileID: 21300000, guid: 5b9d5f0c968d021468cb135ce4a77e34, type: 3}
+    Vitality: "\u25A0\u25A0\u25A0\u25A1\u25A1"
+    Speed: "\u25A0\u25A0\u25A1\u25A1\u25A1"
+    Firepower: "\u25A0\u25A0\u25A0\u25A1\u25A1"
   - VehicleType: 2
     Name: "\u0424\u0443\u0440\u0438\u044F"
     Portrait: {fileID: 21300000, guid: a08496ae2ab429a47bbffbca6734ce92, type: 3}
+    Vitality: "\u25A0\u25A0\u25A0\u25A0\u25A1"
+    Speed: "\u25A0\u25A1\u25A1\u25A1\u25A1"
+    Firepower: "\u25A0\u25A0\u25A0\u25A1\u25A1"
