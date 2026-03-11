@@ -9,7 +9,7 @@ namespace Assets.Scripts.Factories.Interfaces
 {
     public interface ISceneAssetFactory
     {
-        public T CreateAsset<T>() where T : MonoBehaviour;
-        public T CreateAssetNotCached<T>() where T : MonoBehaviour;
+        T CreateAsset<T>() where T : MonoBehaviour;
+        T CreateAssetNotCached<T>() where T : MonoBehaviour;
     }
 }

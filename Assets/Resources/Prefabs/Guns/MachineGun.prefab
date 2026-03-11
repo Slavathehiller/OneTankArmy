@@ -82,7 +82,7 @@ MonoBehaviour:
   _audioSourceFire: {fileID: 7846911475412062988}
   _fireSound: {fileID: 8300000, guid: 651495ddda4d6bf43a9693a52be489e6, type: 3}
   _fireLatency: 0.1
-  _bulletPrefab: {fileID: 3719662375724612065, guid: 8f0a1beb13b5a6f4aa01eeb4e3236936, type: 3}
+  _missileType: 3
 --- !u!82 &7846911475412062988
 AudioSource:
   m_ObjectHideFlags: 0

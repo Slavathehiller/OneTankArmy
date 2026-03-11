@@ -20,9 +20,6 @@ public class Turret : MonoBehaviour
     {
         if (_enemy != null) 
             RotateToObject2D(_enemy);
-
-
-
     }
 
     private void FixedUpdate()

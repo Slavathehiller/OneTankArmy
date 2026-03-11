@@ -11,6 +11,8 @@ public class GlobalSettingsInstaller : MonoInstaller
         Container.BindInterfacesTo<VFXManager>().AsSingle();
         Container.BindInterfacesTo<PlayerSettings>().AsSingle();
         Container.BindInterfacesTo<ContractsManager>().AsSingle();
+        Container.BindInterfacesTo<MissileFactory>().AsTransient();
+        Container.BindInterfacesTo<MissilePool>().AsCached();
 
         //Container.Bind<ILogger>().To<Logger>().AsCached();
         //Container.BindInterfacesTo<LocalizationManager>().AsSingle();

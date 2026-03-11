@@ -51,7 +51,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.05
   m_LinearDamping: 5
-  m_AngularDamping: 2
+  m_AngularDamping: 3
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -112,9 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2a376808b319043a3b3e32e88e49ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoomFlea
-  _maxHP: 1
   _moveSpeed: 1
-  _rotateSpeed: 0.05
+  _rotateSpeed: 0.03
+  _maxHP: 1
   _animator: {fileID: 6486955513966762370}
   _distanceOfDetection: 8
   _detectionCooldown: 2

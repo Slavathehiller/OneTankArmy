@@ -83,6 +83,7 @@ public class AcidCockroach : AIRangedEnemy
     protected override void DeadPerfomance()
     {
         base.DeadPerfomance();
-        StartCoroutine(MakeGoooCoroutine<AcidGoo>(BodyParts[0].gameObject, DisablePhysic));
+        DisablePhysic();
+        StartCoroutine(MakeGoooCoroutine<AcidGoo>(BodyParts[0].gameObject));
     }
 }

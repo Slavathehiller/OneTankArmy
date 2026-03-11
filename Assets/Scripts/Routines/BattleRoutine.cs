@@ -1,6 +1,6 @@
 using Assets.Player;
 using Assets.Scripts.Factories.Interfaces;
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -15,6 +15,9 @@ public class BattleRoutine : MonoBehaviour
     private Transform _startPoint;
     [SerializeField]
     private Transform _shuttlePoint;
+
+    [SerializeField]
+    private List<Transform> _spawnPoints;
 
     [SerializeField]
     private CameraController _cameraController;
@@ -40,6 +43,9 @@ public class BattleRoutine : MonoBehaviour
 
     private LifeManager _lifeManager;
     private Vehicle _playerVehicle;
+
+    private int[] _enemiesCount = new int[4] {10, 2, 1, 2};
+    
     void Start()
     {
         _completeContractWindow = _document.rootVisualElement.Q<VisualElement>("ContractCompleteWindow");
@@ -50,7 +56,10 @@ public class BattleRoutine : MonoBehaviour
         // flea.transform.position = new Vector3(-4, 0, 0);
         _shuttle.transform.position = _shuttlePoint.position;
         _shuttle.MoveToPoint(_startPoint.position, LandPlayerAndTakeOff);
+
+        SpawnEnemies();
         _lifeManager = GetComponent<LifeManager>();
+        _lifeManager.Init();
         if (_contractsManager.CurrentContract.Type == ContractType.Cleanse)
             _lifeManager.AllEnemyDead += CompleteContract;
         _lifeManager.EnemyLiveCount += TargetsCountChanged;
@@ -59,6 +68,63 @@ public class BattleRoutine : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
             Application.Quit();
+    }
+
+    public void SpawnEnemies()
+    {
+        for (var i = 0; i < _enemiesCount.Length; i++)
+        {
+            AIEnemy enemy;
+            switch (i)
+            {
+                case 0:
+                    {
+                        for (var j = 0; j < _enemiesCount[i]; j++)
+                        {
+                            enemy = _sceneAssetFactory.CreateAsset<AcidCockroach>();
+                            PlaceEnemy(enemy);
+                        }
+                        break;
+                    }
+                case 1:
+                    {
+                        for (var j = 0; j < _enemiesCount[i]; j++)
+                        {
+                            enemy = _sceneAssetFactory.CreateAsset<BoomFlea>();
+                            PlaceEnemy(enemy);
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        for (var j = 0; j < _enemiesCount[i]; j++)
+                        {
+                            enemy = _sceneAssetFactory.CreateAsset<GiantScolopendra>();
+                            PlaceEnemy(enemy);
+                        }
+                        break;
+                    }
+                case 3:
+                    {
+                        for (var j = 0; j < _enemiesCount[i]; j++)
+                        {
+                            enemy = _sceneAssetFactory.CreateAsset<FireMantiss>();
+                            PlaceEnemy(enemy);
+                        }
+                        break;
+                    }
+            }
+        }
+    }
+
+    private void PlaceEnemy(AIEnemy enemy)
+    {
+        var spawnPointIndex = Random.Range(0, _spawnPoints.Count);
+        var spawnPoint = _spawnPoints[spawnPointIndex];
+        enemy.transform.position = spawnPoint.position;
+        _spawnPoints.Remove(spawnPoint);
+        var angle = Random.Range(0, 360);
+        enemy.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
     private void TargetsCountChanged(int targetsLeft)

@@ -44,7 +44,6 @@ public class OutpostRoutine : MonoBehaviour
     [SerializeField]
     private UIDocument _document;
     private Button _takeOffButtonButton;
-    private VisualElement _rapairingWindow;
     private Button _currentContractButton;
 
     private Vehicle _playerAvatar;
@@ -64,14 +63,10 @@ public class OutpostRoutine : MonoBehaviour
 
     [Inject]
     private IVehicleFactory _vehicleFactory;
-
     void Start()
     {
         _takeOffButtonButton = _document.rootVisualElement.Q<Button>("TakeOffButton");
         _takeOffButtonButton.clicked += TakeOff;
-
-        _rapairingWindow = _document.rootVisualElement.Q<VisualElement>("RepairingWndow");
-        _rapairingWindow.Q<Button>("CloseButton").clicked += () => _rapairingWindow.style.visibility = Visibility.Hidden;
 
         _currentContractWindow = _document.rootVisualElement.Q<VisualElement>("CurrentContractWindow");
         _currentContractWindow.Q<Button>("CloseButton").clicked += () => _currentContractWindow.style.display = DisplayStyle.None;
@@ -166,7 +161,7 @@ public class OutpostRoutine : MonoBehaviour
     {
         if (_playerSettings.RepairEndTime != null)
         {
-            _rapairingWindow.style.visibility = Visibility.Visible;
+            _errorController.ShowError("Техника повреждена. Дождитесь окончания ремонтных работ.");
             return false;
         }
         return true;
@@ -227,7 +222,7 @@ public class OutpostRoutine : MonoBehaviour
     {
         if (_playerSettings.CurrentHealth < _playerAvatar.MaxHealth)
         {
-            _rapairingWindow.style.visibility = Visibility.Visible;
+            _errorController.ShowError("Техника повреждена. Дождитесь окончания ремонтных работ.");
             return;
         }
 

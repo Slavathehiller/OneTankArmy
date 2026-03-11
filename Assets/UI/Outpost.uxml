@@ -84,10 +84,6 @@
             <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="width: 25%; top: 4%; right: 6%; height: 35%; padding-bottom: 1%;"/>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="RepairingWndow" class="window" style="height: 163px; width: 50%; background-size: 50% 50%; justify-content: space-around; align-items: center; align-self: center; font-size: initial; visibility: hidden; position: absolute; translate: 0% 50%;">
-        <ui:Label text="Техника повреждена. Дождитесь окончания ремонтных работ." name="MessageLabel" parse-escape-sequences="true" class="message" style="translate: 0% 78%;"/>
-        <ui:Button text="Закрыть" name="CloseButton" class="closebutton"/>
-    </ui:VisualElement>
     <ui:VisualElement name="tooltip-panel" class="tooltip" style="flex-grow: 1; display: none; width: 500px; height: auto; position: absolute; align-self: flex-start; background-color: rgb(123, 123, 123);">
         <ui:Label text="Label" name="tooltip-label" style="align-self: center; font-size: 16px; color: rgb(255, 255, 255); -unity-font-style: bold;"/>
     </ui:VisualElement>

@@ -9,14 +9,13 @@ public class LifeManager : MonoBehaviour
     public event UnityAction AllEnemyDead;
     public event UnityAction<int> EnemyLiveCount;
     private AIEnemy[] _allEnemies;
-    void Start()
+    public void Init()
     {
         _allEnemies = FindObjectsByType<AIEnemy>(FindObjectsSortMode.None);
         foreach (var enemy in _allEnemies)
             enemy.Die += EnemyDie;
         EnemyCountChanged();
     }
-
     private void EnemyDie(BaseEntity deadEnemy)
     {
         EnemyCountChanged();

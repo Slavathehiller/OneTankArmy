@@ -8,6 +8,8 @@ namespace Assets.Scripts.Installers
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<VehicleFactory>().AsTransient();
+            Container.BindInterfacesTo<MissileFactory>().AsTransient();
+            Container.BindInterfacesTo<MissilePool>().AsCached();
         }
     }
 }

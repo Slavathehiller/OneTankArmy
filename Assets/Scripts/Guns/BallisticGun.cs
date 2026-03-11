@@ -1,18 +1,26 @@
+using Assets.Scripts.DamageDealers;
+using Assets.Scripts.ObjectPool;
+using System.Collections;
 using UnityEngine;
+using Zenject;
 
 public class BallisticGun : Gun
 {
-    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField]
+    protected MissileType _missileType;
+
+    [Inject]
+    private IMissilePool _missilePool;
 
     protected override void Fire()
     {
         foreach (var firePoint in _firePoints)
         {
-            var bullet = Instantiate(_bulletPrefab);
+            var bullet = _missilePool.GetMissile(_missileType);
             bullet.transform.position = firePoint.transform.position;
             bullet.transform.rotation = firePoint.transform.rotation;
-            bullet.SetActive(true);
             _audioSourceFire.PlayOneShot(_fireSound);
+            bullet.Init();
         }
     }
 }

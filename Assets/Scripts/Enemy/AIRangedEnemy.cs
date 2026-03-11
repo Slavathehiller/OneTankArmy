@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Assets.Scripts.DamageDealers;
+using Assets.Scripts.ObjectPool;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using Zenject;
 
 namespace Assets.Scripts.Enemy
 {
@@ -20,7 +23,10 @@ namespace Assets.Scripts.Enemy
         protected GameObject _firePoint;
 
         [SerializeField]
-        protected GameObject _missilePrefab;
+        protected MissileType _missileType;
+
+        [Inject]
+        private IMissilePool _missilePool;
 
         protected override void UpdateActions()
         {
@@ -31,10 +37,10 @@ namespace Assets.Scripts.Enemy
 
         protected void Fire()
         {
-            var missile = Instantiate(_missilePrefab);
+            var missile = _missilePool.GetMissile(_missileType);
             missile.transform.position = _firePoint.transform.position;
             missile.transform.rotation = _firePoint.transform.rotation;
-            missile.SetActive(true);
+            missile.Init();
         }
     }
 }

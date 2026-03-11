@@ -1500,9 +1500,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c8a41b35c2a754f934c820d9fe5a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AcidCockroach
-  _maxHP: 30
   _moveSpeed: 1
   _rotateSpeed: 0.02
+  _maxHP: 20
   _animator: {fileID: -4548803581218888768}
   _distanceOfDetection: 10
   _detectionCooldown: 1
