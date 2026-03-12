@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68d8f8a11de681499c3a1158420bd81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AcidSpit
-  _damage: 1
+  _damage: 3
   _moveSpeed: 12
   _timeOfLife: 2
   _missileType: 0

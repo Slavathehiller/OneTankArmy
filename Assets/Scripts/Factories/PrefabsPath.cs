@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.DamageDealers;
+using Assets.Vehicles;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace Assets.Scripts.Factories
 
         private static Dictionary<Type, string> _pathesByClass = new();
         private static Dictionary<MissileType, string> _pathesByMissileType = new();
+        private static Dictionary<VehicleType, string> _pathesByVehicleType = new();
 
         public static void Register(Type type, string path)
         {
@@ -33,6 +35,17 @@ namespace Assets.Scripts.Factories
             _pathesByMissileType.Add(missileType, path);
         }
 
+        public static void Register(VehicleType vehicleType, string path)
+        {
+            if (_pathesByVehicleType.ContainsKey(vehicleType))
+            {
+                Debug.LogError($"VehicleType {vehicleType} already registered in PrefabPath.");
+                return;
+            }
+
+            _pathesByVehicleType.Add(vehicleType, path);
+        }
+
         public static string GetPathFor<T>()
         {
             string result;
@@ -53,6 +66,18 @@ namespace Assets.Scripts.Factories
             return result;
         }
 
+        public static string GetPathForVehicle(VehicleType VehicleType)
+        {
+            string result;
+            if (!_pathesByVehicleType.TryGetValue(VehicleType, out result))
+            {
+                Debug.LogError($"VehicleType {VehicleType} not registered in PrefabPath.");
+            }
+            return result;
+        }
+
+
+
         public static void InitPathes()
         {
             Register(typeof(Explosion), "Prefabs/Explosion");
@@ -64,10 +89,10 @@ namespace Assets.Scripts.Factories
             Register(typeof(ToxicGoo), "Prefabs/ToxicGoo");
             Register(typeof(BigGreenGoo), "Prefabs/BigGreenGoo");            
             Register(typeof(Flame), "Prefabs/Flame");
-            Register(typeof(Beetle), "Prefabs/Vehicle/Beetle");
-            Register(typeof(DianBao), "Prefabs/Vehicle/DianBao");
-            Register(typeof(Fury), "Prefabs/Vehicle/Fury");
 
+            Register(VehicleType.Beetle, "Prefabs/Vehicle/Beetle");
+            Register(VehicleType.DianBao, "Prefabs/Vehicle/DianBao");
+            Register(VehicleType.Fury, "Prefabs/Vehicle/Fury");
             Register(MissileType.AcidSpit, "Prefabs/AcidSpit");
             Register(MissileType.Assault25mm, "Prefabs/Bullets/AssaultCannon25mmBullet");
             Register(MissileType.Autocannon50mm, "Prefabs/Bullets/Autocannon50mmBullet");

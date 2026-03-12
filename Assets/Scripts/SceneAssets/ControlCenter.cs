@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 using Zenject;
-using Zenject.Asteroids;
 
 namespace Assets.Scripts.SceneAssets
 {
@@ -60,6 +59,7 @@ namespace Assets.Scripts.SceneAssets
             _contractManager.CurrentContract = (ContractData)_contractsView.selectedItem;
             _contractManager.CurrentContractStatus = ContractStatus.Signed;
             _contractManager.SaveData();
+            _controlCenter.style.display = DisplayStyle.None;
             OnContractSigned?.Invoke();
         }
 
