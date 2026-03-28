@@ -1,10 +1,8 @@
 ﻿using Assets.Player;
+using Assets.Scripts.Player;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 using Zenject;
 
@@ -12,6 +10,8 @@ namespace Assets.Scripts.SceneAssets
 {
     public class RepairZone : MonoBehaviour
     {
+        public event UnityAction<Consumables> OnConsumableUsing;
+
         [SerializeField]
         private UIDocument _document;
 
@@ -36,7 +36,7 @@ namespace Assets.Scripts.SceneAssets
             _advWindow = _document.rootVisualElement.Q<VisualElement>("AdvWindow");
             _advWindow.Q<Button>("CloseButton").clicked += CloseAdvWindow;
             _showAdvButton.clicked += RepairForAdv;
-            _usenanorepairButton.clicked += UseNanoRepaitKit;
+            _usenanorepairButton.clicked += UseNanoRepairKit;
         }
 
         private void Update()
@@ -64,9 +64,16 @@ namespace Assets.Scripts.SceneAssets
             _advWindow.style.display = DisplayStyle.None;
         }
 
-        public void UseNanoRepaitKit()
+        public void UseNanoRepairKit()
         {
-            _errorController.ShowError("У вас нет ни одного наноремонтного комплекта. \nУскорение ремонта невозможно.");
+            if (_playerSettings.GetConsumable(Consumables.NanoRepairKit) < 1)
+                _errorController.ShowError("У вас нет ни одного наноремонтного комплекта. \nУскорение ремонта невозможно.");
+            else
+            {
+                _playerSettings.RemoveConsumable(Consumables.NanoRepairKit);
+                _playerSettings.RepairEndTime = DateTime.Now;
+                OnConsumableUsing?.Invoke(Consumables.NanoRepairKit);
+            }
         }
 
 
@@ -87,7 +94,7 @@ namespace Assets.Scripts.SceneAssets
         private void OnDestroy()
         {
             _showAdvButton.clicked -= RepairForAdv;
-            _usenanorepairButton.clicked -= UseNanoRepaitKit;
+            _usenanorepairButton.clicked -= UseNanoRepairKit;
             _advWindow.Q<Button>("CloseButton").clicked -= CloseAdvWindow;
         }
     }

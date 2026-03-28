@@ -45,7 +45,8 @@ public class BattleRoutine : MonoBehaviour
     private Vehicle _playerVehicle;
 
     private int[] _enemiesCount = new int[4] {10, 2, 1, 2};
-    
+
+
     void Start()
     {
         _completeContractWindow = _document.rootVisualElement.Q<VisualElement>("ContractCompleteWindow");
@@ -59,10 +60,11 @@ public class BattleRoutine : MonoBehaviour
 
         SpawnEnemies();
         _lifeManager = GetComponent<LifeManager>();
+        _lifeManager.EnemyLiveCount += TargetsCountChanged;
         _lifeManager.Init();
         if (_contractsManager.CurrentContract.Type == ContractType.Cleanse)
             _lifeManager.AllEnemyDead += CompleteContract;
-        _lifeManager.EnemyLiveCount += TargetsCountChanged;
+
     }
     private void Update()
     {

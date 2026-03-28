@@ -26,6 +26,10 @@ MonoBehaviour:
       \u0432\u0441\u0435, \u0447\u0442\u043E \u043A\u0440\u0443\u043F\u043D\u0435\u0435
       \u043A\u0440\u044B\u0441\u044B."
     RatingNeeded: 0
+    RatingReward: 10
+    MoneyReward: 100
+    Scenes:
+    - Arachnia_Cleanse1
   - ID: 2
     Type: 1
     Description: "\u041B\u0438\u043A\u0432\u0438\u0434\u0430\u0446\u0438\u044F"
@@ -36,6 +40,9 @@ MonoBehaviour:
       \u0438 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0430 \u0431\u0443\u0434\u0435\u0442
       \u0440\u0435\u0448\u0435\u043D\u0430."
     RatingNeeded: 500
+    RatingReward: 15
+    MoneyReward: 250
+    Scenes: []
   - ID: 3
     Type: 2
     Description: "\u0421\u0431\u043E\u0440 \u0440\u0435\u0441\u0443\u0440\u0441\u043E\u0432"
@@ -44,6 +51,9 @@ MonoBehaviour:
       \u0414\u043E\u0431\u0443\u0434\u044C\u0442\u0435 20 \u0448\u0442\u0443\u043A
       \u0438 \u043C\u044B \u0449\u0435\u0434\u0440\u043E \u0437\u0430\u043F\u043B\u0430\u0442\u0438\u043C."
     RatingNeeded: 1200
+    RatingReward: 20
+    MoneyReward: 400
+    Scenes: []
   - ID: 4
     Type: 3
     Description: "\u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u043F\u0440\u043E\u0440\u044B\u0432"
@@ -52,3 +62,6 @@ MonoBehaviour:
       \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0438\u044E. \u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0435
       \u0438\u0445."
     RatingNeeded: 2500
+    RatingReward: 25
+    MoneyReward: 600
+    Scenes: []

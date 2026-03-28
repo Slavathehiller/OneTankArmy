@@ -2,11 +2,11 @@
     <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=1a175ca2b059844448327e484be21489&amp;type=3#MainMenu"/>
     <ui:VisualElement name="Root" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/MainMenuBackground.png?fileID=6850352397346096737&amp;guid=615c09ff65398484a9dd612e54728089&amp;type=3#MainMenuBackground_0&quot;);">
         <ui:VisualElement name="ButtonContainer" style="flex-grow: 1; margin-top: 0%; padding-top: 0; padding-bottom: 0; padding-right: 0; padding-left: 0; justify-content: center; align-items: flex-start; align-self: flex-start; top: 10%; position: absolute; flex-direction: column; flex-shrink: 1; flex-basis: auto; width: 30%; height: 80%; margin-left: 0%; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/failed/table.png?fileID=2800000&amp;guid=186a134901df0fd4a84d102735a42cde&amp;type=3#table&quot;); -unity-text-auto-size: best-fit 4px 200px; -unity-text-generator: advanced; left: 2%;">
-            <ui:Label text="Main menu" name="MainMenuLabel" style="height: 10%; width: 60%; -unity-text-align: middle-center; font-size: 80%; margin-left: 0%; color: rgb(195, 195, 195); -unity-font-style: bold; margin-top: 20%; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&amp;guid=4beb055f07aaff244873dec698d0363e&amp;type=3#Roboto-Bold&quot;); align-self: center; padding-left: 0; padding-top: 0; margin-bottom: 0%; padding-right: 0; margin-right: 0; background-size: 60% 20%;"/>
+            <ui:Label text="Главное меню" name="MainMenuLabel" style="height: 10%; width: 60%; -unity-text-align: middle-center; font-size: 80%; margin-left: 0%; color: rgb(195, 195, 195); -unity-font-style: bold; margin-top: 20%; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&amp;guid=4beb055f07aaff244873dec698d0363e&amp;type=3#Roboto-Bold&quot;); align-self: center; padding-left: 0; padding-top: 0; margin-bottom: 0%; padding-right: 0; margin-right: 0; background-size: 60% 20%;"/>
             <ui:VisualElement name="InnerContainer" style="flex-grow: 1; margin-top: 7%; width: 100%; align-self: center; align-content: flex-start; font-size: 14px; -unity-text-generator: advanced;">
-                <ui:Button text="Play" name="PlayButton" class="buttons" style="top: 0%;"/>
-                <ui:Button text="Settings" name="SettingsButton" class="buttons" style="top: 5%;"/>
-                <ui:Button text="Exit" name="ExitButton" class="buttons" style="top: 20%;"/>
+                <ui:Button text="Играть" name="PlayButton" class="buttons" style="top: 0%;"/>
+                <ui:Button text="Настройки" name="SettingsButton" class="buttons" style="top: 5%;"/>
+                <ui:Button text="Выход" name="ExitButton" class="buttons" style="top: 20%;"/>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

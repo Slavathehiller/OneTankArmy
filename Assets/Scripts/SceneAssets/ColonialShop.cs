@@ -1,8 +1,5 @@
 using Assets.Player;
-using Assets.Vehicles;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Assets.Scripts.Player;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -10,58 +7,50 @@ using Zenject;
 
 public class ColonialShop : MonoBehaviour
 {
-    public event UnityAction OnVehicleTypeChange;
+    public event UnityAction<Consumables> OnConsumablePurchase;
 
     [SerializeField]
     private UIDocument _document;
     private VisualElement _shop;
-    private VisualElement _currentTankPanel;
-    private ListView _vehiclesView;
-    private VehiclePresenters _allVehiclePresenters;
-    private VehiclePresenter _currentTankPresenter;
-    private Button _changeTankButton;
+
+    private Button _buyNanorepairKitButton;
+    private Button _buyFuelButton;
 
     [Inject]
     private IPlayerSettings _playerSettings;
-
     void Start()
     {
         _shop = _document.rootVisualElement.Q<VisualElement>("ColonialShopWindow");
-        _vehiclesView = _shop.Q<VisualElement>("ShopPanel").Q<ListView>("AvailableVehiclesView");
-        _currentTankPanel = _shop.Q<VisualElement>("ShopPanel").Q<VisualElement>("CurrentTankPanel");
-        _changeTankButton = _shop.Q<Button>("ChangeTankButton");
-        _allVehiclePresenters = Resources.Load<VehiclePresenters>("VehiclePresenters");
-        _vehiclesView.itemsSource = _allVehiclePresenters.Data;
+        _buyNanorepairKitButton = _shop.Q<VisualElement>("NanorepairKit").Q<Button>("BuyButton");
+        _buyFuelButton = _shop.Q<VisualElement>("Fuel").Q<Button>("BuyButton");
 
-        _vehiclesView.selectionChanged += VehicleClicked;
-
-
-        RefreshCurrentVehicle();
-        _changeTankButton.clicked += ChangeVehicle;
+        _buyNanorepairKitButton.clicked += BuyNanorepairKit;
+        _buyFuelButton.clicked += BuyFuel;
     }
 
-    private void VehicleClicked(IEnumerable<object> enumerable)
+    private void BuyNanorepairKit()
     {
-        _currentTankPanel.dataSource = enumerable.First();
+        if (_playerSettings.Money >= 1000)
+            ConsumablePurchase(Consumables.NanoRepairKit, 1000);
     }
 
-    private void ChangeVehicle()
+    private void BuyFuel()
     {
+        ConsumablePurchase(Consumables.Fuel, 0);
+    }
 
-        _playerSettings.CurrentVehicle = ((VehiclePresenter)_vehiclesView.selectedItem).VehicleType;
+    private void ConsumablePurchase(Consumables consumable, int price)
+    {
+        _playerSettings.AddConsumable(consumable);
+        _playerSettings.Money -= price;
         _playerSettings.SaveSettings();
-        OnVehicleTypeChange?.Invoke();
-    }
-
-    private void RefreshCurrentVehicle()
-    {
-        _vehiclesView.selectedIndex = _allVehiclePresenters.Data.IndexOf(_allVehiclePresenters.Data.First(x => x.VehicleType == _playerSettings.CurrentVehicle));
+        OnConsumablePurchase?.Invoke(consumable);
     }
 
     private void OnDestroy()
     {
-        _vehiclesView.selectionChanged -= VehicleClicked;
-        _changeTankButton.clicked -= ChangeVehicle;
+        _buyNanorepairKitButton.clicked -= BuyNanorepairKit;
+        _buyFuelButton.clicked -= BuyFuel;
     }
 
 }

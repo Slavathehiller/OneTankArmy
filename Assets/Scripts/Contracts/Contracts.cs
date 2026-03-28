@@ -10,6 +10,9 @@ public class ContractData
     public string Description;
     public string Details;
     public int RatingNeeded;
+    public int RatingReward;
+    public int MoneyReward;
+    public string[] Scenes;
 }
 
 [CreateAssetMenu(fileName = "Contracts", menuName = "Scriptable Objects/Contracts")]

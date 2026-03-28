@@ -12,5 +12,6 @@ namespace Assets.Scripts.ObjectPool
     {
         Missile GetMissile(MissileType missileType);
         void RemoveMissile(Missile missile);
+        void Clear();
     }
 }

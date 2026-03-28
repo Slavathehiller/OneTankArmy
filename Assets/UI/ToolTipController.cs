@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -43,6 +42,8 @@ public class ToolTipController : MonoBehaviour
             HideTooltip();
             return;
         }
+
+        _offset = new Vector2(-(_tooltipLabel.layout.width / 2), _offset.y);
 
         ShowTooltip(text, (Vector2)ev.position + _offset);
     }

@@ -3,14 +3,16 @@ using Assets.Scripts.Factories.Interfaces;
 using Assets.Scripts.NPC;
 using Assets.Scripts.Player;
 using Assets.Scripts.SceneAssets;
-using Assets.Vehicles;
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Zenject;
+using Zenject.Asteroids;
+using Random = UnityEngine.Random;
 
 public class OutpostRoutine : MonoBehaviour
 {
@@ -28,7 +30,14 @@ public class OutpostRoutine : MonoBehaviour
     private Transform _defaultPointPoint;
 
     [SerializeField]
+    private Garage _garage;
+
+    [SerializeField]
     private ColonialShop _shop;
+
+    [SerializeField]
+    private RepairZone _repairZone;
+
     [SerializeField]
     private ControlCenter _controlCenter;
 
@@ -36,7 +45,7 @@ public class OutpostRoutine : MonoBehaviour
     private ErrorController _errorController;
 
     [SerializeField]
-    private UIWindowActivator _colonialShopActivator;
+    private UIWindowActivator _garageActivator;
 
     [SerializeField]
     private UIWindowActivator _controlCenterActivator;
@@ -54,6 +63,10 @@ public class OutpostRoutine : MonoBehaviour
     private VisualElement _checkCurrentContractStatusWindow;
     private Button _closeCheckCurrentContractStatusWindowButton;
     private Button _toOrbitButton;
+    private Label _ratingValue;
+    private Label _moneyValue;
+    private Label _nanorepairKitValue;
+    private Label _fuelValue;
 
     [Inject]
     private IPlayerSettings _playerSettings;
@@ -81,19 +94,39 @@ public class OutpostRoutine : MonoBehaviour
         _toOrbitButton = _document.rootVisualElement.Q<Button>("ToOrbitButton");
         _toOrbitButton.clicked += ToOrbit;
 
-        _shop.OnVehicleTypeChange += ChangeVehicle;
+        _garage.OnVehicleTypeChange += ChangeVehicle;
         _controlCenter.OnContractSigned += ContractSigned;
+        _shop.OnConsumablePurchase += ConsumableChanged;
+        _repairZone.OnConsumableUsing += ConsumableChanged;
 
-
-        _colonialShopActivator.WindowAvailable = ColonialShopAvailable;
-
+        _garageActivator.WindowAvailable = ColonialShopAvailable;
         _controlCenterActivator.WindowAvailable = ControlCenterAvailable;
 
         _currentContractButton = _document.rootVisualElement.Q<VisualElement>("MainUI").Q<Button>("CurrentContractButton");
         _currentContractButton.clicked += ShowCurrentContactWindow;
+
+        _ratingValue = _document.rootVisualElement.Q<Label>("RatingValue");
+        _moneyValue = _document.rootVisualElement.Q<Label>("MoneyValue");
+        _nanorepairKitValue = _document.rootVisualElement.Q<Label>("NanoRepairKitValue");
+        _fuelValue = _document.rootVisualElement.Q<Label>("FuelValue");
+
+        RefreshResources();
+
         CheckCurrentContractStatus();
 
         CreateAvatar(true);
+    }
+
+    private void RefreshResources()
+    {
+        _ratingValue.text = _playerSettings.Rating.ToString();
+        _moneyValue.text = _playerSettings.Money.ToString();
+        _nanorepairKitValue.text = _playerSettings.GetConsumable(Consumables.NanoRepairKit).ToString();
+        _fuelValue.text = _playerSettings.GetConsumable(Consumables.Fuel).ToString();
+    }
+    private void ConsumableChanged(Consumables value)
+    {
+        RefreshResources();
     }
 
     private void Update()
@@ -117,7 +150,6 @@ public class OutpostRoutine : MonoBehaviour
     {
         _errorController.ShowError("Челонок не заправлен. Выход на орбиту невозможен.");
     }
-
     private void ContractSigned()
     {
         _document.rootVisualElement.Q<VisualElement>("OperationCenterWndow").style.visibility = Visibility.Hidden;
@@ -135,9 +167,10 @@ public class OutpostRoutine : MonoBehaviour
         if (_contractManager.CurrentContractStatus == ContractStatus.Completed)
         {
             statusLabel.text = "Контракт выполнен";
+            StartCoroutine(TakeReward(_contractManager.CurrentContract.RatingReward, _contractManager.CurrentContract.MoneyReward));
         }
-        if (_contractManager.CurrentContractStatus == ContractStatus.Failed)
 
+        if (_contractManager.CurrentContractStatus == ContractStatus.Failed)
         {
             statusLabel.text = "Контракт провален";
         }
@@ -147,6 +180,41 @@ public class OutpostRoutine : MonoBehaviour
         _contractManager.CurrentContract = null;
         _contractManager.SaveData();
         CheckCurrentContractButton();
+    }
+
+    private IEnumerator TakeReward(int ratingAmount, int moneyAmount)
+    {
+        var initialRatingAmount = _playerSettings.Rating;
+        var initialMoneyAmount = _playerSettings.Money;
+
+        float delta = ratingAmount / 15f;
+
+        float currentAmount = _playerSettings.Rating;
+
+        while (currentAmount < _playerSettings.Rating + ratingAmount)
+        {
+            currentAmount += delta;
+            _ratingValue.text = Convert.ToInt16(currentAmount).ToString();
+            yield return new WaitForSeconds(0.1f);
+        }
+        _playerSettings.Rating += ratingAmount;
+        _ratingValue.text = (_playerSettings.Rating).ToString();
+
+        delta = moneyAmount / 15f;
+
+        currentAmount = _playerSettings.Money;
+
+        while (currentAmount < _playerSettings.Money + moneyAmount)
+        {
+            currentAmount += delta;
+            _moneyValue.text = Convert.ToInt16(currentAmount).ToString();
+            yield return new WaitForSeconds(0.1f);
+        }
+        _playerSettings.Money += moneyAmount;
+        _moneyValue.text = (_playerSettings.Money).ToString();
+
+
+        _playerSettings.SaveSettings();
     }
 
     private void CheckCurrentContractButton()
@@ -232,13 +300,20 @@ public class OutpostRoutine : MonoBehaviour
             return;
         }
 
+        if (_contractManager.CurrentContract.Scenes.Length < 1)
+        {
+            _errorController.ShowError("Ошибка! Для данного контракта нет сцен. Обратитесь к разработчику.");
+            return;
+        }
+
+        var sceneIndex = Random.Range(0, _contractManager.CurrentContract.Scenes.Length);
 
         _takeOffButtonButton.style.visibility = Visibility.Hidden;
         _shuttle.GetComponent<Collider2D>().enabled = false;
         _playerAvatarMover.MoveTo(_shuttle.transform.position, 2, () => 
                   { 
                     Destroy(_playerAvatar.gameObject);
-                    _shuttle.TakeOff(() => SceneManager.LoadScene(Scenes.BATTLE_SCENE));
+                    _shuttle.TakeOff(() => SceneManager.LoadScene(_contractManager.CurrentContract.Scenes[sceneIndex]));
                   });        
     }
     
@@ -276,8 +351,10 @@ public class OutpostRoutine : MonoBehaviour
     {
         _takeOffButtonButton.clicked -= TakeOff;
         _currentContractTakeOffButton.clicked -= TakeOff;
-        _shop.OnVehicleTypeChange -= ChangeVehicle;
+        _garage.OnVehicleTypeChange -= ChangeVehicle;
         _controlCenter.OnContractSigned -= ContractSigned;
+        _shop.OnConsumablePurchase -= ConsumableChanged;
+        _repairZone.OnConsumableUsing -= ConsumableChanged;
         _closeCheckCurrentContractStatusWindowButton.clicked -= CloseCheckCurrentContractStatusWindow;
         _toOrbitButton.clicked -= ToOrbit;
         _playerSettings.SaveSettings();

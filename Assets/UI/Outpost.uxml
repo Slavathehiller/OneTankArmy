@@ -1,13 +1,14 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Outpost.uss?fileID=7433441132597879392&amp;guid=a4f011f86eeda8b48a3b96118247df18&amp;type=3#Outpost"/>
-    <ui:Button text="Колониальный магазин" name="ColonialShopButton" enabled="true" style="height: 24px; width: 204px; top: 133px; left: 204px; visibility: hidden; display: flex;"/>
-    <ui:Button text="Оперативный центр" name="OperationCenterButton" enabled="true" style="height: 24px; width: 153px; top: 133px; left: 660px; visibility: hidden; display: flex;"/>
-    <ui:Button text="Зона ремонта" name="RepairZoneButton" enabled="true" style="height: 24px; width: 113px; top: 97px; left: 1029px; visibility: hidden; display: flex;"/>
-    <ui:Button text="Отправиться" name="TakeOffButton" enabled="true" style="height: 24px; width: 113px; top: 465px; left: 1052px; visibility: hidden; display: flex;"/>
-    <ui:Button text="На орбиту" name="ToOrbitButton" enabled="true" style="height: 24px; width: 113px; top: 411px; left: 161px; visibility: hidden; display: flex;"/>
-    <ui:VisualElement name="ColonialShopWindow" style="flex-grow: 1; margin-top: -130px; display: none;">
-        <ui:VisualElement name="ColonialShopInnerWindow" class="window" style="height: 100%; width: 90%; background-size: 100% 100%; justify-content: space-around; align-items: center; align-self: center; font-size: 50%; flex-direction: column; position: absolute; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/levels/table.png?fileID=2800000&amp;guid=1845cf5622441da428db2aa10a7b0b71&amp;type=3#table&quot;); -unity-background-image-tint-color: rgb(255, 255, 255); -unity-background-scale-mode: stretch-to-fill; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(67, 67, 67, 0); display: flex;">
-            <ui:VisualElement name="ShopPanel" data-source-type="VehiclePresenter, Assembly-CSharp" style="flex-grow: 1; width: 90%; align-self: center; flex-direction: row; background-color: rgba(0, 0, 0, 0); -unity-background-image-tint-color: rgb(255, 255, 255); border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); height: 50%; top: 8%;">
+    <ui:Button text="Гараж" name="GarageButton" enabled="true" style="height: 24px; width: 107px; top: 180px; left: 295px; visibility: hidden; display: flex;"/>
+    <ui:Button text="Оперативный центр" name="OperationCenterButton" enabled="true" style="height: 24px; width: 153px; top: 170px; left: 654px; visibility: hidden; display: flex;"/>
+    <ui:Button text="Зона ремонта" name="RepairZoneButton" enabled="true" style="height: 24px; width: 113px; top: 132px; left: 947px; visibility: hidden; display: flex;"/>
+    <ui:Button text="Отправиться" name="TakeOffButton" enabled="true" style="height: 24px; width: 113px; top: 327px; left: 997px; visibility: hidden; display: flex;"/>
+    <ui:Button text="На орбиту" name="ToOrbitButton" enabled="true" style="height: 24px; width: 113px; top: 411px; left: 209px; visibility: hidden; display: flex;"/>
+    <ui:Button text="Колониальный магазин" name="ColonialShopButton" enabled="true" style="height: 24px; width: 166px; top: 465px; left: 592px; visibility: hidden; display: flex;"/>
+    <ui:VisualElement name="GarageWindow" style="flex-grow: 1; margin-top: -130px; display: none;">
+        <ui:VisualElement name="GarageInnerWindow" class="window" style="height: 90%; width: 85%; background-size: 100% 100%; justify-content: space-around; align-items: center; align-self: center; font-size: 50%; flex-direction: column; position: absolute; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/levels/table.png?fileID=2800000&amp;guid=1845cf5622441da428db2aa10a7b0b71&amp;type=3#table&quot;); -unity-background-image-tint-color: rgb(255, 255, 255); -unity-background-scale-mode: stretch-to-fill; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(67, 67, 67, 0); display: flex; top: 5%;">
+            <ui:VisualElement name="GaragePanel" data-source-type="VehiclePresenter, Assembly-CSharp" style="flex-grow: 1; width: 90%; align-self: center; flex-direction: row; background-color: rgba(0, 0, 0, 0); -unity-background-image-tint-color: rgb(255, 255, 255); border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); height: 50%; top: 8%;">
                 <ui:ListView item-template="project://database/Assets/UI/ChooseTankTemplate.uxml?fileID=9197481963319205126&amp;guid=b8ad20f292d3c6047bae29ea6830a60d&amp;type=3#ChooseTankTemplate" name="AvailableVehiclesView" virtualization-method="DynamicHeight" allow-add="false" allow-remove="false" binding-source-selection-mode="AutoAssign" style="align-self: flex-start; align-items: flex-start; width: 12%; height: 100%; background-color: rgba(0, 0, 0, 0); top: 4%; left: 1%; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/difficulty/window.png?fileID=2800000&amp;guid=51b91d09d8e4e044f8d97d3323a300ac&amp;type=3#window&quot;); right: 1%;"/>
                 <ui:VisualElement name="CurrentTankPanel" style="flex-direction: row; background-color: rgba(140, 140, 140, 0); flex-grow: 1; padding-right: 0; padding-top: 0; padding-bottom: 0; padding-left: 0; margin-right: 0; height: 80%; margin-bottom: 1%; align-self: flex-start; flex-wrap: wrap; top: 5%; left: 2%;">
                     <ui:VisualElement name="DescriptionPanel" style="flex-grow: 1; width: 30%; left: 1%; top: 1%; flex-direction: row;">
@@ -49,6 +50,33 @@
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement name="ColonialShopWindow" style="flex-grow: 1; margin-top: -130px; display: none;">
+        <ui:VisualElement name="ColonialShopInnerWindow" class="window" style="height: 90%; width: 85%; background-size: 100% 100%; justify-content: space-around; align-items: center; align-self: center; font-size: 50%; flex-direction: column; position: absolute; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/levels/table.png?fileID=2800000&amp;guid=1845cf5622441da428db2aa10a7b0b71&amp;type=3#table&quot;); -unity-background-image-tint-color: rgb(255, 255, 255); -unity-background-scale-mode: stretch-to-fill; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(67, 67, 67, 0); display: flex; top: 5%;">
+            <ui:VisualElement name="ShopPanel" style="flex-grow: 1; height: 30%; width: 80%; top: 10%; flex-direction: column;">
+                <ui:VisualElement name="FirstRow" style="flex-grow: 1; flex-direction: row;">
+                    <ui:VisualElement name="NanorepairKit" style="flex-grow: 0; width: auto; height: 49%; align-self: auto; flex-shrink: 1;">
+                        <ui:Image source="project://database/Assets/Sprites/UI/toolkit.png?fileID=2800000&amp;guid=f90d6d7c33bb34a49a5fc62cb5e592eb&amp;type=3#toolkit" style="width: 100%; align-self: center;"/>
+                        <ui:Label text="Наноремонтный набор" style="flex-wrap: wrap; align-self: center; color: rgb(255, 255, 255); -unity-text-generator: advanced; -unity-text-auto-size: best-fit 10px 15px; -unity-text-align: lower-center; flex-shrink: 0; flex-grow: 0; white-space: pre-wrap;"/>
+                        <ui:Button text="1000" name="BuyButton" class="buyButton"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Fuel" style="flex-grow: 0; width: auto; height: 49%; align-self: auto; flex-shrink: 1;">
+                        <ui:Image source="project://database/Assets/Sprites/UI/battery_icon.png?fileID=2800000&amp;guid=14ad55c5d0f362d4f9e98a5ee2818f8f&amp;type=3#battery_icon" style="width: 100%; align-self: center; height: 80px;"/>
+                        <ui:Label text="Топливо" style="flex-wrap: wrap; align-self: center; color: rgb(255, 255, 255); -unity-text-generator: advanced; -unity-text-auto-size: best-fit 10px 15px; -unity-text-align: lower-center; flex-shrink: 0; flex-grow: 0; white-space: pre-wrap;"/>
+                        <ui:Button text="Нет в наличии" enabled="false" name="BuyButton" class="nuyButton" style="background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/btn/button_empty_5.png?fileID=2800000&amp;guid=d43e9a6f548db0e47830a21f9c905220&amp;type=3#button_empty_5&quot;); align-self: center; background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); background-size: 90% 100%; padding-left: 7%; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 10px 20px; padding-right: 7%; height: 56px; width: 160px;"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="SellElement" style="flex-grow: 1;"/>
+                    <ui:VisualElement name="SellElement" style="flex-grow: 1;"/>
+                    <ui:VisualElement name="SellElement" style="flex-grow: 1;"/>
+                    <ui:VisualElement name="SellElement" style="flex-grow: 1;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="Row" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Row" style="flex-grow: 1;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="ButtonPanel" style="flex-grow: 0.5; flex-direction: row-reverse; align-self: stretch; align-content: stretch; width: auto; margin-bottom: 8%; height: 0%; aspect-ratio: auto; background-size: 100% 100%; right: 7%; top: 10%;">
+                <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="width: 17%; height: 50%; left: 0%; align-self: stretch;"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
     <ui:VisualElement name="OperationCenterWndow" style="flex-grow: 1; position: absolute; flex-shrink: 0; width: 100%; height: 100%; display: none;">
         <ui:VisualElement name="OperationCenterInnerWndow" data-source-type="ContractData, Assembly-CSharp" class="window" style="height: 80%; width: 70%; background-size: 50% 50%; align-self: center; visibility: visible; position: absolute; top: 10%; flex-direction: row; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/shop/table.png?fileID=2800000&amp;guid=043a72a608fd34944b95af7ab455f629&amp;type=3#table&quot;); -unity-background-scale-mode: stretch-to-fill; background-color: rgba(67, 67, 67, 0); display: flex;">
             <ui:VisualElement name="ContractList" style="align-self: center; background-image: none; top: 0%; bottom: 0%; left: 7%; right: 1%; width: 22%; height: 80%;">
@@ -61,19 +89,34 @@
                         <ui:DataBinding property="text" data-source-path="Description" binding-mode="ToTarget"/>
                     </Bindings>
                 </ui:Label>
-                <ui:Label name="StatusLabel" text="Статус" style="color: rgb(185, 185, 185); font-size: 20px; width: 90%; height: 10%;"/>
-                <ui:Label text="Детали" name="Details" style="color: rgb(255, 255, 255); height: 64%; white-space: normal; flex-wrap: wrap; width: 90%; -unity-text-generator: advanced; font-size: initial; -unity-text-auto-size: best-fit 10px 30px;">
+                <ui:Label name="StatusLabel" text="Статус" style="color: rgb(185, 185, 185); font-size: 20px; width: 90%; height: 10%; -unity-text-auto-size: best-fit 10px 20px;"/>
+                <ui:Label text="Детали" name="Details" style="color: rgb(255, 255, 255); height: 64%; white-space: normal; flex-wrap: wrap; width: 90%; -unity-text-generator: advanced; font-size: initial; -unity-text-auto-size: best-fit 10px 30px; background-size: 100% 100%; flex-shrink: 0.5;">
                     <Bindings>
                         <ui:DataBinding property="text" data-source-path="Details" binding-mode="ToTarget"/>
                     </Bindings>
                 </ui:Label>
-                <ui:VisualElement name="ButtonPanel" style="flex-grow: 0; position: relative; top: auto; flex-shrink: 0; height: 15%; width: 100%; flex-direction: row;">
-                    <ui:Button text="Подписать" name="SignButton" class="closebutton" style="align-self: stretch; height: 75%; width: 35%; margin-top: 0; margin-right: 0; position: relative; margin-bottom: 0; margin-left: 0; top: auto; left: 23%;">
+                <ui:VisualElement name="RewardPanel" style="flex-grow: 1; flex-direction: row; height: auto; flex-shrink: 1;">
+                    <ui:Label text="Награда" name="RewardLabel" style="color: rgb(255, 255, 255); align-self: center; -unity-text-align: middle-center; -unity-text-auto-size: best-fit 10px 30px;"/>
+                    <ui:Image name="RewardRatingImage" source="project://database/Assets/Sprites/rating-icon.png?fileID=2800000&amp;guid=f2acb28b52b4b104182c79bfc2c38326&amp;type=3#rating-icon" style="width: 10%;"/>
+                    <ui:Label text="" name="RewardRatingValue" style="color: rgb(255, 255, 255); -unity-text-auto-size: best-fit 10px 30px; -unity-text-align: middle-left;">
+                        <Bindings>
+                            <ui:DataBinding property="text" data-source-path="RatingReward" binding-mode="ToTarget"/>
+                        </Bindings>
+                    </ui:Label>
+                    <ui:Image name="RewardMoneyImage" source="project://database/Assets/Sprites/money-icon2.png?fileID=2800000&amp;guid=5cbae317a91eac84fac31ac90fc28cc2&amp;type=3#money-icon2" style="width: 10%;"/>
+                    <ui:Label text="0" name="RewardMoneyValue" style="color: rgb(255, 255, 255); -unity-text-auto-size: best-fit 10px 30px; -unity-text-align: middle-left;">
+                        <Bindings>
+                            <ui:DataBinding property="text" data-source-path="MoneyReward" binding-mode="ToTarget"/>
+                        </Bindings>
+                    </ui:Label>
+                </ui:VisualElement>
+                <ui:VisualElement name="ButtonPanel" style="flex-grow: 0.5; position: relative; top: auto; flex-shrink: 0.5; height: 15%; width: 100%; flex-direction: row; left: 30%;">
+                    <ui:Button text="Подписать" name="SignButton" class="closebutton" style="align-self: stretch; height: 80%; width: 25%; margin-top: 0; margin-right: 0; position: relative; margin-bottom: 0; margin-left: 0; top: auto; left: 23%;">
                         <Bindings>
                             <ui:DataBinding property="enabledSelf" data-source-path="Available" binding-mode="ToTarget"/>
                         </Bindings>
                     </ui:Button>
-                    <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="align-self: flex-start; height: 75%; width: 35%; margin-top: 0; margin-right: 0; position: relative; margin-bottom: 0; margin-left: 1%; top: 0; left: 26%; aspect-ratio: auto; -unity-text-align: middle-center;"/>
+                    <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="align-self: flex-start; height: 80%; width: 25%; margin-top: 0; margin-right: 0; position: relative; margin-bottom: 0; margin-left: 1%; top: 0; left: 26%; aspect-ratio: auto; -unity-text-align: middle-center;"/>
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
@@ -86,24 +129,21 @@
                 <ui:Button name="UseNanorepairButton" tooltip="Использовать наноремонтный набор" style="height: 65%; width: 15%; background-image: url(&quot;project://database/Assets/Sprites/UI/toolkit.png?fileID=-4687270063616015408&amp;guid=f90d6d7c33bb34a49a5fc62cb5e592eb&amp;type=3#toolkit_0&quot;); background-size: 80% 80%; align-self: flex-start; left: 35%;"/>
             </ui:VisualElement>
             <ui:VisualElement name="CloseButtonPanel" style="flex-grow: 1; top: 17%; width: 100%; height: auto;">
-                <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="width: 25%; top: 4%; right: 6%; height: 35%; padding-bottom: 1%;"/>
+                <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="width: 20%; top: 4%; right: 6%; height: 35%; padding-bottom: 1%;"/>
             </ui:VisualElement>
         </ui:VisualElement>
-    </ui:VisualElement>
-    <ui:VisualElement name="tooltip-panel" class="tooltip" style="flex-grow: 1; display: none; width: 500px; height: auto; position: absolute; align-self: flex-start; background-color: rgb(123, 123, 123);">
-        <ui:Label text="Label" name="tooltip-label" style="align-self: center; font-size: 16px; color: rgb(255, 255, 255); -unity-font-style: bold;"/>
     </ui:VisualElement>
     <ui:VisualElement name="AdvWindow" style="flex-grow: 1; position: relative; width: 64%; height: 62%; align-self: center; background-color: rgb(130, 130, 130); display: none;">
         <ui:VisualElement name="Picture" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/advpic.png?fileID=21300000&amp;guid=7951fb4922bf136439c0bd3850e64296&amp;type=3#advpic&quot;);">
             <ui:Label text="Реклама" name="AdvLabel" style="margin-top: 2%; align-self: center; color: rgb(0, 0, 0); -unity-font-style: bold; font-size: 32px; margin-bottom: 1%; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 10px 90px;"/>
             <ui:Label text="Купляйте наших слонов" name="SloganLabel" style="align-self: center; margin-top: 10%; color: rgb(65, 221, 49); font-size: 54px; -unity-font-style: bold; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 10px 200px;"/>
         </ui:VisualElement>
-        <ui:Button text="Закончить &#10;просмотр" name="CloseButton" class="closebutton" style="align-self: center; width: 20%; height: 10%; font-size: 17px; margin-bottom: 1%; margin-top: 1%; padding-bottom: 2%; padding-top: 1%; -unity-font-style: bold;"/>
+        <ui:Button text="Закончить просмотр" name="CloseButton" class="closebutton" style="align-self: center; width: 20%; height: 10%; margin-bottom: 1%; margin-top: 1%; padding-bottom: 2%; padding-top: 1%; -unity-font-style: bold; -unity-text-auto-size: best-fit 10px 30px; flex-wrap: wrap;"/>
     </ui:VisualElement>
     <ui:VisualElement name="ErrorWindow" style="flex-grow: 1; position: absolute; flex-shrink: 0; width: 100%; height: 100%; display: none;">
         <ui:VisualElement name="ErrorInnerWindow" style="flex-grow: 1; background-color: rgba(38, 0, 0, 0); position: absolute; width: 45%; height: 30%; align-self: center; margin-top: 0; display: flex; top: 8%; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/upgrade/table.png?fileID=2800000&amp;guid=4da56640618ee074cb7d1a2469180c5e&amp;type=3#table&quot;); -unity-slice-type: sliced; -unity-background-scale-mode: stretch-to-fill;">
-            <ui:Label text="Error" name="ErrorLabel" style="color: rgb(255, 255, 255); align-self: center; margin-top: 10%; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 4px 200px; display: flex; height: 15%; width: 80%;"/>
-            <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="width: 25%; margin-top: 0; top: 23%; right: 6%; padding-bottom: 1%; margin-bottom: 1%; padding-top: 1%; white-space: normal; height: 20%;"/>
+            <ui:Label text="Error" name="ErrorLabel" style="color: rgb(255, 255, 255); align-self: center; margin-top: 4%; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 4px 30px; display: flex; height: auto; width: 80%; flex-wrap: wrap; flex-grow: 0.5; -unity-text-align: middle-left;"/>
+            <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="width: 25%; margin-top: 0; top: 10%; right: 6%; padding-bottom: 1%; margin-bottom: 1%; padding-top: 1%; white-space: normal; height: 20%;"/>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="MainUI" picking-mode="Ignore" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; flex-direction: column; font-size: 12px; display: flex;">
@@ -138,5 +178,18 @@
                 <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="align-self: flex-end; height: auto; width: 25%; padding-bottom: 2%;"/>
             </ui:VisualElement>
         </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="ResourcePanel" style="flex-grow: 1; position: absolute; align-self: flex-start; align-content: stretch; flex-direction: row; height: 10%; display: flex;">
+        <ui:Image source="project://database/Assets/Sprites/rating-icon.png?fileID=2800000&amp;guid=f2acb28b52b4b104182c79bfc2c38326&amp;type=3#rating-icon" tooltip="Рейтинг" name="RaitingImage" style="width: 7%; align-self: auto; height: 70px;"/>
+        <ui:Label text="0" name="RatingValue" style="align-self: flex-start; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 40px 40px; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: middle-left; top: 15%; margin-top: 0; width: 5%;"/>
+        <ui:Image source="project://database/Assets/Sprites/money-icon2.png?fileID=2800000&amp;guid=5cbae317a91eac84fac31ac90fc28cc2&amp;type=3#money-icon2" tooltip="Звездные кредиты" name="MoneyImage" style="width: 7%; align-self: auto; height: 60px;"/>
+        <ui:Label text="0" name="MoneyValue" style="align-self: flex-start; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 40px 40px; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: middle-left; top: 15%; margin-top: 0; width: 5%;"/>
+        <ui:Image source="project://database/Assets/Sprites/UI/toolkit.png?fileID=2800000&amp;guid=f90d6d7c33bb34a49a5fc62cb5e592eb&amp;type=3#toolkit" tooltip="Наноремонтные наборы" name="NanorepairKitImageImage" style="width: 10%; align-self: auto; height: 60px;"/>
+        <ui:Label text="0" name="NanoRepairKitValue" style="align-self: flex-start; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 40px 40px; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: middle-left; top: 15%; margin-top: 0; width: 5%;"/>
+        <ui:Image source="project://database/Assets/Sprites/UI/battery_icon.png?fileID=2800000&amp;guid=14ad55c5d0f362d4f9e98a5ee2818f8f&amp;type=3#battery_icon" tooltip="Топливо" name="FuelImage" style="width: 7%; align-self: auto; height: 60px;"/>
+        <ui:Label text="0" name="FuelValue" style="align-self: flex-start; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 40px 40px; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: middle-left; top: 15%; margin-top: 0; width: 5%;"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="tooltip-panel" class="tooltip" style="flex-grow: 1; display: none; width: auto; height: auto; position: absolute; align-self: flex-start; background-color: rgb(123, 123, 123);">
+        <ui:Label text="Label" name="tooltip-label" style="align-self: center; font-size: 16px; color: rgb(255, 255, 255); -unity-font-style: bold; margin-left: 0%; margin-right: 0%; display: flex;"/>
     </ui:VisualElement>
 </ui:UXML>

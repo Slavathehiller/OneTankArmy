@@ -7,6 +7,7 @@ public class Bootstrap : MonoBehaviour
     void Start()
     {
         PrefabsPath.InitPathes();
+        RegisterGlobalConverters.Register();
         SceneManager.LoadScene(Scenes.MAIN_MENU);
     }
 }

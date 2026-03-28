@@ -42,7 +42,7 @@ namespace Assets.Scripts.SceneAssets
                 var contract = _allContracts.Data[index];
 
                 element.Q<Label>("Description").text = contract.Description;
-                element.SetEnabled(contract.RatingNeeded <= _playerSettings.Raiting);
+                element.SetEnabled(contract.RatingNeeded <= _playerSettings.Rating);
             };
 
             _statusLabel = _controlPanel.Q<Label>("StatusLabel");
@@ -67,12 +67,12 @@ namespace Assets.Scripts.SceneAssets
         {
             var contract = (ContractData)_contractsView.selectedItem;
             _controlPanel.dataSource = contract;
-            if (contract.RatingNeeded <= _playerSettings.Raiting) { 
+            if (contract.RatingNeeded <= _playerSettings.Rating) { 
                 _statusLabel.text = "Доступен";}
             else
                 _statusLabel.text = $"Не доступен. Требуется рейтинг {contract.RatingNeeded} и выше.";
             if (_signButton != null)
-                _signButton.SetEnabled(contract.RatingNeeded <= _playerSettings.Raiting);
+                _signButton.SetEnabled(contract.RatingNeeded <= _playerSettings.Rating);
         }
 
         private void OnDestroy()

@@ -46,4 +46,9 @@ public class MissilePool : IMissilePool
         bulletList.Add(missile);
         missile.gameObject.SetActive(false);
     }
+
+    public void Clear()
+    {
+        _pool.Clear();
+    }
 }

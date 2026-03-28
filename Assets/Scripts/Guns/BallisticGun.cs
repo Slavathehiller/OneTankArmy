@@ -23,4 +23,9 @@ public class BallisticGun : Gun
             bullet.Init();
         }
     }
+
+    private void OnDestroy()
+    {
+        _missilePool.Clear();
+    }
 }
