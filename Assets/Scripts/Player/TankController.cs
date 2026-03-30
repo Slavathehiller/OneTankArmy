@@ -29,6 +29,8 @@ public class TankController : BaseEntity
     private Vector3 _healthBarOffset;
     private float _healthBarMaxSize;
 
+    protected override float MaxHP => _vehicle.MaxHealth;
+
     [Inject]
     private IPlayerSettings _playerSettings;
     public bool IsDead => _vehicle.Health <= 0;
@@ -191,6 +193,7 @@ public class TankController : BaseEntity
     }
     public override void TakeDamage(float damage)
     {
+        base.TakeDamage(damage);
         _vehicle.TakeDamage(damage);
     }
 

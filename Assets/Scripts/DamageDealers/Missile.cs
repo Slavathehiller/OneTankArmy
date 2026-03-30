@@ -13,7 +13,8 @@ namespace Assets.Scripts.DamageDealers
         AcidSpit = 0,
         Assault25mm = 1,
         Autocannon50mm = 2,
-        Machinegun12mm = 3
+        Machinegun12mm = 3,
+        Cannon100mm = 4
     }
 
     public abstract class Missile : DamageDealer

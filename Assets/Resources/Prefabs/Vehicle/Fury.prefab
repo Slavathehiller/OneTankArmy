@@ -304,6 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 12
   _rotateSpeed: 7
+  _injuries: []
   _healthBar: {fileID: 3167926836334825702}
   _healthBarRenderer: {fileID: 2319024376133290374}
   _spriteRenderer: {fileID: 6586793873056049515}

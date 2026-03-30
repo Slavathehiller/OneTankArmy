@@ -44,7 +44,7 @@ public class BattleRoutine : MonoBehaviour
     private LifeManager _lifeManager;
     private Vehicle _playerVehicle;
 
-    private int[] _enemiesCount = new int[4] {10, 2, 1, 2};
+    private int[] _enemiesCount = new int[4] {15, 2, 1, 2};
 
 
     void Start()

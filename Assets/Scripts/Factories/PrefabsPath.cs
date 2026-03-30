@@ -93,10 +93,12 @@ namespace Assets.Scripts.Factories
             Register(VehicleType.Beetle, "Prefabs/Vehicle/Beetle");
             Register(VehicleType.DianBao, "Prefabs/Vehicle/DianBao");
             Register(VehicleType.Fury, "Prefabs/Vehicle/Fury");
+            Register(VehicleType.Ratnik, "Prefabs/Vehicle/Ratnik");
             Register(MissileType.AcidSpit, "Prefabs/AcidSpit");
             Register(MissileType.Assault25mm, "Prefabs/Bullets/AssaultCannon25mmBullet");
             Register(MissileType.Autocannon50mm, "Prefabs/Bullets/Autocannon50mmBullet");
             Register(MissileType.Machinegun12mm, "Prefabs/Bullets/Machinegun12mmBullet");
+            Register(MissileType.Cannon100mm, "Prefabs/Bullets/Cannon100mmBullet");
         }
     }
 }

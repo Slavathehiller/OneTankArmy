@@ -8,10 +8,18 @@ using UnityEngine.Events;
 using UnityEngine.U2D.Animation;
 using Zenject;
 
+[System.Serializable]
+public struct BodyParts
+{
+    public Rigidbody2D[] Parts;
+}
 public abstract class AIEnemy : BaseEntity
 {
     [SerializeField]
     protected float _maxHP;
+
+    protected override float MaxHP => _maxHP;
+
     [SerializeField]
     protected Animator _animator;
 
@@ -111,7 +119,7 @@ public abstract class AIEnemy : BaseEntity
 
     protected virtual void StartActions() 
     {
-        _currentHP = _maxHP;
+        _currentHP = MaxHP;
     }
 
     protected virtual bool TryToRotateAtTarget()
@@ -168,8 +176,9 @@ public abstract class AIEnemy : BaseEntity
     public override void TakeDamage(float damage)
     {
         if (_isDead) return;
+        base.TakeDamage(damage);
         _currentHP -= damage;
-        CheckIfDead();
+        CheckIfDead();        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

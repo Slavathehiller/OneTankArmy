@@ -8,12 +8,6 @@ using UnityEngine.Events;
 using Zenject;
 using Random = UnityEngine.Random;
 
-[System.Serializable]
-public struct BodyParts
-{
-    public Rigidbody2D[] Parts;
-}
-
 public class AcidCockroach : AIRangedEnemy
 {
     private float _shokedTime;
