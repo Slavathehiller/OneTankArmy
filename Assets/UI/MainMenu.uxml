@@ -10,4 +10,6 @@
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:Label text="Created by Viacheslav Dobrovolski 2026" name="Copyright" style="position: absolute; align-self: flex-end; top: 93%; left: 57%; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 30px 100px; -unity-font-style: bold; bottom: 1%; right: 1%; -unity-text-align: middle-center;"/>
+    <ui:Label text="One tank army" name="Tittle" style="position: absolute; left: 38%; top: 5%; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 40px 400px; -unity-font-style: bold; color: rgb(135, 0, 185); right: 1%;"/>
 </ui:UXML>

@@ -26,7 +26,6 @@ public class BattleRoutine : MonoBehaviour
     private UIDocument _document;
 
     private VisualElement _completeContractWindow;
-    private Button _close_completeContractWindowButton;
     private Label _targetsLeftLabel;
 
     [Inject]
@@ -50,8 +49,6 @@ public class BattleRoutine : MonoBehaviour
     void Start()
     {
         _completeContractWindow = _document.rootVisualElement.Q<VisualElement>("ContractCompleteWindow");
-        _close_completeContractWindowButton = _completeContractWindow.Q<Button>("CloseButton");
-        _close_completeContractWindowButton.clicked += CloseCompleteContractWindow;
         _targetsLeftLabel = _document.rootVisualElement.Q<Label>("TargetsLeftLabel");
         // var flea = _sceneAssetFactory.CreateAsset<BoomFlea>();
         // flea.transform.position = new Vector3(-4, 0, 0);
@@ -196,7 +193,6 @@ public class BattleRoutine : MonoBehaviour
             _playerVehicle.GetComponent<TankController>().Die -= OnEvacuate;
         }
         _lifeManager.AllEnemyDead -= CompleteContract;
-        _close_completeContractWindowButton.clicked -= CloseCompleteContractWindow;
         _lifeManager.EnemyLiveCount -= TargetsCountChanged;        
     }
 }
