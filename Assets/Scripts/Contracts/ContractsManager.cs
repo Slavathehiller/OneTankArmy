@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Assets.Player;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 public enum ContractStatus
 {
@@ -19,6 +21,9 @@ public class ContractsManager : IContractsManager
     private const string CURRENT_CONTRACT_STATUS = "CurrentContractStatus";
     public ContractData CurrentContract {  get; set; }
     public ContractStatus CurrentContractStatus { get; set; }
+
+    [Inject]
+    private IPlayerSettings _playerSettings;
 
     public ContractsManager()
     {

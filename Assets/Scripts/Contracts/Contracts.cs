@@ -12,6 +12,8 @@ public class ContractData
     public int RatingNeeded;
     public int RatingReward;
     public int MoneyReward;
+    public QuestItemType QuestItemType;
+    public int QuestItemNeed;
     public string[] Scenes;
 }
 

@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/BattleScene/BattleScene.uss?fileID=7433441132597879392&amp;guid=0cfd39f6cda548044815f98d8ce97fa1&amp;type=3#BattleScene"/>
+    <ui:VisualElement name="ContractCompleteWindow" style="flex-grow: 1; background-color: rgba(41, 97, 130, 0); align-self: center; width: 50%; height: 25%; position: absolute; top: 13%; flex-direction: column-reverse; display: none;">
+        <ui:Label text="Контракт выполнен. Нажмите Ctrl-E для эвакуации." name="ContractCompleteLabel" style="align-self: center; -unity-text-align: middle-center; text-overflow: clip; margin-bottom: 9%; font-size: 24%; color: rgb(255, 255, 255); white-space: normal; position: relative; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&amp;guid=4beb055f07aaff244873dec698d0363e&amp;type=3#Roboto-Bold&quot;);"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="CollectedItemsPanel" style="flex-grow: 1; flex-direction: row; align-self: flex-end;">
+        <ui:Label text="Собрано:" class="InfoLabel" style="padding-right: 0;"/>
+        <ui:Image name="ItemCollectedIcon" style="align-self: flex-start; width: 50px; height: auto; top: 4%;"/>
+        <ui:Label name="ItemCollectedLabel" class="InfoLabel"/>
+    </ui:VisualElement>
+</ui:UXML>

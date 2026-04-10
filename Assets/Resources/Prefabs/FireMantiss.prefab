@@ -1553,7 +1553,6 @@ MonoBehaviour:
   _moveSpeed: 11
   _rotateSpeed: 0.8
   _injuries:
-  - {fileID: 2115538198644003787}
   - {fileID: 7116949340741159053}
   - {fileID: 4862867676475032071}
   - {fileID: 2336922541493636634}

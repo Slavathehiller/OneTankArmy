@@ -16,6 +16,10 @@ namespace Assets.Player
         public void AddConsumable(Consumables value);
         public void RemoveConsumable(Consumables value);
 
+        public int GetQuestItem(QuestItemType value);
+        public void AddQuestItems(QuestItemType questItemType, int amount);
+        public void RemoveQuestItems(QuestItemType questItemType, int amount);
+
         public void LoadSettings();
         public void SaveSettings();
     }

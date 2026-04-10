@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Factories;
 using Assets.Scripts.Player;
+using Assets.Scripts.SceneAssets;
 using Zenject;
 
 public class GlobalSettingsInstaller : MonoInstaller
@@ -13,7 +14,9 @@ public class GlobalSettingsInstaller : MonoInstaller
         Container.BindInterfacesTo<ContractsManager>().AsSingle();
         Container.BindInterfacesTo<MissileFactory>().AsTransient();
         Container.BindInterfacesTo<MissilePool>().AsCached();
-
+        Container.BindInterfacesTo<QuestItemsData>().AsSingle();
+        Container.BindInterfacesTo<FloatTooltipManager>().AsSingle();
+        
         //Container.Bind<ILogger>().To<Logger>().AsCached();
         //Container.BindInterfacesTo<LocalizationManager>().AsSingle();
         //Container.BindInterfacesTo<TooltipManager>().AsSingle();        

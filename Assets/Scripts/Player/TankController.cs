@@ -1,12 +1,15 @@
 using Assets.Player;
 using Assets.Scripts.ObjectPool;
+using Assets.Scripts.SceneAssets;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering.Universal;
 using Zenject;
 
 public class TankController : BaseEntity
 {
     public event UnityAction<BaseEntity> CallToEvacuate;
+    public event UnityAction<QuestItemType, int> PickupLoot;
 
     [SerializeField] private Transform _healthBar;
     [SerializeField] private SpriteRenderer _healthBarRenderer;
@@ -33,6 +36,7 @@ public class TankController : BaseEntity
 
     [Inject]
     private IPlayerSettings _playerSettings;
+
     public bool IsDead => _vehicle.Health <= 0;
 
     void Start()
@@ -163,6 +167,19 @@ public class TankController : BaseEntity
         {
             TakeDamage(dd.Damage);
         }
+
+        if (collision.gameObject.TryGetComponent<QuestItem>(out var qa))
+        {
+            var loot = qa.GetLoot();
+
+            _playerSettings.AddQuestItems(loot.type, loot.amount);
+            _playerSettings.SaveSettings();
+
+            PickupLoot?.Invoke(loot.type, loot.amount);
+
+            Destroy(qa.gameObject);
+        }
+
 
         if (collision.gameObject.TryGetComponent<Mine>(out var mine))
         {

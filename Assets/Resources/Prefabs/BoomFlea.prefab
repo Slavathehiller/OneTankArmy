@@ -154,7 +154,7 @@ MonoBehaviour:
   _detectionCooldown: 2
   _meleeAttackCooldown: 0
   _meleeDamage: 0
-  _mainBody: {fileID: 0}
+  _mainBody: {fileID: 8972170608464377837}
   _bodyPartsCollection: []
   _distanceOfJump: 4
   _jumpSpeed: 2.5
@@ -546,5 +546,10 @@ PrefabInstance:
 --- !u!4 &7803494011346579342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: e0171e30c0a691d45860aa5302cd81d0, type: 3}
+  m_PrefabInstance: {fileID: 8891304675268531792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8972170608464377837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: e0171e30c0a691d45860aa5302cd81d0, type: 3}
   m_PrefabInstance: {fileID: 8891304675268531792}
   m_PrefabAsset: {fileID: 0}

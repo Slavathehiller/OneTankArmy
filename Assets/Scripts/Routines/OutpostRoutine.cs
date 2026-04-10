@@ -168,6 +168,9 @@ public class OutpostRoutine : MonoBehaviour
         {
             statusLabel.text = "Контракт выполнен";
             StartCoroutine(TakeReward(_contractManager.CurrentContract.RatingReward, _contractManager.CurrentContract.MoneyReward));
+
+            if (((int)_contractManager.CurrentContract.QuestItemType) > -1)
+                _playerSettings.RemoveQuestItems(_contractManager.CurrentContract.QuestItemType, _contractManager.CurrentContract.QuestItemNeed);            
         }
 
         if (_contractManager.CurrentContractStatus == ContractStatus.Failed)

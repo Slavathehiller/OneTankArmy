@@ -20,15 +20,16 @@ namespace Assets.Scripts.Player
         public int Rating {  get; set; }
         public int Money { get; set; }
         private int[] Consumables { get; set; } = new int[2];
+        private int[] QuestItems { get; set; } = new int[1];
 
         public int GetConsumable(Consumables value)
         {
             return Consumables[(int)value];
         }
 
-        private void SetConsumable(Consumables value, int amount)
+        public int GetQuestItem(QuestItemType value)
         {
-            Consumables[(int)value] = amount;
+            return QuestItems[(int)value];
         }
 
         private const string CURRENT_VEHICLE = "CurrentVehicle";
@@ -37,12 +38,7 @@ namespace Assets.Scripts.Player
         private const string RATING = "Rating";
         private const string MONEY = "Money";
         private const string CONSUMABLES = "Consumables";
-
-        //public void ChangeVechicle(VehicleType vehicle)
-        //{
-        //    CurrentVehicle = vehicle;
-        //    SaveSettings();
-        //}
+        private const string QUEST_ITEMS = "QuestItems";
 
         public PlayerSettings()
         {
@@ -62,6 +58,7 @@ namespace Assets.Scripts.Player
             Rating = PlayerPrefs.GetInt(RATING, 0);
             Money = PlayerPrefs.GetInt(MONEY, 0);
             LoadConsumables();
+            LoadQuestItems();
         }
 
         public void SaveSettings() 
@@ -72,6 +69,7 @@ namespace Assets.Scripts.Player
             PlayerPrefs.SetInt(RATING, Rating);
             PlayerPrefs.SetInt(MONEY, Money);
             SaveConsumables();
+            SaveQuestItems();
         }
 
         public void AddConsumable(Consumables value)
@@ -95,6 +93,29 @@ namespace Assets.Scripts.Player
             var consumablesString = PlayerPrefs.GetString(CONSUMABLES, string.Empty);
             if (consumablesString != string.Empty)
                 Consumables = consumablesString.Split(';').Select(s => int.Parse(s)).ToArray();
+        }
+
+        public void AddQuestItems(QuestItemType questItemType, int amount)
+        {
+            QuestItems[(int)questItemType] += amount;
+        }
+
+        public void RemoveQuestItems(QuestItemType questItemType, int amount)
+        {
+            QuestItems[(int)questItemType] -= amount;
+        }
+
+        private void SaveQuestItems()
+        {
+            var questItemsString = string.Join(";", QuestItems);
+            PlayerPrefs.SetString(QUEST_ITEMS, questItemsString);
+        }
+
+        private void LoadQuestItems()
+        {
+            var questItemsString = PlayerPrefs.GetString(QUEST_ITEMS, string.Empty);
+            if (questItemsString != string.Empty)
+                QuestItems = questItemsString.Split(';').Select(s => int.Parse(s)).ToArray();
         }
     }
 }

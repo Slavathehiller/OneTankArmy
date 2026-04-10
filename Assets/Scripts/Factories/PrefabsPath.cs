@@ -76,8 +76,6 @@ namespace Assets.Scripts.Factories
             return result;
         }
 
-
-
         public static void InitPathes()
         {
             Register(typeof(Explosion), "Prefabs/Explosion");

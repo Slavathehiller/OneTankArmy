@@ -1,0 +1,10 @@
+:root {
+}
+
+.InfoLabel {
+    align-self: flex-start;
+    margin-top: 29px;
+    padding-right: 106px;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
