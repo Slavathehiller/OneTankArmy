@@ -1,0 +1,29 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Outpost.uss?fileID=7433441132597879392&amp;guid=a4f011f86eeda8b48a3b96118247df18&amp;type=3#Outpost"/>
+    <ui:VisualElement name="RootInfoPanel" style="flex-grow: 1; background-color: rgb(0, 0, 0); width: 25%;">
+        <ui:VisualElement name="UpperInfoPanel" data-source-type="Assets.Scripts.Orbit.PlanetInfo, Assembly-CSharp" style="flex-grow: 1;">
+            <ui:Label text="Арахния" name="PlanetNameLabel" style="-unity-text-align: upper-center; font-size: 25px; color: rgb(255, 255, 255); -unity-text-generator: advanced; -unity-text-auto-size: best-fit 10px 50px;">
+                <Bindings>
+                    <ui:DataBinding property="text" data-source-path="Name" binding-mode="ToTarget"/>
+                </Bindings>
+            </ui:Label>
+            <ui:Image name="PlanetImage" source="project://database/Assets/Sprites/Large%20Planets%20512x512/Solid/Airless/Airless_01-512x512.png?fileID=2800000&amp;guid=d92a2845d90d21b4b8d483dc9acbf048&amp;type=3#Airless_01-512x512" style="align-self: stretch; width: auto; height: 25%;">
+                <Bindings>
+                    <ui:DataBinding property="source" data-source-path="Image" binding-mode="ToTarget"/>
+                </Bindings>
+            </ui:Image>
+            <ui:ScrollView name="PlanetInfoScrollView" style="flex-grow: 1; height: 60%;">
+                <ui:Label text="Информация о планете" name="PlanetInfoLabel" style="flex-wrap: wrap; color: rgb(255, 255, 255); -unity-text-generator: advanced; -unity-text-auto-size: best-fit 5px 20px; white-space: normal; font-size: 10px;">
+                    <Bindings>
+                        <ui:DataBinding property="text" data-source-path="Description" binding-mode="ToTarget"/>
+                    </Bindings>
+                </ui:Label>
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="LowerInfoPanel" style="flex-grow: 0; height: 15%; flex-direction: row;">
+            <ui:Button text="Отправиться" name="TakeoffButton" class="closebutton" style="align-self: center; width: 40%; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/btn/button_empty_4.png?fileID=2800000&amp;guid=e9d68fbc8e2f3ef49a80eb2abf5ca328&amp;type=3#button_empty_4&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); height: 60%; left: 3%;"/>
+            <ui:Button text="Высадка" name="LandingButton" class="closebutton" style="align-self: center; white-space: normal; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 5px 30px; width: 40%; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/btn/button_empty_4.png?fileID=2800000&amp;guid=e9d68fbc8e2f3ef49a80eb2abf5ca328&amp;type=3#button_empty_4&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); height: 60%; left: 6%;"/>
+        </ui:VisualElement>
+        <ui:Image name="SelectFrame" source="project://database/Assets/Sprites/UI/SelectFrame.png?fileID=2800000&amp;guid=6b8d986436201b74fbd0de14e2630e09&amp;type=3#SelectFrame" style="background-size: 50% 50%; position: absolute;"/>
+    </ui:VisualElement>
+</ui:UXML>

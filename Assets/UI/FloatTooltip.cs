@@ -31,8 +31,10 @@ public class FloatTooltip : MonoBehaviour
         var lifeTime = 0.5f;
 
        Vector3 screenPos = Camera.main.WorldToScreenPoint(position);
-        _root.style.display = DisplayStyle.Flex;
         var currentPosition = screenPos;
+        _root.style.left = currentPosition.x;
+        _root.style.top = currentPosition.y;
+        _root.style.display = DisplayStyle.Flex;
         while (lifeTime > 0)
         {
             lifeTime -= Time.deltaTime;

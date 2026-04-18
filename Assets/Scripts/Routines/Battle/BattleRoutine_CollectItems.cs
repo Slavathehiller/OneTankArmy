@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
-using Label = UnityEngine.UIElements.Label;
 using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Routines.Battle
@@ -70,7 +64,7 @@ namespace Assets.Scripts.Routines.Battle
 
         protected override int[] GetEnemiesCount()
         {
-            return new int[4] { 4, 20, 0, 0 };
+            return new int[4] { 6, 30, 0, 0 };
         }
 
         private void OnDestroy()

@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 89518099}
   - component: {fileID: 89518101}
   - component: {fileID: 89518102}
+  - component: {fileID: 89518103}
   m_Layer: 0
   m_Name: ships_2
   m_TagString: Untagged
@@ -567,6 +568,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIActivator
   _document: {fileID: 243175787}
   _buttonName: ToOrbitButton
+--- !u!114 &89518103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89518098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e37631afe33a44fbd0dfc9a44e6eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.NPC.Transporter
+  _moveSpeed: 10
 --- !u!1 &101748806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,6 +1973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutpostRoutine
   _shuttle: {fileID: 404921128}
+  _transporter: {fileID: 89518103}
   _repairPoint: {fileID: 503334945}
   _defaultPointPoint: {fileID: 187882398}
   _garage: {fileID: 1342080698}

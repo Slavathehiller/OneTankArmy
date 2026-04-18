@@ -24,9 +24,9 @@ public class ToolTipController : MonoBehaviour
 
     private void OnDestroy()
     {
-        _root.RegisterCallback<PointerMoveEvent>(OnPointerMove);
-        _root.RegisterCallback<PointerLeaveEvent>(OnPointerLeave);
-        _root.RegisterCallback<PointerDownEvent>(OnPointerDown);
+        _root.UnregisterCallback<PointerMoveEvent>(OnPointerMove);
+        _root.UnregisterCallback<PointerLeaveEvent>(OnPointerLeave);
+        _root.UnregisterCallback<PointerDownEvent>(OnPointerDown);
     }
 
     private void OnPointerMove(PointerMoveEvent ev)

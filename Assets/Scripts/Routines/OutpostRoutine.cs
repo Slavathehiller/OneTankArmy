@@ -24,6 +24,8 @@ public class OutpostRoutine : MonoBehaviour
 
     [SerializeField]
     private Shuttle _shuttle;
+    [SerializeField] 
+    private Transporter _transporter;
     [SerializeField]
     private Transform _repairPoint;
     [SerializeField]
@@ -68,6 +70,8 @@ public class OutpostRoutine : MonoBehaviour
     private Label _nanorepairKitValue;
     private Label _fuelValue;
 
+    private VisualElement _wholeScreen;
+
     [Inject]
     private IPlayerSettings _playerSettings;
 
@@ -110,6 +114,8 @@ public class OutpostRoutine : MonoBehaviour
         _nanorepairKitValue = _document.rootVisualElement.Q<Label>("NanoRepairKitValue");
         _fuelValue = _document.rootVisualElement.Q<Label>("FuelValue");
 
+        _wholeScreen = _document.rootVisualElement.Q<VisualElement>("WholeScreen");
+
         RefreshResources();
 
         CheckCurrentContractStatus();
@@ -148,7 +154,9 @@ public class OutpostRoutine : MonoBehaviour
 
     private void ToOrbit()
     {
-        _errorController.ShowError("Челонок не заправлен. Выход на орбиту невозможен.");
+        //_errorController.ShowError("Челонок не заправлен. Выход на орбиту невозможен.");
+        _toOrbitButton.style.display = DisplayStyle.None;
+        _transporter.TakeOff(() => SceneManager.LoadScene(Scenes.ORBIT_SCENE));
     }
     private void ContractSigned()
     {
@@ -309,6 +317,7 @@ public class OutpostRoutine : MonoBehaviour
             return;
         }
 
+        _wholeScreen.style.display = DisplayStyle.Flex;
         var sceneIndex = Random.Range(0, _contractManager.CurrentContract.Scenes.Length);
 
         _takeOffButtonButton.style.visibility = Visibility.Hidden;
