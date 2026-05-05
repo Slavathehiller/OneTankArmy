@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle/Arachnia_CollectItems1.unity
     guid: cc55fbdddc62c274698f276e56fcac6f
+  - enabled: 1
+    path: Assets/Scenes/Battle/Arachnia_BossKill 1.unity
+    guid: 3e476d2be69ffdb45b4e7643236ac0e6
+  - enabled: 1
+    path: Assets/Scenes/Battle/Arachnia_BossKill_Cave1.unity
+    guid: 790be6e9d71b88f40bd98f583d809f06
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

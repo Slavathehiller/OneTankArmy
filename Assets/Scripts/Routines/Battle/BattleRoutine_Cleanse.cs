@@ -28,8 +28,9 @@ namespace Assets.Scripts.Routines.Battle
             _targetsLeftLabel.text = $"Осталось целей: {targetsLeft}";
         }
 
-        private void OnDestroy()
+        protected override void OnDestroyAction()
         {
+            base.OnDestroyAction();
             _lifeManager.EnemyLiveCount -= TargetsCountChanged;
             _lifeManager.AllEnemyDead -= CompleteContract;
         }

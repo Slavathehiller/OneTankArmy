@@ -12,6 +12,8 @@ namespace Assets.Player
         public DateTime? RepairEndTime { get; set; }
         public int Rating { get; set; }
         public int Money { get; set; }
+        public int CurrentPlanetID { get; set; }
+
         public int GetConsumable(Consumables value);
         public void AddConsumable(Consumables value);
         public void RemoveConsumable(Consumables value);

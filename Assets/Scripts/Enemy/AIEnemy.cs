@@ -63,28 +63,11 @@ public abstract class AIEnemy : BaseEntity
     [Inject]
     private IVFXManager _VFXMmanager;
 
-    //private void Awake()
-    //{
-    //    var skins = GetComponentsInChildren<SpriteSkin>(true);
-    //    if (skins == null)
-    //        return;
-    //    foreach (var skin in skins)
-    //    {
-    //        _ = skin.transform;
-    //    }
-    //}
-
     void Start()
     {
-        //foreach (var skin in GetComponentsInChildren<SpriteSkin>())
-        //{
-        //    skin.enabled = false;
-        //    skin.enabled = true;
-        //}
         StartActions();
     }
 
-   // Update is called once per frame
     void Update()
     {
         UpdateActions();
@@ -232,10 +215,11 @@ public abstract class AIEnemy : BaseEntity
         }
     }
 
-    protected IEnumerator MakeGoooCoroutine<T>(GameObject mark, UnityAction callback = null) where T : MonoBehaviour
+    protected IEnumerator MakeGoooCoroutine<T>(GameObject mark, float scale = 1, UnityAction callback = null) where T : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         var goo = _VFXMmanager.MeakeVFXAt<T>(mark.transform.position);
+        goo.transform.localScale = new Vector3(scale, scale, 1);
         goo.transform.rotation = mark.transform.rotation;
         callback?.Invoke();
     }

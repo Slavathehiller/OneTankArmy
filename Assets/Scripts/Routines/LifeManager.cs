@@ -27,7 +27,6 @@ public class LifeManager : MonoBehaviour
             AllEnemyDead?.Invoke();
     }
 
-
     private void OnDestroy()
     {
         foreach (var enemy in _allEnemies)

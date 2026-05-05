@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3babbb3990bcc943bfc18766504f2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 11
+  _moveSpeed: 12
   _rotateSpeed: 7
   _injuries: []
   _healthBar: {fileID: 3167926836334825702}
@@ -345,7 +345,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 412d15e03cdeabc48be5272feedc237f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

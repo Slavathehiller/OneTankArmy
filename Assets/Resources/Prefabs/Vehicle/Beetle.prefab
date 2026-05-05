@@ -232,8 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3babbb3990bcc943bfc18766504f2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 16
+  _moveSpeed: 21
   _rotateSpeed: 10
+  _injuries: []
   _healthBar: {fileID: 3167926836334825702}
   _healthBarRenderer: {fileID: 2319024376133290374}
   _spriteRenderer: {fileID: 6586793873056049515}
@@ -285,7 +286,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 412d15e03cdeabc48be5272feedc237f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -382,7 +383,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

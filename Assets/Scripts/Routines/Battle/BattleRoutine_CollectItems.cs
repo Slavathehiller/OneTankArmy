@@ -67,8 +67,9 @@ namespace Assets.Scripts.Routines.Battle
             return new int[4] { 6, 30, 0, 0 };
         }
 
-        private void OnDestroy()
+        protected override void OnDestroyAction()
         {
+            base.OnDestroyAction();
             _tankController.PickupLoot -= OnPickup;
         }
     }

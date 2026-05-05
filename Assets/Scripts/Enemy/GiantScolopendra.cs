@@ -84,7 +84,7 @@ public class GiantScolopendra : AIEnemy
     protected override void DeadPerfomance()
     {
         base.DeadPerfomance();
-        StartCoroutine(MakeGoooCoroutine<ToxicGoo>(BodyParts[0].gameObject, DisablePhysic));
+        StartCoroutine(MakeGoooCoroutine<ToxicGoo>(BodyParts[0].gameObject, 1, DisablePhysic));
     }
 
     protected override void ReactToDamage(DamageDealer dd)

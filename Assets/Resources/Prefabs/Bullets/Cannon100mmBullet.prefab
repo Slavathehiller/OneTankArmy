@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 30
-  _moveSpeed: 140
+  _moveSpeed: 160
   _timeOfLife: 4
   _missileType: 4
 --- !u!50 &-6712035083466525522

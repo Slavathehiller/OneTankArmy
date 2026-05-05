@@ -1,5 +1,6 @@
 using Assets.Player;
 using Assets.Scripts.Factories.Interfaces;
+using Assets.Scripts.SceneNavigation;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -39,6 +40,9 @@ public abstract class BattleRoutine : MonoBehaviour
     [Inject]
     protected IContractsManager _contractsManager;
 
+    [Inject]
+    private ISceneNavigator _sceneNavigator;
+
     protected LifeManager _lifeManager;
     protected Vehicle _playerVehicle;
     protected abstract int[] GetEnemiesCount();
@@ -48,8 +52,26 @@ public abstract class BattleRoutine : MonoBehaviour
     void Start()
     {
         _completeContractWindow = _document.rootVisualElement.Q<VisualElement>("ContractCompleteWindow");
-        _shuttle.transform.position = _shuttlePoint.position;
-        _shuttle.MoveToPoint(_startPoint.position, LandPlayerAndTakeOff);
+
+        if (_sceneNavigator.GoingFromAnotherScene)
+        {
+            if (!string.IsNullOrEmpty(_sceneNavigator.StartPointName)) 
+            {
+                var startPoint = GameObject.Find(_sceneNavigator.StartPointName);
+                if (startPoint == null)
+                {
+                    Debug.LogError($"Не найден объект с именем {_sceneNavigator.StartPointName}");
+                }
+                else
+                    _startPoint.transform.position = startPoint.transform.position;
+            }
+            CreatePlayerVehicle();
+        }
+        else
+        {
+            _shuttle.transform.position = _shuttlePoint.position;
+            _shuttle.MoveToPoint(_startPoint.position, LandPlayerAndTakeOff);
+        }
         SpawnEnemies();
         _lifeManager = GetComponent<LifeManager>();
         ContractConditionsInit();
@@ -57,11 +79,7 @@ public abstract class BattleRoutine : MonoBehaviour
         LateStart();
     }
 
-    protected virtual void LateStart()
-    {
-
-    }
-
+    protected virtual void LateStart() { }
     private void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
@@ -126,28 +144,35 @@ public abstract class BattleRoutine : MonoBehaviour
         enemy.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
-    private void CloseCompleteContractWindow()
+    private void CreatePlayerVehicle()
     {
-        _completeContractWindow.style.display = DisplayStyle.None;
+        _playerVehicle = _vehicleFactory.CreateVehicle(_playerSettings.CurrentVehicle);
+        PlayerVehicleInit();
     }
-
     protected virtual void PlayerVehicleInit() 
     {
         _playerVehicle.transform.position = _startPoint.position;
+        _cameraController.BindObject(_playerVehicle.gameObject);
         _playerVehicle.GetComponent<TankController>().CallToEvacuate += OnEvacuate;
-        _playerVehicle.GetComponent<TankController>().Die += OnEvacuate;
+        _playerVehicle.GetComponent<TankController>().Die += OnDie;
     }
 
     private void LandPlayerAndTakeOff()
     {
-        _playerVehicle = _vehicleFactory.CreateVehicle(_playerSettings.CurrentVehicle);
-        PlayerVehicleInit();
-        _cameraController.BindObject(_playerVehicle.gameObject);
+        CreatePlayerVehicle();
         _shuttle.TakeOff(() =>  _shuttle.transform.position = _shuttlePoint.position );
     }
 
-    private void OnEvacuate(BaseEntity player)
+
+    protected virtual void OnDie(BaseEntity player)
     {
+        _playerVehicle.ControlOff();
+        CheckIfContractFailedOnExit();
+        Invoke("Evacuate", 2);
+    }
+    protected virtual void OnEvacuate(BaseEntity player)
+    {
+        _playerVehicle.EvacuateFlareOn();
         _playerVehicle.ControlOff();
         CheckIfContractFailedOnExit();
         Invoke("Evacuate", 2);
@@ -176,7 +201,7 @@ public abstract class BattleRoutine : MonoBehaviour
         _completeContractWindow.style.display = DisplayStyle.Flex;
     }
 
-    private void CheckIfContractFailedOnExit()
+    protected void CheckIfContractFailedOnExit()
     {
         if (_contractsManager.CurrentContractStatus != ContractStatus.Completed && _contractsManager.CurrentContract.QuestItemNeed == 0)
             _contractsManager.CurrentContractStatus = ContractStatus.Failed;
@@ -186,11 +211,16 @@ public abstract class BattleRoutine : MonoBehaviour
 
     private void OnDestroy()
     {
+        OnDestroyAction();
+    }
+
+    protected virtual void OnDestroyAction()
+    {
         CheckIfContractFailedOnExit();
         if (_playerVehicle != null)
         {
             _playerVehicle.GetComponent<TankController>().CallToEvacuate -= OnEvacuate;
             _playerVehicle.GetComponent<TankController>().Die -= OnEvacuate;
-        }  
+        }
     }
 }

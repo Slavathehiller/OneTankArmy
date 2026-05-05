@@ -47,4 +47,9 @@ public class Vehicle : MonoBehaviour
     {
         GetComponent<TankController>().ControlOff();
     }
+
+    public void EvacuateFlareOn()
+    {
+        GetComponent<TankController>().EvacuateFlareOn();
+    }
 }

@@ -84,6 +84,7 @@ namespace Assets.Scripts.Factories
             Register(typeof(GiantScolopendra), "Prefabs/GiantScolopendra");
             Register(typeof(FireMantiss), "Prefabs/FireMantiss");
             Register(typeof(AcidGoo), "Prefabs/AcidGoo");
+            Register(typeof(BigAcidGoo), "Prefabs/BigAcidGoo");
             Register(typeof(ToxicGoo), "Prefabs/ToxicGoo");
             Register(typeof(BigGreenGoo), "Prefabs/BigGreenGoo");            
             Register(typeof(Flame), "Prefabs/Flame");

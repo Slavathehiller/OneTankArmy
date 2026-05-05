@@ -1,6 +1,7 @@
 using Assets.Player;
 using Assets.Scripts.ObjectPool;
 using Assets.Scripts.SceneAssets;
+using Assets.Scripts.SceneNavigation;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering.Universal;
@@ -54,13 +55,17 @@ public class TankController : BaseEntity
         _healthBarRenderer.size = new Vector3(_healthBarMaxSize * _vehicle.Health / _vehicle.MaxHealth, _healthBarRenderer.size.y, 1);
     }
 
+    public void EvacuateFlareOn()
+    {
+        _evacuateFlare.SetActive(true);
+    }
+
     void Update()
     {
         _healthBar.position = transform.position + _healthBarOffset;
         _healthBar.localRotation = Quaternion.Inverse(transform.rotation);
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.E))
         {
-            _evacuateFlare.SetActive(true);
             CallToEvacuate?.Invoke(this);
         }
         CabinsFollowCursor();

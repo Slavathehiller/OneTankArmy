@@ -1,0 +1,45 @@
+.listViewCustom .unity-scroller--vertical {
+    background-color: transparent;
+    width: 40px;
+    min-width: 40px;
+}
+
+.listViewCustom .unity-base-slider__dragger {
+    background-color: transparent;
+    background-image: resource("UI/ScrollThumb 1");
+    /*-unity-slice-top: 0;
+    -unity-slice-bottom: 0;
+    -unity-slice-left: 0;
+    -unity-slice-right: 0;
+    height: 100%;*/
+}
+
+.listViewCustom .unity-base-slider__tracker {
+    background-color: transparent;
+    background-image: url("/Assets/Sprites/UI/ScrollBarBackground.png");
+    -unity-slice-top: 0;
+    -unity-slice-bottom: 0;
+    -unity-slice-left: 30;
+    -unity-slice-right: 30;
+    height: 100%;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+.listViewCustom .unity-scroller__high-button {
+    background-color: transparent;
+    background-image: url("/Assets/Sprites/UI/arrow_down.png");
+    width: 0;
+    height: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+.listViewCustom .unity-scroller__low-button {
+    background-color: transparent;
+    background-image: url("/Assets/Sprites/UI/arrow_up.png");
+    width: 0;
+    height: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+}

@@ -19,6 +19,7 @@ namespace Assets.Scripts.Player
         public DateTime? RepairEndTime { get; set; }
         public int Rating {  get; set; }
         public int Money { get; set; }
+        public int CurrentPlanetID {  get; set; }
         private int[] Consumables { get; set; } = new int[2];
         private int[] QuestItems { get; set; } = new int[1];
 
@@ -37,6 +38,7 @@ namespace Assets.Scripts.Player
         private const string REPAIR_END_TIME = "RepairEndTime";
         private const string RATING = "Rating";
         private const string MONEY = "Money";
+        private const string CURRENT_PLANET_ID = "CurrentPlanetID";
         private const string CONSUMABLES = "Consumables";
         private const string QUEST_ITEMS = "QuestItems";
 
@@ -57,6 +59,7 @@ namespace Assets.Scripts.Player
             RepairEndTime = repairEndTime == "" ? null : DateTime.Parse(repairEndTime);
             Rating = PlayerPrefs.GetInt(RATING, 0);
             Money = PlayerPrefs.GetInt(MONEY, 0);
+            CurrentPlanetID = PlayerPrefs.GetInt(CURRENT_PLANET_ID, 1);
             LoadConsumables();
             LoadQuestItems();
         }
@@ -68,6 +71,7 @@ namespace Assets.Scripts.Player
             PlayerPrefs.SetString(REPAIR_END_TIME, RepairEndTime == null ? "" : RepairEndTime.ToString());
             PlayerPrefs.SetInt(RATING, Rating);
             PlayerPrefs.SetInt(MONEY, Money);
+            PlayerPrefs.SetInt(CURRENT_PLANET_ID, CurrentPlanetID);
             SaveConsumables();
             SaveQuestItems();
         }
