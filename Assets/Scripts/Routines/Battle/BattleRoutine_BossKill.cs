@@ -5,11 +5,7 @@ using Zenject;
 
 public class BattleRoutine_BossKill : BattleRoutine
 {
-
     protected Label _questEnemyKillCounter;
-
-    [Inject]
-    private ISceneNavigator _sceneNavigator;
     protected override void ContractConditionsInit()
     {
         _questEnemyKillCounter = _document.rootVisualElement.Q<Label>("TargetEliminatedLabel");

@@ -36,6 +36,7 @@ namespace Assets.Scripts.Routines.Battle
 
         protected override void LateStart()
         {
+            base.LateStart();
             for (var i = 0; i < _questItemsAmount; i++)
             {
                 var spawnPointIndex = Random.Range(0, _questItemSpawnPoints.Count);

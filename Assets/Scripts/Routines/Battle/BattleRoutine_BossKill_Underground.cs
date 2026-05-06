@@ -42,6 +42,7 @@ public class BattleRoutine_BossKill_Underground : BattleRoutine_BossKill
 
     private void ReturnToOutpost()
     {
+        _sceneNavigator.ResetData();
         SceneManager.LoadScene(Scenes.OUTPOST_SCENE);
     }
 

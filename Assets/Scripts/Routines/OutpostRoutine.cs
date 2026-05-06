@@ -3,6 +3,7 @@ using Assets.Scripts.Factories.Interfaces;
 using Assets.Scripts.NPC;
 using Assets.Scripts.Player;
 using Assets.Scripts.SceneAssets;
+using Assets.Scripts.SceneNavigation;
 using System;
 using System.Collections;
 using Unity.VisualScripting;
@@ -80,6 +81,9 @@ public class OutpostRoutine : MonoBehaviour
 
     [Inject]
     private IVehicleFactory _vehicleFactory;
+
+    [Inject]
+    private ISceneNavigator _sceneNavigator;
     void Start()
     {
         _takeOffButtonButton = _document.rootVisualElement.Q<Button>("TakeOffButton");
@@ -153,9 +157,9 @@ public class OutpostRoutine : MonoBehaviour
     }
 
     private void ToOrbit()
-    {
-        //_errorController.ShowError("Челонок не заправлен. Выход на орбиту невозможен.");
+    {        
         _toOrbitButton.style.display = DisplayStyle.None;
+        _sceneNavigator.NavigationVector = NavigationVector.GoToOrbit;
         _transporter.TakeOff(() => SceneManager.LoadScene(Scenes.ORBIT_SCENE));
     }
     private void ContractSigned()
@@ -322,6 +326,7 @@ public class OutpostRoutine : MonoBehaviour
 
         _takeOffButtonButton.style.visibility = Visibility.Hidden;
         _shuttle.GetComponent<Collider2D>().enabled = false;
+        _sceneNavigator.NavigationVector = NavigationVector.GoingToMission;
         _playerAvatarMover.MoveTo(_shuttle.transform.position, 2, () => 
                   { 
                     Destroy(_playerAvatar.gameObject);

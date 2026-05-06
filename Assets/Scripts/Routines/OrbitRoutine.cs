@@ -1,5 +1,6 @@
 using Assets.Player;
 using Assets.Scripts.Orbit;
+using Assets.Scripts.SceneNavigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,9 @@ public class OrbitRoutine : MonoBehaviour
 
     [Inject]
     private IPlayerSettings _playerSettings;
+
+    [Inject]
+    private ISceneNavigator _sceneNavigator;
 
     void Start()
     {
@@ -169,7 +173,8 @@ public class OrbitRoutine : MonoBehaviour
     {
         var landingScene = _selectedPlanetInfo.OutpostScene;
         if (!string.IsNullOrEmpty(landingScene))
-        { 
+        {
+            _sceneNavigator.NavigationVector = NavigationVector.ReturnFromOrbit;
             SceneManager.LoadScene(landingScene);
         }
     }

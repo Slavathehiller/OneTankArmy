@@ -1,7 +1,10 @@
 using Assets.Player;
 using Assets.Scripts.Factories.Interfaces;
+using Assets.Scripts.ObjectPool;
 using Assets.Scripts.SceneNavigation;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -18,7 +21,13 @@ public abstract class BattleRoutine : MonoBehaviour
     private Transform _shuttlePoint;
 
     [SerializeField]
+    protected List<Portal> _portals;
+
+    [SerializeField]
     private List<Transform> _spawnPoints;
+
+    [SerializeField]
+    private List<Transform> _portalPoints;
 
     [SerializeField]
     private CameraController _cameraController;
@@ -41,10 +50,15 @@ public abstract class BattleRoutine : MonoBehaviour
     protected IContractsManager _contractsManager;
 
     [Inject]
-    private ISceneNavigator _sceneNavigator;
+    protected ISceneNavigator _sceneNavigator;
+
+    [Inject]
+    private IMissilePool _missilePool;
 
     protected LifeManager _lifeManager;
     protected Vehicle _playerVehicle;
+    protected TankController _playerController;
+    
     protected abstract int[] GetEnemiesCount();
 
     protected abstract void ContractConditionsInit();
@@ -53,24 +67,33 @@ public abstract class BattleRoutine : MonoBehaviour
     {
         _completeContractWindow = _document.rootVisualElement.Q<VisualElement>("ContractCompleteWindow");
 
-        if (_sceneNavigator.GoingFromAnotherScene)
+        if (_sceneNavigator.NavigationVector == NavigationVector.GoingToMission)
         {
-            if (!string.IsNullOrEmpty(_sceneNavigator.StartPointName)) 
-            {
-                var startPoint = GameObject.Find(_sceneNavigator.StartPointName);
-                if (startPoint == null)
-                {
-                    Debug.LogError($"Не найден объект с именем {_sceneNavigator.StartPointName}");
-                }
-                else
-                    _startPoint.transform.position = startPoint.transform.position;
-            }
-            CreatePlayerVehicle();
+            PositionPortals();
+            _shuttle.transform.position = _shuttlePoint.position;
+            _shuttle.MoveToPoint(_startPoint.position, LandPlayerAndTakeOff);
         }
         else
         {
-            _shuttle.transform.position = _shuttlePoint.position;
-            _shuttle.MoveToPoint(_startPoint.position, LandPlayerAndTakeOff);
+            foreach(var portal in _portals)
+            {
+                if (_sceneNavigator.PortalsCoords.TryGetValue(portal.Name, out var coords))
+                {
+                    portal.transform.position = coords;
+                }
+            }
+            //if (!string.IsNullOrEmpty(_sceneNavigator.StartPointName)) 
+            //{
+            //    var startPoint = GameObject.Find(_sceneNavigator.StartPointName);
+            //    if (startPoint == null)
+            //    {
+            //        Debug.LogError($"Не найден объект с именем {_sceneNavigator.StartPointName}");
+            //    }
+            //    else
+            //        _startPoint.transform.position = startPoint.transform.position;
+            //}
+            _missilePool.Clear();
+            CreatePlayerVehicle();
         }
         SpawnEnemies();
         _lifeManager = GetComponent<LifeManager>();
@@ -79,7 +102,26 @@ public abstract class BattleRoutine : MonoBehaviour
         LateStart();
     }
 
-    protected virtual void LateStart() { }
+    private void PositionPortals()
+    {
+        if (_portals.Count > 0 && _portalPoints.Count > 0)
+        {
+            foreach (var portal in _portals)
+            {
+                var portalPointIndex = Random.Range(0, _portalPoints.Count);
+                portal.transform.position = _portalPoints[portalPointIndex].position;
+                _portalPoints.RemoveAt(portalPointIndex);
+                if (_portalPoints.Count < 1)
+                    break;
+            }
+            foreach (var portal in _portals)
+            {
+                if (!_sceneNavigator.PortalsCoords.ContainsKey(portal.Name))
+                    _sceneNavigator.PortalsCoords.Add(portal.Name, portal.transform.position);
+            }
+        }
+    }
+    protected virtual void LateStart() {}
     private void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
@@ -151,10 +193,24 @@ public abstract class BattleRoutine : MonoBehaviour
     }
     protected virtual void PlayerVehicleInit() 
     {
-        _playerVehicle.transform.position = _startPoint.position;
+        if (_sceneNavigator.NavigationVector == NavigationVector.GoingToMission)
+            _playerVehicle.transform.position = _startPoint.position;
+        else
+        {
+            var portalToGO = _portals.First(x => x.Name == _sceneNavigator.PortalToGo);
+            _playerVehicle.transform.position = portalToGO.ExitPoint.position;
+            _playerVehicle.transform.rotation = portalToGO.ExitPoint.rotation;
+        }
         _cameraController.BindObject(_playerVehicle.gameObject);
-        _playerVehicle.GetComponent<TankController>().CallToEvacuate += OnEvacuate;
-        _playerVehicle.GetComponent<TankController>().Die += OnDie;
+        _playerController = _playerVehicle.GetComponent<TankController>();
+        _playerController.CallToEvacuate += OnEvacuate;
+        _playerController.Die += OnDie;
+        _playerController.GoingToPortal += PlayerGoToPortal;
+    }
+
+    private void PlayerGoToPortal(Portal portal)
+    {
+        portal.LoadNextScene();
     }
 
     private void LandPlayerAndTakeOff()
@@ -191,6 +247,7 @@ public abstract class BattleRoutine : MonoBehaviour
         _playerSettings.SaveSettings();
         _contractsManager.SaveData();
         Destroy(_playerVehicle.gameObject);
+        _sceneNavigator.ResetData();
         _shuttle.TakeOff(() => SceneManager.LoadScene(Scenes.OUTPOST_SCENE));
     }
 
@@ -219,8 +276,10 @@ public abstract class BattleRoutine : MonoBehaviour
         CheckIfContractFailedOnExit();
         if (_playerVehicle != null)
         {
-            _playerVehicle.GetComponent<TankController>().CallToEvacuate -= OnEvacuate;
-            _playerVehicle.GetComponent<TankController>().Die -= OnEvacuate;
+            _playerController.CallToEvacuate -= OnEvacuate;
+            _playerController.Die -= OnEvacuate;
+            _playerController.GoingToPortal -= PlayerGoToPortal;
         }
+        _missilePool.Clear();
     }
 }

@@ -11,6 +11,7 @@ public class TankController : BaseEntity
 {
     public event UnityAction<BaseEntity> CallToEvacuate;
     public event UnityAction<QuestItemType, int> PickupLoot;
+    public event UnityAction<Portal> GoingToPortal;
 
     [SerializeField] private Transform _healthBar;
     [SerializeField] private SpriteRenderer _healthBarRenderer;
@@ -194,7 +195,7 @@ public class TankController : BaseEntity
 
         if (collision.gameObject.TryGetComponent<Portal>(out var portal))
         {
-            portal.LoadNextScene();
+            GoingToPortal?.Invoke(portal);
         }
     }
 
