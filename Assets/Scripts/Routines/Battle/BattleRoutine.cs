@@ -193,6 +193,7 @@ public abstract class BattleRoutine : MonoBehaviour
     }
     protected virtual void PlayerVehicleInit() 
     {
+        _playerVehicle.Health = _playerSettings.CurrentHealth;
         if (_sceneNavigator.NavigationVector == NavigationVector.GoingToMission)
             _playerVehicle.transform.position = _startPoint.position;
         else
