@@ -1,8 +1,4 @@
 using Assets.Scripts.SceneNavigation;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;

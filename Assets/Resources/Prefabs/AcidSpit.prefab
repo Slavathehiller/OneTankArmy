@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -2435816131754304858}
   - component: {fileID: 8915329528993115183}
   - component: {fileID: 6851604459920265582}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AcidSpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}

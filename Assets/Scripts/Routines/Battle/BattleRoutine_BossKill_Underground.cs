@@ -20,6 +20,11 @@ public class BattleRoutine_BossKill_Underground : BattleRoutine_BossKill
         }
     }
 
+    protected override int[] GetEnemiesCount()
+    {
+        return new int[4] { 40, 0, 0, 1 };
+    }
+
     protected override void ContractConditionsInit()
     {
         base.ContractConditionsInit();

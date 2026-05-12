@@ -14,7 +14,7 @@ public class BattleRoutine_BossKill : BattleRoutine
 
     protected override int[] GetEnemiesCount()
     {
-        return new int[4] { 30, 0, 0, 1 };
+        return new int[4] { 30, 0, 0, 2 };
     }
 
     protected void RefreshQuestEnemyCounter()
