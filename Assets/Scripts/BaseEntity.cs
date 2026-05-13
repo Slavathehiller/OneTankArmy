@@ -76,4 +76,10 @@ public abstract class BaseEntity : MonoBehaviour
         }
     }
 
+
+    public void ForcedMove(Vector3 force)
+    {
+        RigidBody.AddForce(force);
+    }
+
 }

@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class BattleRoutine_BossKill_Underground : BattleRoutine_BossKill
 {
     [SerializeField]
-    private AIEnemy _questEnemy;
+    protected AIEnemy _questEnemy;
 
     protected override void LateStart()
     {

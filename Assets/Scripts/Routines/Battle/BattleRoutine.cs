@@ -37,7 +37,7 @@ public abstract class BattleRoutine : MonoBehaviour
     private VisualElement _completeContractWindow;
 
     [Inject]
-    ISceneAssetFactory _sceneAssetFactory;
+    protected ISceneAssetFactory _sceneAssetFactory;
 
     [Inject]
     private IVehicleFactory _vehicleFactory;

@@ -65,12 +65,17 @@ public class AcidCockroach : AIRangedEnemy
             Fire();
     }
 
+    public void GetShocked()
+    {
+        _shokedTime = 1;
+        _animator.SetTrigger("Shoke");
+    }
+
     protected override void ReactToDamage(DamageDealer dd)
     {
         if (_shokedTime <= 0)
         {
-            _shokedTime = 1;
-            _animator.SetTrigger("Shoke");
+            GetShocked();
         }
     }
 

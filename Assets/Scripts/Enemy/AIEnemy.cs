@@ -242,5 +242,4 @@ public abstract class AIEnemy : BaseEntity
         }
         enabled = false;
     }
-
 }

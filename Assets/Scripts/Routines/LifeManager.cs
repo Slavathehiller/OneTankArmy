@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,14 +7,21 @@ public class LifeManager : MonoBehaviour
 {
     public event UnityAction AllEnemyDead;
     public event UnityAction<int> EnemyLiveCount;
-    private AIEnemy[] _allEnemies;
+    private List<AIEnemy> _allEnemies;
     public void Init()
     {
-        _allEnemies = FindObjectsByType<AIEnemy>(FindObjectsSortMode.None);
+        _allEnemies = FindObjectsByType<AIEnemy>(FindObjectsSortMode.None).ToList();
         foreach (var enemy in _allEnemies)
             enemy.Die += EnemyDie;
         EnemyCountChanged();
     }
+
+    public void AddEnemy(AIEnemy enemy)
+    {
+        _allEnemies.Add(enemy);
+        enemy.Die += EnemyDie;
+    }
+
     private void EnemyDie(BaseEntity deadEnemy)
     {
         EnemyCountChanged();
