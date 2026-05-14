@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
+using static UnityEngine.Rendering.DebugUI.MessageBox;
 using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Routines.Battle
@@ -23,6 +24,7 @@ namespace Assets.Scripts.Routines.Battle
 
         protected override void ContractConditionsInit()
         {
+            _document.rootVisualElement.Q<VisualElement>("CollectedItemsPanel").style.display = DisplayStyle.Flex;
             _questItemsCounter = _document.rootVisualElement.Q<Label>("ItemCollectedLabel");
             var questItemIcon = _document.rootVisualElement.Q<Image>("ItemCollectedIcon");
             questItemIcon.sprite = _questItemsData.Icon(_contractsManager.CurrentContract.QuestItemType);

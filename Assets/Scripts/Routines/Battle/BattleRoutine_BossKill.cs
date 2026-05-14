@@ -8,7 +8,8 @@ public class BattleRoutine_BossKill : BattleRoutine
     protected Label _questEnemyKillCounter;
     protected override void ContractConditionsInit()
     {
-        _questEnemyKillCounter = _document.rootVisualElement.Q<Label>("TargetEliminatedLabel");
+        _document.rootVisualElement.Q<VisualElement>("TargetEliminationPanel").style.display = DisplayStyle.Flex;
+        _questEnemyKillCounter = _document.rootVisualElement.Q<Label>("TargetEliminatedLabel");        
         RefreshQuestEnemyCounter();
     }
 

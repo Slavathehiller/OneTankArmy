@@ -34,6 +34,9 @@ public abstract class BattleRoutine : MonoBehaviour
     [SerializeField]
     protected UIDocument _document;
 
+    [SerializeField] 
+    private RenderTexture _minimapRenderTexture;
+
     private VisualElement _completeContractWindow;
 
     [Inject]
@@ -65,6 +68,11 @@ public abstract class BattleRoutine : MonoBehaviour
     void Start()
     {
         _completeContractWindow = _document.rootVisualElement.Q<VisualElement>("ContractCompleteWindow");
+
+        var minimapImage = _document.rootVisualElement.Q<Image>("MinimapImage");
+        if (minimapImage != null)
+            minimapImage.image = _minimapRenderTexture;
+
 
         if (_sceneNavigator.NavigationVector == NavigationVector.GoingToMission)
         {

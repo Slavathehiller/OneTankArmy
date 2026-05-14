@@ -13,6 +13,7 @@ namespace Assets.Scripts.Routines.Battle
         protected override void ContractConditionsInit()
         {
             _targetsLeftLabel = _document.rootVisualElement.Q<Label>("TargetsLeftLabel");
+            _targetsLeftLabel.style.display = DisplayStyle.Flex;
             _lifeManager.EnemyLiveCount += TargetsCountChanged;
             _lifeManager.AllEnemyDead += CompleteContract;
         }

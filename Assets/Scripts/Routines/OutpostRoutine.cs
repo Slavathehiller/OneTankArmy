@@ -62,9 +62,11 @@ public class OutpostRoutine : MonoBehaviour
     private SimpleMover _playerAvatarMover;
 
     private VisualElement _currentContractWindow;
+    private Label _currentContractComplectionLabel;
     private Button _currentContractTakeOffButton;
     private VisualElement _checkCurrentContractStatusWindow;
     private Button _closeCheckCurrentContractStatusWindowButton;
+    private Button _breakCurrentContractButton;
     private Button _toOrbitButton;
     private Label _ratingValue;
     private Label _moneyValue;
@@ -92,12 +94,16 @@ public class OutpostRoutine : MonoBehaviour
         _currentContractWindow = _document.rootVisualElement.Q<VisualElement>("CurrentContractWindow");
         _currentContractWindow.Q<Button>("CloseButton").clicked += () => _currentContractWindow.style.display = DisplayStyle.None;
 
+        _currentContractComplectionLabel = _currentContractWindow.Q<Label>("CompleteLabel");
+
         _checkCurrentContractStatusWindow = _document.rootVisualElement.Q<VisualElement>("CheckCurrentContractStatusWindow");
         _closeCheckCurrentContractStatusWindowButton = _checkCurrentContractStatusWindow.Q<Button>("CloseButton");
         _closeCheckCurrentContractStatusWindowButton.clicked += CloseCheckCurrentContractStatusWindow;
         _currentContractTakeOffButton = _currentContractWindow.Q<Button>("TakeOffButton");
         _currentContractTakeOffButton.clicked += () => _currentContractWindow.style.display = DisplayStyle.None;
         _currentContractTakeOffButton.clicked += TakeOff;
+        _breakCurrentContractButton = _currentContractWindow.Q<Button>("BreakButton");
+        _breakCurrentContractButton.clicked += BreakCurrentContract;
 
         _toOrbitButton = _document.rootVisualElement.Q<Button>("ToOrbitButton");
         _toOrbitButton.clicked += ToOrbit;
@@ -125,6 +131,14 @@ public class OutpostRoutine : MonoBehaviour
         CheckCurrentContractStatus();
 
         CreateAvatar(true);
+    }
+
+    private void BreakCurrentContract()
+    {
+        _contractManager.CurrentContract = null;
+        _contractManager.CurrentContractStatus = ContractStatus.Unsigned;
+        _contractManager.SaveData();
+        _currentContractWindow.style.display = DisplayStyle.None;
     }
 
     private void RefreshResources()
@@ -300,6 +314,10 @@ public class OutpostRoutine : MonoBehaviour
     {
         _currentContractWindow.style.display = DisplayStyle.Flex;
         _currentContractWindow.dataSource = _contractManager.CurrentContract;
+        if (_contractManager.CurrentContractStatus == ContractStatus.Signed && _contractManager.CurrentContract.Type == ContractType.CollectItem)
+        {
+            _currentContractComplectionLabel.text = $"Собрано {_playerSettings.GetQuestItem(_contractManager.CurrentContract.QuestItemType)}/{_contractManager.CurrentContract.QuestItemNeed}";
+        }
     }
     private void TakeOff()
     {

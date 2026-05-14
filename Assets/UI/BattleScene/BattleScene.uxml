@@ -1,7 +1,18 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Outpost.uss?fileID=7433441132597879392&amp;guid=a4f011f86eeda8b48a3b96118247df18&amp;type=3#Outpost"/>
+    <ui:Image name="MinimapImage" style="position: absolute; left: 10px; top: 10px;"/>
     <ui:VisualElement name="ContractCompleteWindow" style="flex-grow: 1; background-color: rgba(41, 97, 130, 0); align-self: center; width: 50%; height: 25%; position: absolute; top: 13%; flex-direction: column-reverse; display: none;">
         <ui:Label text="Контракт выполнен. Нажмите Ctrl-E для эвакуации." name="ContractCompleteLabel" style="align-self: center; -unity-text-align: middle-center; text-overflow: clip; margin-bottom: 9%; font-size: 24%; color: rgb(255, 255, 255); white-space: normal; position: relative; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&amp;guid=4beb055f07aaff244873dec698d0363e&amp;type=3#Roboto-Bold&quot;);"/>
     </ui:VisualElement>
-    <ui:Label text="Осталось целей: 0" name="TargetsLeftLabel" style="align-self: flex-end; margin-top: 29px; padding-right: 106px; font-size: 24px; color: rgb(255, 255, 255);"/>
+    <ui:Label text="Осталось целей: 0" name="TargetsLeftLabel" class="contractInfoLabel" style="align-self: flex-end; display: none;"/>
+    <ui:VisualElement name="CollectedItemsPanel" style="flex-grow: 1; flex-direction: row; align-self: flex-end; display: none;">
+        <ui:Label text="Собрано:" name="Label" class="InfoLabel contractInfoLabel" style="padding-right: 0;"/>
+        <ui:Image name="ItemCollectedIcon" style="align-self: flex-start; width: 50px; height: auto; top: 4%;"/>
+        <ui:Label name="ItemCollectedLabel" text="0/0" class="contractInfoLabel"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="TargetEliminationPanel" style="flex-grow: 1; flex-direction: row; align-self: flex-end; display: none;">
+        <ui:Label text="Цель уничтожена:" class="InfoLabel contractInfoLabel" style="padding-right: 0;"/>
+        <ui:Image name="TargetIcon" source="project://database/Assets/Sprites/Entity/Cockroach/CockroachQueenPresenter.png?fileID=2800000&amp;guid=756a9a5eba939264ab0d86953e476417&amp;type=3#CockroachQueenPresenter" style="width: 50px; height: 50px; top: 3%;"/>
+        <ui:Label name="TargetEliminatedLabel" class="InfoLabel contractInfoLabel"/>
+    </ui:VisualElement>
 </ui:UXML>
