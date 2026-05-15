@@ -139,6 +139,7 @@ public class OutpostRoutine : MonoBehaviour
         _contractManager.CurrentContractStatus = ContractStatus.Unsigned;
         _contractManager.SaveData();
         _currentContractWindow.style.display = DisplayStyle.None;
+        CheckCurrentContractButton();
     }
 
     private void RefreshResources()
@@ -314,9 +315,12 @@ public class OutpostRoutine : MonoBehaviour
     {
         _currentContractWindow.style.display = DisplayStyle.Flex;
         _currentContractWindow.dataSource = _contractManager.CurrentContract;
-        if (_contractManager.CurrentContractStatus == ContractStatus.Signed && _contractManager.CurrentContract.Type == ContractType.CollectItem)
+        if (_contractManager.CurrentContractStatus == ContractStatus.Signed)           
         {
-            _currentContractComplectionLabel.text = $"Собрано {_playerSettings.GetQuestItem(_contractManager.CurrentContract.QuestItemType)}/{_contractManager.CurrentContract.QuestItemNeed}";
+            if (_contractManager.CurrentContract.Type == ContractType.CollectItem)
+                _currentContractComplectionLabel.text = $"Собрано {_playerSettings.GetQuestItem(_contractManager.CurrentContract.QuestItemType)}/{_contractManager.CurrentContract.QuestItemNeed}";
+            else
+                _currentContractComplectionLabel.text = "Не завершен";
         }
     }
     private void TakeOff()
