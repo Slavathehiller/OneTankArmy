@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3babbb3990bcc943bfc18766504f2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 21
+  _moveSpeed: 22
   _rotateSpeed: 10
   _injuries: []
   _healthBar: {fileID: 3167926836334825702}

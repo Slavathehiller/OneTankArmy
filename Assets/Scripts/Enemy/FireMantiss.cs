@@ -184,7 +184,8 @@ public class FireMantiss : AIEnemy
         if (_flame != null)
             _flame.Off();
         StopAllCoroutines();
-        Revealing();
+        if (_isHide)
+            Revealing();
         base.DeadPerfomance();
         DisablePhysic();
         StartCoroutine(MakeGoooCoroutine<BigGreenGoo>(BodyParts[0].gameObject));

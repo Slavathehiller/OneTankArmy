@@ -668,7 +668,7 @@ MonoBehaviour:
   _injuries: []
   _maxHP: 1000
   _animator: {fileID: 7821131969858519910}
-  _distanceOfDetection: 8
+  _distanceOfDetection: 14
   _detectionCooldown: 1
   _meleeAttackCooldown: 0
   _meleeDamage: 0

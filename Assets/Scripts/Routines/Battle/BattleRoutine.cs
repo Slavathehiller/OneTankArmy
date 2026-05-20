@@ -11,6 +11,14 @@ using Zenject;
 
 public abstract class BattleRoutine : MonoBehaviour
 {
+
+    private enum MinimapMode
+    {
+        None,
+        Normal,
+        Zoom
+    }
+
     [SerializeField]
     private Shuttle _shuttle;
 
@@ -34,8 +42,21 @@ public abstract class BattleRoutine : MonoBehaviour
     [SerializeField]
     protected UIDocument _document;
 
+    [SerializeField]
+    private Camera _minimapCamera;
+
     [SerializeField] 
     private RenderTexture _minimapRenderTexture;
+    [SerializeField]
+    private RenderTexture _minimapZoomRenderTexture;
+
+    private Image _minimapImage;
+    private Image _minimapImage_zoom;
+
+    private Image _minimapImageContainer;
+    private Image _minimapImageZoomContainer;
+
+    private MinimapMode _minimapMode;
 
     private VisualElement _completeContractWindow;
 
@@ -67,12 +88,19 @@ public abstract class BattleRoutine : MonoBehaviour
 
     void Start()
     {
+        _minimapMode = MinimapMode.Normal;
         _completeContractWindow = _document.rootVisualElement.Q<VisualElement>("ContractCompleteWindow");
 
-        var minimapImage = _document.rootVisualElement.Q<Image>("MinimapImage");
-        if (minimapImage != null)
-            minimapImage.image = _minimapRenderTexture;
+        _minimapImage = _document.rootVisualElement.Q<Image>("MinimapImage");
+        if (_minimapImage != null)
+            _minimapImage.image = _minimapRenderTexture;
 
+        _minimapImage_zoom = _document.rootVisualElement.Q<Image>("MinimapImage_zoom");
+        if (_minimapImage_zoom != null)
+            _minimapImage_zoom.image = _minimapZoomRenderTexture;
+
+        _minimapImageContainer = _document.rootVisualElement.Q<Image>("MinimapImageContainer");
+        _minimapImageZoomContainer = _document.rootVisualElement.Q<Image>("MinimapImageZoomContainer");
 
         if (_sceneNavigator.NavigationVector == NavigationVector.GoingToMission)
         {
@@ -129,10 +157,37 @@ public abstract class BattleRoutine : MonoBehaviour
         }
     }
     protected virtual void LateStart() {}
+
+    private void SetMiniMap()
+    {
+        _minimapImageContainer.style.display = DisplayStyle.None;
+        _minimapImageZoomContainer.style.display = DisplayStyle.None;
+
+        if (_minimapMode == MinimapMode.Normal)
+        {
+            _minimapImageContainer.style.display = DisplayStyle.Flex;
+            if (_minimapCamera != null)
+                _minimapCamera.targetTexture = _minimapRenderTexture;
+        }
+        if (_minimapMode == MinimapMode.Zoom)
+        {
+            _minimapImageZoomContainer.style.display = DisplayStyle.Flex;
+            if (_minimapCamera != null)
+                _minimapCamera.targetTexture = _minimapZoomRenderTexture;
+        }
+    }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))
             Application.Quit();
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            _minimapMode++;
+            if ((int)_minimapMode > 2)
+                _minimapMode = 0;
+
+            SetMiniMap();
+        }
     }
 
     public void SpawnEnemies()
@@ -191,6 +246,10 @@ public abstract class BattleRoutine : MonoBehaviour
         _spawnPoints.Remove(spawnPoint);
         var angle = Random.Range(0, 360);
         enemy.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        var minimapMarkPrefab = Resources.Load<GameObject>("Prefabs/red-dot-mark");
+        var minimapMark = GameObject.Instantiate(minimapMarkPrefab);
+        enemy.GetMinimapMark(minimapMark);
+        
     }
 
     private void CreatePlayerVehicle()

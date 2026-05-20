@@ -178,7 +178,7 @@ MonoBehaviour:
   - {fileID: 2565681624438959080}
   _audioSourceFire: {fileID: 7846911475412062988}
   _fireSound: {fileID: 8300000, guid: 651495ddda4d6bf43a9693a52be489e6, type: 3}
-  _fireLatency: 0.3
+  _fireLatency: 0.25
   _missileType: 2
 --- !u!1 &8894185959440213136
 GameObject:

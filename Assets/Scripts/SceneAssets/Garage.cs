@@ -45,10 +45,10 @@ public class Garage : MonoBehaviour
 
     private void ChangeVehicle()
     {
-
         _playerSettings.CurrentVehicle = ((VehiclePresenter)_vehiclesView.selectedItem).VehicleType;
         _playerSettings.SaveSettings();
         OnVehicleTypeChange?.Invoke();
+        _garage.style.display = DisplayStyle.None;
     }
 
     private void RefreshCurrentVehicle()

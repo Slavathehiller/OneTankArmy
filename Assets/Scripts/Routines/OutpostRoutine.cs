@@ -172,7 +172,8 @@ public class OutpostRoutine : MonoBehaviour
     }
 
     private void ToOrbit()
-    {        
+    {
+        _wholeScreen.style.display = DisplayStyle.Flex;
         _toOrbitButton.style.display = DisplayStyle.None;
         _sceneNavigator.NavigationVector = NavigationVector.GoToOrbit;
         _transporter.TakeOff(() => SceneManager.LoadScene(Scenes.ORBIT_SCENE));

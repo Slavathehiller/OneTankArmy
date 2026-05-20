@@ -11,7 +11,7 @@
         <ui:VisualElement name="GarageInnerWindow" class="window" style="height: 90%; width: 85%; background-size: 100% 100%; justify-content: space-around; align-items: center; align-self: center; font-size: 50%; flex-direction: column; position: absolute; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/levels/table.png?fileID=2800000&amp;guid=1845cf5622441da428db2aa10a7b0b71&amp;type=3#table&quot;); -unity-background-image-tint-color: rgb(255, 255, 255); -unity-background-scale-mode: stretch-to-fill; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(67, 67, 67, 0); display: flex; top: 5%;">
             <ui:VisualElement name="GaragePanel" data-source-type="VehiclePresenter, Assembly-CSharp" style="flex-grow: 1; width: 90%; align-self: center; flex-direction: row; background-color: rgba(0, 0, 0, 0); -unity-background-image-tint-color: rgb(255, 255, 255); border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); height: 50%; top: 8%;">
                 <ui:ListView item-template="project://database/Assets/UI/ChooseTankTemplate.uxml?fileID=9197481963319205126&amp;guid=b8ad20f292d3c6047bae29ea6830a60d&amp;type=3#ChooseTankTemplate" name="AvailableVehiclesView" virtualization-method="DynamicHeight" allow-add="false" allow-remove="false" binding-source-selection-mode="AutoAssign" class="listViewCustom" style="align-self: flex-start; align-items: flex-start; width: 12%; height: 100%; background-color: rgba(0, 0, 0, 0); top: 4%; left: 1%; background-image: url(&quot;project://database/Assets/Sprites/UI/fantasy-strategy-game-ui/PNG/difficulty/window.png?fileID=2800000&amp;guid=51b91d09d8e4e044f8d97d3323a300ac&amp;type=3#window&quot;); right: 1%;"/>
-                <ui:VisualElement name="CurrentTankPanel" style="flex-direction: row; background-color: rgba(140, 140, 140, 0); flex-grow: 1; padding-right: 0; padding-top: 0; padding-bottom: 0; padding-left: 0; margin-right: 0; height: 80%; margin-bottom: 1%; align-self: flex-start; flex-wrap: wrap; top: 5%; left: 2%;">
+                <ui:VisualElement name="CurrentTankPanel" style="flex-direction: row; background-color: rgba(140, 140, 140, 0); flex-grow: 1; padding-right: 0; padding-top: 0; padding-bottom: 0; padding-left: 0; margin-right: 0; height: 80%; margin-bottom: 1%; align-self: flex-start; flex-wrap: wrap; top: 5%; left: 5%;">
                     <ui:VisualElement name="DescriptionPanel" style="flex-grow: 1; width: 30%; left: 1%; top: 1%; flex-direction: row;">
                         <ui:VisualElement name="Labels" style="flex-grow: 1;">
                             <ui:Label text="Живучесть" name="Vitality" style="color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-generator: advanced; -unity-text-auto-size: best-fit 4px 200px; height: 20%; -unity-text-align: middle-left;"/>
@@ -36,7 +36,7 @@
                             </ui:Label>
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="PresenterPanel" style="flex-grow: 1;">
+                    <ui:VisualElement name="PresenterPanel" style="flex-grow: 1; right: 3%;">
                         <ui:VisualElement name="CurrentTankPicture" style="flex-grow: 1; padding-bottom: 5px; background-image: url(&quot;project://database/Assets/Sprites/Vehicles/Presenters/BeetlePresenter.png?fileID=21300000&amp;guid=37157eb041d7b2b41b6c9805ea543698&amp;type=3#BeetlePresenter&quot;); width: 70%; height: 80%; align-self: center; margin-top: 0; margin-right: 50px; margin-bottom: 0%; margin-left: 50px; background-size: 100% 80%; -unity-background-scale-mode: scale-to-fit;">
                             <Bindings>
                                 <ui:DataBinding property="style.backgroundImage" data-source-path="Portrait" binding-mode="ToTarget"/>
@@ -45,9 +45,9 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="ButtonPanel" style="flex-grow: 0.5; flex-direction: row-reverse; align-self: stretch; align-content: stretch; width: auto; margin-bottom: 8%; height: 0%; aspect-ratio: auto; background-size: 100% 100%; right: 7%;">
-                <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="width: 15%; height: 70%; left: 1%;"/>
-                <ui:Button text="Выбрать" name="ChangeTankButton" class="closebutton" style="width: 15%; height: 70%; right: 1%;"/>
+            <ui:VisualElement name="ButtonPanel" style="flex-grow: 0.5; flex-direction: row-reverse; align-self: stretch; align-content: stretch; width: auto; margin-bottom: 8%; height: 0%; aspect-ratio: auto; background-size: 100% 100%; right: 7%; left: 30%;">
+                <ui:Button text="Закрыть" name="CloseButton" class="closebutton" style="width: 15%; height: 70%; left: auto; right: 37%;"/>
+                <ui:Button text="Выбрать" name="ChangeTankButton" class="closebutton" style="width: 15%; height: 70%; right: 39%;"/>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

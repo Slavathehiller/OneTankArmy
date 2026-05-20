@@ -100,6 +100,12 @@ public abstract class AIEnemy : BaseEntity
         }
     }
 
+    public void GetMinimapMark(GameObject minimapMark)
+    {
+        minimapMark.transform.SetParent(_mainBody.transform);
+        minimapMark.transform.localPosition = Vector3.zero;
+    }
+
     protected virtual void StartActions() 
     {
         _currentHP = MaxHP;

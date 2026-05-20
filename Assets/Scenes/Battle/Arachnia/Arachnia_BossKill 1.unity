@@ -1883,7 +1883,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 511
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -5377,7 +5377,9 @@ MonoBehaviour:
   - {fileID: 78821682}
   _cameraController: {fileID: 519420033}
   _document: {fileID: 1945576311}
+  _minimapCamera: {fileID: 1663114588}
   _minimapRenderTexture: {fileID: 8400000, guid: a8c8b1ee45291ec439c6a89c4c00968e, type: 2}
+  _minimapZoomRenderTexture: {fileID: 8400000, guid: 6e0c74d582f9bac4b82176626cf9ad2c, type: 2}
 --- !u!1001 &1145191067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7348,7 +7350,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 543
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: a8c8b1ee45291ec439c6a89c4c00968e, type: 2}
   m_TargetDisplay: 0

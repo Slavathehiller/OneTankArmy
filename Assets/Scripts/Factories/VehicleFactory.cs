@@ -2,6 +2,7 @@
 using Assets.Scripts.Factories.Interfaces;
 using Assets.Vehicles;
 using System;
+using UnityEngine;
 using Zenject;
 
 namespace Assets.Scripts.Factories
@@ -15,7 +16,11 @@ namespace Assets.Scripts.Factories
         public Vehicle CreateVehicle(VehicleType vehicleType)
         {
             var prefabPath = PrefabsPath.GetPathForVehicle(vehicleType);
-            return CreateFromPath(prefabPath).GetComponent<Vehicle>();
+            var vehicle = CreateFromPath(prefabPath).GetComponent<Vehicle>();
+            var minimapMarkPrefab = Resources.Load<GameObject>("Prefabs/green-dot-mark");
+            var minimapMark = GameObject.Instantiate(minimapMarkPrefab, vehicle.gameObject.transform);
+            minimapMark.transform.localPosition = Vector3.zero;
+            return vehicle;
         }
     }
 }

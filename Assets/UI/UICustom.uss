@@ -29,17 +29,19 @@
 .listViewCustom .unity-scroller__high-button {
     background-color: transparent;
     background-image: url("/Assets/Sprites/UI/arrow_down.png");
-    width: 0;
-    height: 0;
+    -unity-background-image-tint-color: white;
     border-left-width: 0;
     border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
 }
 
 .listViewCustom .unity-scroller__low-button {
     background-color: transparent;
     background-image: url("/Assets/Sprites/UI/arrow_up.png");
-    width: 0;
-    height: 0;
+    -unity-background-image-tint-color: white;
     border-left-width: 0;
     border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
 }
