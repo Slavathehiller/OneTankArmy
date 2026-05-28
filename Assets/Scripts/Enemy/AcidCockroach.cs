@@ -1,23 +1,16 @@
 using Assets.Scripts.Enemy;
-using Assets.Scripts.VFX.Interfaces;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using Zenject;
-using Random = UnityEngine.Random;
 
 public class AcidCockroach : AIRangedEnemy
 {
     private float _shokedTime;
     protected bool IsShocked => _shokedTime > 0;
 
-    private void FixedUpdate()
+    protected override void FixedUpdateActions()
     {
 
-        if (_isDead)
-                return;
+        if (_isDead && IsShocked)
+            return;
 
         if (_target == null)
         {
@@ -25,24 +18,7 @@ public class AcidCockroach : AIRangedEnemy
             return;
         }
 
-        if (IsShocked)
-            return;
-
-        if (!TryToRotateAtTarget())
-        {
-            RigidBody.angularVelocity = 0;
-            if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceOfRangeAttack)
-            {
-                StopMoving();
-                if (_currentRangeAttackCooldown <= 0)
-                {
-                    AcidSpit();
-                    _currentRangeAttackCooldown = _rangeAttackCooldown;
-                }
-            }
-            else
-                MoveToTarget();
-        }
+        base.FixedUpdateActions();
     }
 
     protected override void UpdateActions()
@@ -57,6 +33,7 @@ public class AcidCockroach : AIRangedEnemy
         {
             _animator.SetTrigger("AcidSpit");
         }
+        _currentRangeAttackCooldown = _rangeAttackCooldown;
     }
 
     public void AcidSpitStart()
@@ -69,6 +46,8 @@ public class AcidCockroach : AIRangedEnemy
     {
         _shokedTime = 1;
         _animator.SetTrigger("Shoke");
+        if (_agent.enabled)
+            _agent.ResetPath();
     }
 
     protected override void ReactToDamage(DamageDealer dd)
@@ -82,7 +61,12 @@ public class AcidCockroach : AIRangedEnemy
     protected override void DeadPerfomance()
     {
         base.DeadPerfomance();
-        DisablePhysic();
-        StartCoroutine(MakeGoooCoroutine<AcidGoo>(BodyParts[0].gameObject));
+       // DisablePhysic();
+        StartCoroutine(MakeGoooCoroutine<AcidGoo>(BodyParts[0].gameObject, 1, DisablePhysic));
+    }
+
+    protected override void RangedAttack()
+    {
+        AcidSpit();
     }
 }

@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2115552500642151589}
   - component: {fileID: 6486955513966762370}
   - component: {fileID: 6865157173743595246}
+  - component: {fileID: 7747162461048793577}
   m_Layer: 0
   m_Name: BoomFlea
   m_TagString: Untagged
@@ -83,7 +84,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.05
   m_LinearDamping: 5
-  m_AngularDamping: 3
+  m_AngularDamping: 4
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -144,15 +145,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2a376808b319043a3b3e32e88e49ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoomFlea
-  _moveSpeed: 1
-  _rotateSpeed: 0.03
+  _moveSpeed: 2
+  _rotateSpeed: 0.002
   _injuries:
   - {fileID: 4655467338303869079}
   _maxHP: 1
   _animator: {fileID: 6486955513966762370}
+  _agent: {fileID: 7747162461048793577}
   _distanceOfDetection: 10
   _detectionCooldown: 2
   _meleeAttackCooldown: 0
+  _meleeDistance: 0
   _meleeDamage: 0
   _mainBody: {fileID: 8972170608464377837}
   _bodyPartsCollection: []
@@ -240,6 +243,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+--- !u!195 &7747162461048793577
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7436413967900424432}
+  m_Enabled: 0
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.13
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.28
+  m_BaseOffset: 0.16
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &8891304675268531792
 PrefabInstance:
   m_ObjectHideFlags: 0

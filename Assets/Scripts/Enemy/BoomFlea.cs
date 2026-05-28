@@ -23,7 +23,13 @@ public class BoomFlea : AIEnemy
 
     private bool IsJumping => _jumpTime > 0;
 
-    private void FixedUpdate()
+    protected override void StartActions()
+    {
+        _agent.stoppingDistance = _distanceOfJump;
+        base.StartActions();
+    }
+
+    protected override void FixedUpdateActions()
     {
         if (_target == null)
         {
@@ -39,19 +45,14 @@ public class BoomFlea : AIEnemy
         else
             _animator.SetBool("Jumping", false);
 
-
-        if (!TryToRotateAtTarget())
+        if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceOfJump)
         {
-            RigidBody.angularVelocity = 0;
-            if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceOfJump)
-            {
-                StopMoving();
-                if (_jumpCooldown <= 0)
-                    Jump();
-            }
-            else
-                MoveToTarget();
-        }           
+            StopMoving();
+            if (_jumpCooldown <= 0 && !TryToRotateAtTarget())
+                Jump();
+        }
+    
+        base.FixedUpdateActions();
     }
 
     protected override void UpdateActions()
@@ -61,11 +62,26 @@ public class BoomFlea : AIEnemy
         base.UpdateActions();
     }
 
+    protected override void DetectEnemy(TankController player)
+    {
+        if (player.IsDead)
+            return;
+        base.DetectEnemy(player);
+        MoveToTarget();
+    }
+
+    protected override void LooseEnemy()
+    {
+        base.LooseEnemy();
+        StopMoving();
+    }
+
     private void Jump()
     {
         _jumpTime = _jumpMaxTime;
         _jumpCooldown = _jumpTime * 2;
         _animator.SetBool("Jumping", true);
+        _agent.isStopped = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

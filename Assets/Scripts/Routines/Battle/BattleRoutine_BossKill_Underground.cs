@@ -10,7 +10,6 @@ public class BattleRoutine_BossKill_Underground : BattleRoutine_BossKill
 
     protected override void LateStart()
     {
-        base.LateStart();
         var contractCompleteLabel = _document.rootVisualElement.Q<Label>("ContractCompleteLabel");
         contractCompleteLabel.text = "Контракт выполнен. Поднимитесь на поверхность для эвакуации.";
         if (_contractsManager.CurrentContractStatus == ContractStatus.Completed)
@@ -18,6 +17,7 @@ public class BattleRoutine_BossKill_Underground : BattleRoutine_BossKill
             Destroy(_questEnemy.gameObject);
             CompleteContract(null);
         }
+        base.LateStart();
     }
 
     protected override int[] GetEnemiesCount()

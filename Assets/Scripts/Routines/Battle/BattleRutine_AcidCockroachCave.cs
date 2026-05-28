@@ -33,6 +33,7 @@ namespace Assets.Scripts.Routines.Battle
             cockroach.transform.rotation = _queen.SpawnPoint.rotation;
             cockroach.GetShocked();
             cockroach.ForcedMove(cockroach.transform.up * 40);
+            cockroach.SetAgentOn();
         }
 
         protected override void OnDestroyAction()

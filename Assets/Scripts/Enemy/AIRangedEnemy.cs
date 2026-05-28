@@ -28,11 +28,45 @@ namespace Assets.Scripts.Enemy
         [Inject]
         private IMissilePool _missilePool;
 
+        protected abstract void RangedAttack();
+        protected override void StartActions()
+        {
+            _agent.stoppingDistance = _distanceOfRangeAttack;
+            base.StartActions();
+        }
+
         protected override void UpdateActions()
         {
             if (_currentRangeAttackCooldown > 0)
                 _currentRangeAttackCooldown -= Time.deltaTime;
             base.UpdateActions();
+        }
+
+
+        protected override void FixedUpdateActions()
+        {
+            base.FixedUpdateActions();
+            if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceOfRangeAttack)
+            {
+                StopMoving();
+
+                if (_currentRangeAttackCooldown <= 0 && !TryToRotateAtTarget())
+                    RangedAttack();
+            }
+        }
+
+        protected override void DetectEnemy(TankController player)
+        {
+            if (IsDead || player.IsDead)
+                return;
+            base.DetectEnemy(player);
+            MoveToTarget();
+        }
+
+        protected override void LooseEnemy()
+        {
+            base.LooseEnemy();
+            StopMoving();
         }
 
         protected void Fire()

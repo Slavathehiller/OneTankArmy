@@ -1,9 +1,9 @@
+using Assets.Scripts.MISC;
 using Assets.Scripts.VFX.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class FireMantiss : AIEnemy
 {
@@ -84,6 +84,20 @@ public class FireMantiss : AIEnemy
         _isHide = on;
     }
 
+    protected override void DetectEnemy(TankController player)
+    {
+        if (player.IsDead)
+            return;
+        base.DetectEnemy(player);
+        if (!InContactWithTarget && ((Vector3.Distance(transform.position, _target.transform.position) > _distanceOfFlame) || _currentDurationOfFlame > 0))
+            MoveToTarget();
+    }
+
+    protected override void LooseEnemy()
+    {
+        base.LooseEnemy();
+        StopMoving();
+    }
 
     protected void Revealing()
     {
@@ -98,6 +112,7 @@ public class FireMantiss : AIEnemy
         _flame.transform.localPosition = Vector3.zero;
 
         _currentDurationOfFlame = _durationOfFlame;
+        _agent.isStopped = true;
     }
 
     protected void Slash()
@@ -107,7 +122,7 @@ public class FireMantiss : AIEnemy
 
     public void EndSlash()
     {
-        if (_inContactWithTarget)
+        if (InContactWithTarget)
             _target.GetComponent<TankController>().TakeDamage(_meleeDamage);
         _animator.SetBool("Slashing", false);
         _currentMeleeAttackCooldown = _meleeAttackCooldown;
@@ -128,10 +143,11 @@ public class FireMantiss : AIEnemy
         _spriteRenderers.AddRange(GetComponentsInChildren<SpriteRenderer>(true));
     }
 
-    private void FixedUpdate()
+    protected override void FixedUpdateActions()
     {
         if (_currentDurationOfFlame > 0)
         {
+            _agent.isStopped = true;
             return;
         }
         else
@@ -141,6 +157,7 @@ public class FireMantiss : AIEnemy
                 _flame.Off();
                 _flame = null;
             }
+            _agent.isStopped = false;
         }
 
         if (_isDead)
@@ -157,26 +174,30 @@ public class FireMantiss : AIEnemy
         if (_isHide)
             Revealing();
 
-        if (!TryToRotateAtTarget())
+        if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceOfFlame && _currentCooldownOfFlame <= 0)
         {
-            RigidBody.angularVelocity = 0;
-            if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceOfFlame && _currentCooldownOfFlame <= 0)
+            StopMoving();
+            _agent.isStopped = true;
+            TryToRotateAtTarget();
+            if (RotateCalculator.AngleTolookAt(transform, _target.transform.position) < 20)
             {
-                StopMoving();
                 _currentCooldownOfFlame = _cooldownOfFlame;
                 Flame();
-                return;
             }
-            if (_inContactWithTarget && _currentMeleeAttackCooldown <= 0)
-            {
-                StopMoving();
-                Slash();
-                return;
-            }
-            if (!_inContactWithTarget)
-                MoveToTarget();
             return;
         }
+
+        if (InContactWithTarget)
+        {
+            StopMoving();
+            _agent.isStopped = true;
+            TryToRotateAtTarget();
+            if (RotateCalculator.AngleTolookAt(transform, _target.transform.position) < 20 && _currentMeleeAttackCooldown <= 0)
+                Slash();
+            return;
+        }
+
+        base.FixedUpdateActions();
     }
 
     protected override void DeadPerfomance()

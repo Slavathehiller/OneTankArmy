@@ -20,8 +20,7 @@ namespace Assets.Scripts.Routines.Battle
 
         protected override int[] GetEnemiesCount()
         {
-            //return new int[4] { 1, 0, 0, 0 };
-            return new int[4] { 15, 2, 1, 2 }; 
+            return new int[4] { 15, 2, 1, 2 };
         }
 
         private void TargetsCountChanged(int targetsLeft)

@@ -1,9 +1,11 @@
 using Assets.Scripts.MISC;
 using Assets.Scripts.VFX.Interfaces;
 using System.Collections;
+using System.Drawing;
 using System.Net.Security;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.U2D.Animation;
 using Zenject;
@@ -17,11 +19,13 @@ public abstract class AIEnemy : BaseEntity
 {
     [SerializeField]
     protected float _maxHP;
-
     protected override float MaxHP => _maxHP;
 
     [SerializeField]
     protected Animator _animator;
+
+    [SerializeField]
+    protected NavMeshAgent _agent;
 
     [SerializeField]
     protected float _distanceOfDetection;
@@ -32,14 +36,14 @@ public abstract class AIEnemy : BaseEntity
 
     [SerializeField]
     protected float _meleeAttackCooldown;
+    [SerializeField]
+    protected float _meleeDistance;
     protected float _currentMeleeAttackCooldown;
 
     [SerializeField]
     protected float _meleeDamage;
 
     protected GameObject _target;
-
-    protected bool _inContactWithTarget;
 
     public bool IsDead => _isDead;
 
@@ -50,6 +54,8 @@ public abstract class AIEnemy : BaseEntity
     protected BodyParts[] _bodyPartsCollection;
 
     private int? _bodyPartIndex = null;
+
+    private Collider2D _mainCollider;
     protected Rigidbody2D[] BodyParts
     {
         get
@@ -63,14 +69,29 @@ public abstract class AIEnemy : BaseEntity
     [Inject]
     private IVFXManager _VFXMmanager;
 
-    void Start()
+    private void Start()
     {
         StartActions();
     }
 
-    void Update()
+    private void Update()
     {
         UpdateActions();
+    }
+
+    private void FixedUpdate()
+    {
+        FixedUpdateActions();
+    }
+
+    protected virtual void FixedUpdateActions()
+    {
+        if (_agent != null && _agent.hasPath && _agent.remainingDistance > _agent.stoppingDistance)
+        {
+            var angleToPoint = RotateCalculator.AngleTolookAt(transform, _agent.steeringTarget);
+            _agent.isStopped = angleToPoint != null && Mathf.Abs(angleToPoint.Value) > 30;
+           TryToRotateAt(_agent.steeringTarget);
+        }
     }
 
     protected virtual void UpdateActions()
@@ -79,6 +100,7 @@ public abstract class AIEnemy : BaseEntity
             _currentDetectionCooldown -= Time.deltaTime;
         if (_currentMeleeAttackCooldown > 0)
             _currentMeleeAttackCooldown -= Time.deltaTime;
+
         if (_currentDetectionCooldown <= 0)
         {
             var detectedColliders = Physics2D.OverlapCircleAll(transform.position, _distanceOfDetection);
@@ -100,6 +122,21 @@ public abstract class AIEnemy : BaseEntity
         }
     }
 
+    public void SetAgentOn()
+    {
+        _agent.enabled = true;
+    }
+
+    protected virtual bool InContactWithTarget
+    {
+        get
+        {
+            return (_target != null
+                && Vector3.Distance(transform.position, _target.transform.position) <= _meleeDistance
+                && RotateCalculator.AngleTolookAt(transform, _target.transform.position) <= 15);
+        }
+    }
+
     public void GetMinimapMark(GameObject minimapMark)
     {
         minimapMark.transform.SetParent(_mainBody.transform);
@@ -109,11 +146,20 @@ public abstract class AIEnemy : BaseEntity
     protected virtual void StartActions() 
     {
         _currentHP = MaxHP;
+        _mainCollider = GetComponent<Collider2D>();
+        if (_agent != null)
+        {
+            _agent.updateUpAxis = false;
+            _agent.updateRotation = false;
+            _agent.speed = _moveSpeed;
+            var currentZ = transform.eulerAngles.z;
+            transform.eulerAngles = new Vector3(0f, 0f, currentZ);
+        }
     }
 
-    protected virtual bool TryToRotateAtTarget()
+    protected virtual bool TryToRotateAt(Vector3 point)
     {
-        var angleToTarget = RotateCalculator.AngleTolookAt(transform, _target.transform);
+        var angleToTarget = RotateCalculator.AngleTolookAt(transform, point);
         if (angleToTarget != null)
         {
             if (Mathf.Abs(angleToTarget.Value) > 5)
@@ -129,28 +175,34 @@ public abstract class AIEnemy : BaseEntity
         return false;
     }
 
+    protected virtual bool TryToRotateAtTarget()
+    {
+        if (_target == null)
+            return false;
+        return TryToRotateAt(_target.transform.position);
+    }
+
     protected void MoveToTarget()
     {
+        if (IsDead)
+            return;
         _animator.SetBool("Moving", true);
-        RigidBody.AddForce(transform.up * _moveSpeed);
+        _agent.SetDestination(_target.transform.position);
     }
     protected void StopMoving()
     {
-        RigidBody.linearVelocity = Vector3.zero;
-        _animator.SetBool("Moving", false);
-    }
-
-    protected virtual void DetectEnemy(TankController controller)
-    {
-        if (controller.IsDead)
+        if (IsDead)
             return;
-        _target = controller.gameObject;
-        _target.GetComponent<TankController>().Die += TagetDead;
+        _animator.SetBool("Moving", false);
+        _agent.ResetPath();
     }
 
-    private void TagetDead(BaseEntity tarket)
+    protected virtual void DetectEnemy(TankController player)
     {
-        LooseEnemy();
+        if (IsDead || player.IsDead)
+            return;
+        _target = player.gameObject;
+        _target.GetComponent<TankController>().Die += TagetDead;
     }
 
     protected virtual void LooseEnemy()
@@ -160,6 +212,12 @@ public abstract class AIEnemy : BaseEntity
             _target.GetComponent<TankController>().Die -= TagetDead;
             _target = null;
         }
+    }
+
+    private void TagetDead(BaseEntity target)
+    {
+        LooseEnemy();
+        target.Die -= TagetDead;
     }
 
     public override void TakeDamage(float damage)
@@ -178,19 +236,10 @@ public abstract class AIEnemy : BaseEntity
             ReactToDamage(dd);
             dd.gameObject.SetActive(false);
         }
-        if (collision.gameObject == _target)
-        {
-            _inContactWithTarget = true;
-        }
-        //ReactToCollision(collision);
     }
 
     protected void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject == _target)
-        {
-            _inContactWithTarget = false;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -210,10 +259,13 @@ public abstract class AIEnemy : BaseEntity
             DeadPerfomance();
     }
 
-   // protected abstract void ReactToCollision(Collision2D collision);
     protected abstract void ReactToDamage(DamageDealer dd);
     protected virtual void DeadPerfomance()
     {
+        if (_mainCollider != null)
+            _mainCollider.enabled = false;
+        if (_agent != null)
+            _agent.enabled = false;
         Destroy(_mainBody);
         foreach (var bodyPart in BodyParts)
         {
@@ -232,9 +284,6 @@ public abstract class AIEnemy : BaseEntity
 
     protected void DisablePhysic()
     {
-        var mainCollider = GetComponent<Collider2D>();
-        if (mainCollider != null)
-            mainCollider.enabled = false;
         if (RigidBody != null)
             RigidBody.simulated = false;
         foreach (var bodyPart in BodyParts)

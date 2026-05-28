@@ -2,6 +2,7 @@ using Assets.Player;
 using Assets.Scripts.Factories.Interfaces;
 using Assets.Scripts.ObjectPool;
 using Assets.Scripts.SceneNavigation;
+using NavMeshPlus.Components;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -156,7 +157,9 @@ public abstract class BattleRoutine : MonoBehaviour
             }
         }
     }
-    protected virtual void LateStart() {}
+    protected virtual void LateStart() 
+    {
+    }
 
     private void SetMiniMap()
     {
@@ -192,6 +195,9 @@ public abstract class BattleRoutine : MonoBehaviour
 
     public void SpawnEnemies()
     {
+        //var navmesh = FindAnyObjectByType<NavMeshSurface>();
+        //navmesh.RemoveData();
+        //navmesh.BuildNavMesh();
         var enemiesCount = GetEnemiesCount();
         for (var i = 0; i < GetEnemiesCount().Length; i++)
         {
@@ -246,6 +252,7 @@ public abstract class BattleRoutine : MonoBehaviour
         _spawnPoints.Remove(spawnPoint);
         var angle = Random.Range(0, 360);
         enemy.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        enemy.SetAgentOn();
         var minimapMarkPrefab = Resources.Load<GameObject>("Prefabs/red-dot-mark");
         var minimapMark = GameObject.Instantiate(minimapMarkPrefab);
         enemy.GetMinimapMark(minimapMark);

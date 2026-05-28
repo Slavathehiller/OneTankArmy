@@ -9,7 +9,7 @@ public class GiantScolopendra : AIEnemy
         base.UpdateActions();
     }
 
-    private void FixedUpdate()
+    protected override void FixedUpdateActions()
     {
 
         if (_isDead)
@@ -23,22 +23,33 @@ public class GiantScolopendra : AIEnemy
 
         if (!TryToRotateAtTarget())
         {
-            RigidBody.angularVelocity = 0;
-            if (_inContactWithTarget)
+            if (InContactWithTarget)
             {
                 if (_currentMeleeAttackCooldown <= 0)
                     Bite();
             }
-            else
-            {
-                MoveToTarget();
-            }
         }
     }
 
-    protected override bool TryToRotateAtTarget()
+    protected override void DetectEnemy(TankController player)
     {
-        var angleToTarget = RotateCalculator.AngleTolookAt(transform, _target.transform);
+        if (IsDead && player.IsDead)
+            return;
+        base.DetectEnemy(player);
+        if (!InContactWithTarget)
+            MoveToTarget();
+    }
+
+    protected override void LooseEnemy()
+    {
+        base.LooseEnemy();
+        StopMoving();
+    }
+
+
+    protected override bool TryToRotateAt(Vector3 point)
+    {
+        var angleToTarget = RotateCalculator.AngleTolookAt(transform, point);
         var minAngleToCurve = 40;
         if (angleToTarget != null)
         {
@@ -60,13 +71,13 @@ public class GiantScolopendra : AIEnemy
                 return true;
             }
 
-            if (Mathf.Abs(angleToTarget.Value) < minAngleToCurve && !_inContactWithTarget)
-            {
-                RigidBody.AddForce(transform.up * _moveSpeed);
-                _animator.SetBool("TurningLeft", false);
-                _animator.SetBool("TurningRight", false);
-                _animator.SetBool("Moving", Mathf.Abs(angleToTarget.Value) < minAngleToCurve);
-            }
+            //if (Mathf.Abs(angleToTarget.Value) < minAngleToCurve && !_inContactWithTarget)
+            //{
+            //    RigidBody.AddForce(transform.up * _moveSpeed);
+            //    _animator.SetBool("TurningLeft", false);
+            //    _animator.SetBool("TurningRight", false);
+            //    _animator.SetBool("Moving", Mathf.Abs(angleToTarget.Value) < minAngleToCurve);
+            //}
 
         }
         _animator.SetBool("TurningLeft", false);
@@ -76,9 +87,14 @@ public class GiantScolopendra : AIEnemy
     protected void Bite()
     {
         _animator.SetTrigger("Bite");
-        if (_inContactWithTarget)
-            _target.GetComponent<TankController>().TakeDamage(_meleeDamage);
+        StopMoving();
         _currentMeleeAttackCooldown = _meleeAttackCooldown;
+    }
+
+    protected void EndBiting()
+    {
+        if (InContactWithTarget)
+            _target.GetComponent<TankController>().TakeDamage(_meleeDamage);
     }
 
     protected override void DeadPerfomance()

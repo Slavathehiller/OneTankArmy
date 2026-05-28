@@ -10,11 +10,11 @@ namespace Assets.Scripts.MISC
 {
     public static class RotateCalculator
     {
-        public static float? AngleTolookAt(Transform observer, Transform target)
+        public static float? AngleTolookAt(Transform observer, Vector3 target)
         {
             float? angleToTurn = null;
 
-            var targetPosition = target.position - observer.position;
+            var targetPosition = target - observer.position;
 
             var angle = Vector3.Angle(observer.up, targetPosition);
             var cross = Vector3.Cross(observer.up, targetPosition);

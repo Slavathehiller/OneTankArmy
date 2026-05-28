@@ -433,7 +433,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2056050054886148908, guid: 1cae36394e8a8d94ba30a05553323e39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -690,7 +690,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 620453539, guid: 1cae36394e8a8d94ba30a05553323e39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -781,7 +781,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1685463097, guid: 1cae36394e8a8d94ba30a05553323e39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1236,7 +1236,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5702940402856666496, guid: 1cae36394e8a8d94ba30a05553323e39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1427,6 +1427,7 @@ GameObject:
   - component: {fileID: 1359990465470384078}
   - component: {fileID: -4548803581218888768}
   - component: {fileID: 7599279031533347897}
+  - component: {fileID: 4923148204926645851}
   m_Layer: 0
   m_Name: FireMantiss
   m_TagString: Untagged
@@ -1443,7 +1444,7 @@ Transform:
   m_GameObject: {fileID: 8026494773418044879}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.006, y: -0.002, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1466,7 +1467,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 0.8
   m_LinearDamping: 5
-  m_AngularDamping: 2
+  m_AngularDamping: 3
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1550,8 +1551,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e2cfb3a95e01a4483abdb3703b6889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireMantiss
-  _moveSpeed: 11
-  _rotateSpeed: 0.8
+  _moveSpeed: 1
+  _rotateSpeed: 0.2
   _injuries:
   - {fileID: 7116949340741159053}
   - {fileID: 4862867676475032071}
@@ -1559,9 +1560,11 @@ MonoBehaviour:
   - {fileID: 4447899080071031218}
   _maxHP: 100
   _animator: {fileID: -4548803581218888768}
+  _agent: {fileID: 4923148204926645851}
   _distanceOfDetection: 5
   _detectionCooldown: 1
   _meleeAttackCooldown: 1
+  _meleeDistance: 1.5
   _meleeDamage: 10
   _mainBody: {fileID: 213121472236678872}
   _bodyPartsCollection:
@@ -1575,10 +1578,32 @@ MonoBehaviour:
     - {fileID: 1459475593367017596}
     - {fileID: 7169545376723426971}
     - {fileID: 294822037595159556}
-  _distanceOfFlame: 2.5
+  _distanceOfFlame: 3.5
   _cooldownOfFlame: 5
   _durationOfFlame: 1
   _firePoint: {fileID: 4977496454540731263}
+--- !u!195 &4923148204926645851
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026494773418044879}
+  m_Enabled: 0
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8113474919867333080
 GameObject:
   m_ObjectHideFlags: 0

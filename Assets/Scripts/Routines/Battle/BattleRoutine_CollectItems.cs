@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
-using static UnityEngine.Rendering.DebugUI.MessageBox;
 using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Routines.Battle
@@ -38,7 +37,6 @@ namespace Assets.Scripts.Routines.Battle
 
         protected override void LateStart()
         {
-            base.LateStart();
             for (var i = 0; i < _questItemsAmount; i++)
             {
                 var spawnPointIndex = Random.Range(0, _questItemSpawnPoints.Count);
@@ -49,6 +47,7 @@ namespace Assets.Scripts.Routines.Battle
                 var angle = Random.Range(0, 360);
                 questItem.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             }
+            base.LateStart();
         }
 
         protected override void PlayerVehicleInit()
