@@ -1,4 +1,5 @@
 using Assets.Scripts.MISC;
+using Assets.Scripts.Player;
 using Assets.Scripts.VFX.Interfaces;
 using System.Collections;
 using System.Drawing;
@@ -45,8 +46,6 @@ public abstract class AIEnemy : BaseEntity
 
     protected GameObject _target;
 
-    public bool IsDead => _isDead;
-
     [SerializeField]
     protected GameObject _mainBody;
 
@@ -69,23 +68,9 @@ public abstract class AIEnemy : BaseEntity
     [Inject]
     private IVFXManager _VFXMmanager;
 
-    private void Start()
+    protected override void FixedUpdateActions()
     {
-        StartActions();
-    }
-
-    private void Update()
-    {
-        UpdateActions();
-    }
-
-    private void FixedUpdate()
-    {
-        FixedUpdateActions();
-    }
-
-    protected virtual void FixedUpdateActions()
-    {
+        base.FixedUpdateActions();
         if (_agent != null && _agent.hasPath && _agent.remainingDistance > _agent.stoppingDistance)
         {
             var angleToPoint = RotateCalculator.AngleTolookAt(transform, _agent.steeringTarget);
@@ -94,8 +79,9 @@ public abstract class AIEnemy : BaseEntity
         }
     }
 
-    protected virtual void UpdateActions()
+    protected override void UpdateActions()
     {
+        base.UpdateActions();
         if (_currentDetectionCooldown > 0)
             _currentDetectionCooldown -= Time.deltaTime;
         if (_currentMeleeAttackCooldown > 0)
@@ -103,23 +89,28 @@ public abstract class AIEnemy : BaseEntity
 
         if (_currentDetectionCooldown <= 0)
         {
-            var detectedColliders = Physics2D.OverlapCircleAll(transform.position, _distanceOfDetection);
-            TankController enemyFound = null;
-            foreach (Collider2D collider in detectedColliders)
-            {
-                if (collider.gameObject.TryGetComponent<TankController>(out var tank))
-                {
-                    enemyFound = tank;
-                    break;
-                }
-            }
+
+            PlayerSide enemyFound = TryDetect(_distanceOfDetection);
             if (enemyFound)
                 DetectEnemy(enemyFound);
             else
-                LooseEnemy();
+                Invoke("LooseEnemy", 2);
 
             _currentDetectionCooldown = _detectionCooldown;
         }
+    }
+
+    protected PlayerSide TryDetect(float radius)
+    {
+        var detectedColliders = Physics2D.OverlapCircleAll(transform.position, radius);
+        foreach (Collider2D collider in detectedColliders)
+        {
+            if (collider.gameObject.TryGetComponent<PlayerSide>(out var target))
+            {
+                return target;
+            }
+        }
+        return null;
     }
 
     public void SetAgentOn()
@@ -143,8 +134,9 @@ public abstract class AIEnemy : BaseEntity
         minimapMark.transform.localPosition = Vector3.zero;
     }
 
-    protected virtual void StartActions() 
+    protected override void StartActions() 
     {
+        base.StartActions();
         _currentHP = MaxHP;
         _mainCollider = GetComponent<Collider2D>();
         if (_agent != null)
@@ -197,20 +189,24 @@ public abstract class AIEnemy : BaseEntity
         _agent.ResetPath();
     }
 
-    protected virtual void DetectEnemy(TankController player)
+    protected virtual void DetectEnemy(PlayerSide player)
     {
         if (IsDead || player.IsDead)
             return;
         _target = player.gameObject;
-        _target.GetComponent<TankController>().Die += TagetDead;
+        _target.GetComponent<PlayerSide>().Die += TagetDead;
     }
 
     protected virtual void LooseEnemy()
     {
-        if (_target != null)
+        if (_target != null && Vector3.Distance(transform.position, _target.transform.position) > _distanceOfDetection * 1.2f)
         {
-            _target.GetComponent<TankController>().Die -= TagetDead;
-            _target = null;
+            var playerSide = _target.GetComponent<PlayerSide>();
+            if (playerSide != null)
+            {
+                playerSide.Die -= TagetDead;
+                _target = null;
+            }
         }
     }
 
@@ -225,21 +221,13 @@ public abstract class AIEnemy : BaseEntity
         if (_isDead) return;
         base.TakeDamage(damage);
         _currentHP -= damage;
-        CheckIfDead();        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<DamageDealer>(out var dd))
+        CheckIfDead();
+        if (!_isDead)
         {
-            TakeDamage(dd.Damage);
-            ReactToDamage(dd);
-            dd.gameObject.SetActive(false);
+            var target = TryDetect(_distanceOfDetection * 2);
+            if (target != null)
+                DetectEnemy(target);
         }
-    }
-
-    protected void OnCollisionExit2D(Collision2D collision)
-    {
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -259,7 +247,6 @@ public abstract class AIEnemy : BaseEntity
             DeadPerfomance();
     }
 
-    protected abstract void ReactToDamage(DamageDealer dd);
     protected virtual void DeadPerfomance()
     {
         if (_mainCollider != null)

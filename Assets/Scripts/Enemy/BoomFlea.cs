@@ -1,4 +1,5 @@
 using Assets.Scripts.ObjectPool;
+using Assets.Scripts.Player;
 using Assets.Scripts.VFX.Interfaces;
 using System;
 using UnityEngine;
@@ -62,7 +63,13 @@ public class BoomFlea : AIEnemy
         base.UpdateActions();
     }
 
-    protected override void DetectEnemy(TankController player)
+    protected override void InitTagCloud()
+    {
+        base.InitTagCloud();
+        TagCloud.Add(Tag.Insect);
+    }
+
+    protected override void DetectEnemy(PlayerSide player)
     {
         if (player.IsDead)
             return;

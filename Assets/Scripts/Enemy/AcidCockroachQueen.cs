@@ -24,6 +24,12 @@ public class AcidCockroachQueen : AIEnemy
             MakeSpawn();
     }
 
+    protected override void InitTagCloud()
+    {
+        base.InitTagCloud();
+        TagCloud.Add(Tag.Insect);
+    }
+
     private void MakeSpawn()
     {
         _animator.SetTrigger("Spawn");

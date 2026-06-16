@@ -27,6 +27,13 @@ public class AcidCockroach : AIRangedEnemy
         base.UpdateActions();
     }
 
+    protected override void InitTagCloud()
+    {
+        base.InitTagCloud();
+        TagCloud.Add(Tag.Small)
+                .Add(Tag.Insect);
+    }
+
     private void AcidSpit()
     {
         if (_target != null && !_isDead) 

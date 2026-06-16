@@ -20,4 +20,16 @@
         <ui:Image name="TargetIcon" source="project://database/Assets/Sprites/Entity/Cockroach/CockroachQueenPresenter.png?fileID=2800000&amp;guid=756a9a5eba939264ab0d86953e476417&amp;type=3#CockroachQueenPresenter" style="width: 50px; height: 50px; top: 3%;"/>
         <ui:Label name="TargetEliminatedLabel" class="InfoLabel contractInfoLabel"/>
     </ui:VisualElement>
+    <ui:VisualElement name="BreacherCrossedPanel" style="flex-grow: 1; flex-direction: column; align-self: flex-end; display: none; margin-top: 20px; align-content: auto;">
+        <ui:VisualElement name="BreacherDestroyed" style="flex-grow: 0.001; flex-direction: row; height: auto; align-content: flex-end;">
+            <ui:Label text="Уничтожено:" name="CompleteConditionLabel" class="InfoLabel contractInfoLabel" style="padding-right: 0; background-size: 100% 81%; height: 50px; margin-top: 2px;"/>
+            <ui:Image name="BreacherIcon" style="align-self: flex-start; width: 50px; height: auto; top: 4%;"/>
+            <ui:Label name="BreacherDestroyedLabel" text="0/0" class="contractInfoLabel" style="height: 45px; margin-top: 2px;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="BreacherCrossed" style="flex-grow: 0.001; flex-direction: row; height: auto; align-content: flex-end;">
+            <ui:Label text="Прорвалось:" name="Label" class="InfoLabel contractInfoLabel" style="padding-right: 0; margin-top: 2px;"/>
+            <ui:Image name="BreacherIcon" style="align-self: flex-start; width: 50px; height: auto; top: 4%;"/>
+            <ui:Label name="BreacherCrossedLabel" text="0/0" class="contractInfoLabel" style="margin-top: 2px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>

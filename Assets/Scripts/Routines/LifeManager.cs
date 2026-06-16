@@ -26,9 +26,15 @@ public class LifeManager : MonoBehaviour
     {
         EnemyCountChanged();
     }
+
+    public int EnemyLiveNow()
+    {
+        return _allEnemies.Count(x => !x.IsDead);
+    }
+
     private void EnemyCountChanged()
     {
-        EnemyLiveCount?.Invoke(_allEnemies.Count(x => !x.IsDead));
+        EnemyLiveCount?.Invoke(EnemyLiveNow());
         if (!_allEnemies.Any(x => !x.IsDead))
             AllEnemyDead?.Invoke();
     }

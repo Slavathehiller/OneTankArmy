@@ -27,6 +27,8 @@ namespace Assets.Scripts.Routines.Battle
 
         private void AcidCockroachSpawn()
         {
+            if (_lifeManager.EnemyLiveNow() > 50)
+                return;
             var cockroach = _sceneAssetFactory.CreateAsset<AcidCockroach>();
             _lifeManager.AddEnemy(cockroach);
             cockroach.transform.position = _queen.SpawnPoint.position;

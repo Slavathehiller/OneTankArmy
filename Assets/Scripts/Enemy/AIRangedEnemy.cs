@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.DamageDealers;
 using Assets.Scripts.ObjectPool;
+using Assets.Scripts.Player;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,9 @@ namespace Assets.Scripts.Enemy
 
         [SerializeField]
         protected MissileType _missileType;
+        
+        [SerializeField]
+        protected AudioSource _missileSound;
 
         [Inject]
         private IMissilePool _missilePool;
@@ -55,7 +59,7 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        protected override void DetectEnemy(TankController player)
+        protected override void DetectEnemy(PlayerSide player)
         {
             if (IsDead || player.IsDead)
                 return;
@@ -75,6 +79,8 @@ namespace Assets.Scripts.Enemy
             missile.transform.position = _firePoint.transform.position;
             missile.transform.rotation = _firePoint.transform.rotation;
             missile.Init();
+            if (_missileSound  != null)
+                _missileSound.Play();
         }
     }
 }

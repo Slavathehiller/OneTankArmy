@@ -71,10 +71,10 @@ MonoBehaviour:
       \u0431\u043E\u0433\u043E\u043C\u043E\u043B\u043E\u0432 \u0443\u0433\u0440\u043E\u0436\u0430\u0435\u0442
       \u043F\u043E\u0441\u0435\u043B\u0435\u043D\u0438\u044E. \u041E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0435
       \u0438\u0445."
-    RatingNeeded: 2500
+    RatingNeeded: 150
     RatingReward: 40
     MoneyReward: 600
     QuestItemType: -1
     QuestItemNeed: 0
     Scenes:
-    - 
+    - Arachnia_BreackBreach1

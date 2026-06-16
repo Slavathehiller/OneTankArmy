@@ -38,6 +38,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle/Arachnia/Arachnia_BossKill_Cave2.unity
     guid: 00cf39f2db60f214ca52f81ca25a55e8
+  - enabled: 1
+    path: Assets/Scenes/Battle/Arachnia/Arachnia_BreackBreach1.unity
+    guid: 11f77c4b894dd754d9c91a712ae3c666
+  - enabled: 0
+    path: Assets/Scenes/Battle/TEST1.unity
+    guid: 39da2d06d5a212e48881c426b85ffe8f
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

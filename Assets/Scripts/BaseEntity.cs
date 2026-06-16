@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public abstract class BaseEntity : MonoBehaviour
 {
+
+    [SerializeField]
+    protected AudioSource _audioSourceMove;
     protected abstract float MaxHP { get; }
 
     protected float _currentHP;
@@ -23,6 +26,11 @@ public abstract class BaseEntity : MonoBehaviour
 
     private Rigidbody2D _rigidBody;
 
+    public virtual bool IsDead => _isDead;
+
+    private TagCloud _tagCloud;
+    public TagCloud TagCloud => _tagCloud;
+
     protected Rigidbody2D RigidBody
     {
         get
@@ -32,6 +40,49 @@ public abstract class BaseEntity : MonoBehaviour
             return _rigidBody;
         }
     }
+
+    private void Start()
+    {
+        StartActions();
+    }
+
+    private void Update()
+    {
+        UpdateActions();
+    }
+
+    private void FixedUpdate()
+    {
+        if (_audioSourceMove != null)
+        {
+            if (RigidBody.linearVelocity.magnitude > 0.6f)
+            {
+                if (!_audioSourceMove.isPlaying)
+                {
+                    _audioSourceMove.Play();
+                }
+            }
+            else
+            {
+                _audioSourceMove.Stop();
+            }
+        }
+
+        FixedUpdateActions();
+    }
+
+    protected virtual void StartActions() 
+    {
+        InitTagCloud();
+    }
+    protected virtual void UpdateActions() { }
+    protected virtual void FixedUpdateActions() { }
+
+    protected virtual void InitTagCloud()
+    {
+        _tagCloud = new();
+    }
+
 
     protected virtual bool CheckHPOver()
     {
@@ -44,6 +95,12 @@ public abstract class BaseEntity : MonoBehaviour
             _isDead = true;
             Die?.Invoke(this);
         }
+    }
+
+    public void InstantDeath()
+    {
+        _currentHP = 0;
+        CheckIfDead();
     }
 
     public virtual void TakeDamage(float damage)
@@ -68,6 +125,17 @@ public abstract class BaseEntity : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<DamageDealer>(out var dd))
+        {
+            TakeDamage(dd.Damage);
+            ReactToDamage(dd);
+            dd.gameObject.SetActive(false);
+        }
+    }
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<DamageDealerDOT>(out var ddDOT))
@@ -81,5 +149,7 @@ public abstract class BaseEntity : MonoBehaviour
     {
         RigidBody.AddForce(force);
     }
+
+    protected virtual void ReactToDamage(DamageDealer dd) { }
 
 }

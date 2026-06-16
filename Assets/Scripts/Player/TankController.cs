@@ -1,22 +1,21 @@
 using Assets.Player;
-using Assets.Scripts.ObjectPool;
-using Assets.Scripts.SceneAssets;
-using Assets.Scripts.SceneNavigation;
+using Assets.Scripts.Player;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering.Universal;
 using Zenject;
 
-public class TankController : BaseEntity
+public class TankController : PlayerSide
 {
     public event UnityAction<BaseEntity> CallToEvacuate;
     public event UnityAction<QuestItemType, int> PickupLoot;
     public event UnityAction<Portal> GoingToPortal;
 
-    [SerializeField] private Transform _healthBar;
-    [SerializeField] private SpriteRenderer _healthBarRenderer;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private AudioSource _audioSourceDrive;
+    [SerializeField] 
+    private Transform _healthBar;
+    [SerializeField] 
+    private SpriteRenderer _healthBarRenderer;
+    [SerializeField] 
+    private SpriteRenderer _spriteRenderer;
 
     [SerializeField]
     private float _cabinsRotationSpeed = 1f;
@@ -39,10 +38,11 @@ public class TankController : BaseEntity
     [Inject]
     private IPlayerSettings _playerSettings;
 
-    public bool IsDead => _vehicle.Health <= 0;
+    public override bool IsDead => _vehicle.Health <= 0;
 
-    void Start()
+    protected override void StartActions()
     {
+        base.StartActions();
         _healthBarOffset = _healthBar.localPosition;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _healthBarMaxSize = _healthBarRenderer.size.x;
@@ -61,8 +61,9 @@ public class TankController : BaseEntity
         _evacuateFlare.SetActive(true);
     }
 
-    void Update()
+    protected override void UpdateActions()
     {
+        base.UpdateActions();
         _healthBar.position = transform.position + _healthBarOffset;
         _healthBar.localRotation = Quaternion.Inverse(transform.rotation);
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.E))
@@ -111,8 +112,9 @@ public class TankController : BaseEntity
         }
     }
 
-    private void FixedUpdate()
+    protected override  void FixedUpdateActions()
     {
+        base.FixedUpdateActions();
         if (Input.GetKey(KeyCode.W))
         {
             RigidBody.AddForce(transform.up * _moveSpeed);
@@ -131,18 +133,6 @@ public class TankController : BaseEntity
         if (Input.GetKey(KeyCode.D))
         {
             RigidBody.AddTorque(-_rotateSpeed);
-        }
-
-        if (RigidBody.linearVelocity.magnitude > 0.6f)
-        {
-            if (!_audioSourceDrive.isPlaying)
-            {
-                _audioSourceDrive.Play();
-            }
-        }
-        else
-        {
-            _audioSourceDrive.Stop();
         }
 
         //int layerMask = 63;
@@ -174,16 +164,16 @@ public class TankController : BaseEntity
             TakeDamage(dd.Damage);
         }
 
-        if (collision.gameObject.TryGetComponent<QuestItem>(out var qa))
+        if (collision.gameObject.TryGetComponent<QuestItem>(out var qi))
         {
-            var loot = qa.GetLoot();
+            var loot = qi.GetLoot();
 
             _playerSettings.AddQuestItems(loot.type, loot.amount);
             _playerSettings.SaveSettings();
 
             PickupLoot?.Invoke(loot.type, loot.amount);
 
-            Destroy(qa.gameObject);
+            Destroy(qi.gameObject);
         }
 
 
@@ -207,13 +197,6 @@ public class TankController : BaseEntity
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<DamageDealer>(out var dd))
-        {
-            TakeDamage(dd.Damage);
-        }
-    }
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
@@ -222,7 +205,7 @@ public class TankController : BaseEntity
 
     public void ControlOff()
     {
-        _audioSourceDrive.Stop();
+        _audioSourceMove.Stop();
         _healthBar.gameObject.SetActive(false);
         GetComponent<FireController>().enabled = false;
         GetComponent<Collider2D>().enabled = false;

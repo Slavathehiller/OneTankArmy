@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: ea1ee44649d275249ab9ba129311784c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8573984315288660092
+    second: tower_destroyed_0
+  - first:
+      213: 2700963339728353801
+    second: tower_destroyed_1
+  - first:
+      213: 5796573197312106779
+    second: tower_destroyed_2
+  - first:
+      213: -2247137580708112659
+    second: tower_destroyed_3
+  - first:
+      213: 5014857035135590933
+    second: tower_destroyed_4
+  - first:
+      213: -43020008029365924
+    second: tower_destroyed_5
+  - first:
+      213: -3444539135439052457
+    second: tower_destroyed_6
+  - first:
+      213: -5391595945382837155
+    second: tower_destroyed_7
+  - first:
+      213: -5887031158283437948
+    second: tower_destroyed_8
+  - first:
+      213: -5605331529713932387
+    second: tower_destroyed_9
+  - first:
+      213: 7805791683607747637
+    second: tower_destroyed_10
+  - first:
+      213: 1463438438606293994
+    second: tower_destroyed_11
+  - first:
+      213: 8569983722032978891
+    second: tower_destroyed_12
+  - first:
+      213: 1324884876405999186
+    second: tower_destroyed_13
+  - first:
+      213: 4966774447656762416
+    second: tower_destroyed_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tower_destroyed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 265
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 487d27131b6130980800000000000000
+      internalID: -8573984315288660092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 12d467cbb58ee0e4e89a5f432bce0832
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tower_destroyed_0: -8573984315288660092
+      tower_destroyed_1: 2700963339728353801
+      tower_destroyed_10: 7805791683607747637
+      tower_destroyed_11: 1463438438606293994
+      tower_destroyed_12: 8569983722032978891
+      tower_destroyed_13: 1324884876405999186
+      tower_destroyed_14: 4966774447656762416
+      tower_destroyed_2: 5796573197312106779
+      tower_destroyed_3: -2247137580708112659
+      tower_destroyed_4: 5014857035135590933
+      tower_destroyed_5: -43020008029365924
+      tower_destroyed_6: -3444539135439052457
+      tower_destroyed_7: -5391595945382837155
+      tower_destroyed_8: -5887031158283437948
+      tower_destroyed_9: -5605331529713932387
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

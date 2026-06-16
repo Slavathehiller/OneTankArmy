@@ -1,4 +1,5 @@
 using Assets.Scripts.MISC;
+using Assets.Scripts.Player;
 using Assets.Scripts.VFX.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
@@ -84,7 +85,7 @@ public class FireMantiss : AIEnemy
         _isHide = on;
     }
 
-    protected override void DetectEnemy(TankController player)
+    protected override void DetectEnemy(PlayerSide player)
     {
         if (player.IsDead)
             return;
@@ -123,7 +124,10 @@ public class FireMantiss : AIEnemy
     public void EndSlash()
     {
         if (InContactWithTarget)
-            _target.GetComponent<TankController>().TakeDamage(_meleeDamage);
+        {
+            if (_target.TryGetComponent<PlayerSide>(out PlayerSide playerside))
+                playerside.TakeDamage(_meleeDamage);
+        }
         _animator.SetBool("Slashing", false);
         _currentMeleeAttackCooldown = _meleeAttackCooldown;
     }
@@ -145,6 +149,8 @@ public class FireMantiss : AIEnemy
 
     protected override void FixedUpdateActions()
     {
+        if (_agent == null || !_agent.enabled)
+            return;
         if (_currentDurationOfFlame > 0)
         {
             _agent.isStopped = true;
@@ -198,6 +204,12 @@ public class FireMantiss : AIEnemy
         }
 
         base.FixedUpdateActions();
+    }
+
+    protected override void InitTagCloud()
+    {
+        base.InitTagCloud();
+        TagCloud.Add(Tag.Insect);
     }
 
     protected override void DeadPerfomance()

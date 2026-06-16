@@ -1,4 +1,5 @@
 using Assets.Scripts.MISC;
+using Assets.Scripts.Player;
 using UnityEngine;
 
 public class GiantScolopendra : AIEnemy
@@ -30,8 +31,12 @@ public class GiantScolopendra : AIEnemy
             }
         }
     }
-
-    protected override void DetectEnemy(TankController player)
+    protected override void InitTagCloud()
+    {
+        base.InitTagCloud();
+        TagCloud.Add(Tag.Insect);
+    }
+    protected override void DetectEnemy(PlayerSide player)
     {
         if (IsDead && player.IsDead)
             return;

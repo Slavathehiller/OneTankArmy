@@ -118,16 +118,7 @@ public abstract class BattleRoutine : MonoBehaviour
                     portal.transform.position = coords;
                 }
             }
-            //if (!string.IsNullOrEmpty(_sceneNavigator.StartPointName)) 
-            //{
-            //    var startPoint = GameObject.Find(_sceneNavigator.StartPointName);
-            //    if (startPoint == null)
-            //    {
-            //        Debug.LogError($"Не найден объект с именем {_sceneNavigator.StartPointName}");
-            //    }
-            //    else
-            //        _startPoint.transform.position = startPoint.transform.position;
-            //}
+
             _missilePool.Clear();
             CreatePlayerVehicle();
         }
@@ -157,9 +148,7 @@ public abstract class BattleRoutine : MonoBehaviour
             }
         }
     }
-    protected virtual void LateStart() 
-    {
-    }
+    protected virtual void LateStart() {}
 
     private void SetMiniMap()
     {
@@ -191,57 +180,38 @@ public abstract class BattleRoutine : MonoBehaviour
 
             SetMiniMap();
         }
+        UpdateActions();
     }
 
-    public void SpawnEnemies()
+    protected virtual void UpdateActions() {}
+
+    public virtual void SpawnEnemies()
     {
-        //var navmesh = FindAnyObjectByType<NavMeshSurface>();
-        //navmesh.RemoveData();
-        //navmesh.BuildNavMesh();
         var enemiesCount = GetEnemiesCount();
         for (var i = 0; i < GetEnemiesCount().Length; i++)
         {
-            AIEnemy enemy;
-            switch (i)
+            for (var j = 0; j < enemiesCount[i]; j++)
             {
-                case 0:
-                    {
-                        for (var j = 0; j < enemiesCount[i]; j++)
-                        {
-                            enemy = _sceneAssetFactory.CreateAsset<AcidCockroach>();
-                            PlaceEnemy(enemy);
-                        }
+                switch (i)
+                {
+                    case 0: SpawnEnemy<AcidCockroach>();
                         break;
-                    }
-                case 1:
-                    {
-                        for (var j = 0; j < enemiesCount[i]; j++)
-                        {
-                            enemy = _sceneAssetFactory.CreateAsset<BoomFlea>();
-                            PlaceEnemy(enemy);
-                        }
+                    case 1: SpawnEnemy<BoomFlea>();
                         break;
-                    }
-                case 2:
-                    {
-                        for (var j = 0; j < enemiesCount[i]; j++)
-                        {
-                            enemy = _sceneAssetFactory.CreateAsset<GiantScolopendra>();
-                            PlaceEnemy(enemy);
-                        }
+                    case 2: SpawnEnemy<GiantScolopendra>();
                         break;
-                    }
-                case 3:
-                    {
-                        for (var j = 0; j < enemiesCount[i]; j++)
-                        {
-                            enemy = _sceneAssetFactory.CreateAsset<FireMantiss>();
-                            PlaceEnemy(enemy);
-                        }
+                    case 3: SpawnEnemy<FireMantiss>();
                         break;
-                    }
+                }
             }
         }
+    }
+
+    protected T SpawnEnemy<T>() where T : AIEnemy
+    {
+        var enemy = _sceneAssetFactory.CreateAsset<T>();
+        PlaceEnemy(enemy);
+        return enemy;
     }
 
     private void PlaceEnemy(AIEnemy enemy)
@@ -252,11 +222,15 @@ public abstract class BattleRoutine : MonoBehaviour
         _spawnPoints.Remove(spawnPoint);
         var angle = Random.Range(0, 360);
         enemy.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        InitEnemy(enemy);
+    }
+
+    protected void InitEnemy(AIEnemy enemy)
+    {
         enemy.SetAgentOn();
         var minimapMarkPrefab = Resources.Load<GameObject>("Prefabs/red-dot-mark");
         var minimapMark = GameObject.Instantiate(minimapMarkPrefab);
         enemy.GetMinimapMark(minimapMark);
-        
     }
 
     private void CreatePlayerVehicle()
@@ -325,11 +299,26 @@ public abstract class BattleRoutine : MonoBehaviour
         _shuttle.TakeOff(() => SceneManager.LoadScene(Scenes.OUTPOST_SCENE));
     }
 
+
+    protected void SetCompleteContractMessage(string message)
+    {
+        var contractCompleteLabel = _document.rootVisualElement.Q<Label>("ContractCompleteLabel");
+        contractCompleteLabel.text = message;
+    }
+
     protected void CompleteContract()
     {
         _contractsManager.CurrentContractStatus = ContractStatus.Completed;
         _contractsManager.SaveData();
         _completeContractWindow.style.display = DisplayStyle.Flex;
+    }
+
+    protected void FailContract()
+    {
+        _contractsManager.CurrentContractStatus = ContractStatus.Failed;
+        _contractsManager.SaveData();
+        _completeContractWindow.style.display = DisplayStyle.Flex;
+        SetCompleteContractMessage("Контракт провален. Нажмите Ctrl-E для эвакуации");
     }
 
     protected void CheckIfContractFailedOnExit()

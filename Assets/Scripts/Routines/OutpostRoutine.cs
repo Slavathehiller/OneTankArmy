@@ -144,10 +144,10 @@ public class OutpostRoutine : MonoBehaviour
 
     private void RefreshResources()
     {
-        _ratingValue.text = _playerSettings.Rating.ToString();
-        _moneyValue.text = _playerSettings.Money.ToString();
-        _nanorepairKitValue.text = _playerSettings.GetConsumable(Consumables.NanoRepairKit).ToString();
-        _fuelValue.text = _playerSettings.GetConsumable(Consumables.Fuel).ToString();
+        _ratingValue.text = _playerSettings.Rating.To4SymbString();
+        _moneyValue.text = _playerSettings.Money.To4SymbString();
+        _nanorepairKitValue.text = _playerSettings.GetConsumable(Consumables.NanoRepairKit).To4SymbString();
+        _fuelValue.text = _playerSettings.GetConsumable(Consumables.Fuel).To4SymbString();
     }
     private void ConsumableChanged(Consumables value)
     {
@@ -352,7 +352,7 @@ public class OutpostRoutine : MonoBehaviour
         _sceneNavigator.NavigationVector = NavigationVector.GoingToMission;
         _playerAvatarMover.MoveTo(_shuttle.transform.position, 2, () => 
                   { 
-                    Destroy(_playerAvatar.gameObject);
+                    _playerAvatar.gameObject.SetActive(false);
                     _shuttle.TakeOff(() => SceneManager.LoadScene(_contractManager.CurrentContract.Scenes[sceneIndex]));
                   });        
     }

@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: 5c3d33a9cd890cd4dbcfe187ce057f6c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5625958057491014333
+    second: tower_destroyed2_0
+  - first:
+      213: 7811415929339955566
+    second: tower_destroyed2_1
+  - first:
+      213: 7724503950655291771
+    second: tower_destroyed2_2
+  - first:
+      213: -8917266922913761518
+    second: tower_destroyed2_3
+  - first:
+      213: -2851300154045283278
+    second: tower_destroyed2_4
+  - first:
+      213: 8104481123439785587
+    second: tower_destroyed2_5
+  - first:
+      213: 2751353124538929606
+    second: tower_destroyed2_6
+  - first:
+      213: 8122170294611676410
+    second: tower_destroyed2_7
+  - first:
+      213: 2841646494744524823
+    second: tower_destroyed2_8
+  - first:
+      213: -5447550995297475137
+    second: tower_destroyed2_9
+  - first:
+      213: -5330237714206484202
+    second: tower_destroyed2_10
+  - first:
+      213: 5926902322975453983
+    second: tower_destroyed2_11
+  - first:
+      213: 5770874468724265187
+    second: tower_destroyed2_12
+  - first:
+      213: -932344581473220708
+    second: tower_destroyed2_13
+  - first:
+      213: 3116302653527353432
+    second: tower_destroyed2_14
+  - first:
+      213: 2296764560798680558
+    second: tower_destroyed2_15
+  - first:
+      213: 3270801099009798941
+    second: tower_destroyed2_16
+  - first:
+      213: 7051357533280754950
+    second: tower_destroyed2_17
+  - first:
+      213: -663011576526750603
+    second: tower_destroyed2_18
+  - first:
+      213: -8285345851266438298
+    second: tower_destroyed2_19
+  - first:
+      213: 3436536840401021195
+    second: tower_destroyed2_20
+  - first:
+      213: -8539710400159030453
+    second: tower_destroyed2_21
+  - first:
+      213: 30449507487113313
+    second: tower_destroyed2_22
+  - first:
+      213: -5902609631462962342
+    second: tower_destroyed2_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tower_destroyed2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db2aff1bb0b631e40800000000000000
+      internalID: 5625958057491014333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8478f77ceae463d42b61eee5bb086b8e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tower_destroyed2_0: 5625958057491014333
+      tower_destroyed2_1: 7811415929339955566
+      tower_destroyed2_10: -5330237714206484202
+      tower_destroyed2_11: 5926902322975453983
+      tower_destroyed2_12: 5770874468724265187
+      tower_destroyed2_13: -932344581473220708
+      tower_destroyed2_14: 3116302653527353432
+      tower_destroyed2_15: 2296764560798680558
+      tower_destroyed2_16: 3270801099009798941
+      tower_destroyed2_17: 7051357533280754950
+      tower_destroyed2_18: -663011576526750603
+      tower_destroyed2_19: -8285345851266438298
+      tower_destroyed2_2: 7724503950655291771
+      tower_destroyed2_20: 3436536840401021195
+      tower_destroyed2_21: -8539710400159030453
+      tower_destroyed2_22: 30449507487113313
+      tower_destroyed2_23: -5902609631462962342
+      tower_destroyed2_3: -8917266922913761518
+      tower_destroyed2_4: -2851300154045283278
+      tower_destroyed2_5: 8104481123439785587
+      tower_destroyed2_6: 2751353124538929606
+      tower_destroyed2_7: 8122170294611676410
+      tower_destroyed2_8: 2841646494744524823
+      tower_destroyed2_9: -5447550995297475137
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

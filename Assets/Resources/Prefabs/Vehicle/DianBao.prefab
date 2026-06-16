@@ -233,13 +233,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3babbb3990bcc943bfc18766504f2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioSourceMove: {fileID: 7517493489112617148}
   _moveSpeed: 15
   _rotateSpeed: 9
   _injuries: []
   _healthBar: {fileID: 3167926836334825702}
   _healthBarRenderer: {fileID: 2319024376133290374}
   _spriteRenderer: {fileID: 6586793873056049515}
-  _audioSourceDrive: {fileID: 7517493489112617148}
   _cabinsRotationSpeed: 2.5
   _cabins:
   - {fileID: 8531055388512267355}
