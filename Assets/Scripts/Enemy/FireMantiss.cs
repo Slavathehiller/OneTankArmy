@@ -22,7 +22,11 @@ public class FireMantiss : AIEnemy
     [SerializeField]
     protected Transform _firePoint;
 
+    [SerializeField]
     private Flame _flame;
+
+    [SerializeField]
+    protected AudioSource _flameSound;
 
     private bool _isHide;
 
@@ -107,11 +111,8 @@ public class FireMantiss : AIEnemy
 
     protected void Flame()
     {
-        _flame = _VFXMmanager.MeakeVFXAt<Flame>(Vector3.zero);
-        _flame.transform.SetParent(_firePoint);        
-        _flame.transform.localRotation = Quaternion.identity;
-        _flame.transform.localPosition = Vector3.zero;
-
+        _flame.On();
+        _flameSound?.Play();
         _currentDurationOfFlame = _durationOfFlame;
         _agent.isStopped = true;
     }
@@ -158,10 +159,10 @@ public class FireMantiss : AIEnemy
         }
         else
         {
-            if (_flame != null)
+            if (_flame.IsOn())
             {
                 _flame.Off();
-                _flame = null;
+                _flameSound?.Stop();
             }
             _agent.isStopped = false;
         }

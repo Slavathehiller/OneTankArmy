@@ -1,3 +1,4 @@
+using Assets.Scripts.Enums;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class ContractData
     public ContractType Type;
     public string Description;
     public string Details;
+    public PlanetsEnum Planet;
     public int RatingNeeded;
     public int RatingReward;
     public int MoneyReward;

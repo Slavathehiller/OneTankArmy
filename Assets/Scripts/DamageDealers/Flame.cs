@@ -1,10 +1,23 @@
-using Assets.Scripts.DamageDealers;
+﻿using Assets.Scripts.DamageDealers;
 using UnityEngine;
 
 public class Flame : DamageDealerDOT
 {
-    public void Off() 
+    [SerializeField]
+    private GameObject _flameBody;
+    public void On()
     {
-        Destroy(gameObject);
+        _flameBody.SetActive(true);
+    }
+
+    public void Off()
+    {
+        _flameBody.SetActive(false);
+    }
+
+    public bool IsOn()
+    {
+        return _flameBody.activeSelf;
     }
 }
+

@@ -2,12 +2,15 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using Zenject;
 
 public class BattleRoutine_BossKill_Underground : BattleRoutine_BossKill
 {
     [SerializeField]
     protected AIEnemy _questEnemy;
 
+    [Inject]
+    private IPlanetManager _planetManager;
     protected override void LateStart()
     {
         var contractCompleteLabel = _document.rootVisualElement.Q<Label>("ContractCompleteLabel");
@@ -54,7 +57,7 @@ public class BattleRoutine_BossKill_Underground : BattleRoutine_BossKill
     private void ReturnToOutpost()
     {
         _sceneNavigator.ResetData();
-        SceneManager.LoadScene(Scenes.OUTPOST_SCENE);
+        SceneManager.LoadScene(_planetManager.CurrentPlanet.OutpostScene);
     }
 
     protected override void OnDestroyAction()

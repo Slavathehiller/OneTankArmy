@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: -1267759032250053154}
   - component: {fileID: 7517493489112617148}
   - component: {fileID: 8245310478764340479}
-  - component: {fileID: 3840400751302630580}
+  - component: {fileID: 1133807345045374232}
   m_Layer: 6
   m_Name: DianBao
   m_TagString: Untagged
@@ -237,6 +237,7 @@ MonoBehaviour:
   _moveSpeed: 15
   _rotateSpeed: 9
   _injuries: []
+  _rigidBody: {fileID: 0}
   _healthBar: {fileID: 3167926836334825702}
   _healthBarRenderer: {fileID: 2319024376133290374}
   _spriteRenderer: {fileID: 6586793873056049515}
@@ -274,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DianBao
   _maxHealth: 200
+  _tankController: {fileID: 0}
 --- !u!82 &7517493489112617148
 AudioSource:
   m_ObjectHideFlags: 0
@@ -468,8 +470,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!68 &3840400751302630580
-EdgeCollider2D:
+--- !u!60 &1133807345045374232
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -503,29 +505,41 @@ EdgeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.49409917, y: 0.422685}
+    oldSize: {x: 1.5, y: 1.66}
+    newSize: {x: 1.23, y: 1.384}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: 0.7699516, y: 0.19912016}
-  - {x: 0.7593496, y: 1.0264211}
-  - {x: 0.34980583, y: 1.0227745}
-  - {x: 0.29378176, y: 0.79907584}
-  - {x: 0.23521376, y: 0.54794836}
-  - {x: -0.21459067, y: 0.5638654}
-  - {x: -0.2960242, y: 0.8021829}
-  - {x: -0.3073249, y: 1.0277379}
-  - {x: -0.72756326, y: 1.0348222}
-  - {x: -0.6973243, y: -0.6218064}
-  - {x: -0.30211318, y: -0.61868143}
-  - {x: -0.21730042, y: -0.55148935}
-  - {x: 0.013204813, y: -0.6085}
-  - {x: 0.2402265, y: -0.55160046}
-  - {x: 0.33567286, y: -0.6266432}
-  - {x: 0.7211704, y: -0.61207104}
-  - {x: 0.7676594, y: 0.19622314}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+    m_Paths:
+    - - {x: 0.7288512, y: -0.7016571}
+      - {x: 0.75885123, y: -0.6616571}
+      - {x: 0.75885123, y: 0.9183429}
+      - {x: 0.7088512, y: 0.95834285}
+      - {x: 0.35885122, y: 0.95834285}
+      - {x: 0.30885124, y: 0.89834285}
+      - {x: 0.21885124, y: 0.6683429}
+      - {x: 0.19885124, y: 0.3183429}
+      - {x: 0.06885124, y: 0.36834288}
+      - {x: -0.13114876, y: 0.3483429}
+      - {x: -0.22114876, y: 0.30834287}
+      - {x: -0.19114876, y: 0.5383429}
+      - {x: -0.22114876, y: 0.68834287}
+      - {x: -0.29114875, y: 0.9183429}
+      - {x: -0.35114875, y: 0.95834285}
+      - {x: -0.68114877, y: 0.95834285}
+      - {x: -0.74114877, y: 0.9283429}
+      - {x: -0.74114877, y: -0.6616571}
+      - {x: -0.71114874, y: -0.7016571}
+      - {x: -0.23114875, y: -0.7016571}
+      - {x: -0.15114875, y: -0.6716571}
+      - {x: 0.09885124, y: -0.69165707}
+      - {x: 0.16885124, y: -0.7016571}
+  m_UseDelaunayMesh: 1
 --- !u!1 &2323210917819160283
 GameObject:
   m_ObjectHideFlags: 0

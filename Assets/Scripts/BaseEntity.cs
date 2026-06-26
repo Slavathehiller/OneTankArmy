@@ -24,6 +24,7 @@ public abstract class BaseEntity : MonoBehaviour
     [SerializeField]
     protected GameObject[] _injuries;
 
+    [SerializeField]
     private Rigidbody2D _rigidBody;
 
     public virtual bool IsDead => _isDead;
@@ -134,16 +135,6 @@ public abstract class BaseEntity : MonoBehaviour
             dd.gameObject.SetActive(false);
         }
     }
-
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<DamageDealerDOT>(out var ddDOT))
-        {
-            TakeDamage(ddDOT.DOT);
-        }
-    }
-
 
     public void ForcedMove(Vector3 force)
     {

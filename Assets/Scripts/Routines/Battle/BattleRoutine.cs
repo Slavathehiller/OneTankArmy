@@ -79,6 +79,9 @@ public abstract class BattleRoutine : MonoBehaviour
     [Inject]
     private IMissilePool _missilePool;
 
+    [Inject]
+    private IPlanetManager _planetManager;
+
     protected LifeManager _lifeManager;
     protected Vehicle _playerVehicle;
     protected TankController _playerController;
@@ -250,7 +253,7 @@ public abstract class BattleRoutine : MonoBehaviour
             _playerVehicle.transform.rotation = portalToGO.ExitPoint.rotation;
         }
         _cameraController.BindObject(_playerVehicle.gameObject);
-        _playerController = _playerVehicle.GetComponent<TankController>();
+        _playerController = _playerVehicle.TankController;
         _playerController.CallToEvacuate += OnEvacuate;
         _playerController.Die += OnDie;
         _playerController.GoingToPortal += PlayerGoToPortal;
@@ -289,14 +292,14 @@ public abstract class BattleRoutine : MonoBehaviour
 
     private void PickupPlayerAndTakeOff()
     {
-        _playerVehicle.GetComponent<TankController>().CallToEvacuate -= OnEvacuate;
-        _playerVehicle.GetComponent<TankController>().Die -= OnEvacuate;
+        _playerController.CallToEvacuate -= OnEvacuate;
+        _playerController.Die -= OnEvacuate;
         _playerSettings.CurrentHealth = _playerVehicle.Health;
         _playerSettings.SaveSettings();
         _contractsManager.SaveData();
         Destroy(_playerVehicle.gameObject);
         _sceneNavigator.ResetData();
-        _shuttle.TakeOff(() => SceneManager.LoadScene(Scenes.OUTPOST_SCENE));
+        _shuttle.TakeOff(() => SceneManager.LoadScene(_planetManager.CurrentPlanet.OutpostScene));
     }
 
 

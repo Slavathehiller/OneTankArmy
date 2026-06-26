@@ -10,7 +10,7 @@ public class TagCloud
 
     public TagCloud Add(Tag tag)
     {
-        if (_tags.Contains(tag))
+        if (!_tags.Contains(tag))
             _tags.Add(tag);
         return this;
     }

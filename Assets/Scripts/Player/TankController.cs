@@ -44,7 +44,8 @@ public class TankController : PlayerSide
     {
         base.StartActions();
         _healthBarOffset = _healthBar.localPosition;
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        if (_spriteRenderer == null)
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         _healthBarMaxSize = _healthBarRenderer.size.x;
         _vehicle.HealthChanges += RefreshHealth;
         _vehicle.HealthChanges += CheckIfDead;

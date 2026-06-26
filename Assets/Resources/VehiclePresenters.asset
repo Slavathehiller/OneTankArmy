@@ -37,3 +37,9 @@ MonoBehaviour:
     Vitality: "\u25A0\u25A0\u25A0\u25A0\u25A0"
     Speed: "\u25A0\u25A1\u25A1\u25A1\u25A1"
     Firepower: "\u25A0\u25A0\u25A0\u25A1\u25A1"
+  - VehicleType: 4
+    Name: "\u041A\u0430\u0441\u0442\u0435\u043B\u043B\u044F\u043D"
+    Portrait: {fileID: -6892048595295950875, guid: 8831048c0105fc8418b54355bb0f05f9, type: 3}
+    Vitality: "\u25A0\u25A0\u25A1\u25A1\u25A1"
+    Speed: "\u25A0\u25A0\u25A0\u25A0\u25A1"
+    Firepower: "\u25A0\u25A0\u25A0\u25A1\u25A1"

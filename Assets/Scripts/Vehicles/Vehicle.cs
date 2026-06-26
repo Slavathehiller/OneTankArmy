@@ -11,6 +11,19 @@ public class Vehicle : MonoBehaviour
     private float _health;
     public event UnityAction HealthChanges;
 
+    [SerializeField]
+    private TankController _tankController;
+
+    public TankController TankController
+    {
+        get
+        {
+            if (_tankController == null)
+                _tankController = GetComponent<TankController>();
+            return _tankController;
+        }
+    }
+
     [Inject]
     private IPlayerSettings _playerSettings;
 
@@ -45,11 +58,12 @@ public class Vehicle : MonoBehaviour
 
     public void ControlOff()
     {
-        GetComponent<TankController>().ControlOff();
+
+        TankController.ControlOff();
     }
 
     public void EvacuateFlareOn()
     {
-        GetComponent<TankController>().EvacuateFlareOn();
+        TankController.EvacuateFlareOn();
     }
 }

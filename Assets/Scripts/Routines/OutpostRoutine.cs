@@ -225,11 +225,11 @@ public class OutpostRoutine : MonoBehaviour
         while (currentAmount < _playerSettings.Rating + ratingAmount)
         {
             currentAmount += delta;
-            _ratingValue.text = Convert.ToInt16(currentAmount).ToString();
+            _ratingValue.text = Convert.ToInt32(currentAmount).To4SymbString();
             yield return new WaitForSeconds(0.1f);
         }
         _playerSettings.Rating += ratingAmount;
-        _ratingValue.text = (_playerSettings.Rating).ToString();
+        _ratingValue.text = (_playerSettings.Rating).To4SymbString();
 
         delta = moneyAmount / 15f;
 
@@ -238,11 +238,11 @@ public class OutpostRoutine : MonoBehaviour
         while (currentAmount < _playerSettings.Money + moneyAmount)
         {
             currentAmount += delta;
-            _moneyValue.text = Convert.ToInt16(currentAmount).ToString();
+            _moneyValue.text = Convert.ToInt32(currentAmount).To4SymbString();
             yield return new WaitForSeconds(0.1f);
         }
         _playerSettings.Money += moneyAmount;
-        _moneyValue.text = (_playerSettings.Money).ToString();
+        _moneyValue.text = (_playerSettings.Money).To4SymbString();
 
 
         _playerSettings.SaveSettings();

@@ -12,5 +12,14 @@ namespace Assets.Scripts.DamageDealers
         [SerializeField] private float _dot;
 
         public float DOT => _dot;
+
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.gameObject.TryGetComponent<BaseEntity>(out var entity))
+            {
+                entity.TakeDamage(DOT);
+            }
+        }
+
     }
 }

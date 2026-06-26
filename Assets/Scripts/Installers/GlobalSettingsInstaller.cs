@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Factories;
+using Assets.Scripts.Planets;
 using Assets.Scripts.Player;
 using Assets.Scripts.SceneAssets;
 using Assets.Scripts.SceneNavigation;
@@ -17,7 +18,8 @@ public class GlobalSettingsInstaller : MonoInstaller
         Container.BindInterfacesTo<MissilePool>().AsCached();
         Container.BindInterfacesTo<QuestItemsData>().AsSingle();
         Container.BindInterfacesTo<FloatTooltipManager>().AsSingle();
-        Container.BindInterfacesTo<SceneNavigator>().AsSingle();      
+        Container.BindInterfacesTo<SceneNavigator>().AsSingle();
+        Container.BindInterfacesTo<PlanetManager>().AsSingle();
 
         //Container.Bind<ILogger>().To<Logger>().AsCached();
         //Container.BindInterfacesTo<LocalizationManager>().AsSingle();

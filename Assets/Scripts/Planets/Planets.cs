@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Orbit
+namespace Assets.Scripts.Planets
 {
     [System.Serializable]
     public class PlanetInfo
     {
         public int ID;
-        public Sprite Image;
+        public Sprite Image;        
         public string Name;
         public string Description;
         public string OutpostScene;

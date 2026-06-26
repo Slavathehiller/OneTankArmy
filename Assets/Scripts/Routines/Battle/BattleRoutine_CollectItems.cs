@@ -14,8 +14,6 @@ namespace Assets.Scripts.Routines.Battle
         [SerializeField]
         private int _questItemsAmount = 10;
 
-        private TankController _tankController;
-
         private Label _questItemsCounter;
 
         [Inject]
@@ -53,8 +51,7 @@ namespace Assets.Scripts.Routines.Battle
         protected override void PlayerVehicleInit()
         {
             base.PlayerVehicleInit();
-            _tankController = _playerVehicle.GetComponent<TankController>();
-            _tankController.PickupLoot += OnPickup;
+            _playerController.PickupLoot += OnPickup;
         }
 
         private void OnPickup(QuestItemType type, int amount)
@@ -72,7 +69,7 @@ namespace Assets.Scripts.Routines.Battle
         protected override void OnDestroyAction()
         {
             base.OnDestroyAction();
-            _tankController.PickupLoot -= OnPickup;
+            _playerController.PickupLoot -= OnPickup;
         }
     }
 }

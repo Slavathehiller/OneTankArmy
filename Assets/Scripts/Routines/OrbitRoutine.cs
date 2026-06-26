@@ -1,5 +1,5 @@
 using Assets.Player;
-using Assets.Scripts.Orbit;
+using Assets.Scripts.Planets;
 using Assets.Scripts.SceneNavigation;
 using System;
 using System.Collections.Generic;
@@ -25,6 +25,9 @@ public class OrbitRoutine : MonoBehaviour
 
     [SerializeField] 
     private VisualTreeAsset _planetNameTemplate;
+
+    [Inject]
+    private IPlanetManager _planetManager;
 
     private VisualElement _upperInfoPanel;
     private Button _takeoffButton;
@@ -165,6 +168,7 @@ public class OrbitRoutine : MonoBehaviour
         _spaceship.MoveTo(SelectedPlanetPresenter.ShipPoint.position);
         _playerSettings.CurrentPlanetID = _selectedPlanetInfo.ID;
         _playerSettings.SaveSettings();
+        _planetManager.SetCurrentPlanetInfo();
         _shipInRoute = true;
         RefreshNavigationButtons();
     }

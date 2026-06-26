@@ -1,5 +1,5 @@
 using Assets.Player;
-using Assets.Scripts.Orbit;
+using Assets.Scripts.Planets;
 using Assets.Scripts.SceneNavigation;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     private List<Button> _allButtons;
 
     [Inject]
-    private IPlayerSettings _playerSettings;
+    private IPlanetManager _planetManager;
 
     [Inject]
     private ISceneNavigator _sceneNavigator;
@@ -47,11 +47,10 @@ public class MainMenu : MonoBehaviour
 
     private void StartGame()
     {
-        var planetsInfo = Resources.Load<Planets>("Planets").Data;
-        var currentPlanetInfo = planetsInfo.First(x => x.ID == _playerSettings.CurrentPlanetID);
+        _planetManager.SetCurrentPlanetInfo();
         _sceneNavigator.NavigationVector = NavigationVector.StartGame;
-        if (!string.IsNullOrEmpty(currentPlanetInfo.OutpostScene)) 
-            SceneManager.LoadScene(currentPlanetInfo.OutpostScene);
+        if (!string.IsNullOrEmpty(_planetManager.CurrentPlanet.OutpostScene)) 
+            SceneManager.LoadScene(_planetManager.CurrentPlanet.OutpostScene);
         else
             SceneManager.LoadScene(Scenes.ORBIT_SCENE);
     }

@@ -1,6 +1,7 @@
 ﻿using Assets.Player;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -28,6 +29,8 @@ namespace Assets.Scripts.SceneAssets
         private IPlayerSettings _playerSettings;
         [Inject]
         private IContractsManager _contractManager;
+        [Inject]
+        private IPlanetManager _planetManager;
 
         private void Start()
         {
@@ -35,7 +38,9 @@ namespace Assets.Scripts.SceneAssets
             _contractsView = _controlCenter.Q<VisualElement>("ContractList").Q<ListView>("Contracts");
             _controlPanel = _controlCenter.Q<VisualElement>("ControlPanel");
             _allContracts = Resources.Load<Contracts>("Contracts");
-            _contractsView.itemsSource = _allContracts.Data;
+            _contractsView.itemsSource = _allContracts.Data.Where(x => (int)x.Planet == _planetManager.CurrentPlanet.ID).ToList();
+
+            _contractsView.RegisterCallback<GeometryChangedEvent>(OnListViewGeometryChanged);
 
             _contractsView.bindItem = (element, index) =>
             {
@@ -54,6 +59,25 @@ namespace Assets.Scripts.SceneAssets
             _signButton.clicked += SignContract;
         }
 
+        private void OnListViewGeometryChanged(GeometryChangedEvent evt)
+        {
+            _contractsView.schedule.Execute(() =>
+            {
+                var emptyLabel = _contractsView.Q<Label>(className: "unity-list-view__empty-label");
+                if (emptyLabel != null && emptyLabel.text != "Нет контрактов")
+                {
+                    emptyLabel.text = "Нет контрактов";
+                    emptyLabel.style.color = Color.white;
+                    emptyLabel.style.unityTextAlign = TextAnchor.MiddleCenter;
+                    emptyLabel.style.flexGrow = 1;
+                    emptyLabel.style.width = Length.Percent(100);
+                    emptyLabel.style.height = Length.Percent(100);
+                    emptyLabel.style.justifyContent = Justify.Center;
+                    emptyLabel.style.alignItems = Align.Center;
+                }
+            }).StartingIn(0);
+        }
+
         private void SignContract()
         {
             _contractManager.CurrentContract = (ContractData)_contractsView.selectedItem;
@@ -66,6 +90,8 @@ namespace Assets.Scripts.SceneAssets
         private void RefreshSelectedContract(IEnumerable<object> selectedItems)
         {
             var contract = (ContractData)_contractsView.selectedItem;
+            if (contract == null)
+                return;
             _controlPanel.dataSource = contract;
             if (contract.RatingNeeded <= _playerSettings.Rating) { 
                 _statusLabel.text = "Доступен";}

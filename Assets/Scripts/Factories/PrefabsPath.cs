@@ -88,12 +88,14 @@ namespace Assets.Scripts.Factories
             Register(typeof(BigAcidGoo), "Prefabs/BigAcidGoo");
             Register(typeof(ToxicGoo), "Prefabs/ToxicGoo");
             Register(typeof(BigGreenGoo), "Prefabs/BigGreenGoo");            
-            Register(typeof(Flame), "Prefabs/Flame");
+            Register(typeof(Flame_old), "Prefabs/Flame");
 
             Register(VehicleType.Beetle, "Prefabs/Vehicle/Beetle");
             Register(VehicleType.DianBao, "Prefabs/Vehicle/DianBao");
             Register(VehicleType.Fury, "Prefabs/Vehicle/Fury");
             Register(VehicleType.Ratnik, "Prefabs/Vehicle/Ratnik");
+            Register(VehicleType.Castellan, "Prefabs/Vehicle/Castellan");
+
             Register(MissileType.AcidSpit, "Prefabs/AcidSpit");
             Register(MissileType.Assault25mm, "Prefabs/Bullets/AssaultCannon25mmBullet");
             Register(MissileType.Autocannon50mm, "Prefabs/Bullets/Autocannon50mmBullet");

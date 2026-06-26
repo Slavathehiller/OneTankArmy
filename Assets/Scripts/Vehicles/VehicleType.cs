@@ -12,6 +12,7 @@ namespace Assets.Vehicles
         Beetle = 0,
         DianBao = 1,
         Fury = 2,
-        Ratnik
+        Ratnik = 3,
+        Castellan = 4
     }
 }

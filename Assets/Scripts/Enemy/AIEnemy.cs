@@ -180,6 +180,8 @@ public abstract class AIEnemy : BaseEntity
             return;
         _animator.SetBool("Moving", true);
         _agent.SetDestination(_target.transform.position);
+        //if (_audioSourceMove != null && !_audioSourceMove.isPlaying)            
+        //    _audioSourceMove.Play();
     }
     protected void StopMoving()
     {
@@ -187,6 +189,8 @@ public abstract class AIEnemy : BaseEntity
             return;
         _animator.SetBool("Moving", false);
         _agent.ResetPath();
+        if (_audioSourceMove != null)
+            _audioSourceMove.Stop();
     }
 
     protected virtual void DetectEnemy(PlayerSide player)
@@ -212,6 +216,7 @@ public abstract class AIEnemy : BaseEntity
 
     private void TagetDead(BaseEntity target)
     {
+        if (_isDead) return;
         LooseEnemy();
         target.Die -= TagetDead;
     }
