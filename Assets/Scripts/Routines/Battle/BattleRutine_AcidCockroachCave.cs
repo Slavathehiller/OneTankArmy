@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace Assets.Scripts.Routines.Battle
                 }
                 _queen.Spawn += AcidCockroachSpawn;
             }
+        }
+
+        protected override (EntityType enemyType, int count)[] GetEnemiesCount()
+        {
+            return new (EntityType enemyType, int count)[]
+            {
+            (EntityType.AcidCockroach , 40),
+            (EntityType.FireMantiss, 1)
+            };
         }
 
         private void AcidCockroachSpawn()

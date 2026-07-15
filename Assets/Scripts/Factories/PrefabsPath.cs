@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.DamageDealers;
+using Assets.Scripts.Enums;
 using Assets.Vehicles;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Assets.Scripts.Factories
         private static Dictionary<Type, string> _pathesByClass = new();
         private static Dictionary<MissileType, string> _pathesByMissileType = new();
         private static Dictionary<VehicleType, string> _pathesByVehicleType = new();
+        private static Dictionary<EntityType, string> _pathesByEntityType = new();
 
         public static void Register(Type type, string path)
         {
@@ -46,6 +48,18 @@ namespace Assets.Scripts.Factories
             _pathesByVehicleType.Add(vehicleType, path);
         }
 
+        public static void Register(EntityType entityType, string path)
+        {
+            if (_pathesByEntityType.ContainsKey(entityType))
+            {
+                Debug.LogError($"VehicleType {entityType} already registered in PrefabPath.");
+                return;
+            }
+
+            _pathesByEntityType.Add(entityType, path);
+        }
+
+
         public static string GetPathFor<T>()
         {
             string result;
@@ -76,6 +90,16 @@ namespace Assets.Scripts.Factories
             return result;
         }
 
+        public static string GetPathForEntity(EntityType entityType)
+        {
+            string result;
+            if (!_pathesByEntityType.TryGetValue(entityType, out result))
+            {
+                Debug.LogError($"EntityType {entityType} not registered in PrefabPath.");
+            }
+            return result;
+        }
+
         public static void InitPathes()
         {
             Register(typeof(Explosion), "Prefabs/Explosion");
@@ -90,6 +114,15 @@ namespace Assets.Scripts.Factories
             Register(typeof(BigGreenGoo), "Prefabs/BigGreenGoo");            
             Register(typeof(Flame_old), "Prefabs/Flame");
 
+
+            Register(EntityType.AcidCockroach, "Prefabs/AcidCockroach");
+            Register(EntityType.BoomFlea, "Prefabs/BoomFlea");
+            Register(EntityType.GiantScolopendra, "Prefabs/GiantScolopendra");
+            Register(EntityType.FireMantiss, "Prefabs/FireMantiss");
+            Register(EntityType.FireMantiss_Breacher, "Prefabs/FireMantiss_Breacher");           
+            Register(EntityType.NM_Firefly, "Prefabs/NM_Firefly");
+
+
             Register(VehicleType.Beetle, "Prefabs/Vehicle/Beetle");
             Register(VehicleType.DianBao, "Prefabs/Vehicle/DianBao");
             Register(VehicleType.Fury, "Prefabs/Vehicle/Fury");
@@ -101,6 +134,7 @@ namespace Assets.Scripts.Factories
             Register(MissileType.Autocannon50mm, "Prefabs/Bullets/Autocannon50mmBullet");
             Register(MissileType.Machinegun12mm, "Prefabs/Bullets/Machinegun12mmBullet");
             Register(MissileType.Cannon100mm, "Prefabs/Bullets/Cannon100mmBullet");
+            Register(MissileType.PhotonCharge, "Prefabs/Bullets/PhotonCharge");
         }
     }
 }

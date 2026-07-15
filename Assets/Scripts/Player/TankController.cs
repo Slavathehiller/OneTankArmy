@@ -1,4 +1,5 @@
 using Assets.Player;
+using Assets.Scripts.DamageDealers;
 using Assets.Scripts.Player;
 using UnityEngine;
 using UnityEngine.Events;
@@ -72,6 +73,13 @@ public class TankController : PlayerSide
             CallToEvacuate?.Invoke(this);
         }
         CabinsFollowCursor();
+    }
+
+    protected override void InitTagCloud()
+    { 
+        base.InitTagCloud();
+        TagCloud.Add(Tag.Heavy)
+                .Add(Tag.Mechanical);
     }
 
     private void CabinsFollowCursor()
@@ -163,6 +171,10 @@ public class TankController : PlayerSide
         if (collision.gameObject.TryGetComponent<DamageDealer>(out var dd))
         {
             TakeDamage(dd.Damage);
+
+            var missile = dd as Missile;
+            if (missile != null)
+                missile.Remove();
         }
 
         if (collision.gameObject.TryGetComponent<QuestItem>(out var qi))

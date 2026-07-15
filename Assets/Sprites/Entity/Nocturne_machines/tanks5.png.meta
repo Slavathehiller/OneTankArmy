@@ -1,52 +1,40 @@
 fileFormatVersion: 2
-guid: 2e4da6227f3d97e45a0b58a97a0b402e
+guid: 656fd66a9b2db0c479ae5abf5d149f15
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6533434620068476348
-    second: Fungus_0
+      213: -541734000225441505
+    second: tanks5_0
   - first:
-      213: 6338159489003480316
-    second: Fungus_1
+      213: -3779110815054313536
+    second: tanks5_1
   - first:
-      213: 7449785933797552984
-    second: Fungus_2
+      213: -8926155592116870624
+    second: tanks5_2
   - first:
-      213: -3947806804254753565
-    second: Fungus_3
+      213: -3257971388877325826
+    second: tanks5_3
   - first:
-      213: 8190018753213492361
-    second: Fungus_4
+      213: 3734784359772421259
+    second: tanks5_4
   - first:
-      213: 5428336416752072392
-    second: Fungus_5
+      213: -7592471217534409413
+    second: tanks5_5
   - first:
-      213: 5322468028370143374
-    second: Fungus_6
+      213: 6098549476194036977
+    second: tanks5_6
   - first:
-      213: -1936793934664451659
-    second: Fungus_7
+      213: -3536762539798466754
+    second: tanks5_7
   - first:
-      213: -7119491638096564027
-    second: Fungus_8
+      213: 7021781762139296404
+    second: tanks5_8
   - first:
-      213: -7535169468027291448
-    second: Fungus_9
+      213: -6877382583462696368
+    second: tanks5_9
   - first:
-      213: 3598892329626655896
-    second: Fungus_10
-  - first:
-      213: 8466075441929275494
-    second: Fungus_11
-  - first:
-      213: 1933698331546329244
-    second: Fungus_12
-  - first:
-      213: 7928873040496648708
-    second: Fungus_13
-  - first:
-      213: 4308675899772375583
-    second: Fungus_14
+      213: 2116734721226313496
+    second: tanks5_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -93,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -142,199 +130,243 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fungus_0
+      name: tanks5_0
       rect:
         serializedVersion: 2
-        x: 83
+        x: 6
+        y: 712
+        width: 297
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19afc90ccf5b78f0800000000000000
+      internalID: -541734000225441505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanks5_1
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 718
+        width: 239
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c7c9dd7cb6ed8bc0800000000000000
+      internalID: -3779110815054313536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanks5_2
+      rect:
+        serializedVersion: 2
+        x: 645
         y: 705
-        width: 248
-        height: 242
+        width: 304
+        height: 224
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44a449324d39455a0800000000000000
-      internalID: -6533434620068476348
+      spriteID: 022e10228ccef1480800000000000000
+      internalID: -8926155592116870624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fungus_1
+      name: tanks5_3
       rect:
         serializedVersion: 2
-        x: 767
-        y: 839
-        width: 160
-        height: 155
+        x: 1027
+        y: 701
+        width: 260
+        height: 226
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf4e2d7697aa5f750800000000000000
-      internalID: 6338159489003480316
+      spriteID: ef9b495884c59c2d0800000000000000
+      internalID: -3257971388877325826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fungus_3
+      name: tanks5_4
       rect:
         serializedVersion: 2
-        x: 1156
-        y: 863
-        width: 137
-        height: 122
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ec768eb0a29639c0800000000000000
-      internalID: -3947806804254753565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fungus_5
-      rect:
-        serializedVersion: 2
-        x: 455
-        y: 696
-        width: 193
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c6f2d1e533555b40800000000000000
-      internalID: 5428336416752072392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fungus_7
-      rect:
-        serializedVersion: 2
-        x: 767
-        y: 562
-        width: 180
+        x: 81
+        y: 438
+        width: 207
         height: 178
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5b9b1319d202f15e0800000000000000
-      internalID: -1936793934664451659
+      spriteID: b8c7be4669e94d330800000000000000
+      internalID: 3734784359772421259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fungus_8
+      name: tanks5_5
       rect:
         serializedVersion: 2
-        x: 1131
-        y: 579
-        width: 162
-        height: 144
+        x: 406
+        y: 444
+        width: 296
+        height: 191
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c0f3e9631c723d90800000000000000
-      internalID: -7119491638096564027
+      spriteID: b35eb7f77af12a690800000000000000
+      internalID: -7592471217534409413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fungus_10
+      name: tanks5_6
       rect:
         serializedVersion: 2
-        x: 72
-        y: 367
-        width: 245
-        height: 249
+        x: 861
+        y: 467
+        width: 186
+        height: 174
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 89c564c8185d1f130800000000000000
-      internalID: 3598892329626655896
+      spriteID: 1fca0b5ef6662a450800000000000000
+      internalID: 6098549476194036977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fungus_12
+      name: tanks5_7
       rect:
         serializedVersion: 2
-        x: 513
-        y: 446
-        width: 133
-        height: 111
+        x: 8
+        y: 157
+        width: 300
+        height: 217
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c90a59a2360e5da10800000000000000
-      internalID: 1933698331546329244
+      spriteID: e3f67686535eaeec0800000000000000
+      internalID: -3536762539798466754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fungus_14
+      name: tanks5_8
       rect:
         serializedVersion: 2
-        x: 114
-        y: 200
-        width: 108
-        height: 83
+        x: 363
+        y: 103
+        width: 219
+        height: 217
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f12183a07ed7bcb30800000000000000
-      internalID: 4308675899772375583
+      spriteID: 49211a64f41627160800000000000000
+      internalID: 7021781762139296404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanks5_9
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 150
+        width: 196
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a6f307af0ae80a0800000000000000
+      internalID: -6877382583462696368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanks5_10
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 140
+        width: 252
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81f0e669307206d10800000000000000
+      internalID: 2116734721226313496
       vertices: []
       indices: 
       edges: []
@@ -343,7 +375,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2c5f9e8cfeceff74fb7518910489e02e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -353,21 +385,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fungus_0: -6533434620068476348
-      Fungus_1: 6338159489003480316
-      Fungus_10: 3598892329626655896
-      Fungus_11: 8466075441929275494
-      Fungus_12: 1933698331546329244
-      Fungus_13: 7928873040496648708
-      Fungus_14: 4308675899772375583
-      Fungus_2: 7449785933797552984
-      Fungus_3: -3947806804254753565
-      Fungus_4: 8190018753213492361
-      Fungus_5: 5428336416752072392
-      Fungus_6: 5322468028370143374
-      Fungus_7: -1936793934664451659
-      Fungus_8: -7119491638096564027
-      Fungus_9: -7535169468027291448
+      tanks5_0: -541734000225441505
+      tanks5_1: -3779110815054313536
+      tanks5_10: 2116734721226313496
+      tanks5_2: -8926155592116870624
+      tanks5_3: -3257971388877325826
+      tanks5_4: 3734784359772421259
+      tanks5_5: -7592471217534409413
+      tanks5_6: 6098549476194036977
+      tanks5_7: -3536762539798466754
+      tanks5_8: 7021781762139296404
+      tanks5_9: -6877382583462696368
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

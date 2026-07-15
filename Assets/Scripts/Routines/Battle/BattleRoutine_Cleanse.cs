@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,15 @@ namespace Assets.Scripts.Routines.Battle
             _lifeManager.AllEnemyDead += CompleteContract;
         }
 
-        protected override int[] GetEnemiesCount()
+        protected override (EntityType enemyType, int count)[] GetEnemiesCount()
         {
-            return new int[4] { 15, 2, 1, 2 };
+            return new (EntityType enemyType, int count)[]
+            {
+                (EntityType.AcidCockroach , 15),
+                (EntityType.BoomFlea , 2),
+                (EntityType.GiantScolopendra , 1),
+                (EntityType.FireMantiss , 2),
+            };
         }
 
         private void TargetsCountChanged(int targetsLeft)

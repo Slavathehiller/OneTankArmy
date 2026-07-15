@@ -14,7 +14,8 @@ namespace Assets.Scripts.DamageDealers
         Assault25mm = 1,
         Autocannon50mm = 2,
         Machinegun12mm = 3,
-        Cannon100mm = 4
+        Cannon100mm = 4,
+        PhotonCharge
     }
 
     public abstract class Missile : DamageDealer
@@ -52,14 +53,28 @@ namespace Assets.Scripts.DamageDealers
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            if (!collision.gameObject.TryGetComponent<BaseEntity>(out var entity))
+            {
+                StopAllCoroutines();
+                _missilePool.RemoveMissile(this);
+            }
             //gameObject.SetActive(false);
-            _missilePool.RemoveMissile(this);
         }
+
+        //private void OnTriggerEnter2D(Collider2D collision)
+        //{
+        //    _missilePool.RemoveMissile(this);
+        //}
 
         private IEnumerator RemoveBulletCorutine(float latency)
         {
             yield return new WaitForSeconds(latency);
            _missilePool.RemoveMissile(this);
+        }
+
+        public void Remove()
+        {
+            _missilePool.RemoveMissile(this);
         }
     }
 }

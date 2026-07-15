@@ -173,6 +173,11 @@ public class OutpostRoutine : MonoBehaviour
 
     private void ToOrbit()
     {
+        if(_contractManager.CurrentContractStatus == ContractStatus.Signed)
+        {
+            _errorController.ShowError("Имеется незакрытый контракт.");
+            return;
+        }
         _wholeScreen.style.display = DisplayStyle.Flex;
         _toOrbitButton.style.display = DisplayStyle.None;
         _sceneNavigator.NavigationVector = NavigationVector.GoToOrbit;

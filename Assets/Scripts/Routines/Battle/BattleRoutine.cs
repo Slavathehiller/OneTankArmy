@@ -1,4 +1,5 @@
 using Assets.Player;
+using Assets.Scripts.Enums;
 using Assets.Scripts.Factories.Interfaces;
 using Assets.Scripts.ObjectPool;
 using Assets.Scripts.SceneNavigation;
@@ -68,6 +69,9 @@ public abstract class BattleRoutine : MonoBehaviour
     private IVehicleFactory _vehicleFactory;
 
     [Inject]
+    private IEntityFactory _entityFactory;
+
+    [Inject]
     protected IPlayerSettings _playerSettings;
 
     [Inject]
@@ -86,7 +90,9 @@ public abstract class BattleRoutine : MonoBehaviour
     protected Vehicle _playerVehicle;
     protected TankController _playerController;
     
-    protected abstract int[] GetEnemiesCount();
+   // protected abstract int[] GetEnemiesCount1();
+
+    protected abstract (EntityType enemyType, int count)[] GetEnemiesCount();
 
     protected abstract void ContractConditionsInit();
 
@@ -191,23 +197,36 @@ public abstract class BattleRoutine : MonoBehaviour
     public virtual void SpawnEnemies()
     {
         var enemiesCount = GetEnemiesCount();
-        for (var i = 0; i < GetEnemiesCount().Length; i++)
+        for (var i = 0; i < enemiesCount.Length; i++)
         {
-            for (var j = 0; j < enemiesCount[i]; j++)
+            for (var j = 0; j < enemiesCount[i].count; j++)
             {
-                switch (i)
+                var enemy = _entityFactory.CreateEntity(enemiesCount[i].enemyType) as AIEnemy;
+                if (enemy == null)
                 {
-                    case 0: SpawnEnemy<AcidCockroach>();
-                        break;
-                    case 1: SpawnEnemy<BoomFlea>();
-                        break;
-                    case 2: SpawnEnemy<GiantScolopendra>();
-                        break;
-                    case 3: SpawnEnemy<FireMantiss>();
-                        break;
+                    Debug.LogError("Type {enemy} is not AIEnemy compatible");
+                    return;
                 }
+                PlaceEnemy(enemy);
             }
         }
+        //for (var i = 0; i < GetEnemiesCount().Length; i++)
+        //{
+        //    for (var j = 0; j < enemiesCount[i]; j++)
+        //    {
+        //        switch (i)
+        //        {
+        //            case 0: SpawnEnemy<AcidCockroach>();
+        //                break;
+        //            case 1: SpawnEnemy<BoomFlea>();
+        //                break;
+        //            case 2: SpawnEnemy<GiantScolopendra>();
+        //                break;
+        //            case 3: SpawnEnemy<FireMantiss>();
+        //                break;
+        //        }
+        //    }
+        //}
     }
 
     protected T SpawnEnemy<T>() where T : AIEnemy
@@ -261,6 +280,8 @@ public abstract class BattleRoutine : MonoBehaviour
 
     private void PlayerGoToPortal(Portal portal)
     {
+        _playerSettings.CurrentHealth = _playerVehicle.Health;
+        _playerSettings.SaveSettings();
         portal.LoadNextScene();
     }
 

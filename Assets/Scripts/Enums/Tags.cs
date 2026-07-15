@@ -8,6 +8,7 @@ public enum Tag
 {
     Small,
     Insect,
-    Mechanical
+    Mechanical,
+    Heavy
 }
 

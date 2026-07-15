@@ -13,6 +13,7 @@ namespace Assets.Scripts.Installers
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<VehicleFactory>().AsTransient();
+            Container.BindInterfacesTo<EntityFactory>().AsTransient();            
         }
     }
 }

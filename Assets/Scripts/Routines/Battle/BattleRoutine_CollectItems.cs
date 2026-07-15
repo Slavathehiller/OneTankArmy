@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Enums;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Zenject;
@@ -61,9 +62,13 @@ namespace Assets.Scripts.Routines.Battle
                 CompleteContract();
         }
 
-        protected override int[] GetEnemiesCount()
+        protected override (EntityType enemyType, int count)[] GetEnemiesCount()
         {
-            return new int[4] { 6, 30, 0, 0 };
+            return new (EntityType enemyType, int count)[]
+            {
+                (EntityType.AcidCockroach , 6),
+                (EntityType.BoomFlea , 30),
+            };
         }
 
         protected override void OnDestroyAction()

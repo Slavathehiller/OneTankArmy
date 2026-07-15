@@ -9,7 +9,7 @@ namespace Assets.Scripts.Installers
         {
             Container.BindInterfacesTo<VehicleFactory>().AsTransient();
             Container.BindInterfacesTo<MissileFactory>().AsTransient();
-            Container.BindInterfacesTo<MissilePool>().AsCached();
+            Container.BindInterfacesTo<MissilePool>().AsSingle();
         }
     }
 }

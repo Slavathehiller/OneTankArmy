@@ -1,0 +1,426 @@
+fileFormatVersion: 2
+guid: 3297143f65d6f5842b34901f8d45a576
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3653582218412966283
+    second: Mooshrums_squashed_0
+  - first:
+      213: -2341583881009188618
+    second: Mooshrums_squashed_1
+  - first:
+      213: 2042257080296017071
+    second: Mooshrums_squashed_2
+  - first:
+      213: -224229961466731505
+    second: Mooshrums_squashed_3
+  - first:
+      213: -3295808082246288279
+    second: Mooshrums_squashed_4
+  - first:
+      213: 1805574011830190254
+    second: Mooshrums_squashed_5
+  - first:
+      213: 4486740245385580664
+    second: Mooshrums_squashed_6
+  - first:
+      213: 2975682710755592504
+    second: Mooshrums_squashed_7
+  - first:
+      213: -1117437888970213
+    second: Mooshrums_squashed_8
+  - first:
+      213: -3257496018489270794
+    second: Mooshrums_squashed_9
+  - first:
+      213: -6992440972967502887
+    second: Mooshrums_squashed_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 150
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mooshrums_squashed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 333
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ebfc1745edb4dc0800000000000000
+      internalID: -3653582218412966283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_1
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 0
+        width: 333
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9678f89dba5a53f499bfb911a4e5c323
+      internalID: -2341583881009188618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 239
+        width: 158
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a1461bcc02f7e448d151fac8769fca
+      internalID: 2042257080296017071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_3
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 321
+        width: 145
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f4a6e698a01f04a87f8b18ca950d66
+      internalID: -224229961466731505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_4
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 287
+        width: 250
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebec0c92e75a4b4fb17bfb96a6fb4cb
+      internalID: -3295808082246288279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_5
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 126
+        width: 141
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b475a69502f04cc439dc613a9b9b3090
+      internalID: 1805574011830190254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_6
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 382
+        width: 171
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7100f007ed0bf345917dc95a3d2ea02
+      internalID: 4486740245385580664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_7
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 260
+        width: 311
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba15987a0ddf264dbfb7adf8621f6c8
+      internalID: 2975682710755592504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_8
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 53
+        width: 99
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce2d23a36470a24caed12402c3c1380
+      internalID: -1117437888970213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_9
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 547
+        width: 241
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7644f721ed0fa5041b8602e6788e2579
+      internalID: -3257496018489270794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_10
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 586
+        width: 216
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42447d3953303ef4281126ab3ac5c54a
+      internalID: -6992440972967502887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mooshrums_squashed_11
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 558
+        width: 208
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3609f14c47a192448ea8d865170c02e
+      internalID: 1269112859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8ce8f58a5fc7076489957f0b39c01856
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mooshrums_squashed_0: -3653582218412966283
+      Mooshrums_squashed_1: -2341583881009188618
+      Mooshrums_squashed_10: -6992440972967502887
+      Mooshrums_squashed_11: 1269112859
+      Mooshrums_squashed_2: 2042257080296017071
+      Mooshrums_squashed_3: -224229961466731505
+      Mooshrums_squashed_4: -3295808082246288279
+      Mooshrums_squashed_5: 1805574011830190254
+      Mooshrums_squashed_6: 4486740245385580664
+      Mooshrums_squashed_7: 2975682710755592504
+      Mooshrums_squashed_8: -1117437888970213
+      Mooshrums_squashed_9: -3257496018489270794
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

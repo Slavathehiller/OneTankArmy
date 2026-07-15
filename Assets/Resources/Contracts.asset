@@ -82,3 +82,17 @@ MonoBehaviour:
     QuestItemNeed: 0
     Scenes:
     - Arachnia_BreackBreach1
+  - ID: 5
+    Type: 0
+    Description: "\u0417\u0430\u0447\u0438\u0441\u0442\u043A\u0430"
+    Details: "\u041C\u044B \u043D\u0430\u0442\u043A\u043D\u0443\u043B\u0438\u0441\u044C
+      \u043D\u0430 \u043F\u0430\u0442\u0440\u0443\u043B\u044C \u043C\u0430\u0448\u0438\u043D.
+      \u0423\u043D\u0438\u0447\u0442\u043E\u0436\u044C\u0442\u0435 \u0438\u0445."
+    Planet: 2
+    RatingNeeded: 50
+    RatingReward: 20
+    MoneyReward: 200
+    QuestItemType: -1
+    QuestItemNeed: 0
+    Scenes:
+    - Nocturne_Cleanse1

@@ -189,8 +189,8 @@ public abstract class AIEnemy : BaseEntity
             return;
         _animator.SetBool("Moving", false);
         _agent.ResetPath();
-        if (_audioSourceMove != null)
-            _audioSourceMove.Stop();
+        //if (_audioSourceMove != null)
+        //    _audioSourceMove.Stop();
     }
 
     protected virtual void DetectEnemy(PlayerSide player)

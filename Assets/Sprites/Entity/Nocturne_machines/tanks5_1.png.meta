@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: 2c7d7b11dc7267b41aad557d1a88b792
+guid: df997b65cd2814d4d92b5c61d063158f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2667589067915142571
-    second: Stones_0
+      213: -6314429332083336270
+    second: tanks5_1_0
   - first:
-      213: 6898035379108858973
-    second: Stones_1
+      213: 5182775121683795235
+    second: tanks5_1_1
   - first:
-      213: -8868248462342347919
-    second: Stones_2
+      213: -8641174697890725978
+    second: tanks5_1_2
   - first:
-      213: -1605707320451941170
-    second: Stones_3
+      213: -6885080782152849403
+    second: tanks5_1_3
   - first:
-      213: -8493071338603864884
-    second: Stones_4
+      213: 8111336768481431686
+    second: tanks5_1_4
   - first:
-      213: 7747454605161465366
-    second: Stones_5
-  - first:
-      213: -5681067627176997163
-    second: Stones_6
-  - first:
-      213: -380787975181734724
-    second: Stones_7
+      213: -4687767065770158867
+    second: tanks5_1_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stones_0
+      name: tanks5_1_0
       rect:
         serializedVersion: 2
-        x: 83
-        y: 796
-        width: 153
-        height: 174
+        x: 173
+        y: 432
+        width: 86
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba52ccfaf1e250520800000000000000
-      internalID: 2667589067915142571
+      spriteID: 2bb9ddd4af3ae58a0800000000000000
+      internalID: -6314429332083336270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stones_1
+      name: tanks5_1_1
       rect:
         serializedVersion: 2
-        x: 233
-        y: 868
-        width: 9
-        height: 19
+        x: 433
+        y: 483
+        width: 132
+        height: 163
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5c4cd341aebabf50800000000000000
-      internalID: 6898035379108858973
+      spriteID: 32dc1be738aece740800000000000000
+      internalID: 5182775121683795235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stones_2
+      name: tanks5_1_2
       rect:
         serializedVersion: 2
-        x: 317
-        y: 809
-        width: 143
-        height: 123
+        x: 771
+        y: 459
+        width: 87
+        height: 273
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,108 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1732e2e6207ade480800000000000000
-      internalID: -8868248462342347919
+      spriteID: 6af312a2561641880800000000000000
+      internalID: -8641174697890725978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stones_3
+      name: tanks5_1_3
       rect:
         serializedVersion: 2
-        x: 80
-        y: 818
-        width: 20
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eccb73f03b167b9e0800000000000000
-      internalID: -1605707320451941170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stones_4
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 840
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ccc1772ad9c822a80800000000000000
-      internalID: -8493071338603864884
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stones_5
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 698
-        width: 27
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6160d166aec748b60800000000000000
-      internalID: 7747454605161465366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stones_6
-      rect:
-        serializedVersion: 2
-        x: 155
-        y: 695
-        width: 32
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5dec429b71bc821b0800000000000000
-      internalID: -5681067627176997163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stones_7
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 537
+        x: 134
+        y: 200
         width: 158
-        height: 155
+        height: 213
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,8 +196,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cbc6d84aa5b27baf0800000000000000
-      internalID: -380787975181734724
+      spriteID: 50829e1e1874370a0800000000000000
+      internalID: -6885080782152849403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanks5_1_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 195
+        width: 158
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68096e2b0d1419070800000000000000
+      internalID: 8111336768481431686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanks5_1_5
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 196
+        width: 199
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de49ef6c0b4b1feb0800000000000000
+      internalID: -4687767065770158867
       vertices: []
       indices: 
       edges: []
@@ -310,14 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stones_0: 2667589067915142571
-      Stones_1: 6898035379108858973
-      Stones_2: -8868248462342347919
-      Stones_3: -1605707320451941170
-      Stones_4: -8493071338603864884
-      Stones_5: 7747454605161465366
-      Stones_6: -5681067627176997163
-      Stones_7: -380787975181734724
+      tanks5_1_0: -6314429332083336270
+      tanks5_1_1: 5182775121683795235
+      tanks5_1_2: -8641174697890725978
+      tanks5_1_3: -6885080782152849403
+      tanks5_1_4: 8111336768481431686
+      tanks5_1_5: -4687767065770158867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

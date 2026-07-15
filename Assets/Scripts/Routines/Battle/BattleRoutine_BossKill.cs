@@ -1,3 +1,4 @@
+using Assets.Scripts.Enums;
 using Assets.Scripts.SceneNavigation;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -13,9 +14,13 @@ public class BattleRoutine_BossKill : BattleRoutine
         RefreshQuestEnemyCounter();
     }
 
-    protected override int[] GetEnemiesCount()
+    protected override (EntityType enemyType, int count)[] GetEnemiesCount()
     {
-        return new int[4] { 30, 0, 0, 2 };
+        return new (EntityType enemyType, int count)[] 
+        { 
+            (EntityType.AcidCockroach , 30), 
+            (EntityType.FireMantiss, 2) 
+        };
     }
 
     protected void RefreshQuestEnemyCounter()

@@ -1,0 +1,375 @@
+fileFormatVersion: 2
+guid: 06e0248501e2af3429f87287c2dd0746
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6533434620068476348
+    second: Fungus_0
+  - first:
+      213: 6338159489003480316
+    second: Fungus_1
+  - first:
+      213: 7449785933797552984
+    second: Fungus_2
+  - first:
+      213: -3947806804254753565
+    second: Fungus_3
+  - first:
+      213: 8190018753213492361
+    second: Fungus_4
+  - first:
+      213: 5428336416752072392
+    second: Fungus_5
+  - first:
+      213: 5322468028370143374
+    second: Fungus_6
+  - first:
+      213: -1936793934664451659
+    second: Fungus_7
+  - first:
+      213: -7119491638096564027
+    second: Fungus_8
+  - first:
+      213: -7535169468027291448
+    second: Fungus_9
+  - first:
+      213: 3598892329626655896
+    second: Fungus_10
+  - first:
+      213: 8466075441929275494
+    second: Fungus_11
+  - first:
+      213: 1933698331546329244
+    second: Fungus_12
+  - first:
+      213: 7928873040496648708
+    second: Fungus_13
+  - first:
+      213: 4308675899772375583
+    second: Fungus_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fungus_0
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 705
+        width: 248
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44a449324d39455a0800000000000000
+      internalID: -6533434620068476348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fungus_1
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 839
+        width: 160
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf4e2d7697aa5f750800000000000000
+      internalID: 6338159489003480316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fungus_3
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 863
+        width: 137
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ec768eb0a29639c0800000000000000
+      internalID: -3947806804254753565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fungus_5
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 696
+        width: 193
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c6f2d1e533555b40800000000000000
+      internalID: 5428336416752072392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fungus_7
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 562
+        width: 180
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b9b1319d202f15e0800000000000000
+      internalID: -1936793934664451659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fungus_8
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 579
+        width: 162
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c0f3e9631c723d90800000000000000
+      internalID: -7119491638096564027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fungus_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 367
+        width: 245
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c564c8185d1f130800000000000000
+      internalID: 3598892329626655896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fungus_12
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 446
+        width: 133
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c90a59a2360e5da10800000000000000
+      internalID: 1933698331546329244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fungus_14
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 200
+        width: 108
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f12183a07ed7bcb30800000000000000
+      internalID: 4308675899772375583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 624e9f3e9fb53b4439b013371c0af0b6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Fungus_0: -6533434620068476348
+      Fungus_1: 6338159489003480316
+      Fungus_10: 3598892329626655896
+      Fungus_11: 8466075441929275494
+      Fungus_12: 1933698331546329244
+      Fungus_13: 7928873040496648708
+      Fungus_14: 4308675899772375583
+      Fungus_2: 7449785933797552984
+      Fungus_3: -3947806804254753565
+      Fungus_4: 8190018753213492361
+      Fungus_5: 5428336416752072392
+      Fungus_6: 5322468028370143374
+      Fungus_7: -1936793934664451659
+      Fungus_8: -7119491638096564027
+      Fungus_9: -7535169468027291448
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

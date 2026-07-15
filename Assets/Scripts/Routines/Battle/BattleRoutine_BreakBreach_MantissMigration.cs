@@ -1,3 +1,4 @@
+using Assets.Scripts.Enums;
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -14,9 +15,13 @@ public class BattleRoutine_BreakBreach_MantissMigration : BattleRoutine_BreakBre
         _completeConditionLabel.text = "Противников:";
     }
 
-    protected override int[] GetEnemiesCount()
+    protected override (EntityType enemyType, int count)[] GetEnemiesCount()
     {
-        return new int[4] {3, 1, 0, 0};
+        return new (EntityType enemyType, int count)[]
+        {
+            (EntityType.AcidCockroach , 3),
+            (EntityType.BoomFlea , 1),
+        };
     }
 
     public override void SpawnEnemies()

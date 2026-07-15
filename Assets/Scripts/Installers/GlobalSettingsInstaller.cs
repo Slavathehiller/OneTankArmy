@@ -15,7 +15,7 @@ public class GlobalSettingsInstaller : MonoInstaller
         Container.BindInterfacesTo<PlayerSettings>().AsSingle();
         Container.BindInterfacesTo<ContractsManager>().AsSingle();
         Container.BindInterfacesTo<MissileFactory>().AsTransient();
-        Container.BindInterfacesTo<MissilePool>().AsCached();
+        Container.BindInterfacesTo<MissilePool>().AsSingle();
         Container.BindInterfacesTo<QuestItemsData>().AsSingle();
         Container.BindInterfacesTo<FloatTooltipManager>().AsSingle();
         Container.BindInterfacesTo<SceneNavigator>().AsSingle();

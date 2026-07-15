@@ -1,10 +1,11 @@
+using Assets.Scripts.Enums;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Zenject;
 
-public class BattleRoutine_BossKill_Underground : BattleRoutine_BossKill
+public abstract class BattleRoutine_BossKill_Underground : BattleRoutine_BossKill
 {
     [SerializeField]
     protected AIEnemy _questEnemy;
@@ -21,11 +22,6 @@ public class BattleRoutine_BossKill_Underground : BattleRoutine_BossKill
             CompleteContract(null);
         }
         base.LateStart();
-    }
-
-    protected override int[] GetEnemiesCount()
-    {
-        return new int[4] { 40, 0, 0, 1 };
     }
 
     protected override void ContractConditionsInit()

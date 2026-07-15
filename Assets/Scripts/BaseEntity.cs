@@ -132,7 +132,9 @@ public abstract class BaseEntity : MonoBehaviour
         {
             TakeDamage(dd.Damage);
             ReactToDamage(dd);
-            dd.gameObject.SetActive(false);
+            var missile = dd as Missile;
+            if (missile != null)
+                missile.Remove();
         }
     }
 
