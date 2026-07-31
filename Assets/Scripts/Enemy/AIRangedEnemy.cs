@@ -30,7 +30,7 @@ namespace Assets.Scripts.Enemy
         protected AudioSource _missileSound;
 
         [Inject]
-        private IMissilePool _missilePool;
+        protected IMissilePool _missilePool;
 
         protected abstract void RangedAttack();
         protected override void StartActions()
@@ -73,7 +73,7 @@ namespace Assets.Scripts.Enemy
             StopMoving();
         }
 
-        protected void Fire()
+        protected virtual void Fire()
         {
             var missile = _missilePool.GetMissile(_missileType);
             missile.transform.position = _firePoint.transform.position;

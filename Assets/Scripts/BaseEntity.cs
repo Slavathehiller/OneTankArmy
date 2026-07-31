@@ -138,9 +138,11 @@ public abstract class BaseEntity : MonoBehaviour
         }
     }
 
-    public void ForcedMove(Vector3 force)
+    public void ForcedMove(Vector3 linearForce, float? angularForce = null)
     {
-        RigidBody.AddForce(force);
+        RigidBody.AddForce(linearForce);
+        if (angularForce != null)
+            RigidBody.AddTorque(angularForce.Value);
     }
 
     protected virtual void ReactToDamage(DamageDealer dd) { }

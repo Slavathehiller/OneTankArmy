@@ -13,6 +13,7 @@ namespace Assets.Scripts.Enums
         GiantScolopendra = 2,
         FireMantiss = 3,
         FireMantiss_Breacher = 4,
-        NM_Firefly = 5
+        NM_Firefly = 5,
+        NM_Pipistrelle = 6
     }
 }

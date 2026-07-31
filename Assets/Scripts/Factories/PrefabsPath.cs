@@ -113,16 +113,16 @@ namespace Assets.Scripts.Factories
             Register(typeof(ToxicGoo), "Prefabs/ToxicGoo");
             Register(typeof(BigGreenGoo), "Prefabs/BigGreenGoo");            
             Register(typeof(Flame_old), "Prefabs/Flame");
-
-
+            Register(typeof(SmallGravityBolt), "Prefabs/SmallGravityBolt");
+           
             Register(EntityType.AcidCockroach, "Prefabs/AcidCockroach");
             Register(EntityType.BoomFlea, "Prefabs/BoomFlea");
             Register(EntityType.GiantScolopendra, "Prefabs/GiantScolopendra");
             Register(EntityType.FireMantiss, "Prefabs/FireMantiss");
             Register(EntityType.FireMantiss_Breacher, "Prefabs/FireMantiss_Breacher");           
-            Register(EntityType.NM_Firefly, "Prefabs/NM_Firefly");
-
-
+            Register(EntityType.NM_Firefly, "Prefabs/Enemy/Nocturne/NM_Firefly");
+            Register(EntityType.NM_Pipistrelle, "Prefabs/Enemy/Nocturne/NM_Pipistrelle");
+            
             Register(VehicleType.Beetle, "Prefabs/Vehicle/Beetle");
             Register(VehicleType.DianBao, "Prefabs/Vehicle/DianBao");
             Register(VehicleType.Fury, "Prefabs/Vehicle/Fury");
