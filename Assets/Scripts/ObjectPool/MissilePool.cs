@@ -30,8 +30,14 @@ public class MissilePool : IMissilePool
         if (bulletList.Count > 0)
         {
             result = bulletList[bulletList.Count - 1];
-            result.gameObject.SetActive(true);
             bulletList.Remove(result);
+            if (result != null)
+                result.gameObject.SetActive(true);
+            else
+            {
+                result = _missileFactory.CreateMissile(missileType);
+                return result;
+            }    
         }
         else
         {

@@ -61,7 +61,10 @@ public abstract class AIEnemy : BaseEntity
         {
             if (_bodyPartIndex == null)
                 _bodyPartIndex = Random.Range(0, _bodyPartsCollection.Length);
-            return _bodyPartsCollection[_bodyPartIndex.Value].Parts;
+            if (_bodyPartsCollection.Length > 0)
+                return _bodyPartsCollection[_bodyPartIndex.Value].Parts;
+            else
+                return new Rigidbody2D[0];
         }
     }
 

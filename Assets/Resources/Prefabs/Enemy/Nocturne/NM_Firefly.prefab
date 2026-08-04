@@ -44223,6 +44223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NM_Firefly
   _audioSourceMove: {fileID: 0}
+  _audioSourceDeath: {fileID: 0}
   _moveSpeed: 8
   _rotateSpeed: 1
   _injuries:
@@ -44237,7 +44238,7 @@ MonoBehaviour:
   _maxHP: 100
   _animator: {fileID: 6003243947044220251}
   _agent: {fileID: 9194155318714773008}
-  _distanceOfDetection: 12
+  _distanceOfDetection: 14
   _detectionCooldown: 1
   _meleeAttackCooldown: 0
   _meleeDistance: 0

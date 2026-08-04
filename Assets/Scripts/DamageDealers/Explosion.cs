@@ -10,12 +10,13 @@ public class Explosion : DamageDealer
         Destroy(gameObject);
     }
 
-    public override void ReactToCollision(GameObject collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        var collisionRB = collision.GetComponent<Rigidbody2D>();
+        var collisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
         if (collisionRB == null ) 
             return;
         var vectorToPush = collision.transform.position - transform.position;
         collisionRB.AddForce(vectorToPush * _force);
+        collisionRB.AddTorque(_force/10);
     }
 }

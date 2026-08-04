@@ -14,8 +14,9 @@ namespace Assets.Scripts.Routines.Battle
         {
             return new (EntityType enemyType, int count)[]
             {
-                (EntityType.NM_Firefly , 10),
-                (EntityType.NM_Pipistrelle , 5),
+               (EntityType.NM_Firefly , 10),
+               (EntityType.NM_Pipistrelle , 5),
+               (EntityType.NM_Devourer , 2),
             };
         }
     }

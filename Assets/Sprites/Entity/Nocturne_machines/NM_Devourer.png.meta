@@ -1,0 +1,1753 @@
+fileFormatVersion: 2
+guid: 59e129a2df092ea4181511eb832ec821
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9016668849052215170
+    second: NM_Devourer_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 150
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NM_Devourer_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 782
+        width: 174
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7899e2447b5ed280800000000000000
+      internalID: -9016668849052215170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_1
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 937
+        width: 70
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c49a5ca07383394196be16080458fd4
+      internalID: -46108059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_2
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 891
+        width: 47
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c06db9f369ae9648959765cacb2ff78
+      internalID: 626523297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 802
+        width: 55
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffeb0279796b432419f50c7cde206a2e
+      internalID: 780143660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_4
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 814
+        width: 45
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4c9a71424df0f4baec45c6b6b27ec8
+      internalID: -1336899738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_5
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 935
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe3ec461557744449c9a1ceda778faa
+      internalID: -1596931099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_6
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 949
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3792e4972be22d42b223f7b8c6fce01
+      internalID: -1092850383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 964
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5341ecb41f123a4438075e84da6ceaab
+      internalID: -1825268406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_8
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 937
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a926ff15b70286e4d8d3582d46649f02
+      internalID: -1771821860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_9
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 831
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feacfcc08be7cdb4fa28f774d26ab424
+      internalID: -786127715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_10
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 884
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34eda5122323e5d46a71ab515fb97fab
+      internalID: 1964006142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_11
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 838
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edcf5f7e385ba734f8fff57304a2d3bb
+      internalID: 527366390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_12
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 948
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2221ee3fdc326c44821e9f9ef886d94
+      internalID: -341648569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_13
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 945
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e6f627fbe88614da3943dfd31d3cd7
+      internalID: 1009618428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_14
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 940
+        width: 53
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47780ebd753e5284880e4f9980421aad
+      internalID: 247968283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_15
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 854
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ef2709b6a575c47b7a427e5728977a
+      internalID: 810479655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_16
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 856
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074fda5db69e3fc47966fdadafba4106
+      internalID: -1874518382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_17
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 962
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bc3730dde98a74aa8c254cc7e5a464
+      internalID: 26880174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_18
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 936
+        width: 61
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febca96dbb02afe4ebc0628db8511c81
+      internalID: 148947013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_19
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 885
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1051c5bea4ffd5644a4dca88ce8c787e
+      internalID: 1805614687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_20
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 994
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72474df21e72bb8479209ce2a5d0d227
+      internalID: -317245605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_21
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 976
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8228bf479448994439cbb8b6c9a14fe7
+      internalID: 1840404314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_22
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 939
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c897beb419d52469b97eb196389435
+      internalID: -1559590506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_23
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 786
+        width: 67
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f8e1067e2f8e349bdd10d779e46c18
+      internalID: 1173948468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_24
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 772
+        width: 57
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf7088f73c96da4390e2f3a4f1c049d
+      internalID: 1100255860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_25
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 798
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0babd4aac2d344c4281b2377cd127281
+      internalID: 2038780682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_26
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 759
+        width: 64
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5863b8db936cac74d956b01fa0d317c5
+      internalID: -356536757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_27
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 828
+        width: 54
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9246a75c0637e294eb405222b642169e
+      internalID: 203598312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_28
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 762
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25778ccb6ccbc1f4ab90b2dbac83d5a1
+      internalID: 1293131332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_29
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 759
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642f2374cf989114a98911233d777c87
+      internalID: -2896701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_30
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 808
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed81f023285369468382bcdd4bfe44a
+      internalID: -1297807994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_31
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 869
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1a996b50097c346b543901aeb19a54
+      internalID: 1524519591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_32
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 860
+        width: 43
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec2ce9236ff5c34b90821b5b4e1dc06
+      internalID: -1935792378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_33
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 914
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba34f6ce94c5e74c9065cc1179c16d6
+      internalID: 1707480347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_34
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 960
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc23fb571fc680144b12a8aae3fccce6
+      internalID: 1411810407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_35
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 918
+        width: 39
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7b1d0eaf550774e8b7e2cc82f57623
+      internalID: -32202534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_36
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 696
+        width: 84
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64ec243a47404e4aa2660cc2ef2ad97
+      internalID: -956651476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_37
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 704
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6793847f5212ce47b4665049ccdad69
+      internalID: 1936736927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_38
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 708
+        width: 50
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe9b209667c9524c87a5ab723159e9b
+      internalID: 1935383724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_39
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 717
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09db8783d99232f49bfb4e2ffcc715ed
+      internalID: -2129141281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_40
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 701
+        width: 61
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb09e65fed7724040ad347b78e706d21
+      internalID: 868108464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_41
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 700
+        width: 61
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df89dcb7e908fc4a89dc3964a1cbab6
+      internalID: 1464173440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_42
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 699
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932d8fdaacdd6d54797e0dc5faf3d88d
+      internalID: -276953909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_43
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 721
+        width: 43
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61edb273312a933458566f16321dab5e
+      internalID: -673189729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_44
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 783
+        width: 60
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c9f86d7be286d42895bbf6c9737d68
+      internalID: -873370709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_45
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 716
+        width: 47
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55800033fd283d547bb2018946a531bc
+      internalID: -1025567511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_46
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 648
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c1011826ed04c4384621753083ed4d
+      internalID: -1872956947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_47
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 575
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c9527beb8c9cc428d447a954dd2320
+      internalID: -1022363618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_48
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 596
+        width: 84
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3866b1ab14ee2bd47b35ed2544fb4e06
+      internalID: 2125103105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_49
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 634
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0298efa459ad640932c1563e2e89ce
+      internalID: -2000418689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_50
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 641
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b82cca863eb958488e4d32f4f554468
+      internalID: 1996110485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_51
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 644
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf4fb2be60e63f4c8e539898235d9ad
+      internalID: -1423870196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_52
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 641
+        width: 53
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8ab25287064374791e1e69b46722d9
+      internalID: 1611638621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_53
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 633
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7cf5e444497e684fa782bad6f22c80c
+      internalID: -491699091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_54
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 639
+        width: 77
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecdf1ae6fdf38864e9f2fbef05b3945d
+      internalID: 1234179807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_55
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 543
+        width: 50
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ae17a2690b0c44194db9f3625c3941
+      internalID: -1949895905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_56
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 555
+        width: 49
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa2b7f82e477e842aa572b99566c23b
+      internalID: 1669207105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_57
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 548
+        width: 60
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1beae146994dbc24382291155e0e8df8
+      internalID: -841333170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_58
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 550
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a27e992cb2094943855112fdbdbbddc
+      internalID: -712433880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_59
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 523
+        width: 60
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90e6d211fc035d43aaef3ff2c72949b
+      internalID: 230545095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_60
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 566
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1177a16f05fe34b84dcc5c0e152edd
+      internalID: 1089741918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_61
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 504
+        width: 63
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffa95333ceb8af45bd71b076378618b
+      internalID: -398531583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_62
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 463
+        width: 67
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69b066348b35b9b46a8234b4b32e97c6
+      internalID: 757546899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_63
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 389
+        width: 65
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e092cf191ba822647a0270c702518259
+      internalID: -133441684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_64
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 441
+        width: 49
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f75e242d7f01f140ad0b4f8c8389509
+      internalID: -285040566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_65
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 382
+        width: 45
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8109de0065f659a4c932581145e5449d
+      internalID: 801750230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_66
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 440
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666b2e78fa7b1bc4bb28ddc3e6996c36
+      internalID: 1705235024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_67
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 448
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451940b82bd1d64469c54c91730737bb
+      internalID: 1084524287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_68
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 441
+        width: 76
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5add649fbad3c4db7cf6d05802d758
+      internalID: -1897340047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_69
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 409
+        width: 43
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9312488bf0d5cc84d873f07f29bcb0ec
+      internalID: -791909839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NM_Devourer_70
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 399
+        width: 58
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18951a2ada99d4544adf7d742da14614
+      internalID: -213777562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ecbcc98411f0fa946bf94756e9ee627e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NM_Devourer_0: -9016668849052215170
+      NM_Devourer_1: -46108059
+      NM_Devourer_10: 1964006142
+      NM_Devourer_11: 527366390
+      NM_Devourer_12: -341648569
+      NM_Devourer_13: 1009618428
+      NM_Devourer_14: 247968283
+      NM_Devourer_15: 810479655
+      NM_Devourer_16: -1874518382
+      NM_Devourer_17: 26880174
+      NM_Devourer_18: 148947013
+      NM_Devourer_19: 1805614687
+      NM_Devourer_2: 626523297
+      NM_Devourer_20: -317245605
+      NM_Devourer_21: 1840404314
+      NM_Devourer_22: -1559590506
+      NM_Devourer_23: 1173948468
+      NM_Devourer_24: 1100255860
+      NM_Devourer_25: 2038780682
+      NM_Devourer_26: -356536757
+      NM_Devourer_27: 203598312
+      NM_Devourer_28: 1293131332
+      NM_Devourer_29: -2896701
+      NM_Devourer_3: 780143660
+      NM_Devourer_30: -1297807994
+      NM_Devourer_31: 1524519591
+      NM_Devourer_32: -1935792378
+      NM_Devourer_33: 1707480347
+      NM_Devourer_34: 1411810407
+      NM_Devourer_35: -32202534
+      NM_Devourer_36: -956651476
+      NM_Devourer_37: 1936736927
+      NM_Devourer_38: 1935383724
+      NM_Devourer_39: -2129141281
+      NM_Devourer_4: -1336899738
+      NM_Devourer_40: 868108464
+      NM_Devourer_41: 1464173440
+      NM_Devourer_42: -276953909
+      NM_Devourer_43: -673189729
+      NM_Devourer_44: -873370709
+      NM_Devourer_45: -1025567511
+      NM_Devourer_46: -1872956947
+      NM_Devourer_47: -1022363618
+      NM_Devourer_48: 2125103105
+      NM_Devourer_49: -2000418689
+      NM_Devourer_5: -1596931099
+      NM_Devourer_50: 1996110485
+      NM_Devourer_51: -1423870196
+      NM_Devourer_52: 1611638621
+      NM_Devourer_53: -491699091
+      NM_Devourer_54: 1234179807
+      NM_Devourer_55: -1949895905
+      NM_Devourer_56: 1669207105
+      NM_Devourer_57: -841333170
+      NM_Devourer_58: -712433880
+      NM_Devourer_59: 230545095
+      NM_Devourer_6: -1092850383
+      NM_Devourer_60: 1089741918
+      NM_Devourer_61: -398531583
+      NM_Devourer_62: 757546899
+      NM_Devourer_63: -133441684
+      NM_Devourer_64: -285040566
+      NM_Devourer_65: 801750230
+      NM_Devourer_66: 1705235024
+      NM_Devourer_67: 1084524287
+      NM_Devourer_68: -1897340047
+      NM_Devourer_69: -791909839
+      NM_Devourer_7: -1825268406
+      NM_Devourer_70: -213777562
+      NM_Devourer_8: -1771821860
+      NM_Devourer_9: -786127715
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

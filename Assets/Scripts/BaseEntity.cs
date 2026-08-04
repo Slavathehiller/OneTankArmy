@@ -8,6 +8,9 @@ public abstract class BaseEntity : MonoBehaviour
 
     [SerializeField]
     protected AudioSource _audioSourceMove;
+
+    [SerializeField]
+    protected AudioSource _audioSourceDeath;
     protected abstract float MaxHP { get; }
 
     protected float _currentHP;
@@ -94,6 +97,8 @@ public abstract class BaseEntity : MonoBehaviour
         if (CheckHPOver())
         {
             _isDead = true;
+            if (_audioSourceDeath != null)
+                _audioSourceDeath.Play();
             Die?.Invoke(this);
         }
     }

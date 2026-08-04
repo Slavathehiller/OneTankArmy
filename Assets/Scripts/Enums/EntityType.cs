@@ -14,6 +14,7 @@ namespace Assets.Scripts.Enums
         FireMantiss = 3,
         FireMantiss_Breacher = 4,
         NM_Firefly = 5,
-        NM_Pipistrelle = 6
+        NM_Pipistrelle = 6,
+        NM_Devourer = 7
     }
 }

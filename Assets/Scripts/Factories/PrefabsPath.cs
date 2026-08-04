@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.DamageDealers;
+using Assets.Scripts.Enemy;
 using Assets.Scripts.Enums;
 using Assets.Vehicles;
 using System;
@@ -122,7 +123,8 @@ namespace Assets.Scripts.Factories
             Register(EntityType.FireMantiss_Breacher, "Prefabs/FireMantiss_Breacher");           
             Register(EntityType.NM_Firefly, "Prefabs/Enemy/Nocturne/NM_Firefly");
             Register(EntityType.NM_Pipistrelle, "Prefabs/Enemy/Nocturne/NM_Pipistrelle");
-            
+            Register(EntityType.NM_Devourer, "Prefabs/Enemy/Nocturne/NM_Devourer");
+           
             Register(VehicleType.Beetle, "Prefabs/Vehicle/Beetle");
             Register(VehicleType.DianBao, "Prefabs/Vehicle/DianBao");
             Register(VehicleType.Fury, "Prefabs/Vehicle/Fury");
