@@ -104,11 +104,11 @@ namespace Assets.Scripts.Factories
         public static void InitPathes()
         {
             Register(typeof(Explosion), "Prefabs/Explosion");
-            Register(typeof(AcidCockroach), "Prefabs/AcidCockroach");
-            Register(typeof(BoomFlea), "Prefabs/BoomFlea");
-            Register(typeof(GiantScolopendra), "Prefabs/GiantScolopendra");
-            Register(typeof(FireMantiss), "Prefabs/FireMantiss");
-            Register(typeof(FireMantiss_Breacher), "Prefabs/FireMantiss_Breacher");           
+            Register(typeof(AcidCockroach), "Prefabs/Enemy/Arachnia/AcidCockroach");
+            Register(typeof(BoomFlea), "Prefabs/Enemy/Arachnia/BoomFlea");
+            Register(typeof(GiantScolopendra), "Prefabs/Enemy/Arachnia/GiantScolopendra");
+            Register(typeof(FireMantiss), "Prefabs/Enemy/Arachnia/FireMantiss");
+            Register(typeof(FireMantiss_Breacher), "Prefabs/Enemy/Arachnia/FireMantiss_Breacher");           
             Register(typeof(AcidGoo), "Prefabs/AcidGoo");
             Register(typeof(BigAcidGoo), "Prefabs/BigAcidGoo");
             Register(typeof(ToxicGoo), "Prefabs/ToxicGoo");
@@ -117,11 +117,11 @@ namespace Assets.Scripts.Factories
             Register(typeof(SmallGravityBolt), "Prefabs/SmallGravityBolt");
             Register(typeof(WirlMissile), "Prefabs/WirlMissile");
             
-            Register(EntityType.AcidCockroach, "Prefabs/AcidCockroach");
-            Register(EntityType.BoomFlea, "Prefabs/BoomFlea");
-            Register(EntityType.GiantScolopendra, "Prefabs/GiantScolopendra");
-            Register(EntityType.FireMantiss, "Prefabs/FireMantiss");
-            Register(EntityType.FireMantiss_Breacher, "Prefabs/FireMantiss_Breacher");           
+            Register(EntityType.AcidCockroach, "Prefabs/Enemy/Arachnia/AcidCockroach");
+            Register(EntityType.BoomFlea, "Prefabs/Enemy/Arachnia/BoomFlea");
+            Register(EntityType.GiantScolopendra, "Prefabs/Enemy/Arachnia/GiantScolopendra");
+            Register(EntityType.FireMantiss, "Prefabs/Enemy/Arachnia/FireMantiss");
+            Register(EntityType.FireMantiss_Breacher, "Prefabs/Enemy/Arachnia/FireMantiss_Breacher");           
             Register(EntityType.NM_Firefly, "Prefabs/Enemy/Nocturne/NM_Firefly");
             Register(EntityType.NM_Pipistrelle, "Prefabs/Enemy/Nocturne/NM_Pipistrelle");
             Register(EntityType.NM_Devourer, "Prefabs/Enemy/Nocturne/NM_Devourer");
