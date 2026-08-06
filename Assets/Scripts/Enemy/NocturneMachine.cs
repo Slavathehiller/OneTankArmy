@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Enemy
 {
-    public class NocturneMachine : AIRangedEnemy
+    public class NocturneMachine : AICabinEnemy
     {
         protected override void RangedAttack()
         {
@@ -17,20 +17,18 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        //protected override void Fire()
+        //{
+        //    base.Fire();
+        //    if (_missileSound != null)
+        //        _missileSound.Play();
+        //}
+
         protected override void InitTagCloud()
         {
             base.InitTagCloud();
             TagCloud.Add(Tag.Mechanical)
                     .Add(Tag.Heavy);
-        }
-
-        protected override void FixedUpdateActions()
-        {
-
-            if (_isDead || _target == null)
-                return;
-
-            base.FixedUpdateActions();
         }
     }
 }

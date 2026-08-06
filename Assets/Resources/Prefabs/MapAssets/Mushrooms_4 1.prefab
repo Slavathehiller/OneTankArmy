@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3662380702984716371}
   - component: {fileID: 8918154425204708258}
   - component: {fileID: 3387829615592772734}
-  - component: {fileID: 7485157736165314795}
+  - component: {fileID: 3184495436320464829}
   m_Layer: 0
   m_Name: Mushrooms_4 1
   m_TagString: Untagged
@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SquashibleObject
   _squashedSprite: {fileID: 1269112859, guid: 3297143f65d6f5842b34901f8d45a576, type: 3}
   _activeStaff: {fileID: 2411388418082041385}
---- !u!60 &7485157736165314795
-PolygonCollider2D:
+--- !u!58 &3184495436320464829
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -138,57 +138,12 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9066667, y: 0.72}
-    newSize: {x: 1.58, y: 1.47}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.060000002, y: -0.18666667}
-      - {x: -0.08, y: -0.18666667}
-      - {x: -0.13333334, y: -0.2}
-      - {x: -0.16, y: -0.24666667}
-      - {x: -0.16, y: -0.27333334}
-      - {x: -0.13333334, y: -0.30666667}
-      - {x: -0.086666666, y: -0.30666667}
-      - {x: -0.033333335, y: -0.3}
-      - {x: -0.013333334, y: -0.28666666}
-      - {x: -0.013333334, y: -0.24000001}
-    - - {x: 0.30666667, y: 0.08}
-      - {x: 0.27333334, y: 0.17333333}
-      - {x: 0.20666668, y: 0.23333333}
-      - {x: 0.093333334, y: 0.26666668}
-      - {x: -0.006666667, y: 0.26000002}
-      - {x: -0.1, y: 0.30666667}
-      - {x: -0.22, y: 0.30666667}
-      - {x: -0.27333334, y: 0.3}
-      - {x: -0.31333333, y: 0.26666668}
-      - {x: -0.4, y: 0.12666667}
-      - {x: -0.4, y: 0.093333334}
-      - {x: -0.33333334, y: 0.02}
-      - {x: -0.3866667, y: -0.07333334}
-      - {x: -0.39333335, y: -0.13333334}
-      - {x: -0.25333333, y: -0.23333333}
-      - {x: -0.22, y: -0.23333333}
-      - {x: -0.13333334, y: -0.16}
-      - {x: -0.006666667, y: -0.21333334}
-      - {x: 0.033333335, y: -0.24666667}
-      - {x: 0.11333334, y: -0.24666667}
-      - {x: 0.16, y: -0.22666667}
-      - {x: 0.21333334, y: -0.10666667}
-      - {x: 0.3, y: -0.013333334}
-      - {x: 0.30666667, y: 0.013333334}
-  m_UseDelaunayMesh: 1
+  m_Offset: {x: -0.061662674, y: -0.010832548}
+  m_Radius: 0.30084324
 --- !u!1 &2411388418082041385
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,6 @@ public class NM_Pipistrelle : NocturneMachine
         bolt.transform.rotation = _firePoint.transform.rotation;
 
         bolt.Init();
-
         if (_missileSound != null)
             _missileSound.Play();
     }
