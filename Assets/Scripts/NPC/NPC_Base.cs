@@ -14,7 +14,7 @@ public abstract class NPC_Base : MonoBehaviour
     {
         get
         {
-            return _target != null && Vector3.Distance(transform.position, _target.Value) <= 0.01f;
+            return _target != null && Vector3.Distance(transform.position, _target.Value) <= 0.1f;
         }
     }
 

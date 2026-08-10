@@ -116,7 +116,8 @@ namespace Assets.Scripts.Factories
             Register(typeof(Flame_old), "Prefabs/Flame");
             Register(typeof(SmallGravityBolt), "Prefabs/SmallGravityBolt");
             Register(typeof(WirlMissile), "Prefabs/WirlMissile");
-            
+            Register(typeof(OutpostAvatar), "Prefabs/OutpostAvatar");          
+
             Register(EntityType.AcidCockroach, "Prefabs/Enemy/Arachnia/AcidCockroach");
             Register(EntityType.BoomFlea, "Prefabs/Enemy/Arachnia/BoomFlea");
             Register(EntityType.GiantScolopendra, "Prefabs/Enemy/Arachnia/GiantScolopendra");

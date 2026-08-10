@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Zenject;
+using static UnityEngine.Rendering.DebugUI.MessageBox;
 
 public abstract class BattleRoutine : MonoBehaviour
 {
@@ -61,6 +62,9 @@ public abstract class BattleRoutine : MonoBehaviour
     private MinimapMode _minimapMode;
 
     private VisualElement _completeContractWindow;
+    private VisualElement _gamePauseWindow;
+    private Button _gameContinueButton;
+    private Button _exitButton;
 
     [Inject]
     protected ISceneAssetFactory _sceneAssetFactory;
@@ -88,7 +92,7 @@ public abstract class BattleRoutine : MonoBehaviour
 
     protected LifeManager _lifeManager;
     protected Vehicle _playerVehicle;
-    protected TankController _playerController;
+    protected TankController _playerController;   
     
    // protected abstract int[] GetEnemiesCount1();
 
@@ -100,6 +104,12 @@ public abstract class BattleRoutine : MonoBehaviour
     {
         _minimapMode = MinimapMode.Normal;
         _completeContractWindow = _document.rootVisualElement.Q<VisualElement>("ContractCompleteWindow");
+        _gamePauseWindow = _document.rootVisualElement.Q<VisualElement>("GamePauseWindow");
+        _gameContinueButton = _gamePauseWindow.Q<Button>("ContinueButton");
+        _exitButton = _gamePauseWindow.Q<Button>("ExitButton");
+
+        _gameContinueButton.clicked += GamePauseOff;
+        _exitButton.clicked += QuitGame;
 
         _minimapImage = _document.rootVisualElement.Q<Image>("MinimapImage");
         if (_minimapImage != null)
@@ -110,7 +120,7 @@ public abstract class BattleRoutine : MonoBehaviour
             _minimapImage_zoom.image = _minimapZoomRenderTexture;
 
         _minimapImageContainer = _document.rootVisualElement.Q<Image>("MinimapImageContainer");
-        _minimapImageZoomContainer = _document.rootVisualElement.Q<Image>("MinimapImageZoomContainer");
+        _minimapImageZoomContainer = _document.rootVisualElement.Q<Image>("MinimapImageZoomContainer");        
 
         if (_sceneNavigator.NavigationVector == NavigationVector.GoingToMission)
         {
@@ -180,7 +190,13 @@ public abstract class BattleRoutine : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
-            Application.Quit();
+        {
+            if (_gamePauseWindow.style.display == DisplayStyle.None)
+                GamePauseOn();
+            else
+                GamePauseOff();
+        }
+            
         if (Input.GetKeyDown(KeyCode.M))
         {
             _minimapMode++;
@@ -190,6 +206,23 @@ public abstract class BattleRoutine : MonoBehaviour
             SetMiniMap();
         }
         UpdateActions();
+    }
+
+    private void GamePauseOn()
+    {
+        _gamePauseWindow.style.display = DisplayStyle.Flex;
+        Time.timeScale = 0;
+    }
+
+    private void GamePauseOff()
+    {
+        _gamePauseWindow.style.display = DisplayStyle.None;
+        Time.timeScale = 1;
+    }
+
+    private void QuitGame()
+    {
+        Application.Quit();
     }
 
     protected virtual void UpdateActions() {}
@@ -366,6 +399,8 @@ public abstract class BattleRoutine : MonoBehaviour
             _playerController.CallToEvacuate -= OnEvacuate;
             _playerController.Die -= OnEvacuate;
             _playerController.GoingToPortal -= PlayerGoToPortal;
+            _gameContinueButton.clicked -= GamePauseOff;
+            _exitButton.clicked -= QuitGame;
         }
         _missilePool.Clear();
     }

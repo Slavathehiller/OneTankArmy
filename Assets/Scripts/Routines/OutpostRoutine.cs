@@ -58,8 +58,7 @@ public class OutpostRoutine : MonoBehaviour
     private Button _takeOffButtonButton;
     private Button _currentContractButton;
 
-    private Vehicle _playerAvatar;
-    private SimpleMover _playerAvatarMover;
+    private OutpostAvatar _playerAvatar;
 
     private VisualElement _currentContractWindow;
     private Label _currentContractComplectionLabel;
@@ -82,7 +81,7 @@ public class OutpostRoutine : MonoBehaviour
     private IContractsManager _contractManager;
 
     [Inject]
-    private IVehicleFactory _vehicleFactory;
+    private ISceneAssetFactory _sceneAssetFactory;
 
     [Inject]
     private ISceneNavigator _sceneNavigator;
@@ -130,7 +129,7 @@ public class OutpostRoutine : MonoBehaviour
 
         CheckCurrentContractStatus();
 
-        CreateAvatar(true);
+        CreateAvatar();
     }
 
     private void BreakCurrentContract()
@@ -159,9 +158,8 @@ public class OutpostRoutine : MonoBehaviour
         if (DateTime.Now >= _playerSettings.RepairEndTime)
         {
             _playerSettings.RepairEndTime = null;
-            _playerSettings.CurrentHealth = _playerAvatar.MaxHealth;
+            _playerSettings.CurrentHealth = _playerAvatar.Health;
             _playerSettings.SaveSettings();
-            _playerAvatar.Health = _playerAvatar.MaxHealth;
             _playerAvatar.transform.position = _defaultPointPoint.position;
         }
 
@@ -283,34 +281,26 @@ public class OutpostRoutine : MonoBehaviour
 
     private void ChangeVehicle()
     {
-        Destroy(_playerAvatar.gameObject);
-        CreateAvatar(false);
+        _playerAvatar.SetVechicleType(_playerSettings.CurrentVehicle);
+        _playerSettings.CurrentHealth = _playerAvatar.Health;
     }
 
-    public void CreateAvatar(bool initial)
+    public void CreateAvatar()
     {
-        _playerAvatar = _vehicleFactory.CreateVehicle(_playerSettings.CurrentVehicle);
+        _playerAvatar = _sceneAssetFactory.CreateAsset<OutpostAvatar>();
+        _playerAvatar.SetVechicleType(_playerSettings.CurrentVehicle);
         _playerAvatar.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-        _playerAvatar.ControlOff();
         _playerAvatar.transform.position = _defaultPointPoint.position;
-        _playerAvatarMover = _playerAvatar.AddComponent<SimpleMover>();
-
-        if (!initial)                                                   //Не первое создание (поменяли танк)
-        {
-            _playerSettings.CurrentHealth = _playerAvatar.MaxHealth;
-            return;
-        }
 
         if (_playerSettings.RepairEndTime != null && _playerSettings.RepairEndTime <= GetDateTime()) //Если ремонт закончился оффлайн
         {
             _playerSettings.RepairEndTime = null;
-            _playerSettings.CurrentHealth = _playerAvatar.MaxHealth;
+            _playerSettings.CurrentHealth = _playerAvatar.Health;
             _playerSettings.SaveSettings();
-            _playerAvatar.Health = _playerAvatar.MaxHealth;
             return;
         }
 
-        if (_playerSettings.RepairEndTime == null && _playerSettings.CurrentHealth < _playerAvatar.MaxHealth) //Если ремонт не начат, но здоровье меньше максимального (прилетели побитые)
+        if (_playerSettings.RepairEndTime == null && _playerSettings.CurrentHealth < _playerAvatar.Health) //Если ремонт не начат, но здоровье меньше максимального (прилетели побитые)
                 StartRepair();
 
         if (_playerSettings.RepairEndTime != null && _playerSettings.RepairEndTime > GetDateTime()) //Если ремонт еще не закончился (зашли до окончания ремонта)
@@ -331,7 +321,7 @@ public class OutpostRoutine : MonoBehaviour
     }
     private void TakeOff()
     {
-        if (_playerSettings.CurrentHealth < _playerAvatar.MaxHealth)
+        if (_playerSettings.CurrentHealth < _playerAvatar.Health)
         {
             _errorController.ShowError("Техника повреждена. Дождитесь окончания ремонтных работ.");
             return;
@@ -355,7 +345,7 @@ public class OutpostRoutine : MonoBehaviour
         _takeOffButtonButton.style.visibility = Visibility.Hidden;
         _shuttle.GetComponent<Collider2D>().enabled = false;
         _sceneNavigator.NavigationVector = NavigationVector.GoingToMission;
-        _playerAvatarMover.MoveTo(_shuttle.transform.position, 2, () => 
+        _playerAvatar.MoveTo(_shuttle.transform.position, 1.5f, () => 
                   { 
                     _playerAvatar.gameObject.SetActive(false);
                     _shuttle.TakeOff(() => SceneManager.LoadScene(_contractManager.CurrentContract.Scenes[sceneIndex]));
@@ -365,7 +355,7 @@ public class OutpostRoutine : MonoBehaviour
     private void StartRepair()
     {
         _playerAvatar.transform.position = _repairPoint.position;
-        _playerSettings.RepairEndTime = GetDateTime().AddMinutes((_playerAvatar.MaxHealth - _playerSettings.CurrentHealth) / 2);
+        _playerSettings.RepairEndTime = GetDateTime().AddMinutes((_playerAvatar.Health - _playerSettings.CurrentHealth) / 2);
     }
 
     private DateTime GetDateTime()
