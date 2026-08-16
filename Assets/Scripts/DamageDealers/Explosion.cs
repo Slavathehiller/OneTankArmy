@@ -5,6 +5,11 @@ public class Explosion : DamageDealer
 {
     [SerializeField]
     protected float _force = 50;
+
+    public void ScaleForce(float scale)
+    {
+        _force = _force * scale;
+    }
     public void FinishExplode()
     {
         Destroy(gameObject);

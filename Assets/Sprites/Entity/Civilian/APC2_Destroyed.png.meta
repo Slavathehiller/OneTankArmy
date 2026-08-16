@@ -1,0 +1,643 @@
+fileFormatVersion: 2
+guid: 9d41c5bd8880da5478f89dca3eb19161
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2496181467270341300
+    second: APC2_Destroyed_0
+  - first:
+      213: -5584596534107999560
+    second: APC2_Destroyed_1
+  - first:
+      213: 6343188591518822739
+    second: APC2_Destroyed_2
+  - first:
+      213: 3468539756306893987
+    second: APC2_Destroyed_3
+  - first:
+      213: -2253159328123954856
+    second: APC2_Destroyed_4
+  - first:
+      213: 4865384287515014249
+    second: APC2_Destroyed_5
+  - first:
+      213: -1077388205685515891
+    second: APC2_Destroyed_6
+  - first:
+      213: -2807943790218144010
+    second: APC2_Destroyed_7
+  - first:
+      213: -2902924456298301455
+    second: APC2_Destroyed_8
+  - first:
+      213: -8650410942559184733
+    second: APC2_Destroyed_9
+  - first:
+      213: -2970788049658566538
+    second: APC2_Destroyed_10
+  - first:
+      213: 8288031588233803689
+    second: APC2_Destroyed_11
+  - first:
+      213: -9178914304822137035
+    second: APC2_Destroyed_12
+  - first:
+      213: 2420024090363628554
+    second: APC2_Destroyed_13
+  - first:
+      213: -5463024317054338268
+    second: APC2_Destroyed_14
+  - first:
+      213: -8377013328528223869
+    second: APC2_Destroyed_15
+  - first:
+      213: 7098389316933685411
+    second: APC2_Destroyed_16
+  - first:
+      213: 2287517398604580273
+    second: APC2_Destroyed_17
+  - first:
+      213: 3475426089133866109
+    second: APC2_Destroyed_18
+  - first:
+      213: -2521015844173448914
+    second: APC2_Destroyed_19
+  - first:
+      213: 4076891478280608539
+    second: APC2_Destroyed_20
+  - first:
+      213: -7908097892281816554
+    second: APC2_Destroyed_21
+  - first:
+      213: 6640022419302302663
+    second: APC2_Destroyed_22
+  - first:
+      213: -6961769308392111601
+    second: APC2_Destroyed_23
+  - first:
+      213: -8293344315339944679
+    second: APC2_Destroyed_24
+  - first:
+      213: -5645044658967518483
+    second: APC2_Destroyed_25
+  - first:
+      213: 7670437294421900734
+    second: APC2_Destroyed_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: APC2_Destroyed_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1096
+        width: 64
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d107c4e28cb5dd0800000000000000
+      internalID: -2496181467270341300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 1059
+        width: 111
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b27d9a6a078f72b0800000000000000
+      internalID: -5584596534107999560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_2
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 792
+        width: 398
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3513ac49a68870850800000000000000
+      internalID: 6343188591518822739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_4
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 976
+        width: 236
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85950d0678b2bb0e0800000000000000
+      internalID: -2253159328123954856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_5
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1039
+        width: 130
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96479194b31558340800000000000000
+      internalID: 4865384287515014249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_9
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 859
+        width: 156
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a89b9f541193f780800000000000000
+      internalID: -8650410942559184733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_11
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 668
+        width: 165
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a774ef41d0050370800000000000000
+      internalID: 8288031588233803689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_12
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 597
+        width: 192
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f235d5212fd9080800000000000000
+      internalID: -9178914304822137035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_13
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 306
+        width: 384
+        height: 451
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c030e9617a59120800000000000000
+      internalID: 2420024090363628554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_14
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 477
+        width: 621
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42bb7a6f3507f24b0800000000000000
+      internalID: -5463024317054338268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_15
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 372
+        width: 366
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 381dc52d2cedebb80800000000000000
+      internalID: -8377013328528223869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_16
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 265
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a09241997b828260800000000000000
+      internalID: 7098389316933685411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_17
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 258
+        width: 181
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b50a5944f4eebf10800000000000000
+      internalID: 2287517398604580273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_18
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 308
+        width: 108
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7cf2fd4d913b3030800000000000000
+      internalID: 3475426089133866109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_21
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 201
+        width: 156
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ae689addac04290800000000000000
+      internalID: -7908097892281816554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_22
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 134
+        width: 174
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3c423c539162c50800000000000000
+      internalID: 6640022419302302663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_23
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 55
+        width: 129
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f024215f2b3d26f90800000000000000
+      internalID: -6961769308392111601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_25
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 17
+        width: 102
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de266099ac5c8a1b0800000000000000
+      internalID: -5645044658967518483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APC2_Destroyed_26
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 50
+        width: 139
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebdfced541ed27a60800000000000000
+      internalID: 7670437294421900734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: be299d889e3a4ec4f9c4987cce1acb29
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      APC2_Destroyed_0: -2496181467270341300
+      APC2_Destroyed_1: -5584596534107999560
+      APC2_Destroyed_10: -2970788049658566538
+      APC2_Destroyed_11: 8288031588233803689
+      APC2_Destroyed_12: -9178914304822137035
+      APC2_Destroyed_13: 2420024090363628554
+      APC2_Destroyed_14: -5463024317054338268
+      APC2_Destroyed_15: -8377013328528223869
+      APC2_Destroyed_16: 7098389316933685411
+      APC2_Destroyed_17: 2287517398604580273
+      APC2_Destroyed_18: 3475426089133866109
+      APC2_Destroyed_19: -2521015844173448914
+      APC2_Destroyed_2: 6343188591518822739
+      APC2_Destroyed_20: 4076891478280608539
+      APC2_Destroyed_21: -7908097892281816554
+      APC2_Destroyed_22: 6640022419302302663
+      APC2_Destroyed_23: -6961769308392111601
+      APC2_Destroyed_24: -8293344315339944679
+      APC2_Destroyed_25: -5645044658967518483
+      APC2_Destroyed_26: 7670437294421900734
+      APC2_Destroyed_3: 3468539756306893987
+      APC2_Destroyed_4: -2253159328123954856
+      APC2_Destroyed_5: 4865384287515014249
+      APC2_Destroyed_6: -1077388205685515891
+      APC2_Destroyed_7: -2807943790218144010
+      APC2_Destroyed_8: -2902924456298301455
+      APC2_Destroyed_9: -8650410942559184733
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

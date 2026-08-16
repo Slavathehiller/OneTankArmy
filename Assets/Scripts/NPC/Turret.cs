@@ -13,8 +13,6 @@ namespace Assets.Scripts.NPC
         protected override float MaxHP => _maxHP;
 
         [SerializeField]
-        private GameObject _mainBody;
-        [SerializeField]
         private GameObject _destroyedBody;
         [SerializeField]
         protected Gun[] _guns;

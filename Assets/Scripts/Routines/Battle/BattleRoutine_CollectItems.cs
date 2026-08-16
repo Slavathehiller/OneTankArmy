@@ -67,7 +67,7 @@ namespace Assets.Scripts.Routines.Battle
             return new (EntityType enemyType, int count)[]
             {
                 (EntityType.AcidCockroach , 6),
-                (EntityType.BoomFlea , 30),
+                (EntityType.BoomFlea , 40),
             };
         }
 

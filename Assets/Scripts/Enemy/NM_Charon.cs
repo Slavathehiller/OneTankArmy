@@ -18,7 +18,8 @@ namespace Assets.Scripts.Enemy
 
             wirlMissile.GetComponent<IncomingMissile>().SetTarget(_target);
 
-            base.Fire();
+            if (_missileSound != null)
+                _missileSound.Play();
         }
     }
 }

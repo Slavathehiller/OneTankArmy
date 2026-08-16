@@ -44276,6 +44276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NM_Pipistrelle
   _audioSourceMove: {fileID: 0}
+  _audioSourceDeath: {fileID: 0}
   _moveSpeed: 4
   _rotateSpeed: 1
   _injuries:
@@ -44286,14 +44287,6 @@ MonoBehaviour:
   - {fileID: 1703259762095370467}
   - {fileID: 5125250701525176179}
   _rigidBody: {fileID: 4725045119980238106}
-  _maxHP: 150
-  _animator: {fileID: 6003243947044220251}
-  _agent: {fileID: 9194155318714773008}
-  _distanceOfDetection: 10
-  _detectionCooldown: 1
-  _meleeAttackCooldown: 0
-  _meleeDistance: 0
-  _meleeDamage: 0
   _mainBody: {fileID: 1998489287556979102}
   _bodyPartsCollection:
   - Parts:
@@ -44304,11 +44297,21 @@ MonoBehaviour:
     - {fileID: 9206234503367892823}
   - Parts:
     - {fileID: 3461184611258286407}
+  _maxHP: 150
+  _animator: {fileID: 6003243947044220251}
+  _agent: {fileID: 9194155318714773008}
+  _distanceOfDetection: 10
+  _detectionCooldown: 1
+  _meleeAttackCooldown: 0
+  _meleeDistance: 0
+  _meleeDamage: 0
   _distanceOfRangeAttack: 8
-  _rangeAttackCooldown: 2
+  _rangeAttackCooldown: 3
   _firePoint: {fileID: 298819687466208371}
   _missileType: -1
   _missileSound: {fileID: 4066924889948168972}
+  _cabins: []
+  _gunsRotationSpeed: 2
 --- !u!60 &5637285597789780433
 PolygonCollider2D:
   m_ObjectHideFlags: 0

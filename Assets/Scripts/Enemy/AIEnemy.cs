@@ -46,28 +46,6 @@ public abstract class AIEnemy : BaseEntity
 
     protected GameObject _target;
 
-    [SerializeField]
-    protected GameObject _mainBody;
-
-    [SerializeField]
-    protected BodyParts[] _bodyPartsCollection;
-
-    private int? _bodyPartIndex = null;
-
-    private Collider2D _mainCollider;
-    protected Rigidbody2D[] BodyParts
-    {
-        get
-        {
-            if (_bodyPartIndex == null)
-                _bodyPartIndex = Random.Range(0, _bodyPartsCollection.Length);
-            if (_bodyPartsCollection.Length > 0)
-                return _bodyPartsCollection[_bodyPartIndex.Value].Parts;
-            else
-                return new Rigidbody2D[0];
-        }
-    }
-
     [Inject]
     private IVFXManager _VFXMmanager;
 
@@ -141,7 +119,6 @@ public abstract class AIEnemy : BaseEntity
     {
         base.StartActions();
         _currentHP = MaxHP;
-        _mainCollider = GetComponent<Collider2D>();
         if (_agent != null)
         {
             _agent.updateUpAxis = false;
@@ -251,45 +228,21 @@ public abstract class AIEnemy : BaseEntity
     protected override void CheckIfDead()
     {
         base.CheckIfDead();
-        if (_isDead)
-            DeadPerfomance();
     }
 
-    protected virtual void DeadPerfomance()
+    protected override void DeadPerfomance()
     {
-        if (_mainCollider != null)
-            _mainCollider.enabled = false;
         if (_agent != null)
             _agent.enabled = false;
-        Destroy(_mainBody);
-        foreach (var bodyPart in BodyParts)
-        {
-            bodyPart.gameObject.SetActive(true);
-        }
+        base.DeadPerfomance();
     }
 
     protected IEnumerator MakeGoooCoroutine<T>(GameObject mark, float scale = 1, UnityAction callback = null) where T : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
-        var goo = _VFXMmanager.MeakeVFXAt<T>(mark.transform.position);
+        var goo = _VFXMmanager.MakeVFXAt<T>(mark.transform.position);
         goo.transform.localScale = new Vector3(scale, scale, 1);
         goo.transform.rotation = mark.transform.rotation;
         callback?.Invoke();
-    }
-
-    protected void DisablePhysic()
-    {
-        if (RigidBody != null)
-            RigidBody.simulated = false;
-        foreach (var bodyPart in BodyParts)
-        {
-            var bpRigidBody = bodyPart.GetComponent<Rigidbody2D>();
-            if (bpRigidBody != null)
-                bpRigidBody.simulated = false;
-            var bpCollider = bodyPart.GetComponent<Collider2D>();
-            if (bpCollider != null)
-                bpCollider.enabled = false;
-        }
-        enabled = false;
     }
 }

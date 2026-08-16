@@ -18,7 +18,7 @@ public struct Waypoint
 #pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
     public float latency;
 }
-public abstract class NPC_Patroller : NPC_Base
+public class NPC_Patroller : NPC_Base
 {
     [SerializeField]
     protected Waypoint[] _waypoints;

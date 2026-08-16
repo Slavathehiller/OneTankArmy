@@ -4,6 +4,7 @@
     Cleanse = 0,
     BossKill = 1,
     CollectItem = 2,
-    BreakBreach = 3
+    BreakBreach = 3,
+    Convoy = 4
 }
 

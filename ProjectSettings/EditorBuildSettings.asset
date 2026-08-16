@@ -47,6 +47,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle/Nocturne/Nocturne_Cleanse1.unity
     guid: 7f26f8c130b9644479dbbf867c9ddd21
+  - enabled: 1
+    path: Assets/Scenes/Battle/Nocturne/Nocturne_Convoy.unity
+    guid: c000e0601f27ce84eaa407458e031f68
   - enabled: 0
     path: Assets/Scenes/Battle/TEST1.unity
     guid: 39da2d06d5a212e48881c426b85ffe8f

@@ -83,6 +83,8 @@ MonoBehaviour:
   _fireSound: {fileID: 8300000, guid: 651495ddda4d6bf43a9693a52be489e6, type: 3}
   _fireLatency: 0.15
   _missileType: 1
+  _fireSeries: 1
+  _fireSeriesLatency: 0.1
 --- !u!82 &7846911475412062988
 AudioSource:
   m_ObjectHideFlags: 0

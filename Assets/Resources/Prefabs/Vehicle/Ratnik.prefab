@@ -235,10 +235,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSourceMove: {fileID: 7517493489112617148}
-  _moveSpeed: 14
-  _rotateSpeed: 7
+  _audioSourceDeath: {fileID: 0}
+  _moveSpeed: 18
+  _rotateSpeed: 8
   _injuries: []
   _rigidBody: {fileID: 0}
+  _mainBody: {fileID: 0}
+  _bodyPartsCollection: []
   _healthBar: {fileID: 3167926836334825702}
   _healthBarRenderer: {fileID: 2319024376133290374}
   _spriteRenderer: {fileID: 6586793873056049515}

@@ -14,7 +14,7 @@ namespace Assets.Scripts.Routines.Battle
         {
             return new (EntityType enemyType, int count)[]
             {
-               (EntityType.NM_Firefly , 8),
+               (EntityType.NM_Firefly , 6),
                (EntityType.NM_Pipistrelle , 3),
                (EntityType.NM_Devourer , 2),
                (EntityType.NM_Charon , 2),

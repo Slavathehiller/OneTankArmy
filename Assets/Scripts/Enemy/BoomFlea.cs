@@ -109,8 +109,7 @@ public class BoomFlea : AIEnemy
 
     private void Explode()
     {
-        _VFXMmanager.MeakeExplosionAt(transform.position);
+        _VFXMmanager.MakeExplosionAt(transform.position);
         Destroy(gameObject);
     }
-
 }

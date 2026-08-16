@@ -30,10 +30,33 @@ public abstract class BaseEntity : MonoBehaviour
     [SerializeField]
     private Rigidbody2D _rigidBody;
 
+    [SerializeField]
+    protected GameObject _mainBody;
+
+    [SerializeField]
+    protected BodyParts[] _bodyPartsCollection;
+
+    private int? _bodyPartIndex = null;
+
+    protected Rigidbody2D[] BodyParts
+    {
+        get
+        {
+            if (_bodyPartIndex == null)
+                _bodyPartIndex = Random.Range(0, _bodyPartsCollection.Length);
+            if (_bodyPartsCollection.Length > 0)
+                return _bodyPartsCollection[_bodyPartIndex.Value].Parts;
+            else
+                return new Rigidbody2D[0];
+        }
+    }
+
     public virtual bool IsDead => _isDead;
 
     private TagCloud _tagCloud;
     public TagCloud TagCloud => _tagCloud;
+
+    private Collider2D _mainCollider;
 
     protected Rigidbody2D RigidBody
     {
@@ -79,7 +102,10 @@ public abstract class BaseEntity : MonoBehaviour
     {
         InitTagCloud();
     }
-    protected virtual void UpdateActions() { }
+    protected virtual void UpdateActions() 
+    {
+        _mainCollider = GetComponent<Collider2D>();
+    }
     protected virtual void FixedUpdateActions() { }
 
     protected virtual void InitTagCloud()
@@ -100,6 +126,7 @@ public abstract class BaseEntity : MonoBehaviour
             if (_audioSourceDeath != null)
                 _audioSourceDeath.Play();
             Die?.Invoke(this);
+            DeadPerfomance();
         }
     }
 
@@ -149,6 +176,35 @@ public abstract class BaseEntity : MonoBehaviour
         if (angularForce != null)
             RigidBody.AddTorque(angularForce.Value);
     }
+
+
+    protected virtual void DeadPerfomance()
+    {
+        if (_mainCollider != null)
+            _mainCollider.enabled = false;
+        Destroy(_mainBody);
+        foreach (var bodyPart in BodyParts)
+        {
+            bodyPart.gameObject.SetActive(true);
+        }
+    }
+
+    protected void DisablePhysic()
+    {
+        if (RigidBody != null)
+            RigidBody.simulated = false;
+        foreach (var bodyPart in BodyParts)
+        {
+            var bpRigidBody = bodyPart.GetComponent<Rigidbody2D>();
+            if (bpRigidBody != null)
+                bpRigidBody.simulated = false;
+            var bpCollider = bodyPart.GetComponent<Collider2D>();
+            if (bpCollider != null)
+                bpCollider.enabled = false;
+        }
+        enabled = false;
+    }
+
 
     protected virtual void ReactToDamage(DamageDealer dd) { }
 
