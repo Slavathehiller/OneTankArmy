@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 398087191}
   - component: {fileID: 398087190}
   - component: {fileID: 398087189}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WalkableArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

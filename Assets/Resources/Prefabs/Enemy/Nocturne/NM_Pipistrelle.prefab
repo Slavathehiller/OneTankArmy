@@ -44300,7 +44300,7 @@ MonoBehaviour:
   _maxHP: 150
   _animator: {fileID: 6003243947044220251}
   _agent: {fileID: 9194155318714773008}
-  _distanceOfDetection: 10
+  _distanceOfDetection: 11
   _detectionCooldown: 1
   _meleeAttackCooldown: 0
   _meleeDistance: 0

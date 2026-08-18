@@ -1995,6 +1995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AcidCockroach
   _audioSourceMove: {fileID: 0}
+  _audioSourceDeath: {fileID: 0}
   _moveSpeed: 1
   _rotateSpeed: 0.008
   _injuries:
@@ -2005,14 +2006,6 @@ MonoBehaviour:
   - {fileID: 2904057838800004858}
   - {fileID: 6375409677650132124}
   _rigidBody: {fileID: 0}
-  _maxHP: 20
-  _animator: {fileID: -4548803581218888768}
-  _agent: {fileID: 4827037110713195259}
-  _distanceOfDetection: 12
-  _detectionCooldown: 1
-  _meleeAttackCooldown: 0
-  _meleeDistance: 0
-  _meleeDamage: 0
   _mainBody: {fileID: 2628012586123905761}
   _bodyPartsCollection:
   - Parts:
@@ -2029,7 +2022,15 @@ MonoBehaviour:
     - {fileID: 7214593828954634750}
     - {fileID: 1254565202284105489}
     - {fileID: 8609389939541461134}
-  _distanceOfRangeAttack: 4
+  _maxHP: 20
+  _animator: {fileID: -4548803581218888768}
+  _agent: {fileID: 4827037110713195259}
+  _distanceOfDetection: 13
+  _detectionCooldown: 1
+  _meleeAttackCooldown: 0
+  _meleeDistance: 0
+  _meleeDamage: 0
+  _distanceOfRangeAttack: 5
   _rangeAttackCooldown: 0.5
   _firePoint: {fileID: 8878035907138750546}
   _missileType: 0

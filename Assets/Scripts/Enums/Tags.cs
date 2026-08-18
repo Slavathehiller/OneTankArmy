@@ -9,6 +9,8 @@ public enum Tag
     Small,
     Insect,
     Mechanical,
-    Heavy
+    Heavy,
+    SuprHeavy,
+    WirlCannonOperator
 }
 

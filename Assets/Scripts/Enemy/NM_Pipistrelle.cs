@@ -2,6 +2,7 @@ using Assets.Scripts.DamageDealers;
 using Assets.Scripts.Enemy;
 using Assets.Scripts.Factories.Interfaces;
 using Assets.Scripts.ObjectPool;
+using System.Drawing;
 using UnityEngine;
 using Zenject;
 
@@ -18,5 +19,18 @@ public class NM_Pipistrelle : NocturneMachine
         bolt.Init();
         if (_missileSound != null)
             _missileSound.Play();
+    }
+
+    protected override void FixedUpdateActions()
+    {
+        if (_isDead || _target == null)
+            return;
+        base.FixedUpdateActions();
+        if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceOfRangeAttack)
+        {
+            StopMoving();
+            if (_currentRangeAttackCooldown <= 0 && !TryToRotateAt(_target.transform.position))
+                RangedAttack();
+        }
     }
 }

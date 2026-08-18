@@ -17,6 +17,8 @@ public class Explosion : DamageDealer
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (TryGetComponent<DamageDealer>(out _))
+            return;
         var collisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
         if (collisionRB == null ) 
             return;

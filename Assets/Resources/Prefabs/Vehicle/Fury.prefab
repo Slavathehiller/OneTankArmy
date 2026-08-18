@@ -182,7 +182,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8391021626538507948, guid: 4dfccf980d9ff8841ab54af05517008d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -234,10 +234,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSourceMove: {fileID: 7517493489112617148}
+  _audioSourceDeath: {fileID: 0}
   _moveSpeed: 19
   _rotateSpeed: 7
   _injuries: []
   _rigidBody: {fileID: 0}
+  _mainBody: {fileID: 0}
+  _bodyPartsCollection: []
   _healthBar: {fileID: 3167926836334825702}
   _healthBarRenderer: {fileID: 2319024376133290374}
   _spriteRenderer: {fileID: 6586793873056049515}
@@ -10421,6 +10424,10 @@ PrefabInstance:
     - target: {fileID: 6406418801034517470, guid: 70f8c282606aba24c8f8c64399eb3a36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057668171670812684, guid: 70f8c282606aba24c8f8c64399eb3a36, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

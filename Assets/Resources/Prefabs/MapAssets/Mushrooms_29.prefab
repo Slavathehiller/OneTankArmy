@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8203345572488877719}
   - component: {fileID: 6396174795581987960}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8918154425204708258}
   - component: {fileID: 3387829615592772734}
   - component: {fileID: 9172246959457813630}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mushrooms_29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5812730906527157266, guid: 99ef0fbb09a8a75499d53e3784fa4e4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -296,7 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4314506729133992815}
   - component: {fileID: 4215950092546552403}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6790368877097618585}
   - component: {fileID: 8892293570712181064}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BigLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3348670668054104331}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ActiveStaff
   m_TagString: Untagged
   m_Icon: {fileID: 0}

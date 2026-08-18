@@ -19612,7 +19612,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 50
   m_LinearDamping: 1
   m_AngularDamping: 1
   m_GravityScale: 0
@@ -34347,7 +34347,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 50
   m_LinearDamping: 1
   m_AngularDamping: 1
   m_GravityScale: 0
@@ -44235,14 +44235,6 @@ MonoBehaviour:
   - {fileID: 5125250701525176179}
   - {fileID: 1937510951687911969}
   _rigidBody: {fileID: 4725045119980238106}
-  _maxHP: 100
-  _animator: {fileID: 6003243947044220251}
-  _agent: {fileID: 9194155318714773008}
-  _distanceOfDetection: 14
-  _detectionCooldown: 1
-  _meleeAttackCooldown: 0
-  _meleeDistance: 0
-  _meleeDamage: 0
   _mainBody: {fileID: 1998489287556979102}
   _bodyPartsCollection:
   - Parts:
@@ -44253,11 +44245,21 @@ MonoBehaviour:
     - {fileID: 9206234503367892823}
   - Parts:
     - {fileID: 3461184611258286407}
+  _maxHP: 100
+  _animator: {fileID: 6003243947044220251}
+  _agent: {fileID: 9194155318714773008}
+  _distanceOfDetection: 15
+  _detectionCooldown: 1
+  _meleeAttackCooldown: 0
+  _meleeDistance: 0
+  _meleeDamage: 0
   _distanceOfRangeAttack: 10
   _rangeAttackCooldown: 1
   _firePoint: {fileID: 298819687466208371}
   _missileType: 5
   _missileSound: {fileID: 4017903284576534224}
+  _cabins: []
+  _gunsRotationSpeed: 2
 --- !u!50 &4725045119980238106
 Rigidbody2D:
   serializedVersion: 5
@@ -49426,7 +49428,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 50
   m_LinearDamping: 1
   m_AngularDamping: 1
   m_GravityScale: 0
@@ -59328,7 +59330,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 50
   m_LinearDamping: 1
   m_AngularDamping: 1
   m_GravityScale: 0

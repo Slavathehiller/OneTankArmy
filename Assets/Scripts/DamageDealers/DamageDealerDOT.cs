@@ -17,8 +17,13 @@ namespace Assets.Scripts.DamageDealers
         {
             if (collision.gameObject.TryGetComponent<BaseEntity>(out var entity))
             {
-                entity.TakeDamage(DOT);
+                DoDotDamage(entity);    
             }
+        }
+
+        protected virtual void DoDotDamage(BaseEntity entity)
+        {
+            entity.TakeDamage(DOT);
         }
 
     }

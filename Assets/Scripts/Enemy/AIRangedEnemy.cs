@@ -35,7 +35,7 @@ namespace Assets.Scripts.Enemy
         protected abstract void RangedAttack();
         protected override void StartActions()
         {
-            _agent.stoppingDistance = _distanceOfRangeAttack;
+           // _agent.stoppingDistance = _distanceOfRangeAttack;
             base.StartActions();
         }
 
@@ -52,11 +52,24 @@ namespace Assets.Scripts.Enemy
             base.FixedUpdateActions();
             if (Vector3.Distance(transform.position, _target.transform.position) <= _distanceOfRangeAttack)
             {
-                StopMoving();
+                if (HasLineOfSight(_target))
+                    StopMoving();
 
-                if (_currentRangeAttackCooldown <= 0 && !TryToRotateAtTarget())
+                if (_currentRangeAttackCooldown <= 0 && HasLineOfSight(_target))
                     RangedAttack();
             }
+        }
+
+
+        protected virtual bool HasLineOfSight(GameObject target)
+        {
+            int layerMask = 4 + 128 + 256;  //Ignore Raycast + Missile + PlayerMissile
+            layerMask = ~layerMask;
+
+            RaycastHit2D hit = Physics2D.Raycast(_firePoint.transform.position, transform.up, _distanceOfRangeAttack, layerMask);
+            //Debug.DrawRay(_firePoint.transform.position, transform.up * 5, Color.yellow, 1);
+
+            return (hit && hit.collider.gameObject.TryGetComponent<PlayerSide>(out var hited) && hited.gameObject == target);
         }
 
         protected override void DetectEnemy(PlayerSide player)
@@ -64,7 +77,8 @@ namespace Assets.Scripts.Enemy
             if (IsDead || player.IsDead)
                 return;
             base.DetectEnemy(player);
-            MoveToTarget();
+            if(Vector3.Distance(transform.position, _target.transform.position) > _distanceOfRangeAttack || !HasLineOfSight(_target))
+                MoveToTarget();
         }
 
         protected override void LooseEnemy()

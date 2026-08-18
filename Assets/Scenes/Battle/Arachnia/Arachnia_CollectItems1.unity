@@ -9630,7 +9630,7 @@ GameObject:
   - component: {fileID: 1933630000}
   - component: {fileID: 1933629999}
   - component: {fileID: 1933630001}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WalkableArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -21,5 +21,16 @@ namespace Assets.Scripts.Enemy
             if (_missileSound != null)
                 _missileSound.Play();
         }
+
+        protected override void InitTagCloud()
+        {
+            base.InitTagCloud();
+            TagCloud.Add(Tag.WirlCannonOperator);
+        }
+
+        protected override bool HasLineOfSight(GameObject target)
+        {
+            return true;
+        }
     }
 }

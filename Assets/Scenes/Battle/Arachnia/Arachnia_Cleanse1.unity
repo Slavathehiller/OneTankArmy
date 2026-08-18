@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 243442245}
   - component: {fileID: 243442244}
   - component: {fileID: 243442248}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Coast
   m_TagString: Untagged
   m_Icon: {fileID: 0}

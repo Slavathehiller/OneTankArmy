@@ -91,7 +91,7 @@ public class BoomFlea : AIEnemy
         _agent.isStopped = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void ReactToCollision()
     {
         ReactToDamage(null);
     }

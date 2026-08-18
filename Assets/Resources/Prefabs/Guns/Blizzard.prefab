@@ -180,6 +180,8 @@ MonoBehaviour:
   _fireSound: {fileID: 8300000, guid: 651495ddda4d6bf43a9693a52be489e6, type: 3}
   _fireLatency: 0.3
   _missileType: 2
+  _fireSeries: 1
+  _fireSeriesLatency: 0.1
 --- !u!1 &8894185959440213136
 GameObject:
   m_ObjectHideFlags: 0

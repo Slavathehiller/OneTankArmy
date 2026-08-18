@@ -181,7 +181,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 613594893210079028, guid: e19c591002d4d294093ed741d55fc9ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10564,7 +10564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8057668171670812684, guid: 6f0f96fc23ff48443867b1a0a7cce984, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

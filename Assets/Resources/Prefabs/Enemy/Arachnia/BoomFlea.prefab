@@ -153,16 +153,16 @@ MonoBehaviour:
   _injuries:
   - {fileID: 4655467338303869079}
   _rigidBody: {fileID: 0}
+  _mainBody: {fileID: 8972170608464377837}
+  _bodyPartsCollection: []
   _maxHP: 1
   _animator: {fileID: 6486955513966762370}
   _agent: {fileID: 7747162461048793577}
-  _distanceOfDetection: 10
+  _distanceOfDetection: 12
   _detectionCooldown: 2
   _meleeAttackCooldown: 0
   _meleeDistance: 0
   _meleeDamage: 0
-  _mainBody: {fileID: 8972170608464377837}
-  _bodyPartsCollection: []
   _distanceOfJump: 4
   _jumpSpeed: 2.5
   _jumpMaxTime: 0.5

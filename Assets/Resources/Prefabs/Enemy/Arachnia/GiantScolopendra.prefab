@@ -1920,6 +1920,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b792a198e373948bf68a041980aa08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GiantScolopendra
+  _audioSourceMove: {fileID: 0}
+  _audioSourceDeath: {fileID: 0}
   _moveSpeed: 3
   _rotateSpeed: 1
   _injuries:
@@ -1927,14 +1929,7 @@ MonoBehaviour:
   - {fileID: 5671062956164016936}
   - {fileID: 6827951167841031351}
   - {fileID: 8436906926343097260}
-  _maxHP: 200
-  _animator: {fileID: 2463686268153394793}
-  _agent: {fileID: 1701082830812486420}
-  _distanceOfDetection: 10
-  _detectionCooldown: 1
-  _meleeAttackCooldown: 0.5
-  _meleeDistance: 3
-  _meleeDamage: 20
+  _rigidBody: {fileID: 0}
   _mainBody: {fileID: 2149267448374833974}
   _bodyPartsCollection:
   - Parts:
@@ -1952,6 +1947,14 @@ MonoBehaviour:
     - {fileID: 8486954581663747479}
     - {fileID: 8800979262299925625}
     - {fileID: 8433822058581101124}
+  _maxHP: 200
+  _animator: {fileID: 2463686268153394793}
+  _agent: {fileID: 1701082830812486420}
+  _distanceOfDetection: 11
+  _detectionCooldown: 1
+  _meleeAttackCooldown: 0.5
+  _meleeDistance: 3
+  _meleeDamage: 20
 --- !u!95 &2463686268153394793
 Animator:
   serializedVersion: 7

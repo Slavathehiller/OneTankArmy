@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8918154425204708258}
   - component: {fileID: -2884994181622681904}
   - component: {fileID: 3387829615592772734}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mushrooms_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -763994117416756504, guid: 99ef0fbb09a8a75499d53e3784fa4e4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -153,7 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6202478669206944538}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ActiveStaff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5894006315981330956}
   - component: {fileID: 6497301329365519520}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BigLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

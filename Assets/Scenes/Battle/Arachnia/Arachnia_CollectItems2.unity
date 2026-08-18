@@ -8561,7 +8561,7 @@ GameObject:
   - component: {fileID: 1600881685}
   - component: {fileID: 1600881684}
   - component: {fileID: 1600881683}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WalkableArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

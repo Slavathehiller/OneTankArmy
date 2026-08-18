@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8918154425204708258}
   - component: {fileID: 3387829615592772734}
   - component: {fileID: 3268264627586906971}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mushrooms_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4053803884656177018, guid: 99ef0fbb09a8a75499d53e3784fa4e4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -227,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3218183384105451391}
   - component: {fileID: 7019626937378215093}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4089508957887782408}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ActiveStaff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2091235492256635201}
   - component: {fileID: 4226873784152644267}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light1-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7704281719205036999}
   - component: {fileID: 4250238044883096680}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4927140050400406751}
   - component: {fileID: 181133271316707067}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BigLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1147915115087767647}
   - component: {fileID: 3811542324801347259}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8248063346652986585}
   - component: {fileID: 5003414286771829924}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

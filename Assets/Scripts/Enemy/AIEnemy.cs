@@ -3,6 +3,7 @@ using Assets.Scripts.Player;
 using Assets.Scripts.VFX.Interfaces;
 using System.Collections;
 using System.Drawing;
+using System.Linq;
 using System.Net.Security;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -49,10 +50,24 @@ public abstract class AIEnemy : BaseEntity
     [Inject]
     private IVFXManager _VFXMmanager;
 
+    protected override void StartActions()
+    {
+        base.StartActions();
+        _currentHP = MaxHP;
+        if (_agent != null)
+        {
+            _agent.updateUpAxis = false;
+            _agent.updateRotation = false;
+            _agent.speed = _moveSpeed;
+            var currentZ = transform.eulerAngles.z;
+            transform.eulerAngles = new Vector3(0f, 0f, currentZ);
+        }
+    }
+
     protected override void FixedUpdateActions()
     {
         base.FixedUpdateActions();
-        if (_agent != null && _agent.hasPath && _agent.remainingDistance > _agent.stoppingDistance)
+        if (_agent != null && _agent.hasPath /*&& _agent.remainingDistance > _agent.stoppingDistance*/)
         {
             var angleToPoint = RotateCalculator.AngleTolookAt(transform, _agent.steeringTarget);
             _agent.isStopped = angleToPoint != null && Mathf.Abs(angleToPoint.Value) > 30;
@@ -83,15 +98,12 @@ public abstract class AIEnemy : BaseEntity
 
     protected PlayerSide TryDetect(float radius)
     {
-        var detectedColliders = Physics2D.OverlapCircleAll(transform.position, radius);
-        foreach (Collider2D collider in detectedColliders)
-        {
-            if (collider.gameObject.TryGetComponent<PlayerSide>(out var target))
-            {
-                return target;
-            }
-        }
-        return null;
+        var detectedTargets = Physics2D.OverlapCircleAll(transform.position, radius).Where(x => x.TryGetComponent<PlayerSide>(out _));
+        var nearest =  detectedTargets.OrderBy(x => Vector3.Distance(x.transform.position, transform.position)).FirstOrDefault();
+        if (nearest != null)
+            return nearest.GetComponent<PlayerSide>();
+        else 
+            return null;
     }
 
     public void SetAgentOn()
@@ -113,20 +125,6 @@ public abstract class AIEnemy : BaseEntity
     {
         minimapMark.transform.SetParent(_mainBody.transform);
         minimapMark.transform.localPosition = Vector3.zero;
-    }
-
-    protected override void StartActions() 
-    {
-        base.StartActions();
-        _currentHP = MaxHP;
-        if (_agent != null)
-        {
-            _agent.updateUpAxis = false;
-            _agent.updateRotation = false;
-            _agent.speed = _moveSpeed;
-            var currentZ = transform.eulerAngles.z;
-            transform.eulerAngles = new Vector3(0f, 0f, currentZ);
-        }
     }
 
     protected virtual bool TryToRotateAt(Vector3 point)

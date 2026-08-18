@@ -158,8 +158,11 @@ public abstract class BaseEntity : MonoBehaviour
         }
     }
 
+    protected virtual void ReactToCollision() { }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        ReactToCollision();
         if (collision.gameObject.TryGetComponent<DamageDealer>(out var dd))
         {
             TakeDamage(dd.Damage);

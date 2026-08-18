@@ -79,7 +79,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -544449398, guid: 24b7a01fe1ec5cc4ca53c749774f5708, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5430,7 +5430,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -544449398, guid: 24b7a01fe1ec5cc4ca53c749774f5708, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5493,10 +5493,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSourceMove: {fileID: 7517493489112617148}
+  _audioSourceDeath: {fileID: 0}
   _moveSpeed: 17
   _rotateSpeed: 9
   _injuries: []
   _rigidBody: {fileID: 3927391189080961072}
+  _mainBody: {fileID: 0}
+  _bodyPartsCollection: []
   _healthBar: {fileID: 3167926836334825702}
   _healthBarRenderer: {fileID: 2319024376133290374}
   _spriteRenderer: {fileID: 6586793873056049515}
